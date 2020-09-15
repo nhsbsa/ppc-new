@@ -1,0 +1,307 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+  Check your answers
+{% endblock %}
+
+{% block beforeContent %}
+  
+  
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-three-quarters">
+
+      <h1>
+        Check your answers before making your payment
+      </h1>
+
+      <h2 class="nhsuk-heading-m nhsuk-u-margin-top-6 nhsuk-u-margin-bottom-2">Your details</h2>
+
+      <dl class="nhsuk-summary-list">
+        
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Name
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            {{ data['firstname'] }} {{ data['lastname'] }}
+          </dd>
+          <dd class="nhsuk-summary-list__actions">
+            <a href="name">
+              Change<span class="nhsuk-u-visually-hidden"> name</span>
+            </a>
+          </dd>
+        </div>
+      
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Date of birth
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            6 July 2000
+          </dd>
+          <dd class="nhsuk-summary-list__actions">
+            <a href="#">
+              Change<span class="nhsuk-u-visually-hidden"> date of birth</span>
+            </a>
+          </dd>        
+        </div>
+
+        <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">
+              Do you know your NHS number?
+            </dt>
+            <dd class="nhsuk-summary-list__value">
+
+                {% if data['nhsnumber'] == "yes" %}
+                <span>Yes <br> {{ data['nhsnumber-yes'] }}</span>
+                {% endif %}
+                {% if data['nhsnumber'] == "no" %}
+                <span>No</span>
+                {% endif %}
+            </dd>
+            <dd class="nhsuk-summary-list__actions">
+              <a href="#">
+                Change<span class="nhsuk-u-visually-hidden"> NHS number</span>
+              </a>
+            </dd>        
+          </div>
+      
+         
+
+
+          <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">
+                Address
+              </dt>
+              <dd class="nhsuk-summary-list__value">
+                123 Morpeth Street
+                NE1 2ST
+              </dd>
+              <dd class="nhsuk-summary-list__actions">
+                <a href="#">
+                  Change<span class="nhsuk-u-visually-hidden"> address</span>
+                </a>
+              </dd>        
+            </div>
+
+            <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">
+                  Get prepayment certificate and reminder by email?
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+                    
+
+
+                    {% if data['email_print'] == "email" %}
+                    <span>Yes <br> {{ data['nhsnumber-yes'] }}</span>
+                    {% endif %}
+                    {% if data['email_print'] == "print" %}
+                    <span>No, I am printing my prescription</span>
+                    {% endif %}
+                    
+                  
+                  
+                </dd>
+                <dd class="nhsuk-summary-list__actions">
+                  <a href="#">
+                    Change<span class="nhsuk-u-visually-hidden"> address</span>
+                  </a>
+                </dd>        
+              </div>
+  
+
+<br>
+              <h2 class="nhsuk-heading-m">Certificate details</h2>
+
+
+                       <div class="nhsuk-summary-list__row">
+                          <dt class="nhsuk-summary-list__key">
+                           Length
+                          </dt>
+                          <dd class="nhsuk-summary-list__value">
+                            {% if data['ppcduration'] == "3months" %}
+                            <span>3 months</span>
+                            {% endif %}
+                         
+                            {% if data['ppcduration'] == "12months" %}
+                            <span>12 months</span>
+                            {% endif %}
+
+                          </dd>
+                          <dd class="nhsuk-summary-list__actions">
+                            <a href="PPC-last">
+                              Change<span class="nhsuk-u-visually-hidden"> address</span>
+                            </a>
+                          </dd>        
+                        </div>
+
+                        {% if data['ppcduration'] == "12months" %}
+
+                        <div class="nhsuk-summary-list__row">
+                          <dt class="nhsuk-summary-list__key">
+                           Starts on 
+                           <br> <br>
+                           Ends on
+
+                          </dt>
+                          <dd class="nhsuk-summary-list__value">
+                           <span>13 October 2020  <br> <br>13 October 2021 </span>
+                          </dd>
+                          <dd class="nhsuk-summary-list__actions">
+                            <a href="#">
+                              Change<span class="nhsuk-u-visually-hidden"> address</span>
+                            </a>
+                            
+                          </dd>        
+                        </div>
+                        {% endif %}
+
+                        {% if data['ppcduration'] == "12months" %}
+
+                        <div class="nhsuk-summary-list__row">
+                          <dt class="nhsuk-summary-list__key">
+                           Cost
+                          </dt>
+                          <dd class="nhsuk-summary-list__value">
+
+                        
+                            {% if data['payment'] == "dd" %}
+                            <span>Direct Debit <br>10 monthly instalments of £10.59 (£105.90 in total)</span>
+                            {% endif %}
+                         
+                            {% if data['payment'] == "single" %}
+                            <span>Debit or credit card <br>Single payment of £105.90</span>
+                            {% endif %}
+
+                
+                          </dd>
+                          <dd class="nhsuk-summary-list__actions">
+                            <a href="#">
+                              Change<span class="nhsuk-u-visually-hidden"> address</span>
+                            </a>
+                            
+                          </dd>        
+                        </div>
+                        {% endif %}
+
+                        {% if data['ppcduration'] == "3months" %}
+
+                        <div class="nhsuk-summary-list__row">
+                          <dt class="nhsuk-summary-list__key">
+                           Starts on <br> <br> Ends on 
+                          </dt>
+                          <dd class="nhsuk-summary-list__value">
+                           <span>13 October 2020  <br> <br> 13 January 2021</span>
+                           
+                          <dd class="nhsuk-summary-list__actions">
+                            <a href="#">
+                              Change<span class="nhsuk-u-visually-hidden"> address</span>
+                            </a>
+                            
+                          </dd>        
+                        </div>
+                        {% endif %}
+
+
+                  
+
+                        {% if data['ppcduration'] == "3months" %}
+
+                        <div class="nhsuk-summary-list__row">
+                          <dt class="nhsuk-summary-list__key">
+                           Cost
+                          </dt>
+                          <dd class="nhsuk-summary-list__value">
+                          
+                            <span>£29.10 <br> Single card payment</span>
+                         
+                          </dd>
+                          <dd class="nhsuk-summary-list__actions">
+                            <a href="#">
+                              Change<span class="nhsuk-u-visually-hidden"> address</span>
+                            </a>
+                            
+                          </dd>        
+                        </div>
+                        {% endif %}
+
+
+<br>
+
+{% if (data['payment'] == "single") or (data['ppcduration'] == "3months") %}
+<div style="padding: px 25px 1px 25px; margin-top:15px; width: 720px;">                   
+<div class="nhsuk-warning-callout">
+    
+    <h3 class="nhsuk-warning-callout__label">Payment</h3>
+    <br>
+    <strong class="bold-small">
+        If you choose to continue, you will be transferred to our card payment provider, <a
+        href="https://www.payments.service.gov.uk/">GOV.UK Pay.</a>
+        </strong>
+        <p style="margin-top: 20px;margin-bottom: 10px;">
+          <img width="418" src="/images/cards.png" alt="bank card logos"> </p>
+<p style="font-size: 16px;">Accepted credit and debit card types</p>
+    </div>
+  </div>
+  {% endif %}
+
+
+
+
+  <button class="nhsuk-button" data-module="nhsuk-button">
+      Proceed to payment
+      </button>
+
+
+
+
+
+
+
+
+
+
+
+
+                        
+        
+      </dl>
+
+
+   
+
+
+    </div>
+
+   
+
+
+
+  </div>
+{% endblock %}
+
+{% block footer %}
+  {{ footer({
+    "links": [
+      {
+        "URL": "/docs",
+        "label": "Home"
+      },
+      {
+        "URL": "/examples/passing-data/clear-data",
+        "label": "Clear data"
+      },
+      {
+        "URL": "/docs/about",
+        "label": "About and support"
+      },
+      {
+        "URL": "https://github.com/nhsuk/nhsuk-prototype-kit",
+        "label": "NHS.UK prototype kit - GitHub"
+      }
+    ]
+  })}}
+{% endblock %}
