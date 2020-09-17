@@ -96,21 +96,52 @@
 
 
                     {% if data['email_print'] == "email" %}
-                    <span>Yes <br> {{ data['nhsnumber-yes'] }}</span>
+                    <span>Yes <br> </span>
                     {% endif %}
                     {% if data['email_print'] == "print" %}
                     <span>No, I am printing my prescription</span>
                     {% endif %}
                     
                   
-                  
                 </dd>
                 <dd class="nhsuk-summary-list__actions">
-                  <a href="#">
-                    Change<span class="nhsuk-u-visually-hidden"> address</span>
-                  </a>
-                </dd>        
-              </div>
+                    <a href="#">
+                      Change<span class="nhsuk-u-visually-hidden"> reminder</span>
+                    </a>
+                  </dd>        
+                </div>
+
+                {% if data['email_print'] == "email" %}
+
+                <div class="nhsuk-summary-list__row">
+                    <dt class="nhsuk-summary-list__key">
+                     Email
+                     
+                    </dt>
+                    <dd class="nhsuk-summary-list__value">
+                     <span>  {{ data['email'] }} </span>
+                    </dd>
+                    <dd class="nhsuk-summary-list__actions">
+                      <a href="#">
+                        Change<span class="nhsuk-u-visually-hidden"> email address</span>
+                      </a>
+                      
+                    </dd>        
+                  </div>
+                  {% endif %}
+
+              
+
+
+
+
+
+
+
+
+
+
+              
   
 
 <br>
@@ -133,7 +164,7 @@
                           </dd>
                           <dd class="nhsuk-summary-list__actions">
                             <a href="PPC-last">
-                              Change<span class="nhsuk-u-visually-hidden"> address</span>
+                              Change<span class="nhsuk-u-visually-hidden"> Certificate length</span>
                             </a>
                           </dd>        
                         </div>
@@ -152,7 +183,7 @@
                           </dd>
                           <dd class="nhsuk-summary-list__actions">
                             <a href="#">
-                              Change<span class="nhsuk-u-visually-hidden"> address</span>
+                              Change<span class="nhsuk-u-visually-hidden"> PPC length dates</span>
                             </a>
                             
                           </dd>        
@@ -180,7 +211,7 @@
                           </dd>
                           <dd class="nhsuk-summary-list__actions">
                             <a href="#">
-                              Change<span class="nhsuk-u-visually-hidden"> address</span>
+                              Change<span class="nhsuk-u-visually-hidden"> PPC payment for 12 months</span>
                             </a>
                             
                           </dd>        
@@ -198,7 +229,7 @@
                            
                           <dd class="nhsuk-summary-list__actions">
                             <a href="#">
-                              Change<span class="nhsuk-u-visually-hidden"> address</span>
+                              Change<span class="nhsuk-u-visually-hidden">  PPC length dates</span>
                             </a>
                             
                           </dd>        
@@ -221,7 +252,7 @@
                           </dd>
                           <dd class="nhsuk-summary-list__actions">
                             <a href="#">
-                              Change<span class="nhsuk-u-visually-hidden"> address</span>
+                              Change<span class="nhsuk-u-visually-hidden"> Payment method</span>
                             </a>
                             
                           </dd>        
