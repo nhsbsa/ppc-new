@@ -1,0 +1,65 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+  Set up direct debit
+{% endblock %}
+
+{% block content %}
+
+  <div class="nhsuk-grid-row">
+
+		
+
+    <div class="nhsuk-grid-column-two-thirds">
+			
+			
+      <form action="/ppc/set-up-dd" method="post">
+        
+				<fieldset class="nhsuk-fieldset" aria-describedby="example-hint" role="group">
+					<legend class="nhsuk-fieldset_legend nhsuk-label--l">
+						<h1 class="nhsuk-fieldset__heading">
+							Set up a Direct Debit
+						</h1>
+					</legend>
+				</fieldset>
+				
+				<div class="nhsuk-form-group">
+						<label class="nhsuk-label" for="name-on-the-account">
+						  Name on the account <span class="nhsuk-u-visually-hidden">name on the account</span>
+						</label>
+						<input class="nhsuk-input" id="name-on-the-account" name="name-on-the-account" type="text" spellcheck="false">
+					  </div>
+
+			
+				
+				<div class="nhsuk-form-group">
+				  <label class="nhsuk-label" for="sort-code">
+					Sort code
+				  </label>
+				  <div id="sort-code-hint" class="nhsuk-hint">
+					Must be 6 digits long
+				  </div>
+				  <input class="nhsuk-input nhsuk-input--width-5" id="sort-code" name="sort-code" type="text" spellcheck="false" aria-describedby="sort-code-hint" pattern="[0-9]*" inputmode="numeric">
+				</div>
+				
+				<div class="nhsuk-form-group">
+				  <label class="nhsuk-label" for="account-number">
+					Account number
+				  </label>
+				  <div id="account-number-hint" class="nhsuk-hint">
+					Must be between 6 and 8 digits long
+				  </div>
+				  <input class="nhsuk-input nhsuk-input--width-10" id="account-number" name="account-number" type="text" spellcheck="false" aria-describedby="account-number-hint" pattern="[0-9]*" inputmode="numeric">
+				</div>
+				
+			
+				
+
+				<a href="cya-dd" class="nhsuk-button nhsuk-u-margin-bottom-8">
+						Continue
+					  </a>
+				
+			</form>  
+    </div>
+  </div>
+{% endblock %}
