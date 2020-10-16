@@ -1,0 +1,98 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+How long do you want your PPC to last?
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-back-link">
+    <a class="nhsuk-back-link__link" href="javascript:history.go(-1)">
+      <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
+      </svg>
+      Go back</a>
+  </div>
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+
+        <form action="/ppc/iteration_2/buy/PPC-last" method="post">
+       
+            <div class="nhsuk-form-group">
+
+        <fieldset class="nhsuk-fieldset">
+            <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+              <h1 class="nhsuk-fieldset__heading">
+                  How long do you want your prescription prepayment certificate to last?
+              </h1>
+            </legend>
+          
+          
+   
+           
+            <div class="nhsuk-radios nhsuk-radios--conditional">
+                
+           
+
+                <div class="nhsuk-radios__item">
+                  <input class="nhsuk-radios__input" id="numyes" name="ppcduration" type="radio" value="12months">
+                  <label class="nhsuk-label nhsuk-radios__label" for="contact-1">
+                   12 months
+                  </label>
+                  <span class="nhsuk-hint nhsuk-radios__hint" id="example-hints-1-item-hint">
+                      You’ll be able to either pay in a single payment today or in monthly Direct Debit instalments
+                    </span>
+                </div>
+          
+            
+              
+               
+
+                <div class="nhsuk-radios__item">
+                    <input class="nhsuk-radios__input" id="numno" name="ppcduration" type="radio" value="3months">
+                    <label class="nhsuk-label nhsuk-radios__label" for="example-hints-2">
+                     3 months
+                    </label>
+                    <span class="nhsuk-hint nhsuk-radios__hint" id="example-hints-1-item-hint">
+                        You’ll pay a single card payment of £29.10 today
+                      </span>
+                  </div>
+                    
+                
+                </div>
+
+                <br>
+                <br>
+                      <details class="nhsuk-details">
+                          <summary class="nhsuk-details__summary">
+                            <span class="nhsuk-details__summary-text">
+                             What option is best for me?
+                            </span>
+                          </summary>
+                          <div class="nhsuk-details__text">
+                            <p><strong>12 months</strong><br>If you get prescribed more than 1 medicine each month or most months of the year, you’ll save money by choosing this option. <br>
+                              This is because a payment of £10.59 costs less than 2 separate medicines on a prescription per month. 
+                              
+                              <br> <br>
+                              <strong>3 months</strong> <br>
+                              You could save money if you need to buy 6 medicines or more over the course of the next 3 months.</p>                      
+                          </div>
+                        </details>
+
+          </fieldset>
+        
+       <br>
+      
+
+       <button class="nhsuk-button" type="submit">
+          Continue
+                  </button>
+             
+
+      </form>
+
+   
+    </div>
+  </div>
+
+{% endblock %}

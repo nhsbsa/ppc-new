@@ -1,0 +1,137 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+  Address
+  {% endblock %}
+
+  {% block content %}
+
+  <div class="nhsuk-back-link">
+      <a class="nhsuk-back-link__link" href="javascript:history.go(-1)">
+        <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
+        </svg>
+        Go back</a>
+    </div>
+      
+         
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+ 
+                  
+        <form action="/ppc/iteration_2/buy/address-lookup_v2" method="post">
+
+
+                    <fieldset class="nhsuk-fieldset">
+              <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+                <h1 class="nhsuk-fieldset__heading">
+                  Select your address?
+                </h1>
+              </legend>
+
+              <p>1 address found for '{{ data['addresshousenumber'] }}' and '{{ data['addresspostcode'] }}'.</p>
+              
+
+              <div class="nhsuk-radios__item">
+                  <input class="nhsuk-radios__input" id="selectaddress-none" name="selectaddress" type="radio" value="address">
+                  <label class="nhsuk-label nhsuk-radios__label" for="selectaddress-none">
+                      {{ data['addresshousenumber'] }} Morpeth Street, Newcastle Upon Tyne, Tyne and Wear, {{ data['addresspostcode'] }}
+                  </label>
+              </div>
+  
+
+
+
+
+
+
+         <!--       <div class="nhsuk-summary-list__row">
+                  <dd class="nhsuk-summary-list__key">
+                     <p>Postcode</p> 
+                    </dd>
+                    <dd class="nhsuk-summary-list__value">
+                     <h4>{{ data['address-postcode'] }} </h4> 
+                    </dd>
+                    
+              
+              
+              <dd class="nhsuk-summary-list__actions">
+                  
+                  <a href="postcode">
+                      Change<span class="nhsuk-u-visually-hidden"> postcode</span>
+                      </a>
+                
+              </dd>
+              </div>
+              <br>
+                    
+                    <h3>Select an address</h3>
+            
+                    
+            <div class="nhsuk-form-group">
+              
+              <select class="nhsuk-select" id="select-1" name="select-1">
+                <option value="1" selected>21 addresses found</option>
+                <option value="2">19 Morpeth Street</option>
+                <option value="2">20 Morpeth Street</option>
+                <option value="2">21 Morpeth Street</option>
+                <option value="2">22 Morpeth Street</option>
+                <option value="2">Flat 1 Morpeth Street</option>
+                <option value="2">Flat 2 Morpeth Street</option>
+                <option value="2">Flat 3 Morpeth Street</option>
+                <option value="2">23 Morpeth Street</option>
+                <option value="2">24 Morpeth Street</option>
+                <option value="2">25 Morpeth Street</option>
+                <option value="2">26 Morpeth Street</option>
+                <option value="2">27 Morpeth Street</option>
+                <option value="2">28 Morpeth Street</option>
+                <option value="2">29 Morpeth Street</option>
+                <option value="2">30 Morpeth Street</option>
+                <option value="2">31 Morpeth Street</option>
+                <option value="2">32 Morpeth Street</option>
+                <option value="2">33 Morpeth Street</option>
+                <option value="2">34 Morpeth Street</option>
+                <option value="2">35 Morpeth Street</option>
+                <option value="2">36 Morpeth Street</option>
+
+
+              </select>
+            </div> -->
+
+            <div class="nhsuk-radios__divider">or</div>
+            <div class="nhsuk-radios__item">
+                <input class="nhsuk-radios__input" id="selectaddress-none" name="selectaddress" type="radio" value="none">
+                <label class="nhsuk-label nhsuk-radios__label" for="selectaddress-none">
+                My address is not listed here
+                </label>
+            </div>
+
+           
+            
+
+           
+            </fieldset>        
+            
+
+
+
+<br>
+
+
+            <button class="nhsuk-button" type="submit">
+                Continue
+                        </button>
+<br>
+
+
+
+            
+      </form>
+
+   
+
+    </div>
+  </div>
+
+{% endblock %}
