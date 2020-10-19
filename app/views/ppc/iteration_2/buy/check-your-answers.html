@@ -286,16 +286,16 @@
       Proceed to payment
       </button></a>
       {% endif %}
+      
 
-
-      {% if (data['payment'] == "single") or (data['ppcduration'] == "3months") or data['email_print'] == "email" %}
-
+      {% if (data['payment'] == "single") and (data['ppcduration'] == "3months") and (data['email_print'] == "email") %}
+     
       <a href='https://products.payments.service.gov.uk/pay/657b333b77fe45b5a09aecce3782bbc2' class="nhsuk-button" data-module="nhsuk-button">
           Proceed to payment
           </button></a>
-          {% endif %}
+       {% endif %}
 
-          {% if (data['payment'] == "single") or (data['ppcduration'] == "3months") or data['email_print'] == "print" %}
+          {% if (data['payment'] == "single") and (data['ppcduration'] == "3months") and (data['email_print'] == "print") %}
 
           <a href='https://products.payments.service.gov.uk/pay/f20cdaee19a14ed8b302bced0d62da41' class="nhsuk-button" data-module="nhsuk-button">
               Proceed to payment
@@ -304,7 +304,7 @@
      
 
 
-              {% if (data['payment'] == "single") or (data['ppcduration'] == "12months") or data['email_print'] == "email" %}
+              {% if (data['payment'] == "single") and (data['ppcduration'] == "12months") and (data['email_print'] == "email") %}
 
               <a href='https://products.payments.service.gov.uk/pay/634996039328462d9dce37fbdd6d9e52' class="nhsuk-button" data-module="nhsuk-button">
                   Proceed to payment
@@ -312,7 +312,7 @@
                   {% endif %}
          
       
-                  {% if (data['payment'] == "single") or (data['ppcduration'] == "12months") or data['email_print'] == "print" %}
+                  {% if (data['payment'] == "single") and (data['ppcduration'] == "12months") and (data['email_print'] == "print") %}
 
                   <a href='https://products.payments.service.gov.uk/pay/5b526ece795b465dac9db511f1d30f49' class="nhsuk-button" data-module="nhsuk-button">
                       Proceed to payment
