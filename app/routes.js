@@ -232,7 +232,7 @@ router.post("/ppc/iteration_2/buy/address-lookup_v2", function (req, res) {
   // Check whether the variable matches a condition
   if (selectaddress === "address"){
     // Send user to next page
-    res.redirect('../buy/nhs-number')
+    res.redirect('../buy/nhs-number_v2')
   }
   else if (selectaddress === "none") {
       res.redirect('../buy/address-manual')
@@ -244,10 +244,14 @@ router.post("/ppc/iteration_2/buy/address-lookup_v2", function (req, res) {
 
 })
 
+router.post("/ppc/iteration_2/buy/address-manual", function (req, res) {
+  
+    res.redirect('../buy/nhs-number_v2')
+  
+})
 
 
-
-router.post("/ppc/iteration_2/buy/nhs-number", function (req, res) {
+router.post("/ppc/iteration_2/buy/nhs-number_v2", function (req, res) {
 
   // Make a variable and give it the value from 'know-nhs-number'
   var nhsnumber = req.session.data['nhsnumber'] 
@@ -256,7 +260,7 @@ router.post("/ppc/iteration_2/buy/nhs-number", function (req, res) {
       // Send user to next page
       res.redirect('../buy/PPC-last')
     }
-    res.redirect('../buy/nhs-number')
+    res.redirect('../buy/nhs-number_v2')
   
 })
 
@@ -308,7 +312,7 @@ router.get("/ppc/iteration_2/buy/PPC-startdate_v2", function (req, res) {
   var today = new Date();
   var date = new Date(req.query.year,req.query.month,req.query.day,0,0,0);
 
-  res.redirect('../buy/email-print');
+  res.redirect('../buy/email-print_v2');
 });
 
 
@@ -316,7 +320,7 @@ router.get("/ppc/iteration_2/buy/PPC-startdate_v2", function (req, res) {
 
 
 
-router.post("/ppc/iteration_2/buy/email-print", function (req, res) {
+router.post("/ppc/iteration_2/buy/email-print_v2", function (req, res) {
 
   // Make a variable and give it the value from 'know-nhs-number'
   var email_print = req.session.data['email_print']
@@ -331,7 +335,7 @@ router.post("/ppc/iteration_2/buy/email-print", function (req, res) {
     }
   else {
     // Send user to ineligible page
-    res.redirect('../buy/email-print')
+    res.redirect('../buy/email-print_v2')
   }
 
 })
