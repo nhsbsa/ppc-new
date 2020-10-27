@@ -80,7 +80,7 @@ router.get("/ppc/PPC-startdate_v2", function (req, res) {
     var today = new Date();
     var date = new Date(req.query.year,req.query.month,req.query.day,0,0,0);
 
-    res.redirect('email-print');
+    res.redirect('#');
   });
 
 
