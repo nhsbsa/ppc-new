@@ -1,0 +1,64 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+  Start page 
+{% endblock %}
+
+{% block beforeContent %}
+{{ breadcrumb({
+  href: "/",
+  text: "Home"
+}) }}
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <h1>
+        Your payment has been declined
+      </h1>
+
+    
+
+
+      <p>
+       No money has been taken from your account.
+      </p>
+
+      <p> You have 2 attempts to make the payment again. </p>
+
+    <p>You may need to use a different credit or debit card</p>
+
+
+   
+
+      
+
+
+
+  
+
+
+      
+
+      <a href="#" class="nhsuk-button nhsuk-u-margin-bottom-8">
+       Try making payment again
+      </a>
+     
+
+      <h3>If you need to contact us:</h3>
+
+      
+  <div class="nhsuk-inset-text">
+  <span class="nhsuk-u-visually-hidden">If you need to contact us: </span>
+ <p> <strong>Phone:</strong> 
+   0300 330 1341 (this call will be charged at a local rate)</p>
+   
+<p>Lines are open Monday to Friday 8am to 6pm, and Saturday 9am to 3pm</p>
+</div>
+
+    </div>
+
+  </div>
+{% endblock %}

@@ -1,265 +1,167 @@
 {% extends 'layout.html' %}
-
 {% block pageTitle %}
   Check your answers
 {% endblock %}
-
 {% block beforeContent %}
-  
-  
 {% endblock %}
-
 {% block content %}
-  <div class="nhsuk-grid-row">
-    <div class="nhsuk-grid-column-two-thirds">
-
-      <h1>
-        Confirm your direct debit details and pay
-      </h1>
-
-
-      <div class="nhsuk-grid-row">
-          <div class="nhsuk-u-reading-width">
-              <h2 class="nhsuk-heading-m nhsuk-u-margin-top-6 nhsuk-u-margin-bottom-2"> &nbsp; Your account details</h2>
-          </div>
-        </div>
-        <dl class="nhsuk-summary-list">
-        <div class="nhsuk-summary-list__row">
-            <dt class="nhsuk-summary-list__key">
-            Account holder's name
-             
-            </dt>
-            <dd class="nhsuk-summary-list__value">
-             <span>  Mr Joe Doe</span>
-            </dd>
-            <dd class="nhsuk-summary-list__actions">
-              <a href="#">
-                Change<span class="nhsuk-u-visually-hidden"> account name</span>
-              </a>
-              
-            </dd>        
-          </div>
-
-
-
-          <div class="nhsuk-summary-list__row">
-              <dt class="nhsuk-summary-list__key">
-             Account number
-
-              </dt>
-              <dd class="nhsuk-summary-list__value">
-                <span>12345678</span>
-              </dd>
-              <dd class="nhsuk-summary-list__actions">
-                <a href="#">
-                  Change<span class="nhsuk-u-visually-hidden"> Account number</span>
-                </a>
-                
-              </dd>        
-            </div>
-          
-
-            <div class="nhsuk-summary-list__row">
-              <dt class="nhsuk-summary-list__key">
-               Sort code
-              </dt>
-              <dd class="nhsuk-summary-list__value">
-
-            
-               52-12-50
-
-    
-              </dd>
-              <dd class="nhsuk-summary-list__actions">
-                <a href="#">
-                  Change<span class="nhsuk-u-visually-hidden"> Sort code</span>
-                </a>
-                
-              </dd>        
-            </div>
-            
-
-
-
-      <h2 class="nhsuk-heading-m nhsuk-u-margin-top-6 nhsuk-u-margin-bottom-2">Your payments</h2>
-
-      
-        
-        <div class="nhsuk-summary-list__row">
-          <dt class="nhsuk-summary-list__key">
-            Number of payments
-          </dt>
-          <dd class="nhsuk-summary-list__value">
-            10
-          </dd>
-         
-        </div>
-      
-        <div class="nhsuk-summary-list__row">
-          <dt class="nhsuk-summary-list__key">
-            Payment amount per month
-          </dt>
-          <dd class="nhsuk-summary-list__value">
-            £10.50
-          </dd>
-                
-        </div>
-
-        <div class="nhsuk-summary-list__row">
-            <dt class="nhsuk-summary-list__key">
-             First payment
-            </dt>
-            <dd class="nhsuk-summary-list__value">
-
-              30 September 2020
-            </dd>
-                  
-          </div>
-      
-         
-
-
-          <div class="nhsuk-summary-list__row">
-              <dt class="nhsuk-summary-list__key">
-               Final payment
-              </dt>
-              <dd class="nhsuk-summary-list__value">
-               30 June 2021
-              </dd>
-                   
-            </div>
-
-           <br>
-           
-          
-           
-          </dl>
-               
-          <div class="nhsuk-warning-callout">
-              <h3 class="nhsuk-warning-callout__label">Direct debit payments</h3>
-              <p>By submitting, you are agreeing to pay 10 instalments of £10.50. </p>
-
-                <p>If instalments are not kept up, you are not entitled to use the prepayment. You could choose an alternative method of payment to avoid defaulting.</p>
-                
-               <p> If you use the prepayment after failing to pay an instalment, you may have to pay a penalty charge.</p>
-                
-                <p>If you repeatedly fail to pay your prepayment instalments, you may not be able to pay by Direct Debit in the future. </p>
-            
-                                 
-            </div>
-
-            <div class="nhsuk-grid-column-three-quarters">
-                <div class="nhsuk-promo">
-                    <figure class="nhsuk-image">
-                        <div class="nhsuk-grid-column-two-thirds">
-                        <img class="nhsuk-image__img" src="/images/ddlogo.png" width="5px" height="48px" alt="Picture of DD logo">
-                        </div>
-                        </figure>
-                 
-                 <br>
-                  
-                  <div class="payment-summary-small">
-                    
-                      <p>We will send this Direct Debit instruction to: <br>
-                        <span style="font-weight:bold;">Your Bank, Their St. Theirtown</span>
-                      </p>
-                      <p>
-                        Please pay the NHS Business Services Authority Direct Debits from the account detailed in this instruction subject to the safeguards assured by the Direct Debit Guarantee. I understand that this instruction may remain with the Prescription prepayment Issue Office of the NHS Business Services Authority, and if so, details will be passed electronically to my Bank/Building Society.
-                      </p>
-                      <p>
-                        Originator:<br>
-                        NHS Business Services Authority, PPC, Bridge House,<br>
-                        152 Pilgrim Street, Newcastle upon Tyne, NE1 6SN
-                        </p>
-                      <p>
-                        Service User Number (SUN): 242785E
-                      </p>
-                      <p>Telephone: 0191 232 5371</p>
-                
-                    </div>
-                </div>
-                <style>
-                  .nhsuk-promo{
-                  background:white;
-                  padding:20px;
-                  box-shadow: 0 4px 0 0 #D8DDE0;
-                  }
-                </style>
-                </div>
-                 
-<p>
-
-    <details class="nhsuk-details">
-        <summary class="nhsuk-details__summary">
-          <span class="nhsuk-details__summary-text">
-          Your Direct Debit Instruction
-          </span>
-        </summary>
-        <div class="nhsuk-details__text">
-            <figure class="nhsuk-image">
-                <img class="nhsuk-image__img" src="/images/ddlogo.png" width="5px" height="148px" alt="Picture of DD logo">
-                
-                </figure>
-
-                <div class="payment-summary-small">
-          
-                    <p>We will send this Direct Debit instruction to: <br>
-                      <span style="font-weight:bold;">Your Bank, Their St. Theirtown</span>
-                    </p>
-                    <p>
-                      Please pay the NHS Business Services Authority Direct Debits from the account detailed in this instruction subject to the safeguards assured by the Direct Debit Guarantee. I understand that this instruction may remain with the Prescription prepayment Issue Office of the NHS Business Services Authority, and if so, details will be passed electronically to my Bank/Building Society.
-                    </p>
-                    <p>
-                      Originator:<br>
-                      NHS Business Services Authority, PPC, Bridge House,<br>
-                      152 Pilgrim Street, Newcastle upon Tyne, NE1 6SN
-                      </p>
-                    <p>
-                      Service User Number (SUN): 242785E
-                    </p>
-                    <p>Telephone: 0191 232 5371</p>
-              
-                  </div>
-
-
-                  </div>
-        </details>
-                       
-    <a href="DD-confirmation-print" class="nhsuk-button nhsuk-u-margin-bottom-8">
-        Confirm and pay
-      </a>
- 
-
-
-
-
-<p>Research purpose</p>
-
-<p><a href="cya-dd-v2" class="nhsuk-link">Option 2</a> </p>
-
-
-
-
-
-
-
-                        
-        
-     
-
-
-   
-
-
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-two-thirds">
+    <h1>
+      Confirm your direct debit details and pay
+    </h1>
+    <div class="nhsuk-grid-row">
+      <div class="nhsuk-u-reading-width">
+        <h2 class="nhsuk-heading-m nhsuk-u-margin-top-6 nhsuk-u-margin-bottom-2"> &nbsp; Your account details</h2>
+      </div>
     </div>
-    
-   
-
-
-
+    <dl class="nhsuk-summary-list">
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+         Account holder’s name
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          <span>  Mr Joe Doe</span>
+        </dd>
+        <dd class="nhsuk-summary-list__actions">
+          <a href="#">
+            Change<span class="nhsuk-u-visually-hidden"> account name</span>
+          </a>
+        </dd>
+      </div>
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Account number
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          <span>12345678</span>
+        </dd>
+        <dd class="nhsuk-summary-list__actions">
+          <a href="#">
+            Change<span class="nhsuk-u-visually-hidden"> Account number</span>
+          </a>
+        </dd>
+      </div>
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Sort code
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          52-12-50
+        </dd>
+        <dd class="nhsuk-summary-list__actions">
+          <a href="#">
+            Change<span class="nhsuk-u-visually-hidden"> Sort code</span>
+          </a>
+        </dd>
+      </div>
+      <h2 class="nhsuk-heading-m nhsuk-u-margin-top-6 nhsuk-u-margin-bottom-2">Your payments</h2>
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Number of payments
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          10
+        </dd>
+      </div>
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Payment amount per month
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          £10.50
+        </dd>
+      </div>
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          First payment
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          30 September 2020
+        </dd>
+      </div>
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Final payment
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          30 June 2021
+        </dd>
+      </div>
+      <br>
+    </dl>
+    <div class="nhsuk-warning-callout">
+      <h3 class="nhsuk-warning-callout__label">Direct debit payments</h3>
+      <p>By submitting, you are agreeing to pay 10 instalments of £10.50. </p>
+      <p>If instalments are not kept up, you are not entitled to use the prepayment. You could choose an alternative method of payment to avoid defaulting.</p>
+      <p> If you use the prepayment after failing to pay an instalment, you may have to pay a penalty charge.</p>
+      <p>If you repeatedly fail to pay your prepayment instalments, you may not be able to pay by Direct Debit in the future. </p>
+    </div>
+​
+    <div class="nhsuk-promo">
+      <img src="https://www.guhg.co.uk/wp-content/uploads/2018/11/direct-debit-website-992x561-e1542983967438-1140x720.png" width="150px"  alt="Picture of DD logo" style="display:block; margin-bottom: 10px;" />
+      <div class="payment-summary-small">
+        <p>We will send this Direct Debit instruction to: <br>
+          <span class="bold">Your Bank, Their St. Theirtown</span>
+        </p>
+        <p>
+          Please pay the NHS Business Services Authority Direct Debits from the account detailed in this instruction subject to the safeguards assured by the Direct Debit Guarantee. I understand that this instruction may remain with the Prescription prepayment Issue Office of the NHS Business Services Authority, and if so, details will be passed electronically to my Bank/Building Society.
+        </p>
+        <p>
+          Originator:<br>
+          NHS Business Services Authority, PPC, Bridge House,<br>
+          152 Pilgrim Street, Newcastle upon Tyne, NE1 6SN
+        </p>
+        <p>
+          Service User Number (SUN): 242785E
+        </p>
+        <p>Telephone: 0191 232 5371</p>
+      </div>
+    </div>
+    <style>
+      .nhsuk-promo{
+      background:white;
+      padding:20px;
+      box-shadow: 0 4px 0 0 #D8DDE0;
+      }
+    </style>
+    <details class="nhsuk-details">
+      <summary class="nhsuk-details__summary">
+        <span class="nhsuk-details__summary-text">
+        Your Direct Debit Instruction
+        </span>
+      </summary>
+      <div class="nhsuk-details__text">
+        <figure class="nhsuk-image">
+          <img class="nhsuk-image__img" src="/images/ddlogo.png" width="5px" height="148px" alt="Picture of DD logo">
+        </figure>
+        <div class="payment-summary-small">
+          <p>We will send this Direct Debit instruction to: <br>
+            <span style="font-weight:bold;">Your Bank, Their St. Theirtown</span>
+          </p>
+          <p>
+            Please pay the NHS Business Services Authority Direct Debits from the account detailed in this instruction subject to the safeguards assured by the Direct Debit Guarantee. I understand that this instruction may remain with the Prescription prepayment Issue Office of the NHS Business Services Authority, and if so, details will be passed electronically to my Bank/Building Society.
+          </p>
+          <p>
+            Originator:<br>
+            NHS Business Services Authority, PPC, Bridge House,<br>
+            152 Pilgrim Street, Newcastle upon Tyne, NE1 6SN
+          </p>
+          <p>
+            Service User Number (SUN): 242785E
+          </p>
+          <p>Telephone: 0191 232 5371</p>
+        </div>
+      </div>
+    </details>
+    <a href="DD-confirmation-print" class="nhsuk-button nhsuk-u-margin-bottom-8">
+      Confirm and pay
+    </a>
+    <p>Research purpose</p>
+    <p><a href="cya-dd-v2" class="nhsuk-link">Option 2</a> </p>
   </div>
+</div>
 {% endblock %}
-
 {% block footer %}
   {{ footer({
     "links": [
