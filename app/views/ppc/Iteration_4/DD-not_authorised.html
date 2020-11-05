@@ -1,0 +1,57 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+  Direct debit not authorised
+{% endblock %}
+
+{% block beforeContent %}
+{{ breadcrumb({
+  href: "/",
+  text: "Home"
+}) }}
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <h1>
+        You are unable to set up a Direct Debit online on this account
+      </h1>
+
+    
+
+
+      <p>
+       
+          Provide details of the account that you are allowed to authorise Direct Debits to set up a direct debit online, 
+      </p>
+
+
+ 
+      <a href="../iteration_2/set-up-dd" class="nhsuk-button nhsuk-u-margin-bottom-8">
+        Continue
+        </a>
+      
+
+     
+
+      <h3>If you are not able to do this and need to contact us:</h3>
+
+      
+  <div class="nhsuk-inset-text">
+  <span class="nhsuk-u-visually-hidden">If you need to contact us: </span>
+ <p> <strong>Phone:</strong> 
+   0300 330 1341 (this call will be charged at a local rate)</p>
+   
+<p>Lines are open Monday to Friday 8am to 6pm, and Saturday 9am to 3pm</p>
+</div>
+
+
+
+
+
+    </div>
+
+  </div>
+{% endblock %}

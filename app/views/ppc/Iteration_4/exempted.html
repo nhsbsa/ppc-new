@@ -1,0 +1,50 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+  Exempted
+{% endblock %}
+
+{% block beforeContent %}
+{{ breadcrumb({
+  href: "/",
+  text: "Home"
+}) }}
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <h1>
+        You may already be exempted 
+      </h1>
+
+    
+
+
+      <p>
+       Based on what you've told us, you may already be receiving help with NHS health costs. </p>
+
+
+       <h2>What happens next</h2>
+       <p> Check what exemptions you have. You'll need to enter your details again. </p>
+       
+      </p>
+
+
+ 
+      <a href="#" class="nhsuk-button nhsuk-u-margin-bottom-8">
+        Am I Exempt
+        </a>
+      
+
+
+
+
+
+
+
+    </div>
+
+  </div>
+{% endblock %}

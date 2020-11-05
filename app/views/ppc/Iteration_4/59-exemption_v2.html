@@ -1,0 +1,110 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+  Exemption
+{% endblock %}
+
+{% block beforeContent %}
+{{ breadcrumb({
+  href: "/",
+  text: "Home"
+}) }}
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+        <div class="nhsuk-alert nhsuk-alert--info">
+            <h3 class="nhsuk-u-visually-hidden">Information:</h3>
+            <p class="nhsuk-u-font-weight-bold">You'll be eligible to free prescriptions when you turn 60 on 15/01/2021</p>
+          </div>
+          <style>
+
+.nhsuk-alert{
+  border-color:blue;
+
+      }
+ 
+     
+         
+        </style>
+
+        <div class="grid-row">
+            <div class="column-two-thirds">
+              <div class="interrupt-panel">
+                <h1 class="heading-xlarge">Do you want to continue to buy prescription prepayment certificates?</h1>
+                <div class="u-margin-bottom-40">
+                  
+                   
+                 
+                </div>
+              </div>
+                <div class="nhsuk-radios">
+        
+                    <div class="nhsuk-radios__item">
+                      <input class="nhsuk-radios__input" id="example-1" name="example" type="radio" value="yes">
+                      <label class="nhsuk-label nhsuk-radios__label" for="example-1">
+                        Yes
+                      </label>
+                    </div>
+              
+                    <div class="nhsuk-radios__item">
+                      <input class="nhsuk-radios__input" id="example-2" name="example" type="radio" value="no">
+                      <label class="nhsuk-label nhsuk-radios__label" for="example-2">
+                        No
+                      </label>
+                    </div>
+              
+                  </div>
+
+
+<br>
+
+
+
+                <a href="#" class="nhsuk-button nhsuk-u-margin-bottom-8">
+                    Continue
+                    </a>
+
+                   
+
+                </div>
+              </div>
+            </div>
+
+
+
+
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          </div>
+
+       
+  
+     
+
+
+
+
+
+   
+
+  </div>
+{% endblock %}
