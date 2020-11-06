@@ -103,21 +103,20 @@
      
       
       
-      <p class="nhsuk-u-margin-bottom-0"><a href="ppc/iteration_4/payment-cancelled"><button class="nhsuk-button"
-        type="submit">Payment Cancelled</button></a></p>
-      
-        <p class="nhsuk-u-margin-bottom-0"><a href="ppc/iteration_4/payment-declined"><button class="nhsuk-button"
-          type="submit">Payment Declined</button></a></p>
+     <p> <a href="ppc/iteration_4/payment-cancelled">Payment cancelled</a></p>
 
-          <p class="nhsuk-u-margin-bottom-0"><a href="ppc/iteration_4/payment-declined-cardfault"><button class="nhsuk-button"
-            type="submit">Payment Declined (user card fault) </button></a></p>
       
-            <p class="nhsuk-u-margin-bottom-0"><a href="ppc/iteration_4/DD-not_authorised"><button class="nhsuk-button"
-              type="submit">DD not authorised </button></a></p>
+      
+       <p> <a href="ppc/iteration_4/payment-declined">Payment declined</a> </p>
+
+          <p><a href="ppc/iteration_4/payment-declined-cardfault">
+            Payment Declined (user card fault) </a></p>
+      
+            <p><a href="ppc/iteration_4/DD-not_authorised">DD not authorised </a></p>
       
 
-            <p class="nhsuk-u-margin-bottom-0"><a href="ppc/iteration_4/Service_not-available"><button class="nhsuk-button"
-              type="submit">Service not available </button></a></p>
+            <p><a href="ppc/iteration_4/Service_not-available">
+              Service not available </a></p>
       </details>
       </details>
       
@@ -237,28 +236,38 @@
      <li>Content : Review the Done page</li>
      <li>New page: Done page when All Pay failed to set up a DD</li>
      <li>Further review on FP57 - refund receipt</li>
-     <li>Review on whether it is needed to move DD details (on when payment will be taken) to Bank Details screen from the current  screen to avoid 
+     <li>Review on whether it is needed to move DD details (on when payment will be taken) to Bank Details (Set up DD) screen from the current  screen to avoid 
          cognitive overload & to avoid long information in an conditional reveal</li>
     <li> Content : Information on renewal for users who choose to pay via DD</li>
     <li> Review on any other alternative option for users to save keep their cert.User feedback : User can't print because they don't have a printer and they don't have an email. </li>
-    <li>Following user feedback about calling in to change their DD date : Review the process </li>
+    <li>Review : DD Guarantee and DD Instructions; on where and is it needed to have this in the service </li>
+    <li>Following user feedback about calling in to change their DD date : Review the process (Moved to future iteration)</li>
+    <li>Used the 'Warning card' from NHS service manual to display the DD payment Terms and condition</li>
     </ul>
     <h3 class="nhsuk-heading-m">What we plan to test:</h3>
     <ul class="nhsuk-list nhsuk-list--bullet">
      <li>Done page for different scenarios</li>
      <li>Save Certificate option - is it useful for users?</li>
-     <li></li>
+     <li>Following extensive investigation about DD Guarantee & DD Instruction (this is a legal requirement) - decided to put DD in an expander and AB tested the DD Instruction both in an expander and display </li>
+     <li>Whether or not the usage of 'Warning Card' in the CYA was appropriate</li>
     
     
-     <li>..</li>
+    
     </ul>
     <h3 class="nhsuk-heading-m">What we found:</h3>
     <ul class="nhsuk-list nhsuk-list--bullet">
-     <li>...</li>
+     <li> Participants found the payment summary with DD Details in "Set up DD" page to very useful </li>
+    <li>1 participant found that information about DD and auto renewal in 'How do you want to pay for your PPC?' page to be useful </li>
+    <li>2 participants expressed and questioned about the 10 payments ('Would it not be better if it is made 12 - it will bring down the cost further') - the rule behind 10 monthly payments is stipulated in the legislation. The team agreed to 
+      further investigate this</li>
+      <li>2 participants welcomed the choice to print the certificate although 1 was confused with the symbol of save; he thought it was an email.</li>
+      <li>No participant read the DD Guarantee & no participant read the DD Instruction in the explander; but acknowledged the displayed DD Instruction</li>
+      <li>Although the CYA page was long - participants accepted it and stop to read the 'yellow box'(Warning Card)</li>
     </ul>
     <h3 class="nhsuk-heading-m">Any known issues?</h3>
     <ul class="nhsuk-list nhsuk-list--bullet">
-     <li>...</li>
+        <li>No error messages </li>
+        <li>Some dummy data used in ' Check your answer' screen</li>
     </ul>
     <hr>
     <p class="nhsuk-u-margin-bottom-0"><a href="ppc/iteration_2/set-up-dd"><button class="nhsuk-button"
