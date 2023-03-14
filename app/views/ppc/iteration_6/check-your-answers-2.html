@@ -1,0 +1,303 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+  Check your answers
+{% endblock %}
+
+{% block beforeContent %}
+  
+  
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-two-thirds">
+
+    <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--xl">
+      <h1 class="nhsuk-fieldset__heading">
+        Check your answers
+      </h1>
+    </legend>
+
+    <div class="nhsuk-warning-callout">
+      <h3 class="nhsuk-warning-callout__label">
+        <span role="text">
+          <span class="nhsuk-u-visually-hidden">Important: </span>
+          Before you continue
+        </span>
+      </h3>
+      <p>If you pay for NHS prescribed Hormone Replacement Therapy medicine, then an <a href="https://hrt-ppc.herokuapp.com/hrt-nhsbsa">HRT PPC could save you money</a>. </p>
+      
+    </div>
+
+    <h3 class="heading">
+      Your details
+    </h3>
+
+    {{ summaryList({
+      rows: [
+        
+        {
+          key: {
+            text: "Name"
+          },
+          value: {
+            text: "Jane Doe"
+          },
+          actions: {
+            items: [
+              {
+                href: "name",
+                text: "Change",
+                visuallyHiddenText: "name"
+              }
+            ]
+          }
+        },
+        {
+          key: {
+            text: "Date of birth"
+          },
+          value: {
+            html: "1 January 1999"
+          },
+          actions: {
+            items: [
+              {
+                href: "dob",
+                text: "Change",
+                visuallyHiddenText: "date of birth"
+              }
+            ]
+          }
+        },
+        {
+          key: {
+            text: "Do you know your NHS number?"
+          },
+          value: {
+            text: "Yes"
+          },
+          actions: {
+            items: [
+              {
+                href: "nhs-number",
+                text: "Change",
+                visuallyHiddenText: "NHS number"
+              }
+            ]
+          }
+        },
+        {
+          key: {
+            text: "NHS number"
+          },
+          value: {
+            text: "1111111111"
+          },
+          actions: {
+            items: [
+              {
+                href: "nhs-number",
+                text: "Change",
+                visuallyHiddenText: "NHS number"
+              }
+            ]
+          }
+        },
+        {
+          key: {
+            text: "Address"
+          },
+          value: {
+            html: '1 Test Road<br>Town<br>NE1 0LD'
+          },
+          actions: {
+            items: [
+              {
+                href: "postcode",
+                text: "Change",
+                visuallyHiddenText: "NHS number"
+              }
+            ]
+          }
+        },
+        {
+          key: {
+            text: "Receive certificate and reminder by email?"
+          },
+          value: {
+            html: 'Yes'
+          },
+          actions: {
+            items: [
+              {
+                href: "get-certificate-by-email",
+                text: "Change",
+                visuallyHiddenText: "email"
+              }
+            ]
+          }
+        },
+        {
+          key: {
+            text: "Email address"
+          },
+          value: {
+            html: ' Jane.doe@nhs.net'
+          },
+          actions: {
+            items: [
+              {
+                href: "get-certificate-by-email",
+                text: "Change",
+                visuallyHiddenText: "email"
+              }
+            ]
+          }
+        }
+
+      ]
+    }) }}
+    <h3>
+      Your certificate
+    </h3>
+
+    {{ summaryList({
+      rows: [
+        {
+          key: {
+            text: "Length"
+          },
+          value: {
+            text: "12 months"
+          }
+          ,
+          actions: 
+          {
+            items: 
+            [
+              {
+                
+              }
+            ]
+          }
+        },
+        {
+          key: 
+          {
+            text: "Starts on"
+          },
+          value: 
+          {
+            html: "1 April 2023"
+          }
+          ,
+          actions: 
+          {
+            items: 
+            [
+              {
+                href: "your-start-date",
+                text: "Change",
+                visuallyHiddenText: "home address"
+              }
+            ]
+          }
+        },{
+          key: {
+            text: "Ends on"
+          },
+          value: {
+            html: "31 March 2024"
+          }
+          ,
+          actions: 
+          {
+            items: 
+            [
+              {
+               
+              }
+            ]
+          }
+        },{
+          key: {
+            text: "Total cost"
+          },
+          value: {
+            html: "£108.10"
+          }
+          ,
+          actions: 
+          {
+            items: 
+            [
+              {
+                
+              }
+            ]
+          }
+        },{
+          key: {
+            text: "Payment method"
+          },
+          value: {
+            html: "10 installments of £10.81 by Direct Debit"
+          }
+          ,
+          actions: 
+          {
+            items: 
+            [
+              {
+       
+              }
+            ]
+          }
+        }
+      ]
+    }) }}
+
+   
+
+    
+
+    
+  
+
+    
+
+   
+
+    <a href="payment" class="nhsuk-button">
+      Proceed to payment
+    </a>
+    <p class="navigation"><a class="cancel" href="start">Cancel</a></p>
+
+  </div>
+</div>
+{% endblock %}
+
+{% block footer %}
+  {{ footer({
+    "links": [
+      {
+        "URL": "/docs",
+        "label": "Home"
+      },
+      {
+        "URL": "/examples/passing-data/clear-data",
+        "label": "Clear data"
+      },
+      {
+        "URL": "/docs/about",
+        "label": "About and support"
+      },
+      {
+        "URL": "https://github.com/nhsuk/nhsuk-prototype-kit",
+        "label": "NHS.UK prototype kit - GitHub"
+      }
+    ]
+  })}}
+{% endblock %}
