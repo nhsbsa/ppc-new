@@ -1,0 +1,45 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+  Confirm and Submit Direct Debit - PPC
+  {% endblock %}
+
+  {% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+       
+        <fieldset class="nhsuk-fieldset">
+            <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+              <h1 class="nhsuk-fieldset__heading">
+                Confirm and submit
+              </h1>
+            </legend>
+          </fieldset>
+
+          <p>By submitting, you are agreeing to pay 10 instalments of £11.16.</p>
+
+          <p>If instalments are not kept up, you are not entitled to use the
+             prepayment certificate. You could choose an alternative method of 
+             payment to avoid defaulting.</p>
+
+          <p>If you use the prepayment certificate after failing to pay an instalment, you may have to pay a penalty charge.</p>
+
+          <p>If you repeatedly fail to pay your prepayment instalments, you may not be able to pay by Direct Debit in the future.</p>
+      
+    
+
+
+        <form action="/ppc/updated-full-journey/version-1/confirmation-dd-email">
+          <button class="nhsuk-button" type="submit">
+            Confirm and submit
+          </button>
+          </form>
+
+      <p><a href="/ppc/updated-full-journey/version-1/start">Cancel</a></p>
+
+    </div>
+  </div>
+</main>
+</main>
+
+{% endblock %}
