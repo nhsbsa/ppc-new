@@ -476,7 +476,7 @@ router.get("/ppc/updated-full-journey/version-1/start-date", function (req, res)
   var today = new Date();
   var backdate = new Date(req.query.year,req.query.month,req.query.day,0,0,0);
   
-  res.redirect('../buy/email-print_v2');
+  res.redirect('../version-1/fulfilment');
   });
 
 
