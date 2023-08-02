@@ -1,7 +1,7 @@
 {% extends 'layout.html' %}
 
 {% block pageTitle %}
-  Postcode Look-up - PPC
+  Enter address manually - PPC
 {% endblock %}
 
 {% block content %}
@@ -26,10 +26,7 @@
 						<div class="nhsuk-form-group">
 						  <label class="nhsuk-label" id="address1" for="addressLine1">Address line 1</label>
 						 <input class="nhsuk-input nhsuk-input--width-20" id="addressLine1" type="text" autocomplete="off" maxlength="30" aria-required="true" />
-						
-						</div>
-						<div class="nhsuk-form-group">
-						  <label class="nhsuk-label" id="address1" for="addressLine1">Address line 2 (Optional)</label>
+						 <br><br>
 						  <input class="nhsuk-input nhsuk-input--width-20" id="addressLine2" type="text" autocomplete="off" maxlength="30" />
 						
 						</div>
@@ -45,6 +42,8 @@
 					  </div>
 					</fieldset>
 				  
+					<p><a href="/ppc/updated-full-journey/version-1/find-address">Find my address for me</a></p>
+
 					<form action="nhs-number">
 					  <button class="nhsuk-button" type="submit">
 						Next
