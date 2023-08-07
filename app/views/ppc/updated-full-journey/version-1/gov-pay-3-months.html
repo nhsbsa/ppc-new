@@ -1,7 +1,7 @@
 {% extends "layout-gov.html" %}
 
 {% block page_title %}
-  GOV.UK prototype kit
+  GOV.UK prototype kit - 3 months payment - PPC
 {% endblock %}
 
 {% block content %}
@@ -16,14 +16,14 @@
         <div class="payment-summary">
           <h2 class="nhsuk-heading-l">Payment summary</h2>
             <p id="payment-description" class="nhsk-body" style="font-size:19px;">
-              12 months single payment
+              3 months single payment
             </p>
             
             <p class="govuk-body govuk-!-margin-bottom-0" style="font-size:19px;">
               Total amount:
               
             </p>
-            <span id="amount" class="amount govuk-!-font-size-36 govuk-!-font-weight-bold" style="font-size:36px !important;">£18.70</span>
+            <span id="amount" class="amount govuk-!-font-size-36 govuk-!-font-weight-bold" style="font-size:36px !important;">£31.25</span>
         </div>
 
         <form id="card-details" style="margin-top:20px;">
@@ -94,7 +94,7 @@
                 </div>
               </legend>
               <span class="govuk-hint" id="expiry-date-hint" style="font-size:19px !important;">
-                For example, 10/23</span>
+                For example, 10/28</span>
               <div class="govuk-date-input__item govuk-date-input__item--month govuk-date-input__item--with-separator">
                 <label class="govuk-label govuk-date-input__label" for="expiry-month" style="font-size: 19px;">Month</label>
                 <input
@@ -504,12 +504,12 @@
             </div> 
             <br>
             <div class="form-group" style="margin-top:20px">
-              <a href="gov-payment-confirmed" class="govuk-button">
+              <a href="/ppc/updated-full-journey/version-1/gov-payment-confirm-3-months" class="govuk-button">
                 Proceed to payment
               </a>
               <br>
             
-              <p class="navigation"><a class="cancel" href="/v1/error-messages/payment-cancelled">Cancel payment</a></p>
+              <p class="navigation"><a class="cancel" href="/ppc/updated-full-journey/version-1/kickout/payment-cancelled">Cancel payment</a></p>
             </div>
 
 

@@ -10,15 +10,6 @@
 {% endblock %}
 
 {% block content %}
-<div class="nhsuk-back-link">
-  <a class="nhsuk-back-link__link" href="javascript:history.go(-1)">
-    <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
-      <path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
-    </svg>
-    Go back</a>
-</div>
-
-
 <div class="nhsuk-grid-row">
   <div class="nhsuk-grid-column-two-thirds">
     <form action="check-details" onsubmit="return checkForm(this);" method="post" name="form" id="ppcForm"><input type="hidden" name="_csrf" value="964c2c03-f4c2-415f-a20c-eba3614cf4c1">
@@ -39,7 +30,7 @@
           <dt class="nhsuk-summary-list__key" id="full-name">Name</dt>
           <dd class="nhsuk-summary-list__value" id="name-value">Jane Doe</dd>
           <dd class="nhsuk-summary-list__actions">
-            <a href="/ppc/updated-full-journey/version-2/name" id="nameChangeButton" aria-label="Change name">Change</a>
+            <a href="name" id="nameChangeButton" aria-label="Change name">Change</a>
           </dd> 
         </div>
         
@@ -47,7 +38,7 @@
           <dt class="nhsuk-summary-list__key" id="date-of-birth">Date of birth</dt>
           <dd class="nhsuk-summary-list__value" id="dob-value">14 March 1987</dd>
           <dd class="nhsuk-summary-list__actions">
-            <a href="/ppc/updated-full-journey/version-2/date-of-birth" id="dobChangeButton" aria-label="Change date of birth">Change</a>
+            <a href="date-of-birth" id="dobChangeButton" aria-label="Change date of birth">Change</a>
           </dd>
         </div>
         <!-- This is the problem-->
@@ -55,21 +46,21 @@
           <dt class="nhsuk-summary-list__key" id="nhs-question">Do you know your NHS number?</dt>
           <dd class="nhsuk-summary-list__value" id="nhsq-value">Yes</dd>
           <dd class="nhsuk-summary-list__actions">
-            <a href="/ppc/updated-full-journey/version-2/nhs-number" id="nhsAnswerChangeButton" aria-label="Change do you know your NHS number?">Change</a>
+            <a href="nhs-number" id="nhsAnswerChangeButton" aria-label="Change do you know your NHS number?">Change</a>
           </dd>
         </div>
         <div class="nhsuk-summary-list__row">
           <dt class="nhsuk-summary-list__key" id="nhs-no">NHS Number</dt>
           <dd class="nhsuk-summary-list__value" id="nhs-number">1111111111</dd>
           <dd class="nhsuk-summary-list__actions">
-            <a href="/ppc/updated-full-journey/version-2/nhs-number" id="nhsNoChangeButton" aria-label="Change NHS number">Change</a>
+            <a href="nhs-number" id="nhsNoChangeButton" aria-label="Change NHS number">Change</a>
           </dd>
         </div>
         <div class="nhsuk-summary-list__row">
           <dt class="nhsuk-summary-list__key" id="address">Address</dt>
           <dd class="nhsuk-summary-list__value" id="address-value">NHS B S A STELLA HOUSE<br>GOLDCREST WAY<br>NEWCASTLE UPON TYNE<br>NE158NY</dd>
           <dd class="nhsuk-summary-list__actions">
-            <a href="/ppc/updated-full-journey/version-2/enter-address" id="addressChangeButton" aria-label="Change address">Change</a>
+            <a href="enter-address" id="addressChangeButton" aria-label="Change address">Change</a>
           </dd>
         </div>
         
@@ -78,7 +69,7 @@
           <dt class="nhsuk-summary-list__key" id="email-q">Get prepayment certificate and reminder by email?</dt>
           <dd class="nhsuk-summary-list__value" id="emailq-value">No</dd>
           <dd class="nhsuk-summary-list__actions">
-            <a href="/ppc/updated-full-journey/version-2/fulfilment" id="prepayEmailSentChangeButton" aria-label="Change get prepayment certificate and reminder by email?">Change</a>
+            <a href="fulfilment" id="prepayEmailSentChangeButton" aria-label="Change get prepayment certificate and reminder by email?">Change</a>
           </dd>
         </div>
         
@@ -90,7 +81,7 @@
           <dt class="nhsuk-summary-list__key" id="length">Length</dt>
           <dd class="nhsuk-summary-list__value" id="length-value">12 months</dd>
           <dd class="nhsuk-summary-list__actions">
-            <a href="/ppc/updated-full-journey/version-2/duration" id="certLengthChangeButton" aria-label="Change certificate length">Change</a>
+            <a href="duration" id="certLengthChangeButton" aria-label="Change certificate length">Change</a>
           </dd>
         </div>
         <div class="nhsuk-summary-list__row">
@@ -99,7 +90,7 @@
           <dd class="nhsuk-summary-list__actions">
             
             
-              <a href="/ppc/updated-full-journey/version-2/start-date" id="startDateChangeButton" aria-label="Change start date">Change</a>
+              <a href="start-date" id="startDateChangeButton" aria-label="Change start date">Change</a>
             
           </dd>
         </div>
@@ -126,7 +117,7 @@
           <dd class="nhsuk-summary-list__actions">
             
             
-              <a href="/ppc/updated-full-journey/version-2/duration" id="methodChangeButton" aria-label="Change payment method">Change</a>
+              <a href="duration" id="methodChangeButton" aria-label="Change payment method">Change</a>
             
           </dd>
         </div>
@@ -251,10 +242,10 @@
   
       
   
-      <a href="/ppc/updated-full-journey/version-2/card-details" class="nhsuk-button">
+      <a href="/ppc/updated-full-journey/version-1/gov-pay-12-months" class="nhsuk-button">
         Proceed to payment
       </a>
-      <p class="navigation"><a class="cancel" href="/ppc/updated-full-journey/version-2/start">Cancel</a></p>
+      <p class="navigation"><a class="cancel" href="/ppc/updated-full-journey/version-1/start">Cancel</a></p>
   
     </div>
   </div>
