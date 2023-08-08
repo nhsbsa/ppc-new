@@ -377,5 +377,25 @@ router.post("/ppc/email-print", function (req, res) {
 })
 
 
+//Updated Full Journey
+router.post(/contact-email/, (req, res) => {
+
+  const UserEmail= req.session.data["email"]
+
+  if (UserEmail == "directdebit.test@gmail.com") {
+    res.redirect('check-details-email-dd');
+
+  } else if (UserEmail== "12month.test@gmail.com") {
+    res.redirect('check-details-email-12-months')
+
+  } else if (UserEmail== "3month.test@gmail.com") {
+    res.redirect('check-details-email-3-months')
+
+  } else {
+    res.redirect('/ppc/updated-full-journey/version-1/errors/email-required-error');
+  }
+})
+
+
 
 module.exports = router;
