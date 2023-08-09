@@ -392,7 +392,7 @@ router.post(/contact-email/, (req, res) => {
     res.redirect('check-details-email-3-months')
 
   } else {
-    res.redirect('/ppc/updated-full-journey/version-1/errors/email-required-error');
+    res.redirect('/ppc/updated-full-journey/version-1/email');
   }
 })
 
