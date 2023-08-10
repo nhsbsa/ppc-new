@@ -51,30 +51,34 @@
         You may be entitled to free prescriptions depending on where you live.
        </p>
 
+      
+
+
+    <form class="form" action="where-you-collect" method="post">
       <div class="nhsuk-form-group">
         <fieldset class="nhsuk-fieldset">
           <div class="nhsuk-radios">
       
             <div class="nhsuk-radios__item">
-              <input class="nhsuk-radios__input" id="england" name="location" type="radio" value="england">
+              <input class="nhsuk-radios__input" id="england" name="prescriptionCountryName" type="radio" value="england">
               <label class="nhsuk-label nhsuk-radios__label" for="example-1">
                 England
               </label>
             </div>
             <div class="nhsuk-radios__item">
-              <input class="nhsuk-radios__input" id="scotland" name="location" type="radio" value="scotland">
+              <input class="nhsuk-radios__input" id="scotland" name="prescriptionCountryName" type="radio" value="scotland">
               <label class="nhsuk-label nhsuk-radios__label" for="example-1">
                 Scotland
               </label>
             </div>
             <div class="nhsuk-radios__item">
-              <input class="nhsuk-radios__input" id="wales" name="location" type="radio" value="wales">
+              <input class="nhsuk-radios__input" id="wales" name="prescriptionCountryName" type="radio" value="wales">
               <label class="nhsuk-label nhsuk-radios__label" for="example-2">
                 Wales
               </label>
             </div>
             <div class="nhsuk-radios__item">
-              <input class="nhsuk-radios__input" id="northern" name="location" type="radio" value="northern">
+              <input class="nhsuk-radios__input" id="northern" name="prescriptionCountryName" type="radio" value="northern">
               <label class="nhsuk-label nhsuk-radios__label" for="example-2">
                 Northern Ireland
               </label>
@@ -86,11 +90,11 @@
       </div>
 
       
-      <form action="/updated-full-journey/v2/date-of-birth">
+      
         <button class="nhsuk-button" type="submit">
           Next
         </button>
-        </form>
+    </form>
 
 
       <p><a href="/updated-full-journey/v2/start">Cancel</a></p>
