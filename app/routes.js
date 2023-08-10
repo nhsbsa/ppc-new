@@ -2,6 +2,11 @@
 const express = require('express');
 const router = express.Router();
 
+// versioned routes files
+router.use('/updated-full-journey/v1', require('./views/updated-full-journey/v1/_routes'))
+router.use('/updated-full-journey/v2', require('./views/updated-full-journey/v2/_routes'))
+
+
 //Global variables
 
 var benificiary = {
@@ -378,6 +383,20 @@ router.post("/ppc/email-print", function (req, res) {
 
 
 //Updated Full Journey
+//fulfilment
+router.post(/fulfilment/,  function (req, res) {
+  // creating a variable named contact - assigning the variable the value of the radio button selected
+  var fulfilment = req.session.data["fulfilment"]
+
+  if (fulfilment == "email"){
+    res.redirect('email')
+  }
+  else {
+    res.redirect('check-details-print-dd')
+  }
+})
+
+//email address
 router.post(/contact-email/, (req, res) => {
 
   const UserEmail= req.session.data["email"]
@@ -392,7 +411,7 @@ router.post(/contact-email/, (req, res) => {
     res.redirect('check-details-email-3-months')
 
   } else {
-    res.redirect('/updated-full-journey/v1/errors/email-required-error');
+    res.redirect('/errors/email-required-error');
   }
 })
 
