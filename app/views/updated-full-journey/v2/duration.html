@@ -1,0 +1,74 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+How long do you want your PPC to last? - PPC
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-back-link">
+  <a class="nhsuk-back-link__link" href="javascript:history.go(-1)">
+    <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
+    </svg>
+    Go back</a>
+</div>
+
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-two-thirds">
+  <div class="nhsuk-form-group">
+    <fieldset class="nhsuk-fieldset" id="prepayment">
+      <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+        <h1 class="nhsuk-heading-l">How long do you want your prepayment certificate to last?</h1>
+      </legend>
+      
+      
+      <div class="nhsuk-form-group">
+        <h2 class="nhsuk-heading-m" id="12-months">12 months</h2>
+        <div class="nhsuk-radios nhsuk-radios--conditional">
+          
+          <div>
+            <div class="nhsuk-radios__item dd-down">
+              <input class="nhsuk-radios__input" type="radio" value="DD" id="twelvemonthdd" name="certduration" aria-controls="show-directdebit-message" aria-expanded="false">
+              <label class="nhsuk-label nhsuk-radios__label" for="twelvemonthdd">Direct Debit<br>10 instalments of <strong>£<span>11.16</span></strong> (£<span>111.60</span> total)</label>
+            </div>
+            <div class="nhsuk-radios__conditional nhsuk-u-padding-top-3 nhsuk-u-padding-bottom-3 nhsuk-radios__conditional--hidden" id="show-directdebit-message">
+              <p>Your first instalment will be taken on <span>15/08/2023</span>. After that you can call us to change the payment date.</p>
+              <p>Your prepayment will automatically renew in 12 months.</p>
+          </div>
+          </div>
+          
+            <div>
+            <div class="nhsuk-radios__item">
+              <input class="nhsuk-radios__input" type="radio" value="12" id="twelvemonth" name="certduration" aria-expanded="false">
+              <label class="nhsuk-label nhsuk-radios__label" for="twelvemonth">Single payment<strong><br>(£<span>111.60</span>)</strong></label>
+            </div>
+            </div>
+        </div>
+      </div>
+      <div>
+        <div class="nhsuk-form-group card-down">
+          <h2 id="3-months" class="nhsuk-heading-m">3 months</h2>
+          <div class="nhsuk-radios__item">
+            <input class="nhsuk-radios__input" type="radio" value="3" id="threemonth" name="certduration">
+            <label class="nhsuk-label nhsuk-radios__label" for="threemonth">Single payment<strong><br>(£<span>31.25</span>)</strong></label>
+          </div>
+        </div>
+    </div>
+    </fieldset>
+  </div>   
+            
+
+        <form action="/updated-full-journey/v2/start-date">
+          <button class="nhsuk-button" type="submit">
+            Next
+          </button>
+          </form>
+
+
+        <p><a href="/updated-full-journey/v2/start">Cancel</a></p>
+
+   
+    </div>
+  </div>
+
+{% endblock %}

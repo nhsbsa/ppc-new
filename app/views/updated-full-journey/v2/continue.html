@@ -1,0 +1,115 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+  Do you want to continue to buy a PPC? - PPC
+{% endblock %}
+
+<!-- For adding a breadcrumb -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
+{% block beforeContent %}
+
+{% endblock %}
+
+<!-- For adding a back link -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/back-link -->
+{% block outerContent %}
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-phase-banner__content__tag">
+       beta
+    </strong>
+    <span class="govuk-phase-banner__text">
+      This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+    </span>
+  </p>
+</div>
+{% endblock %}
+
+<!-- For adding page content -->
+<!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+<div class="nhsuk-back-link">
+  <a class="nhsuk-back-link__link" href="javascript:history.go(-1)">
+    <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
+    </svg>
+    Go back</a>
+</div>
+
+
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-two-thirds">
+
+    <!-- Change the page heading -->
+
+    <!-- Add content here -->
+    <!-- Styles and components can be found at https://service-manual.nhs.uk/design-system -->
+    
+  
+    
+    
+    <div class="nhsuk-form-group">
+
+      <fieldset class="nhsuk-fieldset" aria-describedby="contact-hint">
+        <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+          <h1 class="nhsuk-fieldset__heading">
+            You may be entitled to free NHS prescriptions
+          </h1>
+        </legend>
+       
+          <p>    
+            If you collect your prescriptions outside of England, you may be entitled to free prescriptions.<br><br>
+            Before buying a PPC, check if you're entitled to free NHS prescriptions and other help with health costs using our <a href="https://services.nhsbsa.nhs.uk/check-for-help-paying-nhs-costs/start" target="_blank">eligibility checker</a> (opens in new tab).
+           </p>
+
+       
+
+        
+       
+
+
+
+        <div class="nhsuk-radios nhsuk-radios--conditional">
+          <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--m">
+            <h2 class="nhsuk-fieldset__heading">
+              Do you still want to buy a PPC?
+            </h2>
+          </legend>
+          <div class="nhsuk-radios__item">
+            <input class="nhsuk-radios__input" id="contact-1" name="continue" type="radio" value="yes" aria-controls="conditional-contact-1" aria-expanded="false">
+            <label class="nhsuk-label nhsuk-radios__label" for="contact-1">
+              Yes
+            </label>
+          </div>
+    
+    
+          <div class="nhsuk-radios__item">
+            <input class="nhsuk-radios__input" id="email" name="continue" type="radio" value="no" aria-controls="conditional-contact-2" aria-expanded="false">
+            <label class="nhsuk-label nhsuk-radios__label" for="contact-2">
+              No
+            </label>
+          </div>
+         
+        </div>
+      
+      </fieldset>
+    </div>
+    
+
+
+      
+      <form action="/updated-full-journey/v2/date-of-birth">
+        <button class="nhsuk-button" type="submit">
+          Next
+        </button>
+        </form>
+
+
+      <p><a href="/updated-full-journey/v2/start">Cancel</a></p>
+
+    </div>  
+  </div>
+
+
+{% endblock %}
+

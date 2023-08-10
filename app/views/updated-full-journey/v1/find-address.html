@@ -1,0 +1,47 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+  Postcode Look-up - PPC
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+   
+        
+				<fieldset class="nhsuk-fieldset" aria-describedby="example-hint" role="group">
+					<legend class="nhsuk-fieldset_legend nhsuk-label--l">
+						<h1 class="nhsuk-fieldset__heading">
+							What is your postcode?
+						</h1>
+					</legend>
+				</fieldset>
+
+					<span class="nhsuk-hint">
+						The address you choose should match what is printed on your prescriptions.
+					</span>
+
+					<div class="nhsuk-form-group">
+						<label class="nhsuk-label" for="input-width-10">
+							Postcode
+						</label>
+						<input class="nhsuk-input nhsuk-input--width-10" id="input-width-10" name="test-width-10" type="text">
+					  </div>
+					
+					  <p><a href="/updated-full-journey/v1/enter-address">Enter address manually</a></p>
+				  </form>  	
+
+					<form action="select-address-radios">
+						<button class="nhsuk-button" type="submit">
+						  Find address
+						</button>
+					  </form>
+
+
+					<p><a href="/updated-full-journey/v1/start">Cancel</a></p>
+					
+				
+    </div>
+  </div>
+{% endblock %}

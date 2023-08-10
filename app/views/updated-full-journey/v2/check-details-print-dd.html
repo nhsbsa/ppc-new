@@ -1,0 +1,145 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+  Check details - Print - Direct Debit - PPC
+{% endblock %}
+
+{% block beforeContent %}
+  
+  
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-back-link">
+  <a class="nhsuk-back-link__link" href="javascript:history.go(-1)">
+    <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
+    </svg>
+    Go back</a>
+</div>
+
+
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-two-thirds">
+    <form action="direct-debit" onsubmit="return checkForm(this);" method="post" name="form" id="ppcForm"><input type="hidden" name="_csrf" value="964c2c03-f4c2-415f-a20c-eba3614cf4c1">
+      <h1 class="nhsuk-heading-l">Check your answers</h1>
+      <div class="nhsuk-warning-callout">
+        <h2 class="nhsuk-warning-callout__label">
+          <span role="text">
+            <span class="nhsuk-u-visually-hidden">Important: </span>
+            Before you continue
+          </span>
+        </h2>
+        <p>If you pay for NHS prescribed hormone replacement therapy (HRT) medicine, then an <a href="https://www.nhsbsa.nhs.uk/help-nhs-prescription-costs/nhs-hormone-replacement-therapy-prescription-prepayment-certificate-hrt-ppc" target="_blank" rel="noopener">HRT PPC could save you more money than a PPC (opens in a new tab)</a>.</p>
+      </div>
+      <h2 class="nhsuk-heading-m">Your details</h2>
+      
+      <dl class="nhsuk-summary-list">
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key" id="full-name">Name</dt>
+          <dd class="nhsuk-summary-list__value" id="name-value">Jane Doe</dd>
+          <dd class="nhsuk-summary-list__actions">
+            <a href="/updated-full-journey/v2/name" id="nameChangeButton" aria-label="Change name">Change</a>
+          </dd> 
+        </div>
+        
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key" id="date-of-birth">Date of birth</dt>
+          <dd class="nhsuk-summary-list__value" id="dob-value">13 January 1991</dd>
+          <dd class="nhsuk-summary-list__actions">
+            <a href="/updated-full-journey/v2/date-of-birth" id="dobChangeButton" aria-label="Change date of birth">Change</a>
+          </dd>
+        </div>
+        <!-- This is the problem-->
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key" id="nhs-question">Do you know your NHS number?</dt>
+          <dd class="nhsuk-summary-list__value" id="nhsq-value">Yes</dd>
+          <dd class="nhsuk-summary-list__actions">
+            <a href="/updated-full-journey/v2/nhs-number" id="nhsAnswerChangeButton" aria-label="Change do you know your NHS number?">Change</a>
+          </dd>
+        </div>
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key" id="nhs-no">NHS Number</dt>
+          <dd class="nhsuk-summary-list__value" id="nhs-number">1111111111</dd>
+          <dd class="nhsuk-summary-list__actions">
+            <a href="/updated-full-journey/v2/nhs-number" id="nhsNoChangeButton" aria-label="Change NHS number">Change</a>
+          </dd>
+        </div>
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key" id="address">Address</dt>
+          <dd class="nhsuk-summary-list__value" id="address-value">NHS B S A STELLA HOUSE<br>GOLDCREST WAY<br>NEWCASTLE UPON TYNE<br>NE158NY</dd>
+          <dd class="nhsuk-summary-list__actions">
+            <a href="/updated-full-journey/v2/enter-address" id="addressChangeButton" aria-label="Change address">Change</a>
+          </dd>
+        </div>
+        
+        
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key" id="email-q">Get prepayment certificate and reminder by email?</dt>
+          <dd class="nhsuk-summary-list__value" id="emailq-value">No</dd>
+          <dd class="nhsuk-summary-list__actions">
+            <a href="/updated-full-journey/v2/fulfilment" id="prepayEmailSentChangeButton" aria-label="Change get prepayment certificate and reminder by email?">Change</a>
+          </dd>
+        </div>
+        
+      </dl>
+
+      <h2 class="nhsuk-heading-m">Your certificate</h2>
+      <dl class="nhsuk-summary-list">
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key" id="length">Length</dt>
+          <dd class="nhsuk-summary-list__value" id="length-value">12 months</dd>
+          <dd class="nhsuk-summary-list__actions">
+            <a href="/updated-full-journey/v2/duration" id="certLengthChangeButton" aria-label="Change certificate length">Change</a>
+          </dd>
+        </div>
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key" id="starts">Starts on</dt>
+          <dd class="nhsuk-summary-list__value" id="starts-on">28 July 2023</dd>
+          <dd class="nhsuk-summary-list__actions">
+            
+            
+              <a href="/updated-full-journey/v2/start-date" id="startDateChangeButton" aria-label="Change start date">Change</a>
+            
+          </dd>
+        </div>
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key" id="ends">Ends on</dt>
+          <dd class="nhsuk-summary-list__value" id="ends-on">27 July 2024</dd>
+          <dd class="nhsuk-summary-list__actions"></dd>
+        </div>
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key" id="cost">Total cost</dt>
+          <dd class="nhsuk-summary-list__value" id="total-cost">
+            <p id="total-costdd">£<span>111.60</span></p>
+            
+            
+          </dd>
+          <dd class="nhsuk-summary-list__actions"></dd>
+        </div>
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key" id="method">Payment method</dt>
+          <dd class="nhsuk-summary-list__value" id="pay-method">
+            <p id="method-dd">10 instalments of £<span>11.16</span> by Direct Debit</p>
+            
+          </dd>
+          <dd class="nhsuk-summary-list__actions">
+            
+            
+              <a href="/updated-full-journey/v2/duration" id="methodChangeButton" aria-label="Change payment method">Change</a>
+            
+          </dd>
+        </div>
+      </dl> 
+
+
+      <form action="/updated-full-journey/v2/direct-debit">
+        <button class="nhsuk-button" type="submit">
+          Proceed to payment
+        </button>
+      </form>
+
+      <p><a href="/updated-full-journey/v2/start">Cancel</a></p>
+      
+    
+{% endblock %}

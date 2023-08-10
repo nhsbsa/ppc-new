@@ -1,0 +1,43 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+  Email address - PPC
+  {% endblock %}
+
+  {% block content %}       
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+       
+        <fieldset class="nhsuk-fieldset">
+            <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+              <h1 class="nhsuk-fieldset__heading">
+                What is your email address?
+              </h1>
+            </legend>
+          </fieldset>
+      
+    
+<form class="form" action="contact-email" method="post">
+        <div class="nhsuk-form-group">
+            <label class="nhsuk-label" for="address-line-1">
+                <span class="nhsuk-u-visually-hidden">Email</span>
+              </label>
+              <input class="nhsuk-input nhsuk-u-width-one-half" id="email" name="email" type="text" aria-label="Email address">
+        </div>
+
+
+
+       
+          <button class="nhsuk-button" type="submit">
+            Next
+          </button>
+          </form>
+
+      <p><a href="/updated-full-journey/v1/start">Cancel</a></p>
+
+    </div>
+  </div>
+</main>
+</main>
+
+{% endblock %}
