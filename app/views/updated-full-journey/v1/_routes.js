@@ -3,13 +3,11 @@ const express = require('express');
 const router = express.Router();
 
 
-// Add your routes here - above the module.exports line
 //fulfilment
 router.post(/fulfilment/,  function (req, res) {
   // creating a variable named contact - assigning the variable the value of the radio button selected
   var TestFulfilment = req.session.data["fulfilment"]
-
-  if (TestFulfilment == "test-email"){
+  if (TestFulfilment == "email"){
     res.redirect('email')
   }
   else {

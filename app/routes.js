@@ -387,8 +387,7 @@ router.post("/ppc/email-print", function (req, res) {
 router.post(/fulfilment/,  function (req, res) {
   // creating a variable named contact - assigning the variable the value of the radio button selected
   var TestFulfilment = req.session.data["fulfilment"]
-
-  if (TestFulfilment == "test-email"){
+  if (TestFulfilment == "email"){
     res.redirect('email')
   }
   else {
