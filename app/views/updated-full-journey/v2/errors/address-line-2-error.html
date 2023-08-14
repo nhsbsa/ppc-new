@@ -8,7 +8,7 @@
 
 <!-- Set the page title -->
 {% block pageTitle %}
-Enter address manually address line 1 error - PPC
+Enter address manually address line 2 error - PPC
 {% endblock %}
 
 <!-- For adding a breadcrumb -->
@@ -48,7 +48,7 @@ Enter address manually address line 1 error - PPC
         <div class="nhsuk-error-summary__body">
           <ul class="nhsuk-list nhsuk-error-summary__list">
             <li>
-              <a href="#address-line-1">Building and street line 1 is required</a>
+              <a href="#address-line-2">Building and street are required</a>
             </li>
             
           </ul>
@@ -71,11 +71,11 @@ Enter address manually address line 1 error - PPC
             Building and street <span class="nhsuk-u-visually-hidden">line 1 of 2</span>
           </label>
           <span class="nhsuk-error-message" id="last-name-error">
-            <span class="nhsuk-u-visually-hidden">Error:</span> Building and street line 1 is required
+            <span class="nhsuk-u-visually-hidden">Error:</span> Building and street are required
           </span>
-          <input class="nhsuk-input nhsuk-input--error" id="address-line-1" name="address-line-1" type="text">
+          <input class="nhsuk-input" id="address-line-1" name="address-line-1" type="text" value="100">
         <br><br>
-          <input class="nhsuk-input" id="address-line-2" name="address-line-2" type="text" value="Test Road">
+          <input class="nhsuk-input nhsuk-input--error" id="address-line-2" name="address-line-2" type="text" value="">
         </div>
       
         <div class="nhsuk-form-group ">
@@ -105,7 +105,7 @@ Enter address manually address line 1 error - PPC
         </button>
       </form>
 
-      <p><a href="/updated-full-journey/v1/start">Cancel</a></p>
+      <p><a href="/updated-full-journey/v2/start">Cancel</a></p>
 
     </div>  
   </div>

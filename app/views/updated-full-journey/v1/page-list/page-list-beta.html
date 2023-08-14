@@ -1,0 +1,2126 @@
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - edit the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title -->
+{% block pageTitle %}
+Buy an NHS Prescription Prepayment Certificate (PPC)
+{% endblock %}
+
+
+
+<!-- For adding a back link -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/back-link -->
+{% block outerContent %}
+{% endblock %}
+
+<!-- For adding page content -->
+<!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+
+  <div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <!-- Change the page heading -->
+      <h1>
+       Beta Prototype Pages
+      </h1>
+
+      {{ warningCallout({
+        "heading": "Prototype Code only",
+        "HTML": "<p>Do not use this code in any production code or production services. It does not adhere to development standards.</p> "
+      }) }}
+      
+      
+     
+
+      
+
+      <h2 class="app-side-nav__heading">Updated full PPC user journey <br> page by page</h2>
+      <hr>
+
+      <!--<h3>Prototype Versions</h3>
+
+      <table class="nhsuk-table">
+        
+        <tbody class="nhsuk-table__body">
+          <tr role="row" class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">Iteration 1 prototype</td>
+            <td class="nhsuk-table__cell "><a href="v1/cookies/start-cookies">Buy an NHS HRT PPC</a></td>
+          </tr>
+          </tbody>
+
+          <tbody class="nhsuk-table__body">
+            <tr role="row" class="nhsuk-table__row">
+              <td class="nhsuk-table__cell">Iteration 1 prototype with Gov standard address input</td>
+              <td class="nhsuk-table__cell "><a href="v1/experimental/user-journey/start">Buy an NHS HRT PPC</a></td>
+            </tr>
+            </tbody>
+          </table>-->
+
+          <h3>Journeys for usability testing</h3>
+
+      <table class="nhsuk-table">
+        
+        <thead role="rowgroup" class="nhsuk-table__head">
+          <tr role="row">
+            <th role="columnheader" class="" scope="col">
+              Version
+            </th>
+            <th role="columnheader" class="" scope="col">
+              Description
+            </th>
+            <th role="columnheader" class="" scope="col">
+              Prototype link
+            </th>
+          </tr>
+        </thead>
+
+          
+
+            
+              <tbody class="nhsuk-table__body">
+                <tr role="row" class="nhsuk-table__row">
+                  <td class="nhsuk-table__cell"><strong>1</strong> </td>
+                  <td class="nhsuk-table__cell">Updated full user journey to match what is currently in production as of 28/07/2023.</td>
+                  <td class="nhsuk-table__cell "><a href="/updated-full-journey/v1/start">Start page</a></td>
+                </tr>
+                <tr role="row" class="nhsuk-table__row">
+                  <td class="nhsuk-table__cell"><strong>2</strong> </td>
+                  <td class="nhsuk-table__cell">Start page leading to new filter screens to help identify users who are based and/or collect their prescriptions outside of England.</td>
+                  <td class="nhsuk-table__cell "><a href="/updated-full-journey/v2/start">Start page</a></td>
+                </tr>
+                
+                </tbody>
+          </table>
+
+      
+
+      
+      <details class="nhsuk-details nhsuk-expander">
+        <summary class="nhsuk-details__summary">
+          <span class="nhsuk-details__summary-text">
+            Version 1 page list
+          </span>
+        </summary>
+        <div class="nhsuk-details__text">
+          <h3>Start pages </h3>
+      <table class="nhsuk-table">
+        <thead role="rowgroup" class="nhsuk-table__head">
+          <tr role="row">
+            <th role="columnheader" class="" scope="col">
+              Description
+            </th>
+            <th role="columnheader" class="" scope="col">
+              Prototype Link
+            </th>
+            <th role="columnheader" class="" scope="col">
+              Jira Story
+            </th>
+          </tr>
+        </thead>
+        
+        
+       
+       
+       
+        
+
+        
+
+        <tbody class="nhsuk-table__body">
+          <tr role="row" class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">Start page</td>
+            <td class="nhsuk-table__cell "><a href="/updated-full-journey/v1/start">Start page with updated PPC pricing</a></td>
+            <td class="nhsuk-table__cell">N/A.</td>
+          </tr>
+        </tbody>
+      </table>
+
+
+
+
+
+      
+      <h3>Main journey pages </h3>
+      <table class="nhsuk-table">
+        <thead role="rowgroup" class="nhsuk-table__head">
+          <tr role="row">
+            <th role="columnheader" class="" scope="col">
+              Description
+            </th>
+            <th role="columnheader" class="" scope="col">
+              Prototype Link
+            </th>
+            <th role="columnheader" class="" scope="col">
+              Jira Story
+            </th>
+          </tr>
+        </thead>
+        <tbody class="nhsuk-table__body">
+          
+          
+          
+          <tr role="row" class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">Date of birth</td>
+            <td class="nhsuk-table__cell "><a href="/updated-full-journey/v1/date-of-birth">What is your date of birth?</a></td>
+            <td class="nhsuk-table__cell">N/A.</td>
+          </tr>
+        </tbody>
+        <tbody class="nhsuk-table__body">
+          
+          <tr role="row" class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">Name</td>
+            <td class="nhsuk-table__cell "><a href="/updated-full-journey/v1/name">What is your name?</a></td>
+            <td class="nhsuk-table__cell">N/A.</td>
+          </tr>
+        </tbody>
+        <tbody class="nhsuk-table__body">
+          
+          <tr role="row" class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">Address - Input postcode</td>
+            <td class="nhsuk-table__cell "><a href="/updated-full-journey/v1/find-address">What is your postcode?</a></td>
+            <td class="nhsuk-table__cell">N/A.</td>
+          </tr>
+        </tbody>
+        <tbody class="nhsuk-table__body">
+          
+          <tr role="row" class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">Enter address manually</td>
+            <td class="nhsuk-table__cell "><a href="/updated-full-journey/v1/enter-address">What is your address?</a></td>
+            <td class="nhsuk-table__cell">N/A.</td>
+          </tr>
+        </tbody>
+        <tbody class="nhsuk-table__body">
+
+          <tr role="row" class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">Select address radios</td>
+            <td class="nhsuk-table__cell "><a href="/updated-full-journey/v1/select-address-radios">Select your address</a></td>
+            <td class="nhsuk-table__cell">N/A.</td>
+          </tr>
+        </tbody>
+        <tbody class="nhsuk-table__body">
+          
+          <tr role="row" class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">NHS number</td>
+            <td class="nhsuk-table__cell "><a href="/updated-full-journey/v1/nhs-number">Do you know your NHS number?</a></td>
+            <td class="nhsuk-table__cell">N/A.</td>
+          </tr>
+        </tbody>
+        <tbody class="nhsuk-table__body">
+
+          <tr role="row" class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">PPC length</td>
+            <td class="nhsuk-table__cell "><a href="/updated-full-journey/v1/duration">How long do you want your prepayment certificate to last?</a></td>
+            <td class="nhsuk-table__cell">N/A.</td>
+          </tr>
+        </tbody>
+        <tbody class="nhsuk-table__body">
+          
+          <tr role="row" class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">PPC start date</td>
+            <td class="nhsuk-table__cell "><a href="/updated-full-journey/v1/start-date">When do you want your prepayment certificate to start?</a></td>
+            <td class="nhsuk-table__cell">N/A.</td>
+          </tr>
+        </tbody>
+        <tbody class="nhsuk-table__body">
+          
+          <tr role="row" class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">Certificate fulfilment</td>
+            <td class="nhsuk-table__cell "><a href="/updated-full-journey/v1/fulfilment">How can we send your prepayment certificate details?</a></td>
+            <td class="nhsuk-table__cell">N/A.</td>
+          </tr>
+        </tbody>
+        <tbody class="nhsuk-table__body">
+          
+          <tr role="row" class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">If selected email - Input email address</td>
+            <td class="nhsuk-table__cell "><a href="/updated-full-journey/v1/email">What is your email address?</a></td>
+            <td class="nhsuk-table__cell">N/A.</td>
+          </tr>
+        </tbody>
+        
+      </table>
+
+
+
+      <h3>Check your answers pages </h3>
+      <table class="nhsuk-table">
+        <thead role="rowgroup" class="nhsuk-table__head">
+          <tr role="row">
+            <th role="columnheader" class="" scope="col">
+              Description
+            </th>
+            <th role="columnheader" class="" scope="col">
+              Prototype Link
+            </th>
+            <th role="columnheader" class="" scope="col">
+              Jira Story
+            </th>
+          </tr>
+        </thead>
+        <tbody class="nhsuk-table__body">
+          <tr role="row" class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">Check your answers - if selected 'email' and Direct Debit payment</td>
+            <td class="nhsuk-table__cell "><a href="/updated-full-journey/v1/check-details-email-dd">Check your answers and PPC details</a></td>
+            <td class="nhsuk-table__cell">N/A.</td>
+          </tr>
+          
+        </tbody>
+        <tbody class="nhsuk-table__body">
+          <tr role="row" class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">Check your answers - if selected 'email' and a single payment for 12 months</td>
+            <td class="nhsuk-table__cell "><a href="/updated-full-journey/v1/check-details-email-12-months">Check your answers and PPC details</a></td>
+            <td class="nhsuk-table__cell">N/A.</td>
+          </tr>
+
+        </tbody>
+        <tbody class="nhsuk-table__body">
+          <tr role="row" class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">Check your answers - if selected 'email' and a single payment for 3 months</td>
+            <td class="nhsuk-table__cell "><a href="/updated-full-journey/v1/check-details-email-3-months">Check your answers and PPC details</a></td>
+            <td class="nhsuk-table__cell">N/A.</td>
+          </tr>
+
+          <tbody class="nhsuk-table__body">
+            <tr role="row" class="nhsuk-table__row">
+              <td class="nhsuk-table__cell">Check your answers - if selected 'print' and Direct Debit payment</td>
+              <td class="nhsuk-table__cell "><a href="/updated-full-journey/v1/check-details-print-dd">Check your answers and PPC details</a></td>
+              <td class="nhsuk-table__cell">N/A.</td>
+            </tr>
+            
+          </tbody>
+          <tbody class="nhsuk-table__body">
+            <tr role="row" class="nhsuk-table__row">
+              <td class="nhsuk-table__cell">Check your answers - if selected 'print' and a single payment for 12 months</td>
+              <td class="nhsuk-table__cell "><a href="/updated-full-journey/v1/check-details-print-12-months">Check your answers and PPC details</a></td>
+              <td class="nhsuk-table__cell">N/A.</td>
+            </tr>
+  
+          </tbody>
+          <tbody class="nhsuk-table__body">
+            <tr role="row" class="nhsuk-table__row">
+              <td class="nhsuk-table__cell">Check your answers - if selected 'print' and a single payment for 3 months</td>
+              <td class="nhsuk-table__cell "><a href="/updated-full-journey/v1/check-details-print-3-months">Check your answers and PPC details</a></td>
+              <td class="nhsuk-table__cell">N/A.</td>
+            </tr>
+          
+        </tbody>
+      </table>
+
+
+
+
+
+      <h3>Payment Pages </h3>  
+      <table class="nhsuk-table">
+        <thead role="rowgroup" class="nhsuk-table__head">
+          <tr role="row">
+            <th role="columnheader" class="" scope="col">
+              Description
+            </th>
+            <th role="columnheader" class="" scope="col">
+              Prototype Link
+            </th>
+            <th role="columnheader" class="" scope="col">
+              Jira Story
+            </th>
+          </tr>
+        </thead>
+        <tbody class="nhsuk-table__body">
+          
+          <tr role="row" class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">Direct Debit - enter card details</td>
+            <td class="nhsuk-table__cell "><a href="/updated-full-journey/v1/direct-debit">Enter bank details - Direct Debit</a></td>
+            <td class="nhsuk-table__cell">N/A.</td>
+          </tr>
+          
+        </tbody>
+
+      <tbody class="nhsuk-table__body">
+        <tr role="row" class="nhsuk-table__row">
+          <td class="nhsuk-table__cell">Direct Debit - confirm card details</td>
+          <td class="nhsuk-table__cell "><a href="/updated-full-journey/v1/confirm-direct-debit">Confirm bank details and Direct Debit</a></td>
+          <td class="nhsuk-table__cell">N/A.</td>
+        </tr>
+        
+      </tbody>
+
+      <tbody class="nhsuk-table__body">
+        <tr role="row" class="nhsuk-table__row">
+          <td class="nhsuk-table__cell">Direct Debit - confirm and submit to Direct Debit T&Cs</td>
+          <td class="nhsuk-table__cell "><a href="/updated-full-journey/v1/submit-direct-debit">Confirm and submit Direct Debit</a></td>
+          <td class="nhsuk-table__cell">N/A.</td>
+        </tr>
+        
+      </tbody>
+
+      <tbody class="nhsuk-table__body">
+        <tr role="row" class="nhsuk-table__row">
+          <td class="nhsuk-table__cell">12 months single payment - GOV Pay - Enter card details</td>
+          <td class="nhsuk-table__cell "><a href="/updated-full-journey/v1/gov-pay-12-months">Enter card details - GOV Pay</a></td>
+          <td class="nhsuk-table__cell">N/A.</td>
+        </tr>
+        
+      </tbody>
+      <tr role="row" class="nhsuk-table__row">
+        <td class="nhsuk-table__cell">12 months single payment - GOV Pay - Confirm card details and payment</td>
+        <td class="nhsuk-table__cell "><a href="/updated-full-journey/v1/gov-payment-confirm-12-months">Confirm your payment - GOV Pay</a></td>
+        <td class="nhsuk-table__cell">N/A.</td>
+      </tr>
+      
+    </tbody>
+
+    <tbody class="nhsuk-table__body">       
+      <tr role="row" class="nhsuk-table__row">
+        <td class="nhsuk-table__cell">3 months single payment - GOV Pay - Enter card details</td>
+        <td class="nhsuk-table__cell "><a href="/updated-full-journey/v1/gov-pay-3-months">Enter card details - GOV Pay</a></td>
+        <td class="nhsuk-table__cell">N/A.</td>
+      </tr>
+      
+    </tbody>
+    <tr role="row" class="nhsuk-table__row">
+      <td class="nhsuk-table__cell">3 months single payment - GOV Pay - Confirm card details and payment</td>
+      <td class="nhsuk-table__cell "><a href="/updated-full-journey/v1/gov-payment-confirm-3-months">Confirm your payment - GOV Pay</a></td>
+      <td class="nhsuk-table__cell">N/A.</td>
+    </tr>
+    
+  </tbody>
+
+        
+          
+        </tbody>
+      </table>
+
+
+
+
+
+
+      
+      <h3>Kickout pages </h3>
+      <table class="nhsuk-table">
+        <thead role="rowgroup" class="nhsuk-table__head">
+          <tr role="row">
+            <th role="columnheader" class="" scope="col">
+              Description
+            </th>
+            <th role="columnheader" class="" scope="col">
+              Prototype Link
+            </th>
+            <th role="columnheader" class="" scope="col">
+              Jira Story
+            </th>
+          </tr>
+        </thead>
+        <tbody class="nhsuk-table__body">
+          <tr role="row" class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">Already exempt based on your DOB (>60 or >16)</td>
+            <td class="nhsuk-table__cell "><a href="/updated-full-journey/v1/kickout/age-entitlement">You are entitled to free prescriptions</a></td>
+            <td class="nhsuk-table__cell">N/A.</td>
+          </tr>
+          
+        </tbody>
+        <tbody class="nhsuk-table__body">
+          <tr role="row" class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">Entitled soon (aged 59)</td>
+            <td class="nhsuk-table__cell "><a href="/updated-full-journey/v1/kickout/free-prescriptions-soon">You can get free prescriptions soon</a></td>
+            <td class="nhsuk-table__cell">N/A.</td>
+          </tr>
+          
+        </tbody>
+        <tbody class="nhsuk-table__body">
+          <tr role="row" class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">Existing exemption</td>
+            <td class="nhsuk-table__cell "><a href="/updated-full-journey/v1/kickout/existing-exemption">Contact us - Our records show you may already be receiving help with NHS health costs.</a></td>
+            <td class="nhsuk-table__cell">N/A.</td>
+          </tr>
+          
+        </tbody>
+        <tbody class="nhsuk-table__body">
+          <tr role="row" class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">Payment cancelled</td>
+            <td class="nhsuk-table__cell "><a href="/updated-full-journey/v1/kickout/payment-cancelled">Your payment has been cancelled</a></td>
+            <td class="nhsuk-table__cell">N/A.</td>
+          </tr>
+          
+        </tbody>
+      </table>
+      
+      
+      
+      <h3>Error messages </h3>
+      <table class="nhsuk-table">
+        <thead role="rowgroup" class="nhsuk-table__head">
+          <tr role="row">
+            <th role="columnheader" class="" scope="col">
+              Description
+            </th>
+            <th role="columnheader" class="" scope="col">
+              Prototype Link
+            </th>
+            <th role="columnheader" class="" scope="col">
+              Jira Story
+            </th>
+          </tr>
+        </thead>
+        <tbody class="nhsuk-table__body">
+          <tr role="row" class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">Date of birth - Day input required</td>
+            <td class="nhsuk-table__cell "><a href="/updated-full-journey/v1/errors/dob-day-error">Date of birth must include a day</a></td>
+            <td class="nhsuk-table__cell">N/A.</td>
+          </tr>
+
+        </tbody>
+        
+        <tbody class="nhsuk-table__body">
+          <tr role="row" class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">Date of birth - Day and month input required</td>
+            <td class="nhsuk-table__cell "><a href="/updated-full-journey/v1/errors/dob-day-month-error">Date of birth must include a day and month</a></td>
+            <td class="nhsuk-table__cell">N/A.</td>
+          </tr>
+
+        </tbody>
+
+        <tbody class="nhsuk-table__body">
+          <tr role="row" class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">Date of birth - Day and year input required</td>
+            <td class="nhsuk-table__cell "><a href="/updated-full-journey/v1/errors/dob-day-year-error">Date of birth must include a day and year</a></td>
+            <td class="nhsuk-table__cell">N/A.</td>
+          </tr>
+
+        </tbody>
+
+        <tbody class="nhsuk-table__body">
+          <tr role="row" class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">Date of birth - Month input required</td>
+            <td class="nhsuk-table__cell "><a href="/updated-full-journey/v1/errors/dob-month-error">Date of birth must include a month</a></td>
+            <td class="nhsuk-table__cell">N/A.</td>
+          </tr>
+
+        </tbody>
+
+        <tbody class="nhsuk-table__body">
+          <tr role="row" class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">Date of birth - Month and year input required</td>
+            <td class="nhsuk-table__cell "><a href="/updated-full-journey/v1/errors/dob-month-year-error">Date of birth must include a month and year</a></td>
+            <td class="nhsuk-table__cell">N/A.</td>
+          </tr>
+
+        </tbody>
+
+        <tbody class="nhsuk-table__body">
+          <tr role="row" class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">Date of birth - All fields input required</td>
+            <td class="nhsuk-table__cell "><a href="/updated-full-journey/v1/errors/dob-no-input-error">Full date of birth is required</a></td>
+            <td class="nhsuk-table__cell">N/A.</td>
+          </tr>
+
+        </tbody>
+
+        <tbody class="nhsuk-table__body">
+          <tr role="row" class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">Date of birth - Date of birth is not in the past</td>
+            <td class="nhsuk-table__cell "><a href="/updated-full-journey/v1/errors/dob-past-error">Date of birth must be in the past</a></td>
+            <td class="nhsuk-table__cell">N/A.</td>
+          </tr>
+
+        </tbody>
+
+        <tbody class="nhsuk-table__body">
+          <tr role="row" class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">Date of birth - Invalid dates have been used</td>
+            <td class="nhsuk-table__cell "><a href="/updated-full-journey/v1/errors/dob-valid-error">Enter a valid date of birth</a></td>
+            <td class="nhsuk-table__cell">N/A.</td>
+          </tr>
+
+        </tbody>
+
+        <tbody class="nhsuk-table__body">
+          <tr role="row" class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">Date of birth - Year input required</td>
+            <td class="nhsuk-table__cell "><a href="/updated-full-journey/v1/errors/dob-year-error">Date of birth must include a year</a></td>
+            <td class="nhsuk-table__cell">N/A.</td>
+          </tr>
+
+        </tbody>
+
+        <tbody class="nhsuk-table__body">
+          <tr role="row" class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">Name - First name contains too many characters</td>
+            <td class="nhsuk-table__cell "><a href="/updated-full-journey/v1/errors/first-name-length-error">First name must be 50 characters or less</a></td>
+            <td class="nhsuk-table__cell">N/A.</td>
+          </tr>
+
+        </tbody>
+
+        <tbody class="nhsuk-table__body">
+          <tr role="row" class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">Name - First name string error</td>
+            <td class="nhsuk-table__cell "><a href="/updated-full-journey/v1/errors/first-name-string-error">First name must only include letters a to z, apostrophes ('), hyphens (-) and spaces</a></td>
+            <td class="nhsuk-table__cell">N/A.</td>
+          </tr>
+
+        </tbody>
+
+        <tbody class="nhsuk-table__body">
+          <tr role="row" class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">Name - Last name contains too many characters</td>
+            <td class="nhsuk-table__cell "><a href="/updated-full-journey/v1/errors/last-name-length-error">Last name must be 50 characters or less</a></td>
+            <td class="nhsuk-table__cell">N/A.</td>
+          </tr>
+
+        </tbody>
+
+        <tbody class="nhsuk-table__body">
+          <tr role="row" class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">Name - Last name string error</td>
+            <td class="nhsuk-table__cell "><a href="/updated-full-journey/v1/errors/last-name-string-error">Last name must only include letters a to z, apostrophes ('), hyphens (-) and spaces</a></td>
+            <td class="nhsuk-table__cell">N/A.</td>
+          </tr>
+
+        </tbody>
+
+        <tbody class="nhsuk-table__body">
+          <tr role="row" class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">Name - First and last name are required</td>
+            <td class="nhsuk-table__cell "><a href="/updated-full-journey/v1/errors/name-error">First and last name are required</a></td>
+            <td class="nhsuk-table__cell">N/A.</td>
+          </tr>
+
+        </tbody>
+
+        <tbody class="nhsuk-table__body">
+          <tr role="row" class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">Name - First and last name contain too many characters</td>
+            <td class="nhsuk-table__cell "><a href="/updated-full-journey/v1/errors/name-length-error">First and last name must be 50 characters or less</a></td>
+            <td class="nhsuk-table__cell">N/A.</td>
+          </tr>
+
+        </tbody>
+
+        <tbody class="nhsuk-table__body">
+          <tr role="row" class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">Name - First and last name string error</td>
+            <td class="nhsuk-table__cell "><a href="/updated-full-journey/v1/errors/name-string-error">First and last name must only include letters a to z, apostrophes ('), hyphens (-) and spaces</a></td>
+            <td class="nhsuk-table__cell">N/A.</td>
+          </tr>
+
+        </tbody>
+
+        <tbody class="nhsuk-table__body">
+          <tr role="row" class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">Find address - Invalid postcode has been entered</td>
+            <td class="nhsuk-table__cell "><a href="/updated-full-journey/v1/errors/postcode-lookup-error">Enter a valid postcode</a></td>
+            <td class="nhsuk-table__cell">N/A.</td>
+          </tr>
+
+        </tbody>
+
+        <tbody class="nhsuk-table__body">
+          <tr role="row" class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">Find address - Invalid postcode has been entered</td>
+            <td class="nhsuk-table__cell "><a href="/updated-full-journey/v1/errors/postcode-lookup-error">Enter a valid postcode</a></td>
+            <td class="nhsuk-table__cell">N/A.</td>
+          </tr>
+
+        </tbody>
+
+        <tbody class="nhsuk-table__body">
+          <tr role="row" class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">Find address - Postcode has not been entered, nor has the user opted to enter their address manually</td>
+            <td class="nhsuk-table__cell "><a href="/updated-full-journey/v1/errors/postcode-required-error">A postcode is required, or you must enter your address manually</a></td>
+            <td class="nhsuk-table__cell">N/A.</td>
+          </tr>
+
+        </tbody>
+
+        <tbody class="nhsuk-table__body">
+          <tr role="row" class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">Find address - Address not found</td>
+            <td class="nhsuk-table__cell "><a href="/updated-full-journey/v1/errors/address-not-found-error">No address was found from the postcode provided</a></td>
+            <td class="nhsuk-table__cell">N/A.</td>
+          </tr>
+
+        </tbody>
+
+        <tbody class="nhsuk-table__body">
+          <tr role="row" class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">Manual address - Building and street line 1 is required</td>
+            <td class="nhsuk-table__cell "><a href="/updated-full-journey/v1/errors/address-line-1-error">Building and street line 1 is required</a></td>
+            <td class="nhsuk-table__cell">N/A.</td>
+          </tr>
+
+        </tbody>
+
+        <tbody class="nhsuk-table__body">
+          <tr role="row" class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">Manual address - Address line 1 format error</td>
+            <td class="nhsuk-table__cell "><a href="/updated-full-journey/v1/errors/address-line-1-format-error">Address line 1 must only include numbers, letters a to z, hyphens, spaces, apostrophes and full stops.
+              or Address line 1 must be 50 characters or less</a></td>
+            <td class="nhsuk-table__cell">N/A.</td>
+          </tr>
+
+        </tbody>
+
+        <tbody class="nhsuk-table__body">
+          <tr role="row" class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">Manual address - Building and street line 2 is required</td>
+            <td class="nhsuk-table__cell "><a href="/updated-full-journey/v1/errors/address-line-2-error">Building and street line 2 is required</a></td>
+            <td class="nhsuk-table__cell">N/A.</td>
+          </tr>
+
+        </tbody>
+
+        <tbody class="nhsuk-table__body">
+          <tr role="row" class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">Manual address - Address line 2 format error</td>
+            <td class="nhsuk-table__cell "><a href="/updated-full-journey/v1/errors/address-line-2-format-error">Address line 2 must only include numbers, letters a to z, hyphens, spaces, apostrophes and full stops.
+              or Address line 1 must be 50 characters or less</a></td>
+            <td class="nhsuk-table__cell">N/A.</td>
+          </tr>
+
+        </tbody>
+
+        <tbody class="nhsuk-table__body">
+          <tr role="row" class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">Manual address - All address lines format errors</td>
+            <td class="nhsuk-table__cell "><a href="/updated-full-journey/v1/errors/all-address-lines-format-error">All address lines format errors</a></td>
+            <td class="nhsuk-table__cell">N/A.</td>
+          </tr>
+
+        </tbody>
+
+        <tbody class="nhsuk-table__body">
+          <tr role="row" class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">Manual address - Town or city is required</td>
+            <td class="nhsuk-table__cell "><a href="/updated-full-journey/v1/errors/city-error">Town or city is required</a></td>
+            <td class="nhsuk-table__cell">N/A.</td>
+          </tr>
+
+        </tbody>
+
+        <tbody class="nhsuk-table__body">
+          <tr role="row" class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">Manual address - Postcode is required</td>
+            <td class="nhsuk-table__cell "><a href="/updated-full-journey/v1/errors/missing-postcode-error">Postcode is required</a></td>
+            <td class="nhsuk-table__cell">N/A.</td>
+          </tr>
+
+        </tbody>
+
+        <tbody class="nhsuk-table__body">
+          <tr role="row" class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">Manual address - Valid postcode is required</td>
+            <td class="nhsuk-table__cell "><a href="/updated-full-journey/v1/errors/valid-postcode-error">Valid postcode is required</a></td>
+            <td class="nhsuk-table__cell">N/A.</td>
+          </tr>
+
+        </tbody>
+
+        <tbody class="nhsuk-table__body">
+          <tr role="row" class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">Select address radios - User has not selected an address from list provided</td>
+            <td class="nhsuk-table__cell "><a href="/updated-full-journey/v1/errors/select-address-radios-error">Select your address</a></td>
+            <td class="nhsuk-table__cell">N/A.</td>
+          </tr>
+
+        </tbody>
+
+        <tbody class="nhsuk-table__body">
+          <tr role="row" class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">NHS number - User has entered an invalid NHS number</td>
+            <td class="nhsuk-table__cell "><a href="/updated-full-journey/v1/errors/nhs-number-format-error">Enter a valid NHS number that is 10 numbers, like 1234567890</a></td>
+            <td class="nhsuk-table__cell">N/A.</td>
+          </tr>
+
+        </tbody>
+
+        <tbody class="nhsuk-table__body">
+          <tr role="row" class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">NHS number - User has not entered their NHS number, despite clicking 'yes' they know it</td>
+            <td class="nhsuk-table__cell "><a href="/updated-full-journey/v1/errors/nhs-number-no-input-error">NHS number is required</a></td>
+            <td class="nhsuk-table__cell">N/A.</td>
+          </tr>
+
+        </tbody>
+
+        <tbody class="nhsuk-table__body">
+          <tr role="row" class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">NHS number - User has not indicated whether they know their NHS number or not</td>
+            <td class="nhsuk-table__cell "><a href="/updated-full-journey/v1/errors/nhs-number-selection-error">You have not made a selection from the below options</a></td>
+            <td class="nhsuk-table__cell">N/A.</td>
+          </tr>
+
+        </tbody>
+
+        <tbody class="nhsuk-table__body">
+          <tr role="row" class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">Duration - User has not selected how long they'd like their PPC to last</td>
+            <td class="nhsuk-table__cell "><a href="/updated-full-journey/v1/errors/duration-selection-error">Prepayment length is required</a></td>
+            <td class="nhsuk-table__cell">N/A.</td>
+          </tr>
+
+        </tbody>
+
+        <tbody class="nhsuk-table__body">
+          <tr role="row" class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">Start date - Start date day and month required</td>
+            <td class="nhsuk-table__cell "><a href="/updated-full-journey/v1/errors/start-date-day-month-error">Your start date must include a day and month</a></td>
+            <td class="nhsuk-table__cell">N/A.</td>
+          </tr>
+
+        </tbody>
+
+        <tbody class="nhsuk-table__body">
+          <tr role="row" class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">Start date - User has opted to cover prescriptions today or later but has entered a start date too far in the future</td>
+            <td class="nhsuk-table__cell "><a href="/updated-full-journey/v1/errors/start-date-future-error">Enter a start date between 27 July 2023 and 27 August 2023</a></td>
+            <td class="nhsuk-table__cell">N/A.</td>
+          </tr>
+
+        </tbody>
+
+        <tbody class="nhsuk-table__body">
+          <tr role="row" class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">Start date - User has opted to cover prescriptions today or later but has entered an invalid date</td>
+            <td class="nhsuk-table__cell "><a href="/updated-full-journey/v1/errors/start-date-invalid-error">Enter a valid start date</a></td>
+            <td class="nhsuk-table__cell">N/A.</td>
+          </tr>
+
+        </tbody>
+
+        <tbody class="nhsuk-table__body">
+          <tr role="row" class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">Start date - User has not selected a start date for their certificate</td>
+            <td class="nhsuk-table__cell "><a href="/updated-full-journey/v1/errors/start-date-selection-error">Select an option for your start date</a></td>
+            <td class="nhsuk-table__cell">N/A.</td>
+          </tr>
+
+        </tbody>
+
+        <tbody class="nhsuk-table__body">
+          <tr role="row" class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">Start date - User has opted to backdate their certificate but has entered an invalid date</td>
+            <td class="nhsuk-table__cell "><a href="/updated-full-journey/v1/errors/invalid-backdate-error">Enter a valid start date between 27 June 2023 and 27 July 2023</a></td>
+            <td class="nhsuk-table__cell">N/A.</td>
+          </tr>
+
+        </tbody>
+
+        <tbody class="nhsuk-table__body">
+          <tr role="row" class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">Fulfilment - User has not selected how they'd like to receive their PPC details</td>
+            <td class="nhsuk-table__cell "><a href="/updated-full-journey/v1/errors/fulfilment-error">You must select how you would like to receive your PPC details</a></td>
+            <td class="nhsuk-table__cell">N/A.</td>
+          </tr>
+
+        </tbody>
+
+        <tbody class="nhsuk-table__body">
+          <tr role="row" class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">Email - User has entered an incorrect email i.e., just numbers or no '@', etc.</td>
+            <td class="nhsuk-table__cell "><a href="/updated-full-journey/v1/errors/email-incorrect-error">Email is incorrect</a></td>
+            <td class="nhsuk-table__cell">N/A.</td>
+          </tr>
+
+        </tbody>
+
+        <tbody class="nhsuk-table__body">
+          <tr role="row" class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">Email - User has not entered an email address when they've opted to receive their PPC by email</td>
+            <td class="nhsuk-table__cell "><a href="/updated-full-journey/v1/errors/email-required-error">Email is required</a></td>
+            <td class="nhsuk-table__cell">N/A.</td>
+          </tr>
+
+        </tbody>
+
+        <tbody class="nhsuk-table__body">
+          <tr role="row" class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">Direct Debit - Account number is required</td>
+            <td class="nhsuk-table__cell "><a href="/updated-full-journey/v1/errors/direct-debit-account-number-error">Account number is required</a></td>
+            <td class="nhsuk-table__cell">N/A.</td>
+          </tr>
+
+        </tbody>
+
+        <tbody class="nhsuk-table__body">
+          <tr role="row" class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">Direct Debit - All bank details are required</td>
+            <td class="nhsuk-table__cell "><a href="/updated-full-journey/v1/errors/direct-debit-account-number-error">The account name, sort-code and account number are all required</a></td>
+            <td class="nhsuk-table__cell">N/A.</td>
+          </tr>
+
+        </tbody>
+
+        <tbody class="nhsuk-table__body">
+          <tr role="row" class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">Direct Debit - The account number is incorrect</td>
+            <td class="nhsuk-table__cell "><a href="/updated-full-journey/v1/errors/direct-debit-incorrect-account-number-error">Account number is incorrect</a></td>
+            <td class="nhsuk-table__cell">N/A.</td>
+          </tr>
+
+        </tbody>
+
+        <tbody class="nhsuk-table__body">
+          <tr role="row" class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">Direct Debit - The sort-code is incorrect</td>
+            <td class="nhsuk-table__cell "><a href="/updated-full-journey/v1/errors/direct-debit-incorrect-sort-code-error">Sort-code is incorrect</a></td>
+            <td class="nhsuk-table__cell">N/A.</td>
+          </tr>
+
+        </tbody>
+
+        <tbody class="nhsuk-table__body">
+          <tr role="row" class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">Direct Debit - Account name string error</td>
+            <td class="nhsuk-table__cell "><a href="/updated-full-journey/v1/errors/direct-debit-name-string-error">Account name must only include letters a to z, apostrophes ('), hyphens (-) and spaces</a></td>
+            <td class="nhsuk-table__cell">N/A.</td>
+          </tr>
+
+        </tbody>
+
+        <tbody class="nhsuk-table__body">
+          <tr role="row" class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">Direct Debit - The sort-code is required</td>
+            <td class="nhsuk-table__cell "><a href="/updated-full-journey/v1/errors/direct-debit-sort-code-error">Sort-code is required</a></td>
+            <td class="nhsuk-table__cell">N/A.</td>
+          </tr>
+
+        </tbody>
+
+        <tbody class="nhsuk-table__body">
+          <tr role="row" class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">GOV Pay - Payment cancelled</td>
+            <td class="nhsuk-table__cell "><a href="/updated-full-journey/v1/errors/gov-pay-payment-cancelled">Payment cancelled</a></td>
+            <td class="nhsuk-table__cell">N/A.</td>
+          </tr>
+
+        </tbody>
+
+        <tbody class="nhsuk-table__body">
+          <tr role="row" class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">GOV Pay - Payment declined</td>
+            <td class="nhsuk-table__cell "><a href="/updated-full-journey/v1/errors/gov-pay-payment-declined">Payment declined</a></td>
+            <td class="nhsuk-table__cell">N/A.</td>
+          </tr>
+
+        </tbody>
+
+        <tbody class="nhsuk-table__body">
+          <tr role="row" class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">NHSBSA screen - payment declined</td>
+            <td class="nhsuk-table__cell "><a href="/updated-full-journey/v1/errors/payment-declined">Payment declined</a></td>
+            <td class="nhsuk-table__cell">N/A.</td>
+          </tr>
+
+        </tbody>
+
+        <tbody class="nhsuk-table__body">
+          <tr role="row" class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">Cookies - choose cookies</td>
+            <td class="nhsuk-table__cell "><a href="/updated-full-journey/v1/errors/choose-cookies-error">Select your cookies setting decision</a></td>
+            <td class="nhsuk-table__cell">N/A.</td>
+          </tr>
+
+        </tbody>
+      </table>
+
+
+
+
+
+     
+      <table class="nhsuk-table">
+        <h3>Service errors</h3>
+        <thead role="rowgroup" class="nhsuk-table__head">
+          <tr role="row">
+            <th role="columnheader" class="" scope="col">
+              Description
+            </th>
+            <th role="columnheader" class="" scope="col">
+              Prototype Link
+            </th>
+            <th role="columnheader" class="" scope="col">
+              Jira Story
+            </th>
+          </tr>
+        </thead>
+        <tbody class="nhsuk-table__body">
+          <tr role="row" class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">Page not found</td>
+            <td class="nhsuk-table__cell "><a href="/updated-full-journey/v1/service-errors/page-not-found">Page not found</a></td>
+            <td class="nhsuk-table__cell">N/A.</td>
+          </tr>
+          <tr role="row" class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">We could not process your details</td>
+            <td class="nhsuk-table__cell "><a href="/updated-full-journey/v1/service-errors/could-not-process-details">We could not process your details</a></td>
+            <td class="nhsuk-table__cell">N/A.</td>
+          </tr>
+          <tr role="row" class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">Page forbidden</td>
+            <td class="nhsuk-table__cell "><a href="/updated-full-journey/v1/service-errors/forbidden">You are not authorised to view this page</a></td>
+            <td class="nhsuk-table__cell">N/A.</td>
+          </tr>
+          <tr role="row" class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">Problem with the service</td>
+            <td class="nhsuk-table__cell "><a href="/updated-full-journey/v1/service-errors/problem-with-service">Sorry, there has been a problem with the service</a></td>
+            <td class="nhsuk-table__cell">N/A.</td>
+          </tr>
+          <tr role="row" class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">Payment provider error</td>
+            <td class="nhsuk-table__cell "><a href="/updated-full-journey/v1/service-errors/payment-provider-error">Payment provider temporarily unavailable</a></td>
+            <td class="nhsuk-table__cell">N/A.</td>
+          </tr>
+        </tbody>
+      </table>
+
+
+
+
+      <h3>End pages</h3>
+      <table class="nhsuk-table">
+        <thead role="rowgroup" class="nhsuk-table__head">
+          <tr role="row">
+            <th role="columnheader" class="" scope="col">
+              Description
+            </th>
+            <th role="columnheader" class="" scope="col">
+              Prototype Link
+            </th>
+            <th role="columnheader" class="" scope="col">
+              Jira Story
+            </th>
+          </tr>
+        </thead>
+       
+        <tbody class="nhsuk-table__body">
+          <tr role="row" class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">Confirmation - Email - Direct Debit <strong>(without Organ Donation information)</strong></td>
+            <td class="nhsuk-table__cell "><a href="/updated-full-journey/v1/confirmation-dd-email">Done - We have set up a Direct Debit payment for 12 months of prescriptions. </a></td>
+            <td class="nhsuk-table__cell">N/A.</td>
+          </tr>
+        </tbody>
+
+        <tbody class="nhsuk-table__body">
+          <tr role="row" class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">Confirmation - Email - 12 months <strong>(without Organ Donation information)</strong></td>
+            <td class="nhsuk-table__cell "><a href="/updated-full-journey/v1/confirmation-12-months-email">Done - You have prepaid for 12 months of prescriptions.</a></td>
+            <td class="nhsuk-table__cell">N/A.</td>
+          </tr>
+        </tbody>
+
+        <tbody class="nhsuk-table__body">
+          <tr role="row" class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">Confirmation - Email - 3 months <strong>(without Organ Donation information)</strong></td>
+            <td class="nhsuk-table__cell "><a href="/updated-full-journey/v1/confirmation-3-months-email">Done - You have prepaid for 12 months of prescriptions.</a></td>
+            <td class="nhsuk-table__cell">N/A.</td>
+          </tr>
+        </tbody>
+
+        <tbody class="nhsuk-table__body">
+          <tr role="row" class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">Confirmation - Print - Direct Debit <strong>(without Organ Donation information)</strong></td>
+            <td class="nhsuk-table__cell "><a href="/updated-full-journey/v1/confirmation-dd-print">Done - We have set up a Direct Debit payment for 12 months of prescriptions. </a></td>
+            <td class="nhsuk-table__cell">N/A.</td>
+          </tr>
+        </tbody>
+
+        <tbody class="nhsuk-table__body">
+          <tr role="row" class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">Confirmation - Print - 12 months <strong>(without Organ Donation information)</strong></td>
+            <td class="nhsuk-table__cell "><a href="/updated-full-journey/v1/confirmation-12-months-print">Done - You have prepaid for 12 months of prescriptions.</a></td>
+            <td class="nhsuk-table__cell">N/A.</td>
+          </tr>
+        </tbody>
+
+        <tbody class="nhsuk-table__body">
+          <tr role="row" class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">Confirmation - Print - 3 months <strong>(without Organ Donation information)</strong></td>
+            <td class="nhsuk-table__cell "><a href="/updated-full-journey/v1/confirmation-3-months-print">Done - You have prepaid for 12 months of prescriptions.</a></td>
+            <td class="nhsuk-table__cell">N/A.</td>
+          </tr>
+        </tbody>
+        
+      </table>
+
+
+
+      <h3>Cookies</h3>
+      <table class="nhsuk-table">
+        <thead role="rowgroup" class="nhsuk-table__head">
+          <tr role="row">
+            <th role="columnheader" class="" scope="col">
+              Description
+            </th>
+            <th role="columnheader" class="" scope="col">
+              Prototype Link
+            </th>
+            <th role="columnheader" class="" scope="col">
+              Jira Story
+            </th>
+          </tr>
+        </thead>
+        <tbody class="nhsuk-table__body">
+          <tr role="row" class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">Start page with cookies</td>
+            <td class="nhsuk-table__cell "><a href="/updated-full-journey/v1/cookies/start-cookies">Cookies banner on start page</a></td>
+            <td class="nhsuk-table__cell">N/A.</td>
+          </tr>
+        </tbody>
+
+        <tbody class="nhsuk-table__body">
+          <tr role="row" class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">Choose cookies</td>
+            <td class="nhsuk-table__cell "><a href="/updated-full-journey/v1/cookies/choose-cookies">Choose cookies</a></td>
+            <td class="nhsuk-table__cell">N/A.</td>
+          </tr>
+        </tbody>
+
+        <tbody class="nhsuk-table__body">
+          <tr role="row" class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">Cookie settings have been saved</td>
+            <td class="nhsuk-table__cell "><a href="/updated-full-journey/v1/cookies/cookies-saved">Your cookie settings have been saved</a></td>
+            <td class="nhsuk-table__cell">N/A.</td>
+          </tr>
+        </tbody>
+
+        <tbody class="nhsuk-table__body">
+          <tr role="row" class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">Cookies on the NHSBSA website</td>
+            <td class="nhsuk-table__cell "><a href="/updated-full-journey/v1/cookies/nhsbsa-cookies">Cookies on the NHSBSA website</a></td>
+            <td class="nhsuk-table__cell">N/A.</td>
+          </tr>
+        </tbody>
+        
+      </table>
+
+     
+
+        </div>
+      </details>
+
+
+
+
+      
+      <details class="nhsuk-details nhsuk-expander">
+        <summary class="nhsuk-details__summary">
+          <span class="nhsuk-details__summary-text">
+            Version 2 page list
+          </span>
+        </summary>
+        <div class="nhsuk-details__text">
+          <h3>Start pages </h3>
+      <table class="nhsuk-table">
+        <thead role="rowgroup" class="nhsuk-table__head">
+          <tr role="row">
+            <th role="columnheader" class="" scope="col">
+              Description
+            </th>
+            <th role="columnheader" class="" scope="col">
+              Prototype Link
+            </th>
+            <th role="columnheader" class="" scope="col">
+              Jira Story
+            </th>
+          </tr>
+        </thead>
+        
+        
+       
+       
+       
+        
+
+        
+
+        <tbody class="nhsuk-table__body">
+          <tr role="row" class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">Start page</td>
+            <td class="nhsuk-table__cell "><a href="/updated-full-journey/v2/start">Start page with updated PPC pricing</a></td>
+            <td class="nhsuk-table__cell">N/A.</td>
+          </tr>
+        </tbody>
+      </table>
+
+
+
+
+
+      
+      <h3>Main journey pages </h3>
+      <table class="nhsuk-table">
+        <thead role="rowgroup" class="nhsuk-table__head">
+          <tr role="row">
+            <th role="columnheader" class="" scope="col">
+              Description
+            </th>
+            <th role="columnheader" class="" scope="col">
+              Prototype Link
+            </th>
+            <th role="columnheader" class="" scope="col">
+              Jira Story
+            </th>
+          </tr>
+        </thead>
+        <tbody class="nhsuk-table__body">
+          
+          
+          
+          <tr role="row" class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">Date of birth</td>
+            <td class="nhsuk-table__cell "><a href="/updated-full-journey/v2/date-of-birth">What is your date of birth?</a></td>
+            <td class="nhsuk-table__cell">N/A.</td>
+          </tr>
+        </tbody>
+        <tbody class="nhsuk-table__body">
+          
+          <tr role="row" class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">Name</td>
+            <td class="nhsuk-table__cell "><a href="/updated-full-journey/v2/name">What is your name?</a></td>
+            <td class="nhsuk-table__cell">N/A.</td>
+          </tr>
+        </tbody>
+        <tbody class="nhsuk-table__body">
+          
+          <tr role="row" class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">Address - Input postcode</td>
+            <td class="nhsuk-table__cell "><a href="/updated-full-journey/v2/find-address">What is your postcode?</a></td>
+            <td class="nhsuk-table__cell">N/A.</td>
+          </tr>
+        </tbody>
+        <tbody class="nhsuk-table__body">
+          
+          <tr role="row" class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">Enter address manually</td>
+            <td class="nhsuk-table__cell "><a href="/updated-full-journey/v2/enter-address">What is your address?</a></td>
+            <td class="nhsuk-table__cell">N/A.</td>
+          </tr>
+        </tbody>
+        <tbody class="nhsuk-table__body">
+
+          <tr role="row" class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">Select address radios</td>
+            <td class="nhsuk-table__cell "><a href="/updated-full-journey/v2/select-address-radios">Select your address</a></td>
+            <td class="nhsuk-table__cell">N/A.</td>
+          </tr>
+        </tbody>
+        <tbody class="nhsuk-table__body">
+          
+          <tr role="row" class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">NHS number</td>
+            <td class="nhsuk-table__cell "><a href="/updated-full-journey/v2/nhs-number">Do you know your NHS number?</a></td>
+            <td class="nhsuk-table__cell">N/A.</td>
+          </tr>
+        </tbody>
+        <tbody class="nhsuk-table__body">
+
+          <tr role="row" class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">PPC length</td>
+            <td class="nhsuk-table__cell "><a href="/updated-full-journey/v2/duration">How long do you want your prepayment certificate to last?</a></td>
+            <td class="nhsuk-table__cell">N/A.</td>
+          </tr>
+        </tbody>
+        <tbody class="nhsuk-table__body">
+          
+          <tr role="row" class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">PPC start date</td>
+            <td class="nhsuk-table__cell "><a href="/updated-full-journey/v2/start-date">When do you want your prepayment certificate to start?</a></td>
+            <td class="nhsuk-table__cell">N/A.</td>
+          </tr>
+        </tbody>
+        <tbody class="nhsuk-table__body">
+          
+          <tr role="row" class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">Certificate fulfilment</td>
+            <td class="nhsuk-table__cell "><a href="/updated-full-journey/v2/fulfilment">How can we send your prepayment certificate details?</a></td>
+            <td class="nhsuk-table__cell">N/A.</td>
+          </tr>
+        </tbody>
+        <tbody class="nhsuk-table__body">
+          
+          <tr role="row" class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">If selected email - Input email address</td>
+            <td class="nhsuk-table__cell "><a href="/updated-full-journey/v2/email">What is your email address?</a></td>
+            <td class="nhsuk-table__cell">N/A.</td>
+          </tr>
+        </tbody>
+        
+      </table>
+
+
+
+      <h3>Check your answers pages </h3>
+      <table class="nhsuk-table">
+        <thead role="rowgroup" class="nhsuk-table__head">
+          <tr role="row">
+            <th role="columnheader" class="" scope="col">
+              Description
+            </th>
+            <th role="columnheader" class="" scope="col">
+              Prototype Link
+            </th>
+            <th role="columnheader" class="" scope="col">
+              Jira Story
+            </th>
+          </tr>
+        </thead>
+        <tbody class="nhsuk-table__body">
+          <tr role="row" class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">Check your answers - if selected 'email' and Direct Debit payment</td>
+            <td class="nhsuk-table__cell "><a href="/updated-full-journey/v2/check-details-email-dd">Check your answers and PPC details</a></td>
+            <td class="nhsuk-table__cell">N/A.</td>
+          </tr>
+          
+        </tbody>
+        <tbody class="nhsuk-table__body">
+          <tr role="row" class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">Check your answers - if selected 'email' and a single payment for 12 months</td>
+            <td class="nhsuk-table__cell "><a href="/updated-full-journey/v2/check-details-email-12-months">Check your answers and PPC details</a></td>
+            <td class="nhsuk-table__cell">N/A.</td>
+          </tr>
+
+        </tbody>
+        <tbody class="nhsuk-table__body">
+          <tr role="row" class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">Check your answers - if selected 'email' and a single payment for 3 months</td>
+            <td class="nhsuk-table__cell "><a href="/updated-full-journey/v2/check-details-email-3-months">Check your answers and PPC details</a></td>
+            <td class="nhsuk-table__cell">N/A.</td>
+          </tr>
+
+          <tbody class="nhsuk-table__body">
+            <tr role="row" class="nhsuk-table__row">
+              <td class="nhsuk-table__cell">Check your answers - if selected 'print' and Direct Debit payment</td>
+              <td class="nhsuk-table__cell "><a href="/updated-full-journey/v2/check-details-print-dd">Check your answers and PPC details</a></td>
+              <td class="nhsuk-table__cell">N/A.</td>
+            </tr>
+            
+          </tbody>
+          <tbody class="nhsuk-table__body">
+            <tr role="row" class="nhsuk-table__row">
+              <td class="nhsuk-table__cell">Check your answers - if selected 'print' and a single payment for 12 months</td>
+              <td class="nhsuk-table__cell "><a href="/updated-full-journey/v2/check-details-print-12-months">Check your answers and PPC details</a></td>
+              <td class="nhsuk-table__cell">N/A.</td>
+            </tr>
+  
+          </tbody>
+          <tbody class="nhsuk-table__body">
+            <tr role="row" class="nhsuk-table__row">
+              <td class="nhsuk-table__cell">Check your answers - if selected 'print' and a single payment for 3 months</td>
+              <td class="nhsuk-table__cell "><a href="/updated-full-journey/v2/check-details-print-3-months">Check your answers and PPC details</a></td>
+              <td class="nhsuk-table__cell">N/A.</td>
+            </tr>
+          
+        </tbody>
+      </table>
+
+
+
+
+
+      <h3>Payment Pages </h3>  
+      <table class="nhsuk-table">
+        <thead role="rowgroup" class="nhsuk-table__head">
+          <tr role="row">
+            <th role="columnheader" class="" scope="col">
+              Description
+            </th>
+            <th role="columnheader" class="" scope="col">
+              Prototype Link
+            </th>
+            <th role="columnheader" class="" scope="col">
+              Jira Story
+            </th>
+          </tr>
+        </thead>
+        <tbody class="nhsuk-table__body">
+          
+          <tr role="row" class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">Direct Debit - enter card details</td>
+            <td class="nhsuk-table__cell "><a href="/updated-full-journey/v2/direct-debit">Enter bank details - Direct Debit</a></td>
+            <td class="nhsuk-table__cell">N/A.</td>
+          </tr>
+          
+        </tbody>
+
+      <tbody class="nhsuk-table__body">
+        <tr role="row" class="nhsuk-table__row">
+          <td class="nhsuk-table__cell">Direct Debit - confirm card details</td>
+          <td class="nhsuk-table__cell "><a href="/updated-full-journey/v2/confirm-direct-debit">Confirm bank details and Direct Debit</a></td>
+          <td class="nhsuk-table__cell">N/A.</td>
+        </tr>
+        
+      </tbody>
+
+      <tbody class="nhsuk-table__body">
+        <tr role="row" class="nhsuk-table__row">
+          <td class="nhsuk-table__cell">Direct Debit - confirm and submit to Direct Debit T&Cs</td>
+          <td class="nhsuk-table__cell "><a href="/updated-full-journey/v2/submit-direct-debit">Confirm and submit Direct Debit</a></td>
+          <td class="nhsuk-table__cell">N/A.</td>
+        </tr>
+        
+      </tbody>
+
+      <tbody class="nhsuk-table__body">
+        <tr role="row" class="nhsuk-table__row">
+          <td class="nhsuk-table__cell">12 months single payment - GOV Pay - Enter card details</td>
+          <td class="nhsuk-table__cell "><a href="/updated-full-journey/v2/gov-pay-12-months">Enter card details - GOV Pay</a></td>
+          <td class="nhsuk-table__cell">N/A.</td>
+        </tr>
+        
+      </tbody>
+      <tr role="row" class="nhsuk-table__row">
+        <td class="nhsuk-table__cell">12 months single payment - GOV Pay - Confirm card details and payment</td>
+        <td class="nhsuk-table__cell "><a href="/updated-full-journey/v2/gov-payment-confirm-12-months">Confirm your payment - GOV Pay</a></td>
+        <td class="nhsuk-table__cell">N/A.</td>
+      </tr>
+      
+    </tbody>
+
+    <tbody class="nhsuk-table__body">       
+      <tr role="row" class="nhsuk-table__row">
+        <td class="nhsuk-table__cell">3 months single payment - GOV Pay - Enter card details</td>
+        <td class="nhsuk-table__cell "><a href="/updated-full-journey/v2/gov-pay-3-months">Enter card details - GOV Pay</a></td>
+        <td class="nhsuk-table__cell">N/A.</td>
+      </tr>
+      
+    </tbody>
+    <tr role="row" class="nhsuk-table__row">
+      <td class="nhsuk-table__cell">3 months single payment - GOV Pay - Confirm card details and payment</td>
+      <td class="nhsuk-table__cell "><a href="/updated-full-journey/v2/gov-payment-confirm-3-months">Confirm your payment - GOV Pay</a></td>
+      <td class="nhsuk-table__cell">N/A.</td>
+    </tr>
+    
+  </tbody>
+
+        
+          
+        </tbody>
+      </table>
+
+
+
+
+
+
+      
+      <h3>Kickout pages </h3>
+      <table class="nhsuk-table">
+        <thead role="rowgroup" class="nhsuk-table__head">
+          <tr role="row">
+            <th role="columnheader" class="" scope="col">
+              Description
+            </th>
+            <th role="columnheader" class="" scope="col">
+              Prototype Link
+            </th>
+            <th role="columnheader" class="" scope="col">
+              Jira Story
+            </th>
+          </tr>
+        </thead>
+        <tbody class="nhsuk-table__body">
+          <tr role="row" class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">Already exempt based on your DOB (>60 or >16)</td>
+            <td class="nhsuk-table__cell "><a href="/updated-full-journey/v2/kickout/age-entitlement">You are entitled to free prescriptions</a></td>
+            <td class="nhsuk-table__cell">N/A.</td>
+          </tr>
+          
+        </tbody>
+        <tbody class="nhsuk-table__body">
+          <tr role="row" class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">Entitled soon (aged 59)</td>
+            <td class="nhsuk-table__cell "><a href="/updated-full-journey/v2/kickout/free-prescriptions-soon">You can get free prescriptions soon</a></td>
+            <td class="nhsuk-table__cell">N/A.</td>
+          </tr>
+          
+        </tbody>
+        <tbody class="nhsuk-table__body">
+          <tr role="row" class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">Existing exemption</td>
+            <td class="nhsuk-table__cell "><a href="/updated-full-journey/v2/kickout/existing-exemption">Contact us - Our records show you may already be receiving help with NHS health costs.</a></td>
+            <td class="nhsuk-table__cell">N/A.</td>
+          </tr>
+          
+        </tbody>
+        <tbody class="nhsuk-table__body">
+          <tr role="row" class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">Payment cancelled</td>
+            <td class="nhsuk-table__cell "><a href="/updated-full-journey/v2/kickout/payment-cancelled">Your payment has been cancelled</a></td>
+            <td class="nhsuk-table__cell">N/A.</td>
+          </tr>
+          
+        </tbody>
+      </table>
+      
+      
+      
+      <h3>Error messages </h3>
+      <table class="nhsuk-table">
+        <thead role="rowgroup" class="nhsuk-table__head">
+          <tr role="row">
+            <th role="columnheader" class="" scope="col">
+              Description
+            </th>
+            <th role="columnheader" class="" scope="col">
+              Prototype Link
+            </th>
+            <th role="columnheader" class="" scope="col">
+              Jira Story
+            </th>
+          </tr>
+        </thead>
+        <tbody class="nhsuk-table__body">
+          <tr role="row" class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">Date of birth - Day input required</td>
+            <td class="nhsuk-table__cell "><a href="/updated-full-journey/v2/errors/dob-day-error">Date of birth must include a day</a></td>
+            <td class="nhsuk-table__cell">N/A.</td>
+          </tr>
+
+        </tbody>
+        
+        <tbody class="nhsuk-table__body">
+          <tr role="row" class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">Date of birth - Day and month input required</td>
+            <td class="nhsuk-table__cell "><a href="/updated-full-journey/v2/errors/dob-day-month-error">Date of birth must include a day and month</a></td>
+            <td class="nhsuk-table__cell">N/A.</td>
+          </tr>
+
+        </tbody>
+
+        <tbody class="nhsuk-table__body">
+          <tr role="row" class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">Date of birth - Day and year input required</td>
+            <td class="nhsuk-table__cell "><a href="/updated-full-journey/v2/errors/dob-day-year-error">Date of birth must include a day and year</a></td>
+            <td class="nhsuk-table__cell">N/A.</td>
+          </tr>
+
+        </tbody>
+
+        <tbody class="nhsuk-table__body">
+          <tr role="row" class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">Date of birth - Month input required</td>
+            <td class="nhsuk-table__cell "><a href="/updated-full-journey/v2/errors/dob-month-error">Date of birth must include a month</a></td>
+            <td class="nhsuk-table__cell">N/A.</td>
+          </tr>
+
+        </tbody>
+
+        <tbody class="nhsuk-table__body">
+          <tr role="row" class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">Date of birth - Month and year input required</td>
+            <td class="nhsuk-table__cell "><a href="/updated-full-journey/v2/errors/dob-month-year-error">Date of birth must include a month and year</a></td>
+            <td class="nhsuk-table__cell">N/A.</td>
+          </tr>
+
+        </tbody>
+
+        <tbody class="nhsuk-table__body">
+          <tr role="row" class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">Date of birth - All fields input required</td>
+            <td class="nhsuk-table__cell "><a href="/updated-full-journey/v2/errors/dob-no-input-error">Full date of birth is required</a></td>
+            <td class="nhsuk-table__cell">N/A.</td>
+          </tr>
+
+        </tbody>
+
+        <tbody class="nhsuk-table__body">
+          <tr role="row" class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">Date of birth - Date of birth is not in the past</td>
+            <td class="nhsuk-table__cell "><a href="/updated-full-journey/v2/errors/dob-past-error">Date of birth must be in the past</a></td>
+            <td class="nhsuk-table__cell">N/A.</td>
+          </tr>
+
+        </tbody>
+
+        <tbody class="nhsuk-table__body">
+          <tr role="row" class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">Date of birth - Invalid dates have been used</td>
+            <td class="nhsuk-table__cell "><a href="/updated-full-journey/v2/errors/dob-valid-error">Enter a valid date of birth</a></td>
+            <td class="nhsuk-table__cell">N/A.</td>
+          </tr>
+
+        </tbody>
+
+        <tbody class="nhsuk-table__body">
+          <tr role="row" class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">Date of birth - Year input required</td>
+            <td class="nhsuk-table__cell "><a href="/updated-full-journey/v2/errors/dob-year-error">Date of birth must include a year</a></td>
+            <td class="nhsuk-table__cell">N/A.</td>
+          </tr>
+
+        </tbody>
+
+        <tbody class="nhsuk-table__body">
+          <tr role="row" class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">Name - First name contains too many characters</td>
+            <td class="nhsuk-table__cell "><a href="/updated-full-journey/v2/errors/first-name-length-error">First name must be 50 characters or less</a></td>
+            <td class="nhsuk-table__cell">N/A.</td>
+          </tr>
+
+        </tbody>
+
+        <tbody class="nhsuk-table__body">
+          <tr role="row" class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">Name - First name string error</td>
+            <td class="nhsuk-table__cell "><a href="/updated-full-journey/v2/errors/first-name-string-error">First name must only include letters a to z, apostrophes ('), hyphens (-) and spaces</a></td>
+            <td class="nhsuk-table__cell">N/A.</td>
+          </tr>
+
+        </tbody>
+
+        <tbody class="nhsuk-table__body">
+          <tr role="row" class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">Name - Last name contains too many characters</td>
+            <td class="nhsuk-table__cell "><a href="/updated-full-journey/v2/errors/last-name-length-error">Last name must be 50 characters or less</a></td>
+            <td class="nhsuk-table__cell">N/A.</td>
+          </tr>
+
+        </tbody>
+
+        <tbody class="nhsuk-table__body">
+          <tr role="row" class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">Name - Last name string error</td>
+            <td class="nhsuk-table__cell "><a href="/updated-full-journey/v2/errors/last-name-string-error">Last name must only include letters a to z, apostrophes ('), hyphens (-) and spaces</a></td>
+            <td class="nhsuk-table__cell">N/A.</td>
+          </tr>
+
+        </tbody>
+
+        <tbody class="nhsuk-table__body">
+          <tr role="row" class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">Name - First and last name are required</td>
+            <td class="nhsuk-table__cell "><a href="/updated-full-journey/v2/errors/name-error">First and last name are required</a></td>
+            <td class="nhsuk-table__cell">N/A.</td>
+          </tr>
+
+        </tbody>
+
+        <tbody class="nhsuk-table__body">
+          <tr role="row" class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">Name - First and last name contain too many characters</td>
+            <td class="nhsuk-table__cell "><a href="/updated-full-journey/v2/errors/name-length-error">First and last name must be 50 characters or less</a></td>
+            <td class="nhsuk-table__cell">N/A.</td>
+          </tr>
+
+        </tbody>
+
+        <tbody class="nhsuk-table__body">
+          <tr role="row" class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">Name - First and last name string error</td>
+            <td class="nhsuk-table__cell "><a href="/updated-full-journey/v2/errors/name-string-error">First and last name must only include letters a to z, apostrophes ('), hyphens (-) and spaces</a></td>
+            <td class="nhsuk-table__cell">N/A.</td>
+          </tr>
+
+        </tbody>
+
+        <tbody class="nhsuk-table__body">
+          <tr role="row" class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">Find address - Invalid postcode has been entered</td>
+            <td class="nhsuk-table__cell "><a href="/updated-full-journey/v2/errors/postcode-lookup-error">Enter a valid postcode</a></td>
+            <td class="nhsuk-table__cell">N/A.</td>
+          </tr>
+
+        </tbody>
+
+        <tbody class="nhsuk-table__body">
+          <tr role="row" class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">Find address - Invalid postcode has been entered</td>
+            <td class="nhsuk-table__cell "><a href="/updated-full-journey/v2/errors/postcode-lookup-error">Enter a valid postcode</a></td>
+            <td class="nhsuk-table__cell">N/A.</td>
+          </tr>
+
+        </tbody>
+
+        <tbody class="nhsuk-table__body">
+          <tr role="row" class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">Find address - Postcode has not been entered, nor has the user opted to enter their address manually</td>
+            <td class="nhsuk-table__cell "><a href="/updated-full-journey/v2/errors/postcode-required-error">A postcode is required, or you must enter your address manually</a></td>
+            <td class="nhsuk-table__cell">N/A.</td>
+          </tr>
+
+        </tbody>
+
+        <tbody class="nhsuk-table__body">
+          <tr role="row" class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">Find address - Address not found</td>
+            <td class="nhsuk-table__cell "><a href="/updated-full-journey/v2/errors/address-not-found-error">No address was found from the postcode provided</a></td>
+            <td class="nhsuk-table__cell">N/A.</td>
+          </tr>
+
+        </tbody>
+
+        <tbody class="nhsuk-table__body">
+          <tr role="row" class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">Manual address - Building and street line 1 is required</td>
+            <td class="nhsuk-table__cell "><a href="/updated-full-journey/v2/errors/address-line-1-error">Building and street line 1 is required</a></td>
+            <td class="nhsuk-table__cell">N/A.</td>
+          </tr>
+
+        </tbody>
+
+        <tbody class="nhsuk-table__body">
+          <tr role="row" class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">Manual address - Address line 1 format error</td>
+            <td class="nhsuk-table__cell "><a href="/updated-full-journey/v2/errors/address-line-1-format-error">Address line 1 must only include numbers, letters a to z, hyphens, spaces, apostrophes and full stops.
+              or Address line 1 must be 50 characters or less</a></td>
+            <td class="nhsuk-table__cell">N/A.</td>
+          </tr>
+
+        </tbody>
+
+        <tbody class="nhsuk-table__body">
+          <tr role="row" class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">Manual address - Building and street line 2 is required</td>
+            <td class="nhsuk-table__cell "><a href="/updated-full-journey/v2/errors/address-line-2-error">Building and street line 2 is required</a></td>
+            <td class="nhsuk-table__cell">N/A.</td>
+          </tr>
+
+        </tbody>
+
+        <tbody class="nhsuk-table__body">
+          <tr role="row" class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">Manual address - Address line 2 format error</td>
+            <td class="nhsuk-table__cell "><a href="/updated-full-journey/v2/errors/address-line-2-format-error">Address line 2 must only include numbers, letters a to z, hyphens, spaces, apostrophes and full stops.
+              or Address line 1 must be 50 characters or less</a></td>
+            <td class="nhsuk-table__cell">N/A.</td>
+          </tr>
+
+        </tbody>
+
+        <tbody class="nhsuk-table__body">
+          <tr role="row" class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">Manual address - All address lines format errors</td>
+            <td class="nhsuk-table__cell "><a href="/updated-full-journey/v2/errors/all-address-lines-format-error">All address lines format errors</a></td>
+            <td class="nhsuk-table__cell">N/A.</td>
+          </tr>
+
+        </tbody>
+
+        <tbody class="nhsuk-table__body">
+          <tr role="row" class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">Manual address - Town or city is required</td>
+            <td class="nhsuk-table__cell "><a href="/updated-full-journey/v2/errors/city-error">Town or city is required</a></td>
+            <td class="nhsuk-table__cell">N/A.</td>
+          </tr>
+
+        </tbody>
+
+        <tbody class="nhsuk-table__body">
+          <tr role="row" class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">Manual address - Postcode is required</td>
+            <td class="nhsuk-table__cell "><a href="/updated-full-journey/v2/errors/missing-postcode-error">Postcode is required</a></td>
+            <td class="nhsuk-table__cell">N/A.</td>
+          </tr>
+
+        </tbody>
+
+        <tbody class="nhsuk-table__body">
+          <tr role="row" class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">Manual address - Valid postcode is required</td>
+            <td class="nhsuk-table__cell "><a href="/updated-full-journey/v2/errors/valid-postcode-error">Valid postcode is required</a></td>
+            <td class="nhsuk-table__cell">N/A.</td>
+          </tr>
+
+        </tbody>
+
+        <tbody class="nhsuk-table__body">
+          <tr role="row" class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">Select address radios - User has not selected an address from list provided</td>
+            <td class="nhsuk-table__cell "><a href="/updated-full-journey/v2/errors/select-address-radios-error">Select your address</a></td>
+            <td class="nhsuk-table__cell">N/A.</td>
+          </tr>
+
+        </tbody>
+
+        <tbody class="nhsuk-table__body">
+          <tr role="row" class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">NHS number - User has entered an invalid NHS number</td>
+            <td class="nhsuk-table__cell "><a href="/updated-full-journey/v2/errors/nhs-number-format-error">Enter a valid NHS number that is 10 numbers, like 1234567890</a></td>
+            <td class="nhsuk-table__cell">N/A.</td>
+          </tr>
+
+        </tbody>
+
+        <tbody class="nhsuk-table__body">
+          <tr role="row" class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">NHS number - User has not entered their NHS number, despite clicking 'yes' they know it</td>
+            <td class="nhsuk-table__cell "><a href="/updated-full-journey/v2/errors/nhs-number-no-input-error">NHS number is required</a></td>
+            <td class="nhsuk-table__cell">N/A.</td>
+          </tr>
+
+        </tbody>
+
+        <tbody class="nhsuk-table__body">
+          <tr role="row" class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">NHS number - User has not indicated whether they know their NHS number or not</td>
+            <td class="nhsuk-table__cell "><a href="/updated-full-journey/v2/errors/nhs-number-selection-error">You have not made a selection from the below options</a></td>
+            <td class="nhsuk-table__cell">N/A.</td>
+          </tr>
+
+        </tbody>
+
+        <tbody class="nhsuk-table__body">
+          <tr role="row" class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">Duration - User has not selected how long they'd like their PPC to last</td>
+            <td class="nhsuk-table__cell "><a href="/updated-full-journey/v2/errors/duration-selection-error">Prepayment length is required</a></td>
+            <td class="nhsuk-table__cell">N/A.</td>
+          </tr>
+
+        </tbody>
+
+        <tbody class="nhsuk-table__body">
+          <tr role="row" class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">Start date - Start date day and month required</td>
+            <td class="nhsuk-table__cell "><a href="/updated-full-journey/v2/errors/start-date-day-month-error">Your start date must include a day and month</a></td>
+            <td class="nhsuk-table__cell">N/A.</td>
+          </tr>
+
+        </tbody>
+
+        <tbody class="nhsuk-table__body">
+          <tr role="row" class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">Start date - User has opted to cover prescriptions today or later but has entered a start date too far in the future</td>
+            <td class="nhsuk-table__cell "><a href="/updated-full-journey/v2/errors/start-date-future-error">Enter a start date between 27 July 2023 and 27 August 2023</a></td>
+            <td class="nhsuk-table__cell">N/A.</td>
+          </tr>
+
+        </tbody>
+
+        <tbody class="nhsuk-table__body">
+          <tr role="row" class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">Start date - User has opted to cover prescriptions today or later but has entered an invalid date</td>
+            <td class="nhsuk-table__cell "><a href="/updated-full-journey/v2/errors/start-date-invalid-error">Enter a valid start date</a></td>
+            <td class="nhsuk-table__cell">N/A.</td>
+          </tr>
+
+        </tbody>
+
+        <tbody class="nhsuk-table__body">
+          <tr role="row" class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">Start date - User has not selected a start date for their certificate</td>
+            <td class="nhsuk-table__cell "><a href="/updated-full-journey/v2/errors/start-date-selection-error">Select an option for your start date</a></td>
+            <td class="nhsuk-table__cell">N/A.</td>
+          </tr>
+
+        </tbody>
+
+        <tbody class="nhsuk-table__body">
+          <tr role="row" class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">Start date - User has opted to backdate their certificate but has entered an invalid date</td>
+            <td class="nhsuk-table__cell "><a href="/updated-full-journey/v2/errors/invalid-backdate-error">Enter a valid start date between 27 June 2023 and 27 July 2023</a></td>
+            <td class="nhsuk-table__cell">N/A.</td>
+          </tr>
+
+        </tbody>
+
+        <tbody class="nhsuk-table__body">
+          <tr role="row" class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">Fulfilment - User has not selected how they'd like to receive their PPC details</td>
+            <td class="nhsuk-table__cell "><a href="/updated-full-journey/v2/errors/fulfilment-error">You must select how you would like to receive your PPC details</a></td>
+            <td class="nhsuk-table__cell">N/A.</td>
+          </tr>
+
+        </tbody>
+
+        <tbody class="nhsuk-table__body">
+          <tr role="row" class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">Email - User has entered an incorrect email i.e., just numbers or no '@', etc.</td>
+            <td class="nhsuk-table__cell "><a href="/updated-full-journey/v2/errors/email-incorrect-error">Email is incorrect</a></td>
+            <td class="nhsuk-table__cell">N/A.</td>
+          </tr>
+
+        </tbody>
+
+        <tbody class="nhsuk-table__body">
+          <tr role="row" class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">Email - User has not entered an email address when they've opted to receive their PPC by email</td>
+            <td class="nhsuk-table__cell "><a href="/updated-full-journey/v2/errors/email-required-error">Email is required</a></td>
+            <td class="nhsuk-table__cell">N/A.</td>
+          </tr>
+
+        </tbody>
+
+        <tbody class="nhsuk-table__body">
+          <tr role="row" class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">Direct Debit - Account number is required</td>
+            <td class="nhsuk-table__cell "><a href="/updated-full-journey/v2/errors/direct-debit-account-number-error">Account number is required</a></td>
+            <td class="nhsuk-table__cell">N/A.</td>
+          </tr>
+
+        </tbody>
+
+        <tbody class="nhsuk-table__body">
+          <tr role="row" class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">Direct Debit - All bank details are required</td>
+            <td class="nhsuk-table__cell "><a href="/updated-full-journey/v2/errors/direct-debit-account-number-error">The account name, sort-code and account number are all required</a></td>
+            <td class="nhsuk-table__cell">N/A.</td>
+          </tr>
+
+        </tbody>
+
+        <tbody class="nhsuk-table__body">
+          <tr role="row" class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">Direct Debit - The account number is incorrect</td>
+            <td class="nhsuk-table__cell "><a href="/updated-full-journey/v2/errors/direct-debit-incorrect-account-number-error">Account number is incorrect</a></td>
+            <td class="nhsuk-table__cell">N/A.</td>
+          </tr>
+
+        </tbody>
+
+        <tbody class="nhsuk-table__body">
+          <tr role="row" class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">Direct Debit - The sort-code is incorrect</td>
+            <td class="nhsuk-table__cell "><a href="/updated-full-journey/v2/errors/direct-debit-incorrect-sort-code-error">Sort-code is incorrect</a></td>
+            <td class="nhsuk-table__cell">N/A.</td>
+          </tr>
+
+        </tbody>
+
+        <tbody class="nhsuk-table__body">
+          <tr role="row" class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">Direct Debit - Account name string error</td>
+            <td class="nhsuk-table__cell "><a href="/updated-full-journey/v2/errors/direct-debit-name-string-error">Account name must only include letters a to z, apostrophes ('), hyphens (-) and spaces</a></td>
+            <td class="nhsuk-table__cell">N/A.</td>
+          </tr>
+
+        </tbody>
+
+        <tbody class="nhsuk-table__body">
+          <tr role="row" class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">Direct Debit - The sort-code is required</td>
+            <td class="nhsuk-table__cell "><a href="/updated-full-journey/v2/errors/direct-debit-sort-code-error">Sort-code is required</a></td>
+            <td class="nhsuk-table__cell">N/A.</td>
+          </tr>
+
+        </tbody>
+
+        <tbody class="nhsuk-table__body">
+          <tr role="row" class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">GOV Pay - Payment cancelled</td>
+            <td class="nhsuk-table__cell "><a href="/updated-full-journey/v2/errors/gov-pay-payment-cancelled">Payment cancelled</a></td>
+            <td class="nhsuk-table__cell">N/A.</td>
+          </tr>
+
+        </tbody>
+
+        <tbody class="nhsuk-table__body">
+          <tr role="row" class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">GOV Pay - Payment declined</td>
+            <td class="nhsuk-table__cell "><a href="/updated-full-journey/v2/errors/gov-pay-payment-declined">Payment declined</a></td>
+            <td class="nhsuk-table__cell">N/A.</td>
+          </tr>
+
+        </tbody>
+
+        <tbody class="nhsuk-table__body">
+          <tr role="row" class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">NHSBSA screen - payment declined</td>
+            <td class="nhsuk-table__cell "><a href="/updated-full-journey/v2/errors/payment-declined">Payment declined</a></td>
+            <td class="nhsuk-table__cell">N/A.</td>
+          </tr>
+
+        </tbody>
+
+        <tbody class="nhsuk-table__body">
+          <tr role="row" class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">Cookies - choose cookies</td>
+            <td class="nhsuk-table__cell "><a href="/updated-full-journey/v2/errors/choose-cookies-error">Select your cookies setting decision</a></td>
+            <td class="nhsuk-table__cell">N/A.</td>
+          </tr>
+
+        </tbody>
+      </table>
+
+
+
+
+
+     
+      <table class="nhsuk-table">
+        <h3>Service errors</h3>
+        <thead role="rowgroup" class="nhsuk-table__head">
+          <tr role="row">
+            <th role="columnheader" class="" scope="col">
+              Description
+            </th>
+            <th role="columnheader" class="" scope="col">
+              Prototype Link
+            </th>
+            <th role="columnheader" class="" scope="col">
+              Jira Story
+            </th>
+          </tr>
+        </thead>
+        <tbody class="nhsuk-table__body">
+          <tr role="row" class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">Page not found</td>
+            <td class="nhsuk-table__cell "><a href="/updated-full-journey/v2/service-errors/page-not-found">Page not found</a></td>
+            <td class="nhsuk-table__cell">N/A.</td>
+          </tr>
+          <tr role="row" class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">We could not process your details</td>
+            <td class="nhsuk-table__cell "><a href="/updated-full-journey/v2/service-errors/could-not-process-details">We could not process your details</a></td>
+            <td class="nhsuk-table__cell">N/A.</td>
+          </tr>
+          <tr role="row" class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">Page forbidden</td>
+            <td class="nhsuk-table__cell "><a href="/updated-full-journey/v2/service-errors/forbidden">You are not authorised to view this page</a></td>
+            <td class="nhsuk-table__cell">N/A.</td>
+          </tr>
+          <tr role="row" class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">Problem with the service</td>
+            <td class="nhsuk-table__cell "><a href="/updated-full-journey/v2/service-errors/problem-with-service">Sorry, there has been a problem with the service</a></td>
+            <td class="nhsuk-table__cell">N/A.</td>
+          </tr>
+          <tr role="row" class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">Payment provider error</td>
+            <td class="nhsuk-table__cell "><a href="/updated-full-journey/v2/service-errors/payment-provider-error">Payment provider temporarily unavailable</a></td>
+            <td class="nhsuk-table__cell">N/A.</td>
+          </tr>
+        </tbody>
+      </table>
+
+
+
+
+      <h3>End pages</h3>
+      <table class="nhsuk-table">
+        <thead role="rowgroup" class="nhsuk-table__head">
+          <tr role="row">
+            <th role="columnheader" class="" scope="col">
+              Description
+            </th>
+            <th role="columnheader" class="" scope="col">
+              Prototype Link
+            </th>
+            <th role="columnheader" class="" scope="col">
+              Jira Story
+            </th>
+          </tr>
+        </thead>
+       
+        <tbody class="nhsuk-table__body">
+          <tr role="row" class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">Confirmation - Email - Direct Debit <strong>(without Organ Donation information)</strong></td>
+            <td class="nhsuk-table__cell "><a href="/updated-full-journey/v2/confirmation-dd-email">Done - We have set up a Direct Debit payment for 12 months of prescriptions. </a></td>
+            <td class="nhsuk-table__cell">N/A.</td>
+          </tr>
+        </tbody>
+
+        <tbody class="nhsuk-table__body">
+          <tr role="row" class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">Confirmation - Email - 12 months <strong>(without Organ Donation information)</strong></td>
+            <td class="nhsuk-table__cell "><a href="/updated-full-journey/v2/confirmation-12-months-email">Done - You have prepaid for 12 months of prescriptions.</a></td>
+            <td class="nhsuk-table__cell">N/A.</td>
+          </tr>
+        </tbody>
+
+        <tbody class="nhsuk-table__body">
+          <tr role="row" class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">Confirmation - Email - 3 months <strong>(without Organ Donation information)</strong></td>
+            <td class="nhsuk-table__cell "><a href="/updated-full-journey/v2/confirmation-3-months-email">Done - You have prepaid for 12 months of prescriptions.</a></td>
+            <td class="nhsuk-table__cell">N/A.</td>
+          </tr>
+        </tbody>
+
+        <tbody class="nhsuk-table__body">
+          <tr role="row" class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">Confirmation - Print - Direct Debit <strong>(without Organ Donation information)</strong></td>
+            <td class="nhsuk-table__cell "><a href="/updated-full-journey/v2/confirmation-dd-print">Done - We have set up a Direct Debit payment for 12 months of prescriptions. </a></td>
+            <td class="nhsuk-table__cell">N/A.</td>
+          </tr>
+        </tbody>
+
+        <tbody class="nhsuk-table__body">
+          <tr role="row" class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">Confirmation - Print - 12 months <strong>(without Organ Donation information)</strong></td>
+            <td class="nhsuk-table__cell "><a href="/updated-full-journey/v2/confirmation-12-months-print">Done - You have prepaid for 12 months of prescriptions.</a></td>
+            <td class="nhsuk-table__cell">N/A.</td>
+          </tr>
+        </tbody>
+
+        <tbody class="nhsuk-table__body">
+          <tr role="row" class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">Confirmation - Print - 3 months <strong>(without Organ Donation information)</strong></td>
+            <td class="nhsuk-table__cell "><a href="/updated-full-journey/v2/confirmation-3-months-print">Done - You have prepaid for 12 months of prescriptions.</a></td>
+            <td class="nhsuk-table__cell">N/A.</td>
+          </tr>
+        </tbody>
+        
+      </table>
+
+
+
+      <h3>Cookies</h3>
+      <table class="nhsuk-table">
+        <thead role="rowgroup" class="nhsuk-table__head">
+          <tr role="row">
+            <th role="columnheader" class="" scope="col">
+              Description
+            </th>
+            <th role="columnheader" class="" scope="col">
+              Prototype Link
+            </th>
+            <th role="columnheader" class="" scope="col">
+              Jira Story
+            </th>
+          </tr>
+        </thead>
+        <tbody class="nhsuk-table__body">
+          <tr role="row" class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">Start page with cookies</td>
+            <td class="nhsuk-table__cell "><a href="/updated-full-journey/v2/cookies/start-cookies">Cookies banner on start page</a></td>
+            <td class="nhsuk-table__cell">N/A.</td>
+          </tr>
+        </tbody>
+
+        <tbody class="nhsuk-table__body">
+          <tr role="row" class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">Choose cookies</td>
+            <td class="nhsuk-table__cell "><a href="/updated-full-journey/v2/cookies/choose-cookies">Choose cookies</a></td>
+            <td class="nhsuk-table__cell">N/A.</td>
+          </tr>
+        </tbody>
+
+        <tbody class="nhsuk-table__body">
+          <tr role="row" class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">Cookie settings have been saved</td>
+            <td class="nhsuk-table__cell "><a href="/updated-full-journey/v2/cookies/cookies-saved">Your cookie settings have been saved</a></td>
+            <td class="nhsuk-table__cell">N/A.</td>
+          </tr>
+        </tbody>
+
+        <tbody class="nhsuk-table__body">
+          <tr role="row" class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">Cookies on the NHSBSA website</td>
+            <td class="nhsuk-table__cell "><a href="/updated-full-journey/v2/cookies/nhsbsa-cookies">Cookies on the NHSBSA website</a></td>
+            <td class="nhsuk-table__cell">N/A.</td>
+          </tr>
+        </tbody>
+        
+      </table>
+
+     
+
+        </div>
+      </details>
+     
+       
+
+      
+
+        </div>
+      </details>
+
+    
+
+    </div>  
+  </div>
+{% endblock %}

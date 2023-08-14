@@ -5,7 +5,7 @@ const router = express.Router();
 
 //Updated Full Journey
 
-//continue
+//where-you-collect
 router.post(/where-you-collect/, (req, res) => {
 
   const UserLocation= req.session.data["prescriptionCountryName"]
