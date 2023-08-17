@@ -1,5 +1,5 @@
 <!-- Extends the layout from /views/layout.html -->
-{% extends "template-kickout.html" %}
+{% extends 'layout.html' %}
 <!-- 
   In /views/layout.html you can:
     - edit the header and footer 
@@ -8,13 +8,12 @@
 
 <!-- Set the page title -->
 {% block pageTitle %}
-There is a problem with the service - PPC
+  You are entitled to free NHS prescriptions - PPC
 {% endblock %}
 
 <!-- For adding a breadcrumb -->
 <!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
 {% block beforeContent %}
-
 {% endblock %}
 
 <!-- For adding a back link -->
@@ -36,30 +35,28 @@ There is a problem with the service - PPC
 <!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
 {% block content %}
 
-  <div class="nhsuk-grid-row">
+<div class="nhsuk-grid-row">
 
-    <div class="nhsuk-grid-column-two-thirds">
+  <div class="nhsuk-grid-column-two-thirds">
 
-      <!-- Change the page heading -->
-      <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
-        <h1 class="nhsuk-fieldset__heading">
-          There is a problem with the service
-        </h1>
-      </legend>
-      <br>
+    <!-- Change the page heading -->
+    <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+      <h1 class="nhsuk-fieldset__heading">
+        Contact us
+      </h1>
+    </legend><br>
 
-      <!-- Add content here -->
-      <!-- Styles and components can be found at https://service-manual.nhs.uk/design-system -->
-      <p>
-        Try again later.<br><br>
-         When the service is available, you will have to start again.<br><br>
-        
-        
+    <!-- Add content here -->
+    <!-- Styles and components can be found at https://service-manual.nhs.uk/design-system -->
+    <p>Our records show you may already be receiving help with NHS health costs.</p>
+
+    <p>If you need help in completing this form, call us on 0300 330 1341. You could also use <a href="https://nhsbsa-live.powerappsportals.com/contact-us/">our contact form</a>.</p>
     
-      </p>
-
-      
-      <!-- End of content -->
-    </div>  
+    <p class="navigation"><a class="cancel" href="/updated-full-journey/v3/start">Cancel</a></p>
+  
   </div>
+</div>
+
+  </div>  
+</div>
 {% endblock %}

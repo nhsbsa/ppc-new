@@ -5,6 +5,7 @@ const router = express.Router();
 // versioned routes files
 router.use('/updated-full-journey/v1', require('./views/updated-full-journey/v1/_routes'))
 router.use('/updated-full-journey/v2', require('./views/updated-full-journey/v2/_routes'))
+router.use('/updated-full-journey/v3', require('./views/updated-full-journey/v3/_routes'))
 
 
 //Global variables
@@ -410,7 +411,7 @@ router.post(/contact-email/, (req, res) => {
     res.redirect('check-details-email-3-months')
 
   } else {
-    res.redirect('/errors/email-required-error');
+    res.redirect('email');
   }
 })
 

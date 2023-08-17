@@ -1,0 +1,42 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+  You can get free prescriptions soon - PPC
+  {% endblock %}
+
+  {% block content %}       
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+       
+        <fieldset class="nhsuk-fieldset">
+            <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+              <h1 class="nhsuk-fieldset__heading">
+                You can get free prescriptions soon
+              </h1>
+            </legend>
+          </fieldset>
+      
+    <p>The information you gave indicates you are 59 years old.</p>
+
+    <p>You will be eligible for free prescriptions from the age of 60.</p>
+
+    <p>Press continue to proceed or cancel to stop.</p>
+
+        
+
+
+
+        <form action="/updated-full-journey/v1/name">
+          <button class="nhsuk-button" type="submit">
+            Continue
+          </button>
+          </form>
+
+      <p><a href="/updated-full-journey/v3/start">Cancel</a></p>
+
+    </div>
+  </div>
+</main>
+</main>
+
+{% endblock %}

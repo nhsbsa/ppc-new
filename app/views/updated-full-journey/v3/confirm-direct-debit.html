@@ -1,0 +1,170 @@
+{% extends 'layout.html' %}
+{% block pageTitle %}
+  Check your answers Direct Debit - PPC
+{% endblock %}
+{% block beforeContent %}
+{% endblock %}
+{% block content %}
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-two-thirds">
+    <h1>
+      Enter your bank details
+    </h1>
+    <div class="nhsuk-grid-row">
+      <div class="nhsuk-u-reading-width">
+        <h2 class="nhsuk-heading-m nhsuk-u-margin-top-6 nhsuk-u-margin-bottom-2"> &nbsp; Your payments</h2>
+      </div>
+    </div>
+
+    
+    <dl class="nhsuk-summary-list">
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Number of payments
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          10
+        </dd>
+      </div>
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Payment amount
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          £11.16
+        </dd>
+      </div>
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          First payment
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          28 July 2023
+        </dd>
+      </div>
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Final payment (on or after)
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          28 April 2024
+        </dd>
+      </div>
+    </dl>
+
+
+    <h2 class="nhsuk-heading-m nhsuk-u-margin-top-6 nhsuk-u-margin-bottom-2">Your account details</h2>
+    <dl class="nhsuk-summary-list">
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+         Account holder’s name
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          <span>  J Doe</span>
+        </dd>
+        <dd class="nhsuk-summary-list__actions">
+          <a href="/updated-full-journey/v3/direct-debit">
+            Change<span class="nhsuk-u-visually-hidden"> account name</span>
+          </a>
+        </dd>
+      </div>
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Account number
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          <span>12345678</span>
+        </dd>
+        <dd class="nhsuk-summary-list__actions">
+          <a href="/updated-full-journey/v3/direct-debit">
+            Change<span class="nhsuk-u-visually-hidden"> Account number</span>
+          </a>
+        </dd>
+      </div>
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Sort code
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          52-12-50
+        </dd>
+        <dd class="nhsuk-summary-list__actions">
+          <a href="/updated-full-journey/v3/direct-debit">
+            Change<span class="nhsuk-u-visually-hidden"> Sort code</span>
+          </a>
+        </dd>
+      </div>
+    </dl>
+​
+    <div class="nhsuk-promo">
+      <img src="https://www.guhg.co.uk/wp-content/uploads/2018/11/direct-debit-website-992x561-e1542983967438-1140x720.png" width="150px"  alt="Picture of DD logo" style="display:block; margin-bottom: 10px;" />
+      <div class="payment-summary-small">
+        <p>We will send this Direct Debit instruction to: <br>
+          <b>Name of Your Bank</b>
+        </p>
+        <p>
+          Please pay the NHS Business Services Authority Direct Debits from the account detailed in this instruction subject to the safeguards assured by the Direct Debit Guarantee. I understand that this instruction may remain with the Prescription prepayment Issue Office of the NHS Business Services Authority, and if so, details will be passed electronically to my Bank/Building Society.
+        </p>
+        <p>
+          Originator:<br>
+          NHS Business Services Authority, PPC, Bridge House,<br>
+          152 Pilgrim Street, Newcastle upon Tyne, NE1 6SN
+        </p>
+        <p>
+          Service User Number (SUN): 242785E
+        </p>
+        <p>Telephone: 0191 232 5371</p>
+      </div>
+    </div>
+    <style>
+      .nhsuk-promo{
+      background:white;
+      padding:20px;
+      box-shadow: 0 4px 0 0 #D8DDE0;
+      }
+    </style>
+ <!--  <details class="nhsuk-details">
+      <summary class="nhsuk-details__summary">
+        <span class="nhsuk-details__summary-text">
+        Your Direct Debit Instruction
+        </span>
+      </summary>
+      <div class="nhsuk-details__text">
+        <figure class="nhsuk-image">
+          <img class="nhsuk-image__img" src="/images/ddlogo.png" width="5px" height="148px" alt="Picture of DD logo">
+        </figure>
+        <div class="payment-summary-small">
+          <p>We will send this Direct Debit instruction to: <br>
+            <span style="font-weight:bold;">Your Bank, Their St. Theirtown</span>
+          </p>
+          <p>
+            Please pay the NHS Business Services Authority Direct Debits from the account detailed in this instruction subject to the safeguards assured by the Direct Debit Guarantee. I understand that this instruction may remain with the Prescription prepayment Issue Office of the NHS Business Services Authority, and if so, details will be passed electronically to my Bank/Building Society.
+          </p>
+          <p>
+            Originator:<br>
+            NHS Business Services Authority, PPC, Bridge House,<br>
+            152 Pilgrim Street, Newcastle upon Tyne, NE1 6SN
+          </p>
+          <p>
+            Service User Number (SUN): 242785E
+          </p>
+          <p>Telephone: 0191 232 5371</p>
+        </div>
+      </div>
+    </details> -->
+
+    
+
+    <a href="/updated-full-journey/v3/submit-direct-debit" class="nhsuk-button nhsuk-u-margin-bottom-8">
+      Confirm
+    </a>
+   
+    <p><a href="/updated-full-journey/v3/start">Cancel</a></p>
+
+   
+  
+
+
+  </div>
+</div>
+{% endblock %}
