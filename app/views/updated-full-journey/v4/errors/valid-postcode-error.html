@@ -8,7 +8,7 @@
 
 <!-- Set the page title -->
 {% block pageTitle %}
-Enter address manually missing postcode error - PPC
+Enter address manually valid postcode error - PPC
 {% endblock %}
 
 <!-- For adding a breadcrumb -->
@@ -49,7 +49,7 @@ Enter address manually missing postcode error - PPC
           <ul class="nhsuk-list nhsuk-error-summary__list">
             
             <li>
-              <a href="#address-postcode">Postcode is required</a>
+              <a href="#address-postcode">Enter a valid postcode, like AA1 1AA</a>
             </li>
           </ul>
         </div>
@@ -72,7 +72,7 @@ Enter address manually missing postcode error - PPC
           </label>
          
           <input class="nhsuk-input" id="address-line-1" name="address-line-1" type="text" value="1 Test House">
-        <br><br>
+          <br><br>
           <input class="nhsuk-input" id="address-line-2" name="address-line-2" type="text" value="Test Road">
         </div>
       
@@ -91,22 +91,22 @@ Enter address manually missing postcode error - PPC
             Postcode
           </label>
           <span class="nhsuk-error-message" id="last-name-error">
-            <span class="nhsuk-u-visually-hidden">Error:</span> Postcode is required
+            <span class="nhsuk-u-visually-hidden">Error:</span> Enter a valid postcode, like AA1 1AA
           </span>
-          <input class="nhsuk-input nhsuk-input--width-10 nhsuk-input--error" id="address-postcode" name="address-postcode" type="text">
+          <input class="nhsuk-input nhsuk-input--width-10 nhsuk-input--error" id="address-postcode" name="address-postcode" type="text" value="D@£ AB%">
         </div>
       
       </fieldset>
       
-      <p><a href="/updated-full-journey/v3/find-address">Find my address for me</a></p>
-      
+      <p><a href="/updated-full-journey/v4/find-address">Find my address for me</a></p>
+
       <form action="">
         <button class="nhsuk-button" type="submit">
           Continue
         </button>
       </form>
 
-      <p><a href="/updated-full-journey/v3/start">Cancel</a></p>
+      <p><a href="/updated-full-journey/v4/start">Cancel</a></p>
 
     </div>  
   </div>
