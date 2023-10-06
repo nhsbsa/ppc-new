@@ -1,0 +1,36 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+  We could not process your details - PPC
+  {% endblock %}
+
+  {% block content %}       
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+       
+        <fieldset class="nhsuk-fieldset">
+            <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+              <h1 class="nhsuk-fieldset__heading">
+                Your application has timed out
+              </h1>
+            </legend>
+          </fieldset>
+      
+    <p>We have reset your application because you did not do anything for 30 minutes. We did this to keep your information secure.</p>
+
+    <a href="/updated-full-journey/v4/start" class="nhsuk-button">
+      Start application again
+    </a>
+
+    
+
+    <p>If you need help <a href="https://faq.nhsbsa.nhs.uk/contact-us/">use our contact form</a> or call us on 0300 330 1341.</p>
+        
+    <p>Lines are open Monday to Friday 8am to 6pm, and Saturday 9am to 3pm. Find out more about <a href="https://www.nhsbsa.nhs.uk/contact-us/call-charges-and-phone-numbers">call charges</a> (opens in a new tab).</p>
+
+    </div>
+  </div>
+</main>
+</main>
+
+{% endblock %}
