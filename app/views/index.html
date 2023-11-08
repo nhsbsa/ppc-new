@@ -88,7 +88,7 @@
     <div class="nhsuk-details__text">
     <details class="nhsuk-details nhsuk-expander nhsuk-u-margin-bottom-0">
        <summary class="nhsuk-details__summary">
-          <span class="nhsuk-details__summary-text"><small>Apple/Google Wallet certificate storage facilities</small></span>
+          <span class="nhsuk-details__summary-text"><small>Apple/Google Wallet certificate storage facilities and changes to content to better align with user needs.</small></span>
        </summary>
     
     <h3 class="nhsuk-heading-m">Hypothesis A</h3>
@@ -99,20 +99,67 @@
     <hr>
     
     
-    <h3 class="nhsuk-heading-m">What we reviewed:</h3>
+    <h3 class="nhsuk-heading-m">We reviewed CSAT feedback and user needs, specifically in relation to:</h3>
     <ul class="nhsuk-list nhsuk-list--bullet">
-    <li>CSAT feedback and user needs, specifically relating to certificate storage.</li>
+    <li>Certificate storage facilities</li>
+    <li>Clearer info about prescriptions becoming free at age 60</li>
+    <li>Info around existing exemption/benefits which entitle users to free prescriptions</li>
+    <li>More information around refund rules and payment expectations</li>
+    <li>Clearer info around when a PPC will/will not autorenew</li>
     </ul>
-    <h3 class="nhsuk-heading-m">What we found:</h3>
-    <ul class="nhsuk-list nhsuk-list--bullet">
-    <li>From reviewing recent CSAT feedback, and general comments made about the PPC application, we identified that it would be in users' best interests to add both Google and Apple Wallet certificate storage facilities. <br><br>
-      <p>Allowing users to add their PPC to their digital wallet on their mobile devices, enables users to easily access their certificate without rummaging around their email inbox or digging around for their paper certificate which can be easily lost or damaged.</p>
-    </li>
 
-    </ul>
-    <h3 class="nhsuk-heading-m">Any known issues?</h3>
+<br>
+
+    <h3 class="nhsuk-heading-m">Certificate storage facilities:</h3>
+    <p>From reviewing recent CSAT feedback, and general comments made about the PPC application, we identified that it would be in users' best interests to add both Google and Apple Wallet certificate storage facilities.</p>
+    <p>Allowing users to add their PPC to their digital wallet on their mobile devices, enables users to easily access their certificate without rummaging around their email inbox or digging around for their paper certificate which can be easily lost or damaged.</p>
+    
+<br>
+
+    <h3 class="nhsuk-heading-m">Clearer info about prescriptions becoming free at age 60:</h3>
+      <p>We have received many complaints from users who have had a PPC that has failed to auto-renew because they are coming up to age 60, some have ended up with PCNs.</p>
+      <p>Whilst we are looking at reinstating the reminder for people coming up to 60, it would also be helpful if clearer information is provided within the application user journey so we are giving users every opportunity to make the right decision for them, 
+        particularly when selecting the length of their certificate.</p>
+      <p>This is because for users approaching age 60, they may find it more cost-effective to buy multiple 3-month PPCs if for example, they turn 60 within 6 months and therefore, wouldn't get the full 
+        use out of a 12-month certificate.</p>
+      <p>We have now provided clearer information regarding prescriptions becoming free at age 60 by adding new content when the system flags up a users who are aged 58 or 59. <br>
+      <br>  
+        View the <a href="/updated-full-journey/v4/kickout/age-59">Age 59</a> screen and/or
+        view the <a href="/updated-full-journey/v4/kickout/age-58">Age 58</a> screen.</p>
+      <p>We have also provided content around approaching age 60 and certificate auto-renewals throughout the user journey. For example, you can see on the <a href="/updated-full-journey/v4/duration">Certificate Duration</a> screen
+        that this information has been clearly highlighted to users through inset text.</p>
+      </p>
+
+<br>
+    
+      <h3 class="nhsuk-heading-m">Info around existing exemption/benefits which entitle users to free prescriptions:</h3>
+      <p>Some users are unaware that some exemptions and benefits already entitle them to free NHS prescriptions, e.g., MATEX and Universal Credit.</p>
+      <p>In order to prevent users purchasing something they don't need i.e., a PPC in this instance, we now signpost users to check if they're already entitled to free NHS prescriptions by using our Eligibility Checker which has been added to the <a href="/updated-full-journey/v4/start">Start</a> screen using an Action Link component.</p>
+      <p>The current <a href="/updated-full-journey/v1/date-of-birth">Live DOB</a> screen (as of 13/09/2023) says ‘We collect this information to check if you qualify for free prescriptions’. This is misleading to users, as we only check our own exemption database. We now clarify at this point that we ask this question because it helps us to identify if a person's age already entitles them to free prescriptions, e.g., over 60 or under 16, etc.</p>
+      <p>Again, as we cannot advise the user about all exemptions/benefits, signposting users to our Eligbility Checker via the Start screen will prevent users from purchasing a PPC which they may not need.</p>
+      
+<br>
+
+      <h3 class="nhsuk-heading-m">More information around refund rules and payment expectations:</h3>
+      <p>Complaints about refunds/cancelled Direct Debits are really high and users frequently mention they had no idea that they couldn’t cancel their PPC or request a refund.</p>
+      <p>To help users understand more about the terms and conditions associated with PPCs, we have added more content to the <a href="/updated-full-journey/v4/submit-direct-debit">Confirm and submit</a> screen seen within the Direct Debit journey,
+        and signposted users to the NHSBSA website to encourage users to read and agree to the <a href="https://www.nhsbsa.nhs.uk/help-nhs-prescription-costs/nhs-prescription-prepayment-certificate-ppc/terms-and-conditions">PPC T&Cs</a> prior to buying a PPC.</p>
+      </p>
+
+<br>
+
+<h3 class="nhsuk-heading-m">Clearer info around when a PPC will/will not autorenew:</h3>
+      <p>A PPC paid by Direct Debit will not always automatically renew. The current user journey, particularly on the <a href="/updated-full-journey/v1/fulfilment">Certificate fulfilment</a> screen is currently misleading about this.
+      As it stands, the Live screen says, "Your certificate will automatically renew after 12 months, as long as you don't cancel your Direct Debit.", however, there are many reasons why a user's Direct Debit may not auto-renew.
+    For example, if a user fails to keep up with monthly payments, the Direct Debit is being paid from someone else's account or, the user is approaching age 60. This list is not exhaustive.</p>
+    <p>We have now strengthed info regarding PPC renewals throughout the user journey regarding PPC renewals by including clearer content which you can view on the version 4 prototype <a href="/updated-full-journey/v4/fulfilment">Certificate fulfilment</a> screen and when users are identified as being age 58/59 which are linked above.</p>
+      
+
+<br>
+
+    <h3 class="nhsuk-heading-m">Next steps:</h3>
     <ul class="nhsuk-list nhsuk-list--bullet">
-    <li>...</li>
+    <li>We may need to add Google/Apple payment options to the 'Check your answers' screens if all tests well following HRT-PPC design and research.</li>
     </ul>
     <hr>
    
