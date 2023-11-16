@@ -1,0 +1,46 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+  You previously selected the back button when on the payment screen - PPC
+  {% endblock %}
+
+  {% block content %}       
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+       
+        <fieldset class="nhsuk-fieldset">
+            <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+              <h1 class="nhsuk-fieldset__heading">
+                You previously selected the back button when on the payment screen
+              </h1>
+            </legend>
+          </fieldset>
+      
+    <p>If you got an error or had any issues when trying to pay, your payment may have already been taken.</p>
+
+    <p>You can contact us to check if your payment was successful by:</p>
+    <ul class="list list-bullet">
+      <li>calling us on 0300 330 1341 - <a href="https://www.nhsbsa.nhs.uk/contact-us/call-charges-and-phone-numbers"> find out about call charges</a> (opens in a new tab).</li>
+      <li>using our <a href="https://faq.nhsbsa.nhs.uk/contact-us/">online contact form</a>.</li>
+    </ul>
+
+    <p>You can still continue to the payment screen. However, you could be charged again.</p>
+
+        
+
+
+
+        <form action="/updated-full-journey/v4/gov-pay-12-months">
+          <button class="nhsuk-button" type="submit">
+            Continue
+          </button>
+          </form>
+
+      <p><a href="/updated-full-journey/v4/start">Cancel</a></p>
+
+    </div>
+  </div>
+</main>
+</main>
+
+{% endblock %}

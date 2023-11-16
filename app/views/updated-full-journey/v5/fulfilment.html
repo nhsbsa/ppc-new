@@ -1,0 +1,91 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+How would you like to receive your prepayment certificate? - PPC
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-back-link">
+  <a class="nhsuk-back-link__link" href="javascript:history.go(-1)">
+    <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
+    </svg>
+    Go back</a>
+</div>
+
+
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+
+
+       
+        <fieldset class="nhsuk-fieldset">
+            <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+              <h1 class="nhsuk-fieldset__heading">
+                How can we send you your prepayment certificate details?
+              </h1>
+            </legend>
+         
+              <p>We can send your prepayment certificate straight away by email. Or, you can print it at the end of the service.</p>
+
+              <p>You will get a:</p>
+              <ul>
+                <li>certificate number</li>
+                <li>start date</li>
+                <li>end date</li>
+              </ul>
+
+              <form class="form" action="fulfilment" method="post">
+              <div class="nhsuk-radios nhsuk-radios--conditional">
+                <div class="nhsuk-radios__item">
+                  
+                    <!-- radio with aria controls -->
+                    <input type="radio" value="email" id="email" class="nhsuk-radios__input" name="fulfilment" aria-controls="show-reminder1" aria-expanded="true" data-gtm-form-interact-field-id="0">
+                  <label for="email" id="email-label" class="nhsuk-label nhsuk-radios__label">Email my certificate details</label>
+                </div>
+
+                <div id="show-reminder1" class="nhsuk-radios__conditional nhsuk-radios__conditional--hidden"> 
+                  <div>
+                    <p class="nhsuk-body">Your certificate will automatically renew after 12 months, until you approach age 60, as long as you don't cancel your Direct Debit.</p>
+                    <p class="nhsuk-body">We'll send your new certificate by email, and a reminder one month before your renewal date.</p>
+                  </div>
+                
+              </div>
+
+                
+
+
+                <div class="nhsuk-radios__item">
+                  <input type="radio" value="print" id="print" class="nhsuk-radios__input" name="fulfilment" aria-controls="show-reminder2" aria-expanded="false" data-gtm-form-interact-field-id="1">
+                  <label for="print" id="print-label" class="nhsuk-label nhsuk-radios__label">I will print my certificate details at the end of the service</label>
+                </div>
+                <div id="show-reminder2" class="nhsuk-radios__conditional nhsuk-radios__conditional--hidden">
+              
+                    <div>
+                      <p class="nhsuk-body">Your certificate will automatically renew after 12 months, until you approach age 60, as long as you don't cancel your Direct Debit.</p>
+                      <p class="nhsuk-body">We'll send your new certificate by post, and a reminder one month before your renewal date.</p>
+                    </div>
+                    
+                  
+                </div>
+              </div>
+
+
+
+                <br>
+
+                
+                  <button class="nhsuk-button" type="submit">
+                    Continue
+                  </button>
+                  </form>
+        
+        
+                <p><a href="/updated-full-journey/v4/start">Cancel</a></p>
+
+     
+    </div>
+  </div>
+
+{% endblock %}
