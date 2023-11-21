@@ -7,6 +7,7 @@ router.use('/updated-full-journey/v1', require('./views/updated-full-journey/v1/
 router.use('/updated-full-journey/v2', require('./views/updated-full-journey/v2/_routes'))
 router.use('/updated-full-journey/v3', require('./views/updated-full-journey/v3/_routes'))
 router.use('/updated-full-journey/v4', require('./views/updated-full-journey/v4/_routes'))
+router.use('/updated-full-journey/v5', require('./views/updated-full-journey/v5/_routes'))
 
 
 //Global variables
