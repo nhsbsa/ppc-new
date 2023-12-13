@@ -34,20 +34,45 @@ NHS.UK prototype kit
     <!-- Add your content here -->
     <!-- Styles and components can be found at https://service-manual.nhs.uk/design-system -->
 
-    <p class="nhsuk-lede-text">
+    <div class="nhsuk-action-link">
+      <a class="nhsuk-action-link__link" href="/updated-full-journey/v5/start">
+        <svg class="nhsuk-icon nhsuk-icon__arrow-right-circle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+          aria-hidden="true" width="36" height="36">
+          <path d="M0 0h24v24H0z" fill="none"></path>
+          <path
+            d="M12 2a10 10 0 0 0-9.95 9h11.64L9.74 7.05a1 1 0 0 1 1.41-1.41l5.66 5.65a1 1 0 0 1 0 1.42l-5.66 5.65a1 1 0 0 1-1.41 0 1 1 0 0 1 0-1.41L13.69 13H2.05A10 10 0 1 0 12 2z">
+          </path>
+        </svg>
+        <span class="nhsuk-action-link__text">Begin full journey (Latest version)</span>
+      </a>
+    </div>
+
+    <div class="nhsuk-inset-text">
+      <span class="nhsuk-u-visually-hidden">Information: </span>
+      <p><strong>Sharing this prototype</strong></p>
+      <p>To give others access to this prototype: <br>
+        Username: ppc_30 <br>
+        Password: ppc_30</p>
+    </div>
+
+    <h2>
+      Brief
+    </h2>
+
+    <p>
       Having to pay for a lot of NHS prescriptions seperately may become expensive.
-      It may be cheaper to buy a prescription prepayment certificate (PPC) –
+      It may be cheaper to buy a prescription prepayment certificate (PPC) -
       effectively a prescription "season ticket".</p>
 
 
-    <p class="nhsuk-lede-text">
+    <p>
       A PPC covers all NHS prescriptions, including NHS dental prescriptions, no matter how many items are needed.</p>
 
-    <p class="nhsuk-lede-text">
+    <p>
       However, it does not cover the cost of other health-related items,
       such as the provision of wigs and fabric supports, which are only provided through the hospital service.</p>
 
-    <p class="nhsuk-lede-text">
+    <p style="margin-bottom: 24px;">
       There are 3 PPC options to choose from:
     <ol>
       <li>The 3-month PPC which costs £31.25 and will save money if a person needs more than 3 prescribed items in 3
@@ -59,32 +84,16 @@ NHS.UK prototype kit
     </ol>
     </p>
 
-    <p class="nhsuk-lede-text">
+    <p style="margin-top: 48px;">
       The HRT PPC is only for HRT medicines licensed to treat menopause symptoms, but can be used regardless of the
       reasons why certain medicines are prescribed for someone. Find out more about the <a
         href="https://www.nhsbsa.nhs.uk/help-nhs-prescription-costs/nhs-hormone-replacement-therapy-prescription-prepayment-certificate-hrt-ppc">HRT
         PPC</a>.</p>
 
-
-    <details class="nhsuk-details nhsuk-expander">
-      <summary class="nhsuk-details__summary">
-        <span class="nhsuk-details__summary-text">
-          Sharing this prototype
-        </span>
-      </summary>
-      <div class="nhsuk-details__text">
-        <p>To give others access to this prototype:</p>
-        <ul>
-          <li>Username : ppc_30 </li>
-          <li>Password : ppc_30</li>
-        </ul>
-      </div>
-    </details>
-
     <hr>
 
     <h2>
-      Sprint work - Continuous improvement
+      Design Prototype versions
     </h2>
 
     <!-- VERSION 5 -->
@@ -94,174 +103,87 @@ NHS.UK prototype kit
         <span class="nhsuk-details__summary-text">16/11/2023 - Version 5</span>
       </summary>
       <div class="nhsuk-details__text">
-        <details class="nhsuk-details nhsuk-expander nhsuk-u-margin-bottom-0">
-          <summary class="nhsuk-details__summary">
-            <span class="nhsuk-details__summary-text"><small>Entry of certificate start date separated onto new page</small></span>
-          </summary>
 
-          <h3 class="nhsuk-heading-m">Hypothesis A</h3>
-          <p style="background: #DEE0E2; padding: 20px;"><strong>We believe</strong> that redesigining PPC online with
-            the NHSUK Front end Kit
-            <strong>will be a useful feature for</strong>
-            users <strong>as it will</strong> create familiarity and trust with users with the NHS branding. It is also
-            up to date with the
-            accessiblity point of view as well as being more recognisable and trustworthy to end users. <strong>This
-              will</strong> help users to confidently use the service.
-          </p>
-          <hr>
+        <h3 class="nhsuk-heading-m">What we reviewed:</h3>
+        <ul class="nhsuk-list nhsuk-list--bullet">
+          <li>Certificate Duration page - Speech recognition issue</li>
+          <li>Certificate Start Date page - Speech recognition issue</li>
+        </ul>
 
+        <br>
 
-          <h3 class="nhsuk-heading-m">We reviewed CSAT feedback and user needs, specifically in relation to:</h3>
-          <ul class="nhsuk-list nhsuk-list--bullet">
-            <li>Certificate storage facilities</li>
-            <li>Clearer info about prescriptions becoming free at age 60</li>
-            <li>Info around existing exemption/benefits which entitle users to free prescriptions</li>
-            <li>More information around refund rules and payment expectations</li>
-            <li>Clearer info around when a PPC will/will not autorenew</li>
-          </ul>
+        <h3 class="nhsuk-heading-m">Certificate Duration page - Speech recognition issue:</h3>
+        <p>An issue has been discovered when using speech recognition (Voice Control on Mac) on this page. The user is
+          offered three radio buttons, and two have the same label, saying 'Single payment'. Testers have attempted to
+          say 'single payment' and the amount, but Voice Control times out before their sentence can be completed.</p>
+        <p>The agreed solution for this issue was quite simple: to change the labels on radio buttons to be
+          different from one another.</p>
 
-          <br>
+        <h3 class="nhsuk-heading-m">Certificate Start Date page - Speech recognition issue:</h3>
+        <p>A similar issue has been reported on this page. In the previous version, there were two sets of date fields,
+          meaning there are two Day, Month and Year fields. When using Voice Control on Mac, it was discovered
+          that it was not possible to differentiate between the two fields, because naturally they are labelled the same
+          way.</p>
+        <p>After considering several different options, the agree solution has been to remove both radio buttons, have
+          only one set of date fields on the page, and present the information previously hidden within the two radio
+          buttons as standalone content. Information about refunds has been moved into a Details component, for users
+          who wish to backdate their certificate and have a valid FP57 form from that day.</p>
 
-          <h3 class="nhsuk-heading-m">Certificate storage facilities:</h3>
-          <p>From reviewing recent CSAT feedback, and general comments made about the PPC application, we identified
-            that it would be in users' best interests to add both Google and Apple Wallet certificate storage
-            facilities.</p>
-          <p>Allowing users to add their PPC to their digital wallet on their mobile devices, enables users to easily
-            access their certificate without rummaging around their email inbox or digging around for their paper
-            certificate which can be easily lost or damaged.</p>
+        <!-- <h3 class="nhsuk-heading-m">Next steps:</h3>
+        <ul class="nhsuk-list nhsuk-list--bullet">
+          <li>...</li>
+        </ul> -->
 
-          <br>
+        <hr>
 
-          <h3 class="nhsuk-heading-m">Clearer info about prescriptions becoming free at age 60:</h3>
-          <p>We have received many complaints from users who have had a PPC that has failed to auto-renew because they
-            are coming up to age 60, some have ended up with PCNs.</p>
-          <p>Whilst we are looking at reinstating the reminder for people coming up to 60, it would also be helpful if
-            clearer information is provided within the application user journey so we are giving users every opportunity
-            to make the right decision for them,
-            particularly when selecting the length of their certificate.</p>
-          <p>This is because for users approaching age 60, they may find it more cost-effective to buy multiple 3-month
-            PPCs if for example, they turn 60 within 6 months and therefore, wouldn't get the full
-            use out of a 12-month certificate.</p>
-          <p>We have now provided clearer information regarding prescriptions becoming free at age 60 by adding new
-            content when the system flags up a users who are aged 58 or 59. <br>
-            <br>
-            View the <a href="/updated-full-journey/v5/kickout/age-59">Age 59</a> screen and/or
-            view the <a href="/updated-full-journey/v5/kickout/age-58">Age 58</a> screen.
-          </p>
-          <p>We have also provided content around approaching age 60 and certificate auto-renewals throughout the user
-            journey. For example, you can see on the <a href="/updated-full-journey/v5/duration">Certificate
-              Duration</a> screen
-            that this information has been clearly highlighted to users through inset text.</p>
-          </p>
+        <h3 class="nhsuk-heading-m">Adding certificate to Apple Wallet journey</h3>
+        <ul>
+          <li>
+            <p> <a
+                href="/updated-full-journey/v5/mobile/apple-wallet/mobile-confirmation-3-months-email-apple">Confirmation
+                page with new certificate storage facilities, as if using an Apple device</a>.</p>
+          </li>
+        </ul>
 
-          <br>
+        <h3 class="nhsuk-heading-m">Adding certificate to Google Wallet journey</h3>
+        <ul>
+          <li>
+            <p> <a
+                href="/updated-full-journey/v5/mobile/google-wallet/mobile-confirmation-3-months-email-google">Confirmation
+                page with new certificate storage facilities, as if using an Android device</a>.</p>
+          </li>
+        </ul>
 
-          <h3 class="nhsuk-heading-m">Info around existing exemption/benefits which entitle users to free prescriptions:
-          </h3>
-          <p>Some users are unaware that some exemptions and benefits already entitle them to free NHS prescriptions,
-            e.g., MATEX and Universal Credit.</p>
-          <p>In order to prevent users purchasing something they don't need i.e., a PPC in this instance, we now
-            signpost users to check if they're already entitled to free NHS prescriptions by using our Eligibility
-            Checker which has been added to the <a href="/updated-full-journey/v5/start">Start</a> screen using an
-            Action Link component.</p>
-          <p>The current <a href="/updated-full-journey/v1/date-of-birth">Live DOB</a> screen (as of 13/09/2023) says
-            ‘We collect this information to check if you qualify for free prescriptions’. This is misleading to users,
-            as we only check our own exemption database. We now clarify at this point that we ask this question because
-            it helps us to identify if a person's age already entitles them to free prescriptions, e.g., over 60 or
-            under 16, etc.</p>
-          <p>Again, as we cannot advise the user about all exemptions/benefits, signposting users to our Eligbility
-            Checker via the Start screen will prevent users from purchasing a PPC which they may not need.</p>
+        <hr>
 
-          <br>
+        <h3 class="nhsuk-heading-m">The full user-journey</h3>
+        <ul>
+          <li>
+            <p> To view the full user journey from the Start to the Confirmation screen, <a
+                href="/updated-full-journey/v5/start">click here</a>. </p>
+          </li>
+        </ul>
 
-          <h3 class="nhsuk-heading-m">More information around refund rules and payment expectations:</h3>
-          <p>Complaints about refunds/cancelled Direct Debits are really high and users frequently mention they had no
-            idea that they couldn’t cancel their PPC or request a refund.</p>
-          <p>To help users understand more about the terms and conditions associated with PPCs, we have added more
-            content to the <a href="/updated-full-journey/v5/submit-direct-debit">Confirm and submit</a> screen seen
-            within the Direct Debit journey,
-            and signposted users to the NHSBSA website to encourage users to read and agree to the <a
-              href="https://www.nhsbsa.nhs.uk/help-nhs-prescription-costs/nhs-prescription-prepayment-certificate-ppc/terms-and-conditions">PPC
-              T&Cs</a> prior to buying a PPC.</p>
-          </p>
+        <br>
 
-          <br>
-
-          <h3 class="nhsuk-heading-m">Clearer info around when a PPC will/will not autorenew:</h3>
-          <p>A PPC paid by Direct Debit will not always automatically renew. The current user journey, particularly on
-            the <a href="/updated-full-journey/v1/fulfilment">Certificate fulfilment</a> screen is currently misleading
-            about this.
-            As it stands, the Live screen says, "Your certificate will automatically renew after 12 months, as long as
-            you don't cancel your Direct Debit.", however, there are many reasons why a user's Direct Debit may not
-            auto-renew.
-            For example, if a user fails to keep up with monthly payments, the Direct Debit is being paid from someone
-            else's account or, the user is approaching age 60. This list is not exhaustive.</p>
-          <p>We have now strengthed info regarding PPC renewals throughout the user journey regarding PPC renewals by
-            including clearer content which you can view on the version 4 prototype <a
-              href="/updated-full-journey/v5/fulfilment">Certificate fulfilment</a> screen and when users are identified
-            as being age 58/59 which are linked above.</p>
+        <h3 class="nhsuk-heading-m">For the email route, use:</h3>
+        <ul>
+          <li><b>'directdebit.test@gmail.com'</b> to view the Direct Debit journey.</li>
+          <li><b>'12month.test@gmail.com'</b> to view the 12 Month journey.</li>
+          <li><b>'3month.test@gmail.com'</b> to view the 3 Month journey.</li>
+        </ul>
 
 
-          <br>
-
-          <h3 class="nhsuk-heading-m">Next steps:</h3>
-          <ul class="nhsuk-list nhsuk-list--bullet">
-            <li>We may need to add Google/Apple payment options to the 'Check your answers' screens if all tests well
-              following HRT-PPC design and research.</li>
-          </ul>
-          <hr>
-
-
-
-          <h3 class="nhsuk-heading-m">Adding certificate to Apple Wallet journey</h3>
-          <ul>
-            <li>
-              <p> <a
-                  href="/updated-full-journey/v5/mobile/apple-wallet/mobile-confirmation-3-months-email-apple">Confirmation
-                  page with new certificate storage facilities, as if using an Apple device</a>.</p>
-            </li>
-          </ul>
-
-          <h3 class="nhsuk-heading-m">Adding certificate to Google Wallet journey</h3>
-          <ul>
-            <li>
-              <p> <a
-                  href="/updated-full-journey/v5/mobile/google-wallet/mobile-confirmation-3-months-email-google">Confirmation
-                  page with new certificate storage facilities, as if using an Android device</a>.</p>
-            </li>
-          </ul>
-
-          <hr>
-
-          <h3 class="nhsuk-heading-m">The full user-journey</h3>
-          <ul>
-            <li>
-              <p> To view the full user journey from the Start to the Confirmation screen, <a
-                  href="/updated-full-journey/v5/start">click here</a>. </p>
-            </li>
-          </ul>
-
-          <br>
-
-          <h3 class="nhsuk-heading-m">For the email route, use:</h3>
-          <ul>
-            <li><b>'directdebit.test@gmail.com'</b> to view the Direct Debit journey.</li>
-            <li><b>'12month.test@gmail.com'</b> to view the 12 Month journey.</li>
-            <li><b>'3month.test@gmail.com'</b> to view the 3 Month journey.</li>
-          </ul>
+        <hr>
+        <h3 class="nhsuk-heading-m">Full page list</h3>
+        <ul>
+          <li>
+            <p> <a href="/updated-full-journey/page-list-beta">Page list</a> - inclusive of main journey pages,
+              errors, kickouts, service errors and cookies.</p>
+          </li>
+        </ul>
 
 
-          <hr>
-          <h3 class="nhsuk-heading-m">Full page list</h3>
-          <ul>
-            <li>
-              <p> <a href="/updated-full-journey/page-list-beta">Page list</a> - inclusive of main journey pages,
-                errors, kickouts, service errors and cookies.</p>
-            </li>
-          </ul>
-
-
-        </details>
     </details>
 
 
