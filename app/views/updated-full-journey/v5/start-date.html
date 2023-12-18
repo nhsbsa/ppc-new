@@ -17,7 +17,7 @@ When do you want your prepayment certificate to start? - PPC
 </div>
 
 
-<script>
+<!-- <script>
   var monthBack = new Date();
   var dd = monthBack.getDate();
   var mm = monthBack.getMonth() + 0; //January is 0!
@@ -48,8 +48,7 @@ When do you want your prepayment certificate to start? - PPC
   }
   monthForward = dd + '/' + mm + '/' + yyyy;
 
-
-</script>
+</script> -->
 
 
 <div class="nhsuk-grid-row">
@@ -62,60 +61,38 @@ When do you want your prepayment certificate to start? - PPC
         </h1>
       </legend>
 
-      <p>
+      <!-- <p>
         You can choose any day to start your prepayment certificate between
         <script>document.write(monthBack);</script> and
         <script>document.write(monthForward);</script>.
-      </p>
+      </p> -->
 
-      <div class="nhsuk-radios nhsuk-radios--conditional">
+      <p>You can choose any date to start your prepayment certificate between 19 July 2023 and 10 November 2023.</p>
 
-        <div class="nhsuk-radios__item">
-          <input class="nhsuk-radios__input" id="numyes" name="ppcstart" type="radio" value="today"
-            aria-controls="conditional-contact-1" aria-expanded="false">
-          <label class="nhsuk-label nhsuk-radios__label" for="contact-1">
-            To cover prescriptions I'll collect today or later
-          </label>
+      <p>Choose the date you will collect your next prescription to get the most out of your certificate.</p>
 
-        </div>
-        <div class="nhsuk-radios__conditional nhsuk-radios__conditional--hidden" id="conditional-contact-1">
+      <p>If you already have a certificate, choose a date after this expires.</p>
+
+      <p>If you have collected your prescription before today and you are eligible for a refund, choose the date you
+        collected your prescription.</p>
 
 
-          <span class="nhsuk-u-visually-hidden">Information: </span>
-          <p>Choose the date you will collect your next prescription to get the most out of your certificate.
-            <br> <br>
-            If you already have a certificate, choose a date after this expires.
-          </p>
-
-        </div>
-
-        <div class="nhsuk-radios__item">
-          <input class="nhsuk-radios__input" id="numno" name="ppcstart" type="radio" value="backdate"
-            aria-controls="conditional-contact-2" aria-expanded="true">
-          <label class="nhsuk-label nhsuk-radios__label" for="example-hints-2">
-            I want to backdate my certificate - I have collected my prescription before today
-          </label>
-
-        </div>
-
-        <div class="nhsuk-radios__conditional nhsuk-radios__conditional--hidden" id="conditional-contact-2">
-          <span class="nhsuk-u-visually-hidden">Information: </span>
-          <p>Choose the date you collected your prescription.
-            <br> <br>
-            You can only claim a refund if you asked the pharmacist for a FP57 refund form on the day you collected the
-            prescription.
-          </p>
+      <details class="nhsuk-details" style="margin-top: 24px;">
+        <summary class="nhsuk-details__summary">
+          <span class="nhsuk-details__summary-text">
+            Refunds for previous prescriptions
+          </span>
+        </summary>
+        <div class="nhsuk-details__text">
+          <p>If you have backdated your certificate, you can only claim a refund for a prescription if you asked the
+            pharmacist for a FP57 refund form on the day you collected the prescription.</p>
           <p>For more information on refunds, visit our <a
               href="https://faq.nhsbsa.nhs.uk/knowledgebase/article/KA-03929/en-us#:~:text=When%20you%20can%20claim%20a,you%20can%20claim%20a%20refund."
               target="_blank">Knowledge Base</a> (opens in a new tab).</p>
-          </p>
-
         </div>
-
-      </div>
+      </details>
 
       <div class="nhsuk-date-input" id="example" style="margin-top: 30px;">
-
         <div class="nhsuk-date-input__item">
           <div class="nhsuk-form-group">
             <label class="nhsuk-label nhsuk-date-input__label" for="future-day">
