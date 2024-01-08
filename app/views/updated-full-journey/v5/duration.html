@@ -35,42 +35,45 @@ How long do you want your PPC to last? - PPC
           <!-- <h2 class="nhsuk-heading-m" id="12-months">12 months</h2> -->
           <div class="nhsuk-radios nhsuk-radios--conditional">
 
-            <div>
-              <div class="nhsuk-radios__item dd-down">
-                <input class="nhsuk-radios__input" type="radio" value="DD" id="twelvemonthdd" name="certduration"
-                  aria-controls="show-directdebit-message" aria-expanded="false">
-                <label class="nhsuk-label nhsuk-radios__label" for="twelvemonthdd">12 months (with 10 monthly Direct
-                  Debit installments of £11.16)</label>
-              </div>
-              <div
-                class="nhsuk-radios__conditional nhsuk-u-padding-top-3 nhsuk-u-padding-bottom-3 nhsuk-radios__conditional--hidden"
-                id="show-directdebit-message">
-                <p>Your first installment will be taken on 15 August 2023. After that you can contact us to change the
-                  payment date.</p>
-                <p>See our <a href="https://faq.nhsbsa.nhs.uk/knowledgebase/article/KA-03588/en-us"
-                    target="_blank">Knowledge Base</a> for more information on Direct Debit renewals (opens in a new
-                  tab).</p>
-              </div>
+            <div class="nhsuk-radios__item dd-down">
+              <input class="nhsuk-radios__input" type="radio" value="DD" id="twelvemonthdd" name="certduration"
+                aria-controls="show-directdebit-message" aria-expanded="false">
+              <label class="nhsuk-label nhsuk-radios__label" for="twelvemonthdd">12 months by Direct Debit
+                <div class="nhsuk-hint" id="contact-hint" style="margin: 0;">
+                  10 monthly installments of £11.16
+                </div>
+              </label>
+            </div>
+            <div
+              class="nhsuk-radios__conditional nhsuk-u-padding-top-3 nhsuk-u-padding-bottom-3 nhsuk-radios__conditional--hidden"
+              id="show-directdebit-message">
+              <p>Your first installment will be taken on 15 August 2023. After that you can contact us to change the
+                payment date.</p>
+              <p>See our <a href="https://faq.nhsbsa.nhs.uk/knowledgebase/article/KA-03588/en-us"
+                  target="_blank">Knowledge Base</a> for more information on Direct Debit renewals (opens in a new
+                tab).</p>
             </div>
 
-            <div>
-              <div class="nhsuk-radios__item">
-                <input class="nhsuk-radios__input" type="radio" value="12" id="twelvemonth" name="certduration"
-                  aria-expanded="false">
-                <label class="nhsuk-label nhsuk-radios__label" for="twelvemonth">12 months (with a single payment of
-                  £111.60)</label>
-              </div>
+            <div class="nhsuk-radios__item" style="margin: 0">
+              <input class="nhsuk-radios__input" type="radio" value="12" id="twelvemonth" name="certduration"
+                aria-expanded="false">
+              <label class="nhsuk-label nhsuk-radios__label" for="twelvemonth">12 months by single payment
+                <div class="nhsuk-hint" id="contact-hint">
+                  1 payment of £111.60
+                </div>
+              </label>
             </div>
-          </div>
-        </div>
-        <div>
-          <div class="nhsuk-form-group card-down">
-            <!-- <h2 id="3-months" class="nhsuk-heading-m">3 months</h2> -->
+
+
             <div class="nhsuk-radios__item">
               <input class="nhsuk-radios__input" type="radio" value="3" id="threemonth" name="certduration">
-              <label class="nhsuk-label nhsuk-radios__label" for="threemonth">3 months (with a single payment of
-                £31.25)</label>
+              <label class="nhsuk-label nhsuk-radios__label" for="threemonth">3 months by single payment
+                <div class="nhsuk-hint" id="contact-hint" style="margin: 0;">
+                  1 payment of £31.25
+                </div>
+              </label>
             </div>
+
           </div>
         </div>
       </fieldset>
