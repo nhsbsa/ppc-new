@@ -65,7 +65,8 @@ router.post(/contact-email/, (req, res) => {
     res.redirect('check-details-email-3-months')
 
   } else {
-    res.redirect('email');
+    // res.redirect('email');
+    res.redirect('check-details-email-12-months');
   }
 })
 
