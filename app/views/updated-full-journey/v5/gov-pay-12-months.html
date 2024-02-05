@@ -26,6 +26,18 @@
             <span id="amount" class="amount govuk-!-font-size-36 govuk-!-font-weight-bold" style="font-size:36px !important;">£111.60</span>
         </div>
 
+
+        <br>
+      
+        <a href="google-pay-web-pop-up">
+          <img alt="Pay with Google Pay button" src="/images/pay-with-google-pay-button.png" width="360" height="44" data-inline="true">
+        </a>
+      
+      
+      <p class="or-lines">
+         or
+      </p>
+
         <form id="card-details" style="margin-top:20px;">
           <div class="govuk-form-group card-no-group" data-validation="cardNo">
             <label id="card-no-lbl" for="card-no" class="govuk-label govuk-label--l govuk-!-width-three-quarters">
@@ -542,6 +554,27 @@
 <style>
 
   
+.or-lines {
+  padding:1em 0;
+  text-align:center;
+  overflow:hidden;
+}
+
+.or-lines:before, .or-lines:after {
+  content:'';
+  width:100%;
+  border-bottom:lightgray solid;
+  display:inline-block;
+  vertical-align:middle;
+}
+
+.or-lines:before {
+  margin-left:-100%;
+}
+
+.or-lines:after {
+  margin-right:-100%;
+}
 
 .accepted-cards .diners-club {
     background-position: 50% 100%;
