@@ -1,62 +1,85 @@
 {% extends 'layout.html' %}
 
 {% block pageTitle %}
-  Confirm and Submit Direct Debit - PPC
-  {% endblock %}
+Confirm and Submit Direct Debit - PPC
+{% endblock %}
 
-  {% block content %}
-  <div class="nhsuk-back-link">
-    <a class="nhsuk-back-link__link" href="javascript:history.go(-1)">
-      <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
-        <path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
-      </svg>
-      Go back</a>
-  </div>
+{% block content %}
+<div class="nhsuk-back-link">
+  <a class="nhsuk-back-link__link" href="javascript:history.go(-1)">
+    <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+      aria-hidden="true">
+      <path
+        d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z">
+      </path>
+    </svg>
+    Go back</a>
+</div>
 
-  
-  <div class="nhsuk-grid-row">
-    <div class="nhsuk-grid-column-two-thirds">
-       
-        <fieldset class="nhsuk-fieldset">
-            <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
-              <h1 class="nhsuk-fieldset__heading">
-                Confirm and submit
-              </h1>
-            </legend>
-          </fieldset>
 
-          <p>You are agreeing to pay 10 monthly instalments of £11.16.</p>
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-two-thirds">
 
-          <p>If instalments are not kept up, you are not entitled to use the
-             prepayment certificate. You could choose an alternative method of 
-             payment to avoid defaulting.</p>
+    <fieldset class="nhsuk-fieldset">
+      <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+        <h1 class="nhsuk-fieldset__heading">
+          Confirm and submit
+        </h1>
+      </legend>
+    </fieldset>
 
-          <p>If you use the prepayment certificate after failing to pay an instalment, you may have to pay a penalty charge.</p>
+    <p>You are agreeing to pay 10 monthly instalments of £11.16.</p>
 
-          <p>If you repeatedly fail to pay your prepayment instalments, you may not be able to pay by Direct Debit in the future.</p>
-      
-          <p>Before submitting, read the full <a href="https://www.nhsbsa.nhs.uk/help-nhs-prescription-costs/nhs-prescription-prepayment-certificate-ppc/terms-and-conditions">Prescription Prepayment Certificate terms and conditions</a> (opens in a new tab), which contain more details on Direct Debit renewals, cancelling your Direct Debit and refunds.</p>
-    
-          <div class="nhsuk-checkboxes__item">
-            <input class="nhsuk-checkboxes__input" id="contact" name="contact" type="checkbox" value="email">
-            <label class="nhsuk-label nhsuk-checkboxes__label" for="contact">
-              I have read and agree to the terms and conditions, and understand that when I press confirm and submit, I am liable for paying all 10 instalments via Direct Debit.
-            </label>
-          </div>
+    <!-- <p>If instalments are not kept up, you are not entitled to use the
+      prepayment certificate. You could choose an alternative method of
+      payment to avoid defaulting.</p>
 
-          <br>
+    <p>If you use the prepayment certificate after failing to pay an instalment, you may have to pay a penalty charge.
+    </p>
 
-        <form action="/updated-full-journey/v5/confirmation-dd-email">
-          <button class="nhsuk-button" type="submit">
-            Confirm and submit
-          </button>
-          </form>
+    <p>If you repeatedly fail to pay your prepayment instalments, you may not be able to pay by Direct Debit in the
+      future.</p> -->
 
-      <p><a href="/updated-full-journey/v5/start">Cancel</a></p>
+    <p>Before submitting, read the full <a
+        href="https://www.nhsbsa.nhs.uk/help-nhs-prescription-costs/nhs-prescription-prepayment-certificate-ppc/terms-and-conditions">Prescription
+        Prepayment Certificate terms and conditions</a> (opens in a new tab), which contains more details on Direct
+      Debit
+      renewals, cancelling your Direct Debit, and refunds.</p>
 
+    <div class="nhsuk-warning-callout">
+      <h3 class="nhsuk-warning-callout__label">
+        <span role="text">
+          <span class="nhsuk-u-visually-hidden">Important: </span>
+          Declaration
+        </span>
+      </h3>
+      <p>If instalments are not kept up, you are not entitled to use the prepayment certificate. You could choose
+        an alternate method of payment to avoid defaulting.</p>
+      <p>If you use the prepayment certificate after failing to pay an instalment, you may have to pay a penalty
+        charge.</p>
+      <p>If you repeatedly fail to pay your prepayment instalments, you may not be able to pay by Direct Debit in the
+        future.</p>
     </div>
+
+    <!-- <div class="nhsuk-checkboxes__item">
+      <input class="nhsuk-checkboxes__input" id="contact" name="contact" type="checkbox" value="email">
+      <label class="nhsuk-label nhsuk-checkboxes__label" for="contact">
+        I have read and agree to the terms and conditions, and understand that when I press confirm and submit, I am
+        liable for paying all 10 instalments via Direct Debit.
+      </label>
+    </div> -->
+
+    <!-- <br> -->
+
+    <form action="/updated-full-journey/v5/confirmation-dd-email">
+      <button class="nhsuk-button" type="submit">
+        Confirm and submit
+      </button>
+    </form>
+
+    <p><a href="/updated-full-journey/v5/start">Cancel</a></p>
+
   </div>
-</main>
-</main>
+</div>
 
 {% endblock %}
