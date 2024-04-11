@@ -18,25 +18,28 @@ How long do you want your PPC to last? - PPC
 
 <div class="nhsuk-grid-row">
   <div class="nhsuk-grid-column-two-thirds">
-    <div class="nhsuk-form-group">
-      <fieldset class="nhsuk-fieldset" id="prepayment">
-        <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
-          <h1 class="nhsuk-heading-l">Select how long you want your prepayment certificate to last</h1>
-        </legend>
 
-        <div class="nhsuk-inset-text" style="margin-top: 20px;">
-          <span class="nhsuk-u-visually-hidden">Information: </span>
-          <p><strong>If you're aged 58 or 59</strong></p>
-          <p>Your prepayment certificate will not automatically renew because you're approaching age 60 - at which point
-            you will be eligible for free prescriptions.</p>
-        </div>
+    <form class="form" action="duration-and-payment-choice" method="post">
+      <div class="nhsuk-form-group">
+        <fieldset class="nhsuk-fieldset" id="prepayment">
+          <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+            <h1 class="nhsuk-heading-l">Select how long you want your prepayment certificate to last</h1>
+          </legend>
 
-        <!-- <div class="nhsuk-form-group"> -->
+          <div class="nhsuk-inset-text" style="margin-top: 20px;">
+            <span class="nhsuk-u-visually-hidden">Information: </span>
+            <p><strong>If you're aged 58 or 59</strong></p>
+            <p>Your prepayment certificate will not automatically renew because you're approaching age 60 - at which
+              point
+              you will be eligible for free prescriptions.</p>
+          </div>
+
+          <!-- <div class="nhsuk-form-group"> -->
           <!-- <h2 class="nhsuk-heading-m" id="12-months">12 months</h2> -->
           <div class="nhsuk-radios nhsuk-radios--conditional">
 
             <div class="nhsuk-radios__item dd-down">
-              <input class="nhsuk-radios__input" type="radio" value="DD" id="twelvemonthdd" name="certduration"
+              <input class="nhsuk-radios__input" type="radio" value="twelvemonthdd" id="twelvemonthdd" name="certduration"
                 aria-controls="show-directdebit-message" aria-expanded="false">
               <label class="nhsuk-label nhsuk-radios__label" for="twelvemonthdd">12 months by Direct Debit
                 <div class="nhsuk-hint" id="contact-hint" style="margin: 0;">
@@ -44,6 +47,7 @@ How long do you want your PPC to last? - PPC
                 </div>
               </label>
             </div>
+            
             <div
               class="nhsuk-radios__conditional nhsuk-u-padding-top-3 nhsuk-u-padding-bottom-3 nhsuk-radios__conditional--hidden"
               id="show-directdebit-message">
@@ -55,9 +59,9 @@ How long do you want your PPC to last? - PPC
             </div>
 
             <div class="nhsuk-radios__item" style="margin: 0">
-              <input class="nhsuk-radios__input" type="radio" value="12" id="twelvemonth" name="certduration"
+              <input class="nhsuk-radios__input" type="radio" value="twelvemonthsingle" id="twelvemonthsingle" name="certduration"
                 aria-expanded="false">
-              <label class="nhsuk-label nhsuk-radios__label" for="twelvemonth">12 months by single payment
+              <label class="nhsuk-label nhsuk-radios__label" for="twelvemonthsingle">12 months by single payment
                 <div class="nhsuk-hint" id="contact-hint">
                   1 payment of £111.60
                 </div>
@@ -66,8 +70,8 @@ How long do you want your PPC to last? - PPC
 
 
             <div class="nhsuk-radios__item">
-              <input class="nhsuk-radios__input" type="radio" value="3" id="threemonth" name="certduration">
-              <label class="nhsuk-label nhsuk-radios__label" for="threemonth">3 months by single payment
+              <input class="nhsuk-radios__input" type="radio" value="threemonthsingle" id="threemonthsingle" name="certduration">
+              <label class="nhsuk-label nhsuk-radios__label" for="threemonthsingle">3 months by single payment
                 <div class="nhsuk-hint" id="contact-hint" style="margin: 0;">
                   1 payment of £31.25
                 </div>
@@ -75,9 +79,14 @@ How long do you want your PPC to last? - PPC
             </div>
 
           </div>
-        <!-- </div> -->
-      </fieldset>
-    </div>
+          <!-- </div> -->
+        </fieldset>
+      </div>
+
+      <button class="nhsuk-button" type="submit">
+        Continue
+      </button>
+    </form>
 
     <details class="nhsuk-details" style="margin-top: 48px;">
       <summary class="nhsuk-details__summary">
@@ -100,11 +109,6 @@ How long do you want your PPC to last? - PPC
     </details>
 
     <br>
-    <form action="/updated-full-journey/v5/start-date">
-      <button class="nhsuk-button" type="submit">
-        Continue
-      </button>
-    </form>
 
     <p><a href="/updated-full-journey/v5/start">Cancel</a></p>
 

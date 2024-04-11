@@ -37,7 +37,6 @@ router.post(/continue/, function (req, res) {
   }
 })
 
-
 //fulfilment
 router.post(/fulfilment/, function (req, res) {
   // creating a variable named contact - assigning the variable the value of the radio button selected
@@ -45,31 +44,22 @@ router.post(/fulfilment/, function (req, res) {
   if (TestFulfilment == "email") {
     res.redirect('email')
   }
+
   else {
-    res.redirect('check-details-print-dd')
+    res.redirect('check-details')
   }
 })
 
 //email address
 router.post(/contact-email/, (req, res) => {
-
-  const UserEmail = req.session.data["email"]
-
-  if (UserEmail == "directdebit.test@gmail.com") {
-    res.redirect('check-details-email-dd');
-
-  } else if (UserEmail == "12month.test@gmail.com") {
-    res.redirect('check-details-email-12-months')
-
-  } else if (UserEmail == "3month.test@gmail.com") {
-    res.redirect('check-details-email-3-months')
-
-  } else {
-    // res.redirect('email');
-    res.redirect('check-details-email-12-months');
-  }
+  res.redirect('check-details');
 })
 
+//duration-and-payment-choice
+router.post(/duration-and-payment-choice/, (req, res) => {
 
+  const DurationChoice = req.session.data["certduration"]
+  res.redirect('start-date');
+})
 
 module.exports = router;

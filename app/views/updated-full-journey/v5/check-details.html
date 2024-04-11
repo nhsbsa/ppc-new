@@ -1,7 +1,7 @@
 {% extends 'layout.html' %}
 
 {% block pageTitle %}
-Check details - Email - 3 Months - PPC
+Check your answers - 12 months full payment and to receive email - PPC
 {% endblock %}
 
 {% block beforeContent %}
@@ -21,11 +21,15 @@ Check details - Email - 3 Months - PPC
     Go back</a>
 </div>
 
-
 <div class="nhsuk-grid-row">
   <div class="nhsuk-grid-column-two-thirds">
+
     <form action="check-details" onsubmit="return checkForm(this);" method="post" name="form" id="ppcForm"><input
         type="hidden" name="_csrf" value="964c2c03-f4c2-415f-a20c-eba3614cf4c1">
+
+
+      <!-- YOUR DETAILS SECTION -->
+
       <h1 class="nhsuk-heading-l">Check your answers</h1>
       <div class="nhsuk-warning-callout">
         <h2 class="nhsuk-warning-callout__label">
@@ -51,13 +55,13 @@ Check details - Email - 3 Months - PPC
 
         <div class="nhsuk-summary-list__row">
           <dt class="nhsuk-summary-list__key" id="date-of-birth">Date of birth</dt>
-          <dd class="nhsuk-summary-list__value" id="dob-value">4 March 1973</dd>
+          <dd class="nhsuk-summary-list__value" id="dob-value">14 February 1991</dd>
           <dd class="nhsuk-summary-list__actions">
             <a href="/updated-full-journey/v5/date-of-birth" id="dobChangeButton"
               aria-label="Change date of birth">Change</a>
           </dd>
         </div>
-        <!-- This is the problem-->
+        <!-- This is the problem [THIS WAS LEFT BEFORE ROBERT CAME - WHAT WAS THE PROBLEM?]-->
         <div class="nhsuk-summary-list__row">
           <dt class="nhsuk-summary-list__key" id="nhs-question">Do you know your NHS number?</dt>
           <dd class="nhsuk-summary-list__value" id="nhsq-value">Yes</dd>
@@ -102,7 +106,107 @@ Check details - Email - 3 Months - PPC
         </div>
       </dl>
 
+
+      <!-- YOUR CERTIFICATE SECTION -->
+
       <h2 class="nhsuk-heading-m">Your certificate</h2>
+
+      <!-- 12 Months Direct Debit -->
+      {% if data['certduration'] === 'twelvemonthdd' %}
+      <dl class="nhsuk-summary-list">
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key" id="length">Length</dt>
+          <dd class="nhsuk-summary-list__value" id="length-value">12 months</dd>
+          <dd class="nhsuk-summary-list__actions">
+            <a href="/updated-full-journey/v5/duration" id="certLengthChangeButton"
+              aria-label="Change certificate length">Change</a>
+          </dd>
+        </div>
+
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key" id="starts">Starts on</dt>
+          <dd class="nhsuk-summary-list__value" id="starts-on">28 July 2023</dd>
+          <dd class="nhsuk-summary-list__actions">
+            <a href="/updated-full-journey/v5/start-date" id="startDateChangeButton"
+              aria-label="Change start date">Change</a>
+          </dd>
+        </div>
+
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key" id="ends">Ends on</dt>
+          <dd class="nhsuk-summary-list__value" id="ends-on">27 July 2024</dd>
+          <dd class="nhsuk-summary-list__actions"></dd>
+        </div>
+
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key" id="cost">Total cost</dt>
+          <dd class="nhsuk-summary-list__value" id="total-cost">
+            <p id="total-costdd">£<span>111.60</span></p>
+          </dd>
+          <dd class="nhsuk-summary-list__actions"></dd>
+        </div>
+
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key" id="method">Payment method</dt>
+          <dd class="nhsuk-summary-list__value" id="pay-method">
+            <p id="method-dd">10 instalments of £<span>11.16</span> by Direct Debit</p>
+          </dd>
+          <dd class="nhsuk-summary-list__actions">
+            <a href="/updated-full-journey/v5/duration" id="methodChangeButton"
+              aria-label="Change payment method">Change</a>
+          </dd>
+        </div>
+      </dl>
+
+      <!-- 12 Months Single Payment -->
+      {% elseif data['certduration'] === 'twelvemonthsingle' %}
+      <dl class="nhsuk-summary-list">
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key" id="length">Length</dt>
+          <dd class="nhsuk-summary-list__value" id="length-value">12 months</dd>
+          <dd class="nhsuk-summary-list__actions">
+            <a href="/updated-full-journey/v5/duration" id="certLengthChangeButton"
+              aria-label="Change certificate length">Change</a>
+          </dd>
+        </div>
+
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key" id="starts">Starts on</dt>
+          <dd class="nhsuk-summary-list__value" id="starts-on">28 July 2023</dd>
+          <dd class="nhsuk-summary-list__actions">
+            <a href="/updated-full-journey/v5/start-date" id="startDateChangeButton"
+              aria-label="Change start date">Change</a>
+          </dd>
+        </div>
+
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key" id="ends">Ends on</dt>
+          <dd class="nhsuk-summary-list__value" id="ends-on">27 July 2024</dd>
+          <dd class="nhsuk-summary-list__actions"></dd>
+        </div>
+
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key" id="cost">Total cost</dt>
+          <dd class="nhsuk-summary-list__value" id="total-cost">
+            <p id="total-cost12">£<span>111.60</span></p>
+          </dd>
+          <dd class="nhsuk-summary-list__actions"></dd>
+        </div>
+
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key" id="method">Payment method</dt>
+          <dd class="nhsuk-summary-list__value" id="pay-method">
+            <p id="method-card">Card payment</p>
+          </dd>
+          <dd class="nhsuk-summary-list__actions">
+            <a href="/updated-full-journey/v5/duration" id="methodChangeButton"
+              aria-label="Change payment method">Change</a>
+          </dd>
+        </div>
+      </dl>
+
+      <!-- 3 Months Single Payment -->
+      {% elseif data['certduration'] === 'threemonthsingle' %}
       <dl class="nhsuk-summary-list">
         <div class="nhsuk-summary-list__row">
           <dt class="nhsuk-summary-list__key" id="length">Length</dt>
@@ -112,47 +216,46 @@ Check details - Email - 3 Months - PPC
               aria-label="Change certificate length">Change</a>
           </dd>
         </div>
+
         <div class="nhsuk-summary-list__row">
           <dt class="nhsuk-summary-list__key" id="starts">Starts on</dt>
           <dd class="nhsuk-summary-list__value" id="starts-on">28 July 2023</dd>
           <dd class="nhsuk-summary-list__actions">
-
-
             <a href="/updated-full-journey/v5/start-date" id="startDateChangeButton"
               aria-label="Change start date">Change</a>
-
           </dd>
         </div>
+
         <div class="nhsuk-summary-list__row">
           <dt class="nhsuk-summary-list__key" id="ends">Ends on</dt>
           <dd class="nhsuk-summary-list__value" id="ends-on">27 October 2023</dd>
           <dd class="nhsuk-summary-list__actions"></dd>
         </div>
+
         <div class="nhsuk-summary-list__row">
           <dt class="nhsuk-summary-list__key" id="cost">Total cost</dt>
           <dd class="nhsuk-summary-list__value" id="total-cost">
-
-
             <p id="total-cost3">£<span>31.25</span></p>
           </dd>
           <dd class="nhsuk-summary-list__actions"></dd>
         </div>
+
         <div class="nhsuk-summary-list__row">
           <dt class="nhsuk-summary-list__key" id="method">Payment method</dt>
           <dd class="nhsuk-summary-list__value" id="pay-method">
-
             <p id="method-card">Card payment</p>
           </dd>
           <dd class="nhsuk-summary-list__actions">
-
-
           </dd>
         </div>
       </dl>
+      {% endif %}
 
+
+      <!-- Card payment options information (for Single Payments only) -->
+      {% if (data['certduration'] === 'twelvemonthsingle') or (data['certduration'] === 'threemonthsingle') %}
       <div class="payment-info-box" style="margin-top:20px;">
         <div class="notice-margin notice form-group">
-
           <strong style="font-size: large;">
             If you choose to continue, you will be transferred to our payment provider, <a id="pay-link"
               href="https://www.payments.service.gov.uk/" target="_blank" rel="noopener">GOV.UK Pay (opens in a new
@@ -162,36 +265,34 @@ Check details - Email - 3 Months - PPC
 
         <ul class="apple-pay field-empty">
           <li class="apple-pay" title="Apple Pay logo" data-key="apple-pay" data-credit="true" data-debit="false">
-
           </li>
         </ul>
+
         <ul class="google-pay field-empty">
           <li class="google-pay" title="Google Pay logo" data-key="google-pay" data-credit="true" data-debit="false">
-
           </li>
         </ul>
         <br><br>
+
         <span class="card-text">Now accepting Apple Pay and Google Pay</span>
 
         <ul class="accepted-cards field-empty">
           <li class="visa" data-key="visa" data-credit="true" data-debit="true">
-
           </li>
           <li class="master-card" data-key="master-card" data-credit="true" data-debit="true">
-
           </li>
           <li class="jcb" data-key="jcb" data-credit="true" data-debit="false">
-
           </li>
           <li class="diners-club" data-key="diners-club" data-credit="true" data-debit="false">
-
           </li>
         </ul>
         <span class="card-text">Accepted credit and debit card types</span>
       </div>
+      {% endif %}
 
 
 
+      <!-- CSS for card payments option information -->
 
       <style>
         /* accepted cards styles */
@@ -338,7 +439,8 @@ Check details - Email - 3 Months - PPC
       </style>
 
 
-      <a href="/updated-full-journey/v5/gov-pay-3-months" class="nhsuk-button">
+
+      <a href="/updated-full-journey/v5/gov-pay-12-months" class="nhsuk-button">
         Proceed to payment
       </a>
       <p class="navigation"><a class="cancel" href="/updated-full-journey/v5/start">Cancel</a></p>
