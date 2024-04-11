@@ -8,28 +8,28 @@ const router = express.Router();
 //where-you-collect
 router.post(/where-you-collect/, (req, res) => {
 
-  const UserLocation= req.session.data["prescriptionCountryName"]
+  const UserLocation = req.session.data["prescriptionCountryName"]
 
   if (UserLocation == "england") {
     res.redirect('date-of-birth');
 
-  } else if (UserLocation== "scotland") {
+  } else if (UserLocation == "scotland") {
     res.redirect('continue')
 
-  } else if (UserLocation== "wales") {
+  } else if (UserLocation == "wales") {
     res.redirect('continue')
 
-  } else if (UserLocation== "northern") {
+  } else if (UserLocation == "northern") {
     res.redirect('continue')
   }
 })
 
 
 //continue
-router.post(/continue/,  function (req, res) {
+router.post(/continue/, function (req, res) {
   // creating a variable named contact - assigning the variable the value of the radio button selected
   var TestContinue = req.session.data["continue"]
-  if (TestContinue == "yes"){
+  if (TestContinue == "yes") {
     res.redirect('date-of-birth')
   }
   else {
@@ -39,10 +39,10 @@ router.post(/continue/,  function (req, res) {
 
 
 //fulfilment
-router.post(/fulfilment/,  function (req, res) {
+router.post(/fulfilment/, function (req, res) {
   // creating a variable named contact - assigning the variable the value of the radio button selected
   var TestFulfilment = req.session.data["fulfilment"]
-  if (TestFulfilment == "email"){
+  if (TestFulfilment == "email") {
     res.redirect('email')
   }
   else {
@@ -53,15 +53,15 @@ router.post(/fulfilment/,  function (req, res) {
 //email address
 router.post(/contact-email/, (req, res) => {
 
-  const UserEmail= req.session.data["email"]
+  const UserEmail = req.session.data["email"]
 
   if (UserEmail == "directdebit.test@gmail.com") {
     res.redirect('check-details-email-dd');
 
-  } else if (UserEmail== "12month.test@gmail.com") {
+  } else if (UserEmail == "12month.test@gmail.com") {
     res.redirect('check-details-email-12-months')
 
-  } else if (UserEmail== "3month.test@gmail.com") {
+  } else if (UserEmail == "3month.test@gmail.com") {
     res.redirect('check-details-email-3-months')
 
   } else {
