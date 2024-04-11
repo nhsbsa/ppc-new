@@ -27,9 +27,6 @@ Check your answers - 12 months full payment and to receive email - PPC
     <form action="check-details" onsubmit="return checkForm(this);" method="post" name="form" id="ppcForm"><input
         type="hidden" name="_csrf" value="964c2c03-f4c2-415f-a20c-eba3614cf4c1">
 
-
-      <!-- YOUR DETAILS SECTION -->
-
       <h1 class="nhsuk-heading-l">Check your answers</h1>
       <div class="nhsuk-warning-callout">
         <h2 class="nhsuk-warning-callout__label">
@@ -42,6 +39,10 @@ Check your answers - 12 months full payment and to receive email - PPC
             href="https://www.nhsbsa.nhs.uk/help-nhs-prescription-costs/nhs-hormone-replacement-therapy-prescription-prepayment-certificate-hrt-ppc"
             target="_blank" rel="noopener">HRT PPC could save you more money than a PPC (opens in a new tab)</a>.</p>
       </div>
+
+
+      <!-- YOUR DETAILS SECTION -->
+
       <h2 class="nhsuk-heading-m">Your details</h2>
 
       <dl class="nhsuk-summary-list">
@@ -88,7 +89,9 @@ Check your answers - 12 months full payment and to receive email - PPC
           </dd>
         </div>
 
-
+        <!-- Email information -->
+        <!-- Show chosen email adrress, if selected by user -->
+        {% if data['fulfilment'] === 'email' %}
         <div class="nhsuk-summary-list__row">
           <dt class="nhsuk-summary-list__key" id="email-q">Receive PPC by email</dt>
           <dd class="nhsuk-summary-list__value" id="emailq-value">Yes</dd>
@@ -106,6 +109,18 @@ Check your answers - 12 months full payment and to receive email - PPC
         </div>
       </dl>
 
+      <!-- Otherwise, show no email address -->
+      {% else %}
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key" id="email-q">Receive PPC by email</dt>
+        <dd class="nhsuk-summary-list__value" id="emailq-value">No</dd>
+        <dd class="nhsuk-summary-list__actions">
+          <a href="/updated-full-journey/v5/fulfilment" id="prepayEmailSentChangeButton"
+            aria-label="Change get prepayment certificate and reminder by email?">Change</a>
+        </dd>
+      </div>
+      </dl>
+      {% endif %}
 
       <!-- YOUR CERTIFICATE SECTION -->
 
