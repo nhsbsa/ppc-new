@@ -54,14 +54,15 @@ Check your answers - 12 months full payment and to receive email - PPC
           </dd>
         </div>
 
+        <!-- CONVERT DOB MONTH TO WRITTEN MONTH  -->
         <!-- Convert month number to month name, so it can be written out in the DoB field -->
         {% set allMonths = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September',
         'October', 'November', 'December'] %}
-        {% set currentMonthName = allMonths[data['dob-month'] - 1] %}
+        {% set dobMonthName = allMonths[data['dob-month'] - 1] %}
 
         <div class="nhsuk-summary-list__row">
           <dt class="nhsuk-summary-list__key" id="date-of-birth">Date of birth</dt>
-          <dd class="nhsuk-summary-list__value" id="dob-value">{{data['dob-day']}} {{currentMonthName}}
+          <dd class="nhsuk-summary-list__value" id="dob-value">{{data['dob-day']}} {{dobMonthName}}
             {{data['dob-year']}}</dd>
           <dd class="nhsuk-summary-list__actions">
             <a href="/updated-full-journey/v5/date-of-birth" id="dobChangeButton"
@@ -164,6 +165,36 @@ Check your answers - 12 months full payment and to receive email - PPC
       <!-- YOUR CERTIFICATE SECTION -->
       <h2 class="nhsuk-heading-m">Your certificate</h2>
 
+      <!-- CALCULATE END MONTH AND YEAR -->
+      <!-- If duration is 12 months... -->
+      {% if (data['certduration'] === 'twelvemonthdd') or (data['certduration'] === 'twelvemonthsingle') %}
+      <!-- Simply set End Month the same as Start Month, and set End Year as 1 year after Start Year -->
+        {% set endMonth = data['start-month'] %}
+        {% set endYear = (data['start-year'] | int) + 1 %}
+
+      <!-- Else if duration is 3 months... -->
+      {% elseif data['certduration'] === 'threemonthsingle' %}
+        <!-- If certificate would expire in same year (if month is 9 or lower), set End Month as 3 months after Start Month -->
+        {% if 9 >= data['start-month'] %}
+          {% set endMonth = (data['start-month'] | int) + 3 %}
+          {% set endYear = data['start-year'] %}
+        <!-- Else, certificate would expire next year, so set End month to what it should be in next year, and End Year becomes 1 later -->
+        {% else %}
+          {% set endMonth = (data['start-month'] | int) + 3 - 12 %}
+          {% set endYear = (data['start-year'] | int) + 1 %}
+        {% endif %}
+      {% endif %}
+      <!-- Minor issue: not all months have the same number of days (so isnt 100% accurate). But this should suffice. -->
+
+
+      <!-- CONVERT START AND END MONTHS TO WRITTEN MONTHS  -->
+      <!-- As with DoB, convert month numbers to month names, so they can be written out in the start/end fields -->
+      {% set allMonths = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September',
+      'October', 'November', 'December'] %}
+      {% set startMonthName = allMonths[data['start-month'] - 1] %}
+      {% set endMonthName = allMonths[endMonth - 1] %}
+
+
       <!-- 12 Months Direct Debit -->
       {% if data['certduration'] === 'twelvemonthdd' %}
       <dl class="nhsuk-summary-list">
@@ -178,7 +209,8 @@ Check your answers - 12 months full payment and to receive email - PPC
 
         <div class="nhsuk-summary-list__row">
           <dt class="nhsuk-summary-list__key" id="starts">Starts on</dt>
-          <dd class="nhsuk-summary-list__value" id="starts-on">28 July 2023</dd>
+          <dd class="nhsuk-summary-list__value" id="starts-on">{{data['start-day']}} {{startMonthName}}
+            {{data['start-year']}}</dd>
           <dd class="nhsuk-summary-list__actions">
             <a href="/updated-full-journey/v5/start-date" id="startDateChangeButton"
               aria-label="Change start date">Change</a>
@@ -187,7 +219,8 @@ Check your answers - 12 months full payment and to receive email - PPC
 
         <div class="nhsuk-summary-list__row">
           <dt class="nhsuk-summary-list__key" id="ends">Ends on</dt>
-          <dd class="nhsuk-summary-list__value" id="ends-on">27 July 2024</dd>
+          <dd class="nhsuk-summary-list__value" id="starts-on">{{data['start-day']}} {{endMonthName}}
+            {{endYear}}</dd>
           <dd class="nhsuk-summary-list__actions"></dd>
         </div>
 
@@ -225,7 +258,8 @@ Check your answers - 12 months full payment and to receive email - PPC
 
         <div class="nhsuk-summary-list__row">
           <dt class="nhsuk-summary-list__key" id="starts">Starts on</dt>
-          <dd class="nhsuk-summary-list__value" id="starts-on">28 July 2023</dd>
+          <dd class="nhsuk-summary-list__value" id="starts-on">{{data['start-day']}} {{startMonthName}}
+            {{data['start-year']}}</dd>
           <dd class="nhsuk-summary-list__actions">
             <a href="/updated-full-journey/v5/start-date" id="startDateChangeButton"
               aria-label="Change start date">Change</a>
@@ -234,7 +268,8 @@ Check your answers - 12 months full payment and to receive email - PPC
 
         <div class="nhsuk-summary-list__row">
           <dt class="nhsuk-summary-list__key" id="ends">Ends on</dt>
-          <dd class="nhsuk-summary-list__value" id="ends-on">27 July 2024</dd>
+          <dd class="nhsuk-summary-list__value" id="starts-on">{{data['start-day']}} {{endMonthName}}
+            {{endYear}}</dd>
           <dd class="nhsuk-summary-list__actions"></dd>
         </div>
 
@@ -272,7 +307,8 @@ Check your answers - 12 months full payment and to receive email - PPC
 
         <div class="nhsuk-summary-list__row">
           <dt class="nhsuk-summary-list__key" id="starts">Starts on</dt>
-          <dd class="nhsuk-summary-list__value" id="starts-on">28 July 2023</dd>
+          <dd class="nhsuk-summary-list__value" id="starts-on">{{data['start-day']}} {{startMonthName}}
+            {{data['start-year']}}</dd>
           <dd class="nhsuk-summary-list__actions">
             <a href="/updated-full-journey/v5/start-date" id="startDateChangeButton"
               aria-label="Change start date">Change</a>
@@ -281,7 +317,8 @@ Check your answers - 12 months full payment and to receive email - PPC
 
         <div class="nhsuk-summary-list__row">
           <dt class="nhsuk-summary-list__key" id="ends">Ends on</dt>
-          <dd class="nhsuk-summary-list__value" id="ends-on">27 October 2023</dd>
+          <dd class="nhsuk-summary-list__value" id="starts-on">{{data['start-day']}} {{endMonthName}}
+            {{endYear}}</dd>
           <dd class="nhsuk-summary-list__actions"></dd>
         </div>
 
