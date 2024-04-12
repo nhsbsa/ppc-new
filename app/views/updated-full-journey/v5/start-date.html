@@ -92,41 +92,41 @@ When do you want your prepayment certificate to start? - PPC
         </div>
       </details>
 
-      <div class="nhsuk-date-input" id="example" style="margin-top: 30px;">
-        <div class="nhsuk-date-input__item">
-          <div class="nhsuk-form-group">
-            <label class="nhsuk-label nhsuk-date-input__label" for="future-day">
-              Day
-            </label>
-            <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="future-day" name="future-day"
-              type="number" pattern="[0-9]*">
+      <form class="form" action="start-date" method="post">
+
+        <div class="nhsuk-date-input" id="example" style="margin-top: 30px;">
+          <div class="nhsuk-date-input__item">
+            <div class="nhsuk-form-group">
+              <label class="nhsuk-label nhsuk-date-input__label" for="start-day">
+                Day
+              </label>
+              <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="start-day" name="start-day"
+                type="number" pattern="[0-9]*">
+            </div>
+          </div>
+          <div class="nhsuk-date-input__item">
+            <div class="nhsuk-form-group">
+              <label class="nhsuk-label nhsuk-date-input__label" for="start-month">
+                Month
+              </label>
+              <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="start-month"
+                name="start-month" type="number" pattern="[0-9]*">
+            </div>
+          </div>
+          <div class="nhsuk-date-input__item">
+            <div class="nhsuk-form-group">
+              <label class="nhsuk-label nhsuk-date-input__label" for="start-year">
+                Year
+              </label>
+              <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-4" id="start-year"
+                name="start-year" type="number" pattern="[0-9]*">
+            </div>
           </div>
         </div>
-        <div class="nhsuk-date-input__item">
-          <div class="nhsuk-form-group">
-            <label class="nhsuk-label nhsuk-date-input__label" for="future-month">
-              Month
-            </label>
-            <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="future-month"
-              name="future-month" type="number" pattern="[0-9]*">
-          </div>
-        </div>
-        <div class="nhsuk-date-input__item">
-          <div class="nhsuk-form-group">
-            <label class="nhsuk-label nhsuk-date-input__label" for="future-year">
-              Year
-            </label>
-            <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-4" id="future-year" name="future-year"
-              type="number" pattern="[0-9]*">
-          </div>
 
-        </div>
+        <br>
 
-      </div>
-
-      <br>
-
-      <form action="/updated-full-journey/v5/fulfilment">
+        <!-- <form action="/updated-full-journey/v5/fulfilment"> -->
         <button class="nhsuk-button" type="submit">
           Continue
         </button>

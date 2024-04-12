@@ -42,47 +42,40 @@ What is your name? - PPC
 <div class="nhsuk-grid-row">
   <div class="nhsuk-grid-column-two-thirds">
 
+    <form class="form" action="name" method="post">
 
+      <fieldset class="nhsuk-fieldset">
+        <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+          <h1 class="nhsuk-fieldset__heading">
+            What is your name?
+          </h1>
+        </legend>
+        <p>Your first name and last name must match what is printed on your prescriptions. Do not include any middle
+          names.</p>
 
-    <fieldset class="nhsuk-fieldset">
-      <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
-        <h1 class="nhsuk-fieldset__heading">
-          What is your name?
-        </h1>
-      </legend>
-      <p>Your first name and last name must match what is printed on your prescriptions. Do not include any middle
-        names.</p>
+        <div class="nhsuk-form-group">
+          <label class="nhsuk-label" for="example">
+            First name
+          </label>
+          <input class="nhsuk-input nhsuk-u-width-two-thirds" id="firstname" name="firstname"
+            value="{{ data['firstname'] }}" type="text">
+        </div>
 
+        <div class="nhsuk-form-group">
+          <label class="nhsuk-label" for="example">
+            Last name
+          </label>
+          <input class="nhsuk-input nhsuk-u-width-two-thirds" id="lastname" name="lastname"
+            value="{{ data['lastname'] }}" type="text">
+        </div>
 
-      <div class="nhsuk-form-group">
-        <label class="nhsuk-label" for="example">
-
-          First name
-        </label>
-        <input class="nhsuk-input nhsuk-u-width-two-thirds" id="firstname" name="firstname"
-          value="{{ data['firstname'] }}" type="text">
-      </div>
-
-
-      <div class="nhsuk-form-group">
-        <label class="nhsuk-label" for="example">
-
-          Last name
-        </label>
-        <input class="nhsuk-input nhsuk-u-width-two-thirds" id="lastname" name="lastname" value="{{ data['lastname'] }}"
-          type="text">
-      </div>
-
-
-
-
-      <form action="/updated-full-journey/v5/find-address">
+        <!-- <form action="/updated-full-journey/v5/find-address"> -->
         <button class="nhsuk-button" type="submit">
           Continue
         </button>
-      </form>
+    </form>
 
-      <p><a href="/updated-full-journey/v5/start">Cancel</a></p>
+    <p><a href="/updated-full-journey/v5/start">Cancel</a></p>
 
 
 

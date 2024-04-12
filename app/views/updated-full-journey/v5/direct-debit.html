@@ -1,108 +1,124 @@
 {% extends 'layout.html' %}
 
 {% block pageTitle %}
-  Set up Direct Debit - PPC
+Set up Direct Debit - PPC
 {% endblock %}
 
 {% block content %}
 <div class="nhsuk-back-link">
   <a class="nhsuk-back-link__link" href="javascript:history.go(-1)">
-    <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
-      <path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
+    <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+      aria-hidden="true">
+      <path
+        d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z">
+      </path>
     </svg>
     Go back</a>
 </div>
 
 
-  <div class="nhsuk-grid-row">
-    <div class="nhsuk-grid-column-two-thirds">
-			
-		<form action="confirm-direct-debit" method="post" id="ppcForm" name="directDebitForm" novalidate="novalidate"><input type="hidden" name="_csrf" value="00bba88c-53c2-4a52-bf39-2384cdd459e2">
-            <fieldset class="nhsuk-fieldset" id="ppc-title">
-              <legend class="nhsuk-fieldset__legend nhsuk-label--l">
-                <h1 class="nhsuk-fieldset__heading">Enter bank details</h1>
-              </legend>
-			  <div class="nhsuk-promo">
-              <div class="nhsbsa-summary__container nhsuk-u-margin-bottom-4">
-                <h2 class="nhsuk-heading-m">Payment summary</h2>
-                <p class="nhsuk-body">Prepay for 12 months of prescriptions</p>
-                <p class="nhsuk-body">Amount to pay:</p>
-                <p class="nhsuk-u-font-weight-bold nhsuk-u-margin-bottom-0">10 monthly payments of £<span>11.16</span></p>
-              </div> 
-			  </div>  
-          
-              <!-- ERRORS display -->
-              
-              <!-- END Errors display -->
-              <div class="nhsuk-form-group">
-                <label for="accountname" id="accountname-label" class="nhsuk-label">Name on the account</label>
-                
-                <input type="text" class="nhsuk-input nhsuk-input--width-20" id="accountname" maxlength="18" autocomplete="off" name="accountname" value="">
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-two-thirds">
+
+    <form action="confirm-direct-debit" method="post" id="ppcForm" name="directDebitForm" novalidate="novalidate"><input
+        type="hidden" name="_csrf" value="00bba88c-53c2-4a52-bf39-2384cdd459e2">
+      <fieldset class="nhsuk-fieldset" id="ppc-title">
+        <legend class="nhsuk-fieldset__legend nhsuk-label--l">
+          <h1 class="nhsuk-fieldset__heading">Enter bank details</h1>
+        </legend>
+        <div class="nhsuk-promo">
+          <div class="nhsbsa-summary__container nhsuk-u-margin-bottom-4">
+            <h2 class="nhsuk-heading-m">Payment summary</h2>
+            <p class="nhsuk-body">Prepay for 12 months of prescriptions</p>
+            <p class="nhsuk-body">Amount to pay:</p>
+            <p class="nhsuk-u-font-weight-bold nhsuk-u-margin-bottom-0">10 monthly payments of £<span>11.16</span></p>
+          </div>
+        </div>
+
+        <!-- ERRORS display -->
+
+        <!-- END Errors display -->
+        <div class="nhsuk-form-group">
+          <label for="accountname" id="accountname-label" class="nhsuk-label">Name on the account</label>
+
+          <input type="text" class="nhsuk-input nhsuk-input--width-20" id="accountname" maxlength="18"
+            autocomplete="off" name="accountname" value="">
+        </div>
+
+        <div class="nhsuk-form-group">
+          <fieldset class="nhsuk-fieldset" id="sort-code">
+            <legend class="nhsuk-fieldset__legend"><span class="nhsuk-label">Sort-code</span>
+            </legend>
+
+            <div class="nhsuk-date-input">
+              <div class="nhsuk-date-input__item">
+                <div class="nhsuk-form-group">
+                  <label class="nhsuk-u-visually-hidden" for="sortcode1">Sort code 1</label>
+                  <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" type="text" id="sortcode1"
+                    maxlength="2" autocomplete="off" pattern="\d*" name="sortcode1" value="">
+                </div>
               </div>
-
-              <div class="nhsuk-form-group">
-                <fieldset class="nhsuk-fieldset" id="sort-code">
-                  <legend class="nhsuk-fieldset__legend"><span class="nhsuk-label">Sort-code</span>
-                  </legend>
-                  
-                  <div class="nhsuk-date-input">
-                    <div class="nhsuk-date-input__item">
-                      <div class="nhsuk-form-group">
-                        <label class="nhsuk-u-visually-hidden" for="sortcode1">Sort code 1</label>
-                        <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" type="text" id="sortcode1" maxlength="2" autocomplete="off" pattern="\d*" name="sortcode1" value="">
-                      </div>
-                    </div>
-                    <div class="nhsuk-date-input__item">
-                      <div class="nhsuk-form-group">
-                        <label class="nhsuk-u-visually-hidden" for="sortcode2">Sort code 2</label>
-                        <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" type="text" id="sortcode2" maxlength="2" autocomplete="off" pattern="\d*" name="sortcode2" value="">
-                      </div>
-                    </div>
-                    <div class="nhsuk-date-input__item">
-                      <div class="nhsuk-form-group">
-                        <label class="nhsuk-u-visually-hidden" for="sortcode3">Sort code 3</label>
-                        <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" type="text" id="sortcode3" maxlength="2" autocomplete="off" pattern="\d*" name="sortcode3" value="">
-                      </div>
-                    </div>
-                  </div>
-                </fieldset>
+              <div class="nhsuk-date-input__item">
+                <div class="nhsuk-form-group">
+                  <label class="nhsuk-u-visually-hidden" for="sortcode2">Sort code 2</label>
+                  <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" type="text" id="sortcode2"
+                    maxlength="2" autocomplete="off" pattern="\d*" name="sortcode2" value="">
+                </div>
               </div>
-
-              <div class="nhsuk-form-group">
-                  <label for="accountnumber" id="accountnumber-label" class="nhsuk-label">Account number</label>
-                  
-                  <input type="text" class="nhsuk-input nhsuk-input--width-20" id="accountnumber" autocomplete="off" maxlength="8" pattern="\d*" name="accountnumber" value="">
+              <div class="nhsuk-date-input__item">
+                <div class="nhsuk-form-group">
+                  <label class="nhsuk-u-visually-hidden" for="sortcode3">Sort code 3</label>
+                  <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" type="text" id="sortcode3"
+                    maxlength="2" autocomplete="off" pattern="\d*" name="sortcode3" value="">
+                </div>
               </div>
-              
-              <div class="nhsuk-form-group">
-                <details class="nhsuk-details" nhsuk-polyfilled="true" id="nhsuk-details0">
-                  <summary class="nhsuk-details__summary" role="button" aria-controls="details-content-0" aria-expanded="false" tabindex="0">
-                    <span class="nhsuk-details__summary-text">View the Direct Debit Guarantee</span>
-                  </summary>
-                  <div class="nhsuk-details__text" id="details-content-0" aria-hidden="true">
-                    <figure class="nhsuk-image">
-						<img class="nhsuk-image__img" src="/images/ddlogo.png" width="10px" height="121px" alt="Picture of DD logo">
-					  </figure>
-                    <p>The Guarantee is offered by all banks and building societies that accept instructions to pay Direct Debits.</p>
-                    <p>If there are any changes to the amount, date or frequency of your Direct Debit the NHS Business Services Authority will notify you (normally 10 working days) in advance of your account being debited or as otherwise agreed. If you request the NHS Business Services Authority to collect a payment, confirmation of the amount and date will be given to you at the time of the request.</p>
-                    <p>If an error is made in the payment of your Direct Debit, by the NHS Business Services Authority or your bank or building society, you are entitled to a full and immediate refund of the amount paid from your bank or building society.</p>
-                    <p>If you receive a refund you are not entitled to, you must pay it back when the NHS Business Services Authority asks you to.</p>
-                    <p>You can cancel a Direct Debit at any time by simply contacting your bank or building society. Written confirmation may be required. Please also notify the NHS Business Services Authority.</p>
-                  </div>
-                </details>
-              </div>
+            </div>
+          </fieldset>
+        </div>
 
-			  <form action="/updated-full-journey/v5/confirm-direct-debit">
-				<button class="nhsuk-button" type="submit">
-				  Continue
-				</button>
-			  </form>
-		
-			  <p><a href="/updated-full-journey/v5/start">Cancel</a></p>
+        <div class="nhsuk-form-group">
+          <label for="accountnumber" id="accountnumber-label" class="nhsuk-label">Account number</label>
+
+          <input type="text" class="nhsuk-input nhsuk-input--width-20" id="accountnumber" autocomplete="off"
+            maxlength="8" pattern="\d*" name="accountnumber" value="">
+        </div>
+
+        <div class="nhsuk-form-group">
+          <details class="nhsuk-details" nhsuk-polyfilled="true" id="nhsuk-details0">
+            <summary class="nhsuk-details__summary" role="button" aria-controls="details-content-0"
+              aria-expanded="false" tabindex="0">
+              <span class="nhsuk-details__summary-text">View the Direct Debit Guarantee</span>
+            </summary>
+            <div class="nhsuk-details__text" id="details-content-0" aria-hidden="true">
+              <figure class="nhsuk-image">
+                <img class="nhsuk-image__img" src="/images/ddlogo.png" width="10px" height="121px"
+                  alt="Picture of DD logo">
+              </figure>
+              <p>The Guarantee is offered by all banks and building societies that accept instructions to pay Direct
+                Debits.</p>
+              <p>If there are any changes to the amount, date or frequency of your Direct Debit the NHS Business
+                Services Authority will notify you (normally 10 working days) in advance of your account being debited
+                or as otherwise agreed. If you request the NHS Business Services Authority to collect a payment,
+                confirmation of the amount and date will be given to you at the time of the request.</p>
+              <p>If an error is made in the payment of your Direct Debit, by the NHS Business Services Authority or your
+                bank or building society, you are entitled to a full and immediate refund of the amount paid from your
+                bank or building society.</p>
+              <p>If you receive a refund you are not entitled to, you must pay it back when the NHS Business Services
+                Authority asks you to.</p>
+              <p>You can cancel a Direct Debit at any time by simply contacting your bank or building society. Written
+                confirmation may be required. Please also notify the NHS Business Services Authority.</p>
+            </div>
+          </details>
+        </div>
+
+        <form action="/updated-full-journey/v5/confirm-direct-debit">
+          <button class="nhsuk-button" type="submit">
+            Continue
+          </button>
+        </form>
+
+        <p><a href="/updated-full-journey/v5/start">Cancel</a></p>
 
 
-      
-{% endblock %}
 
-
-
+        {% endblock %}

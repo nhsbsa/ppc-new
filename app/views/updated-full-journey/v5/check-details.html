@@ -48,48 +48,86 @@ Check your answers - 12 months full payment and to receive email - PPC
       <dl class="nhsuk-summary-list">
         <div class="nhsuk-summary-list__row">
           <dt class="nhsuk-summary-list__key" id="full-name">Name</dt>
-          <dd class="nhsuk-summary-list__value" id="name-value">Jane Doe</dd>
+          <dd class="nhsuk-summary-list__value" id="name-value">{{ data['firstname'] }} {{ data['lastname'] }}</dd>
           <dd class="nhsuk-summary-list__actions">
             <a href="/updated-full-journey/v5/name" id="nameChangeButton" aria-label="Change name">Change</a>
           </dd>
         </div>
 
+        <!-- Convert month number to month name, so it can be written out in the DoB field -->
+        {% set allMonths = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September',
+        'October', 'November', 'December'] %}
+        {% set currentMonthName = allMonths[data['dob-month'] - 1] %}
+
         <div class="nhsuk-summary-list__row">
           <dt class="nhsuk-summary-list__key" id="date-of-birth">Date of birth</dt>
-          <dd class="nhsuk-summary-list__value" id="dob-value">14 February 1991</dd>
+          <dd class="nhsuk-summary-list__value" id="dob-value">{{data['dob-day']}} {{currentMonthName}}
+            {{data['dob-year']}}</dd>
           <dd class="nhsuk-summary-list__actions">
             <a href="/updated-full-journey/v5/date-of-birth" id="dobChangeButton"
               aria-label="Change date of birth">Change</a>
           </dd>
         </div>
-        <!-- This is the problem [THIS WAS LEFT BEFORE ROBERT CAME - WHAT WAS THE PROBLEM?]-->
+
+        <!-- This is the problem  [THIS WAS LEFT BEFORE ROBERT CAME - WHAT WAS THE PROBLEM...? -Robert] -->
         <div class="nhsuk-summary-list__row">
           <dt class="nhsuk-summary-list__key" id="nhs-question">Do you know your NHS number?</dt>
-          <dd class="nhsuk-summary-list__value" id="nhsq-value">Yes</dd>
+          <dd class="nhsuk-summary-list__value" id="nhsq-value">{{data['nhs-number-known']}}</dd>
           <dd class="nhsuk-summary-list__actions">
             <a href="/updated-full-journey/v5/nhs-number" id="nhsAnswerChangeButton"
               aria-label="Change do you know your NHS number?">Change</a>
           </dd>
         </div>
+
+        {% if data['nhs-number-known'] === 'Yes' %}
         <div class="nhsuk-summary-list__row">
           <dt class="nhsuk-summary-list__key" id="nhs-no">NHS Number</dt>
-          <dd class="nhsuk-summary-list__value" id="nhs-number">1111111111</dd>
+          <dd class="nhsuk-summary-list__value" id="nhs-number">{{data['nhs-number-entered']}}</dd>
           <dd class="nhsuk-summary-list__actions">
             <a href="/updated-full-journey/v5/nhs-number" id="nhsNoChangeButton"
               aria-label="Change NHS number">Change</a>
           </dd>
         </div>
+        {% endif %}
+
+
+        <!-- ADDRESS SUBSECTION -->
+        <!-- If address was entered using Find Address journey (so address-line-1 was never filled, and has no length), present that found address -->
+        {% if not data['address-line-1'] | length %}
         <div class="nhsuk-summary-list__row">
           <dt class="nhsuk-summary-list__key" id="address">Address</dt>
-          <dd class="nhsuk-summary-list__value" id="address-value">NHS B S A STELLA HOUSE<br>GOLDCREST WAY<br>NEWCASTLE
-            UPON TYNE<br>NE158NY</dd>
+          <dd class="nhsuk-summary-list__value" id="address-value">{{data['selected-address-house-number']}} Test
+            Road<br>Newcastle<br>{{data['postcode']}}</dd>
           <dd class="nhsuk-summary-list__actions">
             <a href="/updated-full-journey/v5/enter-address" id="addressChangeButton"
               aria-label="Change address">Change</a>
           </dd>
         </div>
 
-        <!-- Email information -->
+        {% else %}
+        <!-- Else, address was entered using Enter Address journey, so present that entered address -->
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key" id="address">Address</dt>
+          <dd class="nhsuk-summary-list__value" id="address-value">
+            {{data['address-line-1']}}<br>
+
+            <!-- If address-line-2 was filled (contains anything/has length), add that line to displayed address -->
+            {% if data['address-line-2'] | length %}
+            {{data['address-line-2']}}<br>
+            {% endif %}
+
+            {{data['address-town']}}<br>
+            {{data['postcode']}}
+          </dd>
+          <dd class="nhsuk-summary-list__actions">
+            <a href="/updated-full-journey/v5/enter-address" id="addressChangeButton"
+              aria-label="Change address">Change</a>
+          </dd>
+        </div>
+        {% endif %}
+
+
+        <!-- EMAIL SUBSECTION -->
         <!-- Show chosen email adrress, if selected by user -->
         {% if data['fulfilment'] === 'email' %}
         <div class="nhsuk-summary-list__row">
@@ -102,7 +140,7 @@ Check your answers - 12 months full payment and to receive email - PPC
         </div>
         <div class="nhsuk-summary-list__row">
           <dt class="nhsuk-summary-list__key" id="email-address">Email address</dt>
-          <dd class="nhsuk-summary-list__value" id="email-address-value">jane.doe@gmail.com</dd>
+          <dd class="nhsuk-summary-list__value" id="email-address-value">{{data['email']}}</dd>
           <dd class="nhsuk-summary-list__actions">
             <a href="/updated-full-journey/v5/email" id="emailChangeButton" aria-label="Change email address">Change</a>
           </dd>
@@ -122,8 +160,8 @@ Check your answers - 12 months full payment and to receive email - PPC
       </dl>
       {% endif %}
 
-      <!-- YOUR CERTIFICATE SECTION -->
 
+      <!-- YOUR CERTIFICATE SECTION -->
       <h2 class="nhsuk-heading-m">Your certificate</h2>
 
       <!-- 12 Months Direct Debit -->

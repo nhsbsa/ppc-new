@@ -57,9 +57,44 @@ router.post(/contact-email/, (req, res) => {
 
 //duration-and-payment-choice
 router.post(/duration-and-payment-choice/, (req, res) => {
-
-  const DurationChoice = req.session.data["certduration"]
   res.redirect('start-date');
+})
+
+//name
+router.post(/name/, (req, res) => {
+  res.redirect('find-address');
+})
+
+//date-of-birth
+router.post(/date-of-birth/, (req, res) => {
+  res.redirect('name');
+})
+
+//start-date
+router.post(/start-date/, (req, res) => {
+  res.redirect('fulfilment');
+})
+
+//nhs-number
+router.post(/nhs-number/, (req, res) => {
+  res.redirect('duration');
+})
+
+//find-address
+router.post(/find-address/, (req, res) => {
+  res.redirect('select-address');
+})
+
+//select-address
+router.post(/select-address/, (req, res) => {
+  // An address was selected, so remove any data from line-1 in Enter Address screen (otherwise this can break how CYA displays address)
+  req.session.data["address-line-1"] = null;
+
+  res.redirect('nhs-number');
+})
+//enter-address
+router.post(/enter-address/, (req, res) => {
+  res.redirect('nhs-number');
 })
 
 module.exports = router;
