@@ -94,7 +94,8 @@ NHS.UK prototype kit
 
     <details class="nhsuk-details nhsuk-expander">
       <summary class="nhsuk-details__summary">
-        <span class="nhsuk-details__summary-text">16/11/2023 - Version 5</span>
+        <span class="nhsuk-details__summary-text">Version 5 - Apple/Google Pay, speech recognition fixes, T&Cs content
+          (16/11/2023)</span>
       </summary>
       <div class="nhsuk-details__text">
 
@@ -118,33 +119,16 @@ NHS.UK prototype kit
 
         <hr>
 
-        <h3 class="nhsuk-heading-m">What we reviewed:</h3>
-        <ul class="nhsuk-list nhsuk-list--bullet">
+        <h3 class="nhsuk-heading-m">What we reviewed</h3>
+        <ol>
+          <li>New Apple/Google Pay journey, added to GOV Pay screen</li>
           <li>Certificate Duration page - Speech recognition issue</li>
           <li>Certificate Start Date page - Speech recognition issue</li>
-          <li>New Apple/Google Pay journey, added to GOV Pay screen</li>
-        </ul>
+        </ol>
 
         <br>
 
-        <h3 class="nhsuk-heading-m">Certificate Duration page - Speech recognition issue:</h3>
-        <p>An issue has been discovered when using speech recognition (Voice Control on Mac) on this page. The user is
-          offered three radio buttons, and two have the same label, saying 'Single payment'. Testers have attempted to
-          say 'single payment' and the amount, but Voice Control times out before their sentence can be completed.</p>
-        <p>The agreed solution for this issue was quite simple: to change the labels on radio buttons to be
-          different from one another.</p>
-
-        <h3 class="nhsuk-heading-m">Certificate Start Date page - Speech recognition issue:</h3>
-        <p>A similar issue has been reported on this page. In the previous version, there were two sets of date fields,
-          meaning there are two Day, Month and Year fields. When using Voice Control on Mac, it was discovered
-          that it was not possible to differentiate between the two fields, because naturally they are labelled the same
-          way.</p>
-        <p>After considering several different options, the agree solution has been to remove both radio buttons, have
-          only one set of date fields on the page, and present the information previously hidden within the two radio
-          buttons as standalone content. Information about refunds has been moved into a Details component, for users
-          who wish to backdate their certificate and have a valid FP57 form from that day.</p>
-
-        <h3 class="nhsuk-heading-m">'Pay with Apple/Google Pay' journeys</h3>
+        <h3 class="nhsuk-heading-m">1. 'Pay with Apple/Google Pay' journeys</h3>
         <ul>
           <li>
             Apple Pay - <a href="/updated-full-journey/v5/gov-pay-12-months-apple-pay">Gov Pay screen with new Apple Pay
@@ -167,22 +151,22 @@ NHS.UK prototype kit
           </li>
         </ul>
 
-        <hr>
+        <h3 class="nhsuk-heading-m">2. Certificate Duration page - Speech recognition issue</h3>
+        <p>An issue has been discovered when using speech recognition (Voice Control on Mac) on this page. The user is
+          offered three radio buttons, and two have the same label, saying 'Single payment'. Testers have attempted to
+          say 'single payment' and the amount, but Voice Control times out before their sentence can be completed.</p>
+        <p>The agreed solution for this issue was quite simple: to change the labels on radio buttons to be
+          different from one another.</p>
 
-        <h3 class="nhsuk-heading-m">'Add certificate to Apple/Google Wallet' journeys (work from V4)</h3>
-        <ul>
-          <li>
-            Apple Wallet - <a
-              href="/updated-full-journey/v5/mobile/apple-wallet/mobile-confirmation-3-months-email-apple">Confirmation
-              page with new certificate storage facilities, as if using an Apple device</a>.
-          </li>
-
-          <li>
-            Google Wallet - <a
-              href="/updated-full-journey/v5/mobile/google-wallet/mobile-confirmation-3-months-email-google">Confirmation
-              page with new certificate storage facilities, as if using an Android device</a>.
-          </li>
-        </ul>
+        <h3 class="nhsuk-heading-m">3. Certificate Start Date page - Speech recognition issue</h3>
+        <p>A similar issue has been reported on this page. In the previous version, there were two sets of date fields,
+          meaning there are two Day, Month and Year fields. When using Voice Control on Mac, it was discovered
+          that it was not possible to differentiate between the two fields, because naturally they are labelled the same
+          way.</p>
+        <p>After considering several different options, the agree solution has been to remove both radio buttons, have
+          only one set of date fields on the page, and present the information previously hidden within the two radio
+          buttons as standalone content. Information about refunds has been moved into a Details component, for users
+          who wish to backdate their certificate and have a valid FP57 form from that day.</p>
 
         <hr>
 
@@ -193,8 +177,6 @@ NHS.UK prototype kit
               errors, kickouts, service errors and cookies.</p>
           </li>
         </ul>
-
-
     </details>
 
 
@@ -202,7 +184,8 @@ NHS.UK prototype kit
 
     <details class="nhsuk-details nhsuk-expander">
       <summary class="nhsuk-details__summary">
-        <span class="nhsuk-details__summary-text">13/09/2023 - Version 4</span>
+        <span class="nhsuk-details__summary-text">Version 4 - Apple/Google Wallet storage, exemptions and T&Cs content
+          (13/09/2023)</span>
       </summary>
       <div class="nhsuk-details__text">
         <details class="nhsuk-details nhsuk-expander nhsuk-u-margin-bottom-0">
@@ -221,7 +204,6 @@ NHS.UK prototype kit
               will</strong> help users to confidently use the service.
           </p>
           <hr>
-
 
           <h3 class="nhsuk-heading-m">We reviewed CSAT feedback and user needs, specifically in relation to:</h3>
           <ul class="nhsuk-list nhsuk-list--bullet">
@@ -381,7 +363,8 @@ NHS.UK prototype kit
 
     <details class="nhsuk-details nhsuk-expander">
       <summary class="nhsuk-details__summary">
-        <span class="nhsuk-details__summary-text">17/08/2023 - Version 3</span>
+        <span class="nhsuk-details__summary-text">Version 3 - Content changes, new confirmation component
+          (17/08/2023)</span>
       </summary>
       <div class="nhsuk-details__text">
         <details class="nhsuk-details nhsuk-expander nhsuk-u-margin-bottom-0">
@@ -504,7 +487,7 @@ NHS.UK prototype kit
 
     <details class="nhsuk-details nhsuk-expander">
       <summary class="nhsuk-details__summary">
-        <span class="nhsuk-details__summary-text">28/07/2023 - Version 2</span>
+        <span class="nhsuk-details__summary-text">Version 2 - New filter screen for user's country (28/07/2023)</span>
       </summary>
       <div class="nhsuk-details__text">
         <details class="nhsuk-details nhsuk-expander nhsuk-u-margin-bottom-0">
@@ -547,15 +530,12 @@ NHS.UK prototype kit
           </ul>
           <hr>
 
-
-
           <h3 class="nhsuk-heading-m">Start page</h3>
           <ul>
             <li>
               <p> <a href="/updated-full-journey/v2/start">Start page leading to full user journey.</a></p>
             </li>
           </ul>
-
 
           <h3 class="nhsuk-heading-m">What country do you collect your prescriptions in?</h3>
           <ul>
@@ -583,16 +563,15 @@ NHS.UK prototype kit
                 errors, kickouts, service errors and cookies.</p>
             </li>
           </ul>
-
-
         </details>
     </details>
 
 
+    <!-- VERSION 1 -->
+
     <details class="nhsuk-details nhsuk-expander">
       <summary class="nhsuk-details__summary">
-        <span class="nhsuk-details__summary-text">28/07/2023 - Updated full user journey to reflect what is currently
-          live.</span>
+        <span class="nhsuk-details__summary-text">Version 1 - Updated full journey to reflect live service/'as-is' (28/07/2023)</span>
       </summary>
       <div class="nhsuk-details__text">
         <details class="nhsuk-details nhsuk-expander nhsuk-u-margin-bottom-0">
@@ -653,15 +632,17 @@ NHS.UK prototype kit
                 errors, kickouts, service errors and cookies.</p>
             </li>
           </ul>
-
-
         </details>
     </details>
 
+    <hr style="margin-top: 60px;">
 
 
+    <!-- OLD PROTOTYPES -->
 
-
+    <h2>
+      Old versions 
+    </h2>
 
 
     <details class="nhsuk-details nhsuk-expander">
