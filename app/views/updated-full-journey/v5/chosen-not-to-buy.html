@@ -1,7 +1,7 @@
 {% extends 'layout.html' %}
 
 {% block pageTitle %}
-  You have chosen not to buy - PPC
+You have chosen not to buy - PPC
 {% endblock %}
 
 <!-- For adding a breadcrumb -->
@@ -16,7 +16,7 @@
 <div class="govuk-phase-banner">
   <p class="govuk-phase-banner__content">
     <strong class="govuk-tag govuk-phase-banner__content__tag">
-       beta
+      beta
     </strong>
     <span class="govuk-phase-banner__text">
       This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
@@ -30,8 +30,11 @@
 {% block content %}
 <div class="nhsuk-back-link">
   <a class="nhsuk-back-link__link" href="javascript:history.go(-1)">
-    <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
-      <path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
+    <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+      aria-hidden="true">
+      <path
+        d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z">
+      </path>
     </svg>
     Go back</a>
 </div>
@@ -44,25 +47,25 @@
 
     <!-- Add content here -->
     <!-- Styles and components can be found at https://service-manual.nhs.uk/design-system -->
-    
-  
-    
+
+
+
     <form action="address-continue" method="get" class="form">
-    <div class="nhsuk-form-group">
+      <div class="nhsuk-form-group">
 
-      <fieldset class="nhsuk-fieldset" aria-describedby="contact-hint">
-        <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
-          <h1 class="nhsuk-fieldset__heading">
-            You have chosen not to buy a PPC
-          </h1>
-        </legend>
-       
-        <p><a href="https://www.nhsbsa.nhs.uk/nhs-help-health-costs" target="_blank"> Find out more information about help with health costs on our website</a> (opens in a new tab).</p>
+        <fieldset class="nhsuk-fieldset" aria-describedby="contact-hint">
+          <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+            <h1 class="nhsuk-fieldset__heading">
+              You have chosen not to buy a PPC
+            </h1>
+          </legend>
 
-       
-    </div>  
+          <p><a href="https://www.nhsbsa.nhs.uk/nhs-help-health-costs" target="_blank"> Find out more information about
+              help with health costs on our website (opens in new tab)</a>.</p>
+
+
+      </div>
   </div>
 
 
-{% endblock %}
-
+  {% endblock %}
