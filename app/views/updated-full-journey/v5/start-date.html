@@ -17,38 +17,34 @@ When do you want your prepayment certificate to start? - PPC
 </div>
 
 
-<!-- <script>
-  var monthBack = new Date();
-  var dd = monthBack.getDate();
-  var mm = monthBack.getMonth() + 0; //January is 0!
-  var yyyy = monthBack.getFullYear();
+<!-- CODE TO DYNAMICALLY CALCULATE THE START DATE RANGE OFFERED TO USERS (anywhere between 1 month before or after current date) -->
+<script>
+  var allMonths = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September',
+    'October', 'November', 'December'];
 
-  if (dd < 10) {
-    dd = '0' + dd
-  }
+  // LAST MONTH'S DATE
+  var dateBack = new Date();
+  var dateBackDay = dateBack.getDate();
+  var dateBackMonth = dateBack.getMonth() - 1; //January is 0!
+  var dateBackYear = dateBack.getFullYear();
 
-  if (mm < 10) {
-    mm = '0' + mm
-  }
+  // Convert month number to month name, so it can be written out in the DoB field
+  var dateBackMonthName = allMonths[dateBackMonth];
+  // Write out date for displaying in the page
+  var dateBackWritten = dateBackDay + ' ' + dateBackMonthName + ' ' + dateBackYear;
 
-  monthBack = dd + '/' + mm + '/' + yyyy;
 
+  // NEXT MONTH'S DATE
+  var dateForward = new Date();
+  var dateForwardDay = dateForward.getDate();
+  var dateForwardMonth = dateForward.getMonth() + 1; //January is 0!
+  var dateForwardYear = dateForward.getFullYear();
 
-  var monthForward = new Date();
-  var dd = monthForward.getDate();
-  var mm = monthForward.getMonth() + 2; //January is 0!
-  var yyyy = monthForward.getFullYear();
-
-  if (dd < 10) {
-    dd = '0' + dd
-  }
-
-  if (mm < 10) {
-    mm = '0' + mm
-  }
-  monthForward = dd + '/' + mm + '/' + yyyy;
-
-</script> -->
+  // Convert month number to month name, so it can be written out in the DoB field
+  var dateForwardMonthName = allMonths[dateForwardMonth];
+  // Write out date for displaying in the page
+  var dateForwardWritten = dateForwardDay + ' ' + dateForwardMonthName + ' ' + dateForwardYear;
+</script>
 
 
 <div class="nhsuk-grid-row">
@@ -61,13 +57,11 @@ When do you want your prepayment certificate to start? - PPC
         </h1>
       </legend>
 
-      <!-- <p>
-        You can choose any day to start your prepayment certificate between
-        <script>document.write(monthBack);</script> and
-        <script>document.write(monthForward);</script>.
-      </p> -->
-
-      <p>You can choose any date to start your prepayment certificate between 19 July 2023 and 10 November 2023.</p>
+      <p>
+        You can choose any date to start your prepayment certificate between
+        <script>document.write(dateBackWritten);</script> and
+        <script>document.write(dateForwardWritten);</script>.
+      </p>
 
       <p>Choose the date you will collect your next prescription to get the most out of your certificate.</p>
 
