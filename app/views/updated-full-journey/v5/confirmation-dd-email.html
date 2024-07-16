@@ -30,11 +30,8 @@ Confirmation of Direct Debit and to receive email - PPC
             PPC for
           </dt>
           <dd class="nhsuk-summary-list__value nhsuk-print-black">
-            Jane Doe
+            {{ data['firstname'] }} {{ data['lastname'] }}
           </dd>
-
-
-
         </div>
 
         <div class="nhsuk-summary-list__row nhsuk-print-black">
@@ -46,12 +43,28 @@ Confirmation of Direct Debit and to receive email - PPC
           </dd>
         </div>
 
+
+        <!-- CALCULATE END MONTH AND YEAR -->
+        <!-- If duration is 12 months... -->
+        {% if (data['certduration'] === 'twelvemonthdd') or (data['certduration'] === 'twelvemonthsingle') %}
+          <!-- Simply set End Month the same as Start Month, and set End Year as 1 year after Start Year -->
+          {% set endMonth = data['start-month'] %}
+          {% set endYear = (data['start-year'] | int) + 1 %}
+        {% endif %}
+
+        <!-- CONVERT START AND END MONTHS TO WRITTEN MONTHS  -->
+        <!-- As with DoB, convert month numbers to month names, so they can be written out in the start/end fields -->
+        {% set allMonths = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September',
+        'October', 'November', 'December'] %}
+        {% set startMonthName = allMonths[data['start-month'] - 1] %}
+        {% set endMonthName = allMonths[endMonth - 1] %}
+
         <div class="nhsuk-summary-list__row nhsuk-print-black">
           <dt class="nhsuk-summary-list__key nhsuk-print-black">
             Starts on
           </dt>
           <dd class="nhsuk-summary-list__value nhsuk-print-black">
-            28 July 2023
+            {{data['start-day']}} {{startMonthName}} {{data['start-year']}}
           </dd>
         </div>
 
@@ -60,7 +73,7 @@ Confirmation of Direct Debit and to receive email - PPC
             Ends on
           </dt>
           <dd class="nhsuk-summary-list__value nhsuk-print-black">
-            27 July 2024
+            {{data['start-day']}} {{endMonthName}} {{endYear}}
           </dd>
         </div>
 
@@ -86,7 +99,7 @@ Confirmation of Direct Debit and to receive email - PPC
     <h2 class="nhsuk-heading-m">Save or print your certificate</h2>
 
     <p class="nhsuk-body">We have sent your certificate details to <span
-        class="nhsuk-u-font-weight-bold">jane.doe@gmail.com</span>.</p>
+        class="nhsuk-u-font-weight-bold">{{data['email']}}</span>.</p>
     <p>You can also save your certificate by printing this page, saving your certificate as a PDF or by taking a
       screenshot of your certificate details above.</p>
 
