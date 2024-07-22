@@ -139,10 +139,11 @@ PPC Prototype
 
           <h3 class="nhsuk-heading-m">Summary of changes</h3>
           <ol>
-            <li><strong>New 'Pay with Apple/Google Pay' journeys</strong> - added to GOV Pay screen</li>
-            <li><strong>Certificate Duration page</strong> - speech recognition issue solved</li>
-            <li><strong>Certificate Start Date page</strong> - speech recognition issue solved</li>
-            <li><strong>Improving awareness of Direct Debit T&Cs</strong> - changes to CYA and Submit pages</li>
+            <li><strong><a href="#apple-google-pay">New 'Pay with Apple/Google Pay' journeys</a></strong> - added to GOV
+              Pay screen</li>
+            <li><a href="#cert-duration"><strong>Certificate Duration page</a></strong> - speech recognition issue solved</li>
+            <li><a href="#cert-start"><strong>Certificate Start Date page</a></strong> - speech recognition issue solved</li>
+            <li><a href="#ts-and-cs"><strong>Improving awareness of T&Cs</a></strong> - changes to CYA and Submit pages</li>
             <li><strong>General changes:</strong></li>
             <ul>
               <li>(Content) All 'opens in new tab' links now include this text in the hyperlinks themselves.</li>
@@ -153,11 +154,11 @@ PPC Prototype
 
           <hr>
 
-          <h3 class="nhsuk-heading-m">1. New 'Pay with Apple/Google Pay' journeys</h3>
-          <p>New versions of GOV.UK Pay screen with Google/Apple Pay buttons and popup functionality. Only prototyped
-            for 12 month
-            payment option currently (as proof of concept). Not currently added to main journey - only accessible via
-            links below.</p>
+          <h3 class="nhsuk-heading-m" id="apple-google-pay">1. New 'Pay with Apple/Google Pay' journeys</h3>
+          <p>New versions of GOV.UK Pay screen added, with Google/Apple Pay buttons and popup functionality. Only
+            prototyped for 12 month payment option currently (as proof of concept). Not currently added to main journey
+            - only accessible via links below.</p>
+
           <ul>
             <li>
               Apple Pay - <a href="/updated-full-journey/v5/gov-pay-12-months-apple-pay">Link to page</a>
@@ -183,16 +184,19 @@ PPC Prototype
               target=”_blank”>Design Log</a>
             -
             <a href="https://miro.com/app/board/uXjVM3WcBpE=/?moveToWidget=3458764577949469297&cot=14"
-              target=”_blank”>Location in PPC Miro</a>
+              target=”_blank”>Discussion in PPC Miro</a>
           </p>
 
 
-          <h3 class="nhsuk-heading-m">2. Certificate Duration page - Speech recognition issue solved</h3>
+          <h3 class="nhsuk-heading-m" id="cert-duration" style="margin-top: 40px;">2. Certificate Duration page - Speech
+            recognition issue solved
+          </h3>
           <p>An issue has been discovered when using speech recognition (Voice Control on Mac) on this page. The user is
             offered three radio buttons, and two have the same label, saying 'Single payment'. Testers have attempted to
             say 'single payment' and the amount, but Voice Control times out before their sentence can be completed.</p>
           <p>The agreed solution for this issue was quite simple: to change the labels on radio buttons to be
             different from one another.</p>
+
           <ul>
             <li>
               Certificate Duration - <a href="/updated-full-journey/v5/duration">Link to page</a>
@@ -204,21 +208,23 @@ PPC Prototype
               target=”_blank”>Design Log</a>
             -
             <a href="https://miro.com/app/board/uXjVM3WcBpE=/?moveToWidget=3458764569255750089&cot=14"
-              target=”_blank”>Location in PPC Miro</a>
+              target=”_blank”>Discussion in PPC Miro</a>
             -
             <a href="https://bsa2468.atlassian.net/browse/HELP-2018" target=”_blank”>JIRA Ticket</a>
           </p>
 
 
-          <h3 class="nhsuk-heading-m">3. Certificate Start Date page - Speech recognition issue solved</h3>
+          <h3 class="nhsuk-heading-m" id="cert-start" style="margin-top: 40px;">3. Certificate Start Date page - Speech
+            recognition issue solved</h3>
           <p>A similar issue has been reported on this page. In the previous version, there were two sets of date
             fields, meaning there are two Day, Month and Year fields. When using Voice Control on Mac, it was discovered
             that it was not possible to differentiate between the two fields, because naturally they are labelled the
             same way.</p>
-          <p>After considering several different options, the agree solution has been to remove both radio buttons,
-            have only one set of date fields on the page, and present the information previously hidden within the two
-            radio buttons as standalone content. Information about refunds has been moved into a Details component, for
-            users who wish to backdate their certificate and have a valid FP57 form from that day.</p>
+          <p>The agreed solution was to remove both radio buttons, have only one set of date fields on the page,
+            and present the information previously hidden within the two radio buttons as standalone content.
+            Information about refunds has been moved into a Details component, for users who wish to backdate their
+            certificate and have a valid FP57 form from that day.</p>
+
           <ul>
             <li>
               Certificate Start Date - <a href="/updated-full-journey/v5/start-date">Link to page</a>
@@ -230,9 +236,43 @@ PPC Prototype
               target=”_blank”>Design Log</a>
             -
             <a href="https://miro.com/app/board/uXjVM3WcBpE=/?moveToWidget=3458764571293097405&cot=14"
-              target=”_blank”>Location in PPC Miro</a>
+              target=”_blank”>Discussion in PPC Miro</a>
             -
             <a href="https://bsa2468.atlassian.net/browse/HELP-1161" target=”_blank”>JIRA Ticket</a>
+          </p>
+
+
+          <h3 class="nhsuk-heading-m" id="ts-and-cs" style="margin-top: 40px;">4. Improving awareness of T&Cs</h3>
+          <p>Complaints about refunds and cancelled direct debits remain high, and users often mention being unaware
+            that they could not cancel their PPC or request a refund. Changes were previously made in V4 to aid this:
+            the T&Cs were signposted-to, and a checkbox was added which required users to confirm their agreement with
+            them. However in V5 this was further investigated by Steve and Rob, and changes were agreed with the team.
+          </p>
+          <p>In the Check Your Answers page, users are now informed and signposted to the T&Cs - and if they selected to
+            pay by Direct Debit (DD), the specific terms about DD payments are also mentioned to them. This was done
+            using a warning callout, which replaced the existing callout here regarding HRT-PPC (which users are still
+            informed about at the start of the journey).</p>
+          <p>In the Confirm and Submit page (only present in the DD journey), content about DD T&Cs was tweaked and
+            rearranged into a new warning callout to highlight its importance, and the team agreed the checkbox (added
+            in V4) should be removed as a result, to streamline the new page (particuarly for screen reader users).</p>
+
+          <ul>
+            <li>
+              Check Your Answers (requires completing journey up to this point) - <a
+                href="/updated-full-journey/v5/check-details">Link to page</a>
+            </li>
+            <li>
+              Confirm and Submit (Direct Debit) - <a href="/updated-full-journey/v5/submit-direct-debit">Link to
+                page</a>
+            </li>
+          </ul>
+
+          <p>Additional resources:
+            <a href="https://bsa2468.atlassian.net/wiki/spaces/HESUCD/pages/4238737787/PPC+ID+Design+Log+2023"
+              target=”_blank”>Design Log (WIP)</a>
+            -
+            <a href="https://miro.com/app/board/uXjVM3WcBpE=/?moveToWidget=3458764585706519124&cot=14"
+              target=”_blank”>Discussion in PPC Miro</a>
           </p>
 
 
