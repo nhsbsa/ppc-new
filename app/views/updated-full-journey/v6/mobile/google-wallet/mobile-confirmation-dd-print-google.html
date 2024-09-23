@@ -1,0 +1,256 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+Confirmation of Direct Debit and to print - PPC
+{% endblock %}
+
+<!-- Header goes inside the header block -->
+<!-- More info and code for the header can be found at https://service-manual.nhs.uk/design-system/components/header -->
+{% block header %}
+  {{ header({
+    "service": {
+        "name": "Buy an NHS Prescription Prepayment Certificate",
+        "href": "/"
+      },
+      "showNav": "false",
+      "showSearch": "false"
+    })
+  }}
+    <!-- Phase banner -->
+    <div class="app-phase-banner">
+        <div class="nhsuk-width-container app-phase-banner__container">
+          <p class="app-phase-banner__content">
+            <strong class="nhsuk-tag app-phase-banner__tag">
+              beta
+            </strong>
+            <span class="app-phase-banner__text">
+              This is a new service – your <a class="govuk-link" href="https://online1.snapsurveys.com/PPC_beta_banner_feedback">feedback (opens in a new tab)</a> will help us to improve it.
+            </span>
+          </p>
+        </div>
+      </div>
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-two-thirds">
+
+    <!-- Done panel -->
+    <div class="nhsuk-panel nhsuk-u-margin-bottom-5" style="background: #00703c; margin-top: 0;">
+      <h1 class="nhsuk-panel__title" style="color: white;">Application complete</h1><span
+        class="nhsuk-caption-l nhsuk-caption--bottom" style="text-align: center; color: white;">
+        <b>You have set up a Direct Debit payment for 12 months of prescriptions.</b> </span> <br>
+    </div>
+
+    <br>
+
+    <p>If a pharmacist asks for evidence that you have prepaid, you must show them your certificate details.</p>
+
+    <div style="background-color: #005EB8; border-radius: 20px;">
+      <div style="padding-top: 15px;">
+      </div>
+
+      <dl class="nhsuk-summary-list" style="color: white; padding: 20px ; margin-bottom: 5px; margin-top: -25px;">
+
+        <div class="nhsuk-summary-list__row nhsuk-print-black">
+          <dt class="nhsuk-summary-list__key nhsuk-print-black">
+            PPC for
+          </dt>
+          <dd class="nhsuk-summary-list__value nhsuk-print-black">
+            Jane Doe
+          </dd>
+
+
+
+        </div>
+
+        <div class="nhsuk-summary-list__row nhsuk-print-black">
+          <dt class="nhsuk-summary-list__key nhsuk-print-black">
+            Certificate reference
+          </dt>
+          <dd class="nhsuk-summary-list__value nhsuk-print-black">
+            1000000001234
+          </dd>
+        </div>
+
+        <div class="nhsuk-summary-list__row nhsuk-print-black">
+          <dt class="nhsuk-summary-list__key nhsuk-print-black">
+            Starts on
+          </dt>
+          <dd class="nhsuk-summary-list__value nhsuk-print-black">
+            28 July 2023
+          </dd>
+        </div>
+
+        <div class="nhsuk-summary-list__row nhsuk-print-black">
+          <dt class="nhsuk-summary-list__key nhsuk-print-black">
+            Ends on
+          </dt>
+          <dd class="nhsuk-summary-list__value nhsuk-print-black">
+            27 July 2024
+          </dd>
+        </div>
+
+      </dl>
+
+      <div style="color: white;">
+        <p class="nhsuk-print-black" style=" padding-left: 20px; padding-bottom: 20px;"><strong>If your personal details
+            change, you must contact the NHSBSA.</strong><br>If your details do not match our records, you may receive
+          a<br> penalty charge.</p>
+      </div>
+
+      <div style="color: white;">
+        <p class="nhsuk-print-black" style=" padding-left: 20px; padding-bottom: 20px;">Ways you can contact us can be
+          found on our website:<br> <strong>https://www.nhsbsa.nhs.uk/contact-nhs-help-health-costs</strong></p>
+      </div>
+
+    </div>
+
+    <br>
+
+
+    <!-- Save or Print Cert -->
+    <h2 class="nhsuk-heading-m">Printing your certificate</h2>
+
+    <p>You must save your certificate details by printing this page.</p>
+    <p>You can also save your certificate as a PDF or take a screenshot of this page.</p>
+
+
+    </svg> <a href="javascript:window.print();"><button class="nhsuk-button" data-prevent-double-click="true"
+        data-inline="true" type="submit">
+        Print or save a copy</button></a>
+
+    <a href="/updated-full-journey/v6/mobile/google-wallet/add-cert-to-google-wallet-1">
+      <button type="submit">
+        <img src="/images/google-wallet.png" alt="Add to Google Wallet button" data-inline="true">
+      </button>
+    </a>
+
+
+    <style>
+      button {
+        border: none;
+        cursor: pointer;
+        appearance: none;
+      }
+
+      @media (min-width:320px) {
+        /* smartphones, iPhone, portrait 480x320 phones */
+      }
+
+      img {
+        width: 190px;
+        height: 58px;
+      }
+    </style>
+
+    <!--  <div class="nhsuk-inset-text">
+          <span class="nhsuk-u-visually-hidden">Information: </span>
+
+          <dl class="nhsuk-summary-list">
+
+              <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">
+                  Certificate for:
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+                  Jane Doe
+                </dd>
+              </div>
+
+              <div class="nhsuk-summary-list__row">
+                  <dt class="nhsuk-summary-list__key">
+                    Certificate number:
+                  </dt>
+                  <dd class="nhsuk-summary-list__value">
+                    10000000006578
+                  </dd>
+                </div>
+
+                <div class="nhsuk-summary-list__row">
+                    <dt class="nhsuk-summary-list__key">
+                      Starts on:
+                    </dt>
+                    <dd class="nhsuk-summary-list__value">
+                      28 July 2023
+                    </dd>
+                  </div>
+
+                  <div class="nhsuk-summary-list__row">
+                      <dt class="nhsuk-summary-list__key">
+                        Ends on:
+                      </dt>
+                      <dd class="nhsuk-summary-list__value">
+                        27 July 2024
+                      </dd>
+                    </div>
+              </dl>
+        </div>-->
+
+    <br><br>
+
+
+    <!-- Direct debit -->
+    <div class="nhsuk-u-margin-bottom-7">
+      <h2 class="nhsuk-heading-m">Your Direct Debit</h2>
+      <p class="nhsuk-body">We have set up a Direct Debit payment for you. You will receive a letter confirming this and
+        including your mandate. Our name on your bank statement will be NHSBSA.</p>
+    </div>
+
+    <div class="nhsuk-form-group">
+      <h2 class="nhsuk-heading-m">Collecting prescriptions</h2>
+      <p class="nhsuk-body">Tick box 'F' on the back of your prescription.</p>
+      <p class="nhsuk-body">Pharmacy staff ask for prepayment details. If you do not have them with you, they tick
+        'Evidence not seen' on the prescription. They will not charge you.</p>
+      <p class="nhsuk-body">We prevent fraud by matching certificate details on our database with prescriptions.</p>
+    </div>
+
+    <br>
+    <div class="noprint">
+      <!-- feedback -->
+      <div class="nhsuk-form-group">
+        <h2 class="nhsuk-heading-m">Feedback</h2>
+        <p class="nhsuk-body"><a class="nhsuk-link"
+            href="https://online1.snapsurveys.com/buy-prescription-prepayment-certificate-feedback/" target="_blank"
+            rel="noopener" id="finished-button">What did you think of this service?</a> (Takes 30 seconds)</p>
+      </div>
+
+      <br>
+      <!-- Contact us -->
+      <h2 class="nhsuk-heading-m">Contact us</h2>
+      <p class="nhsuk-body"><a class="nhsuk-link" href="https://nhsbsa-live.powerappsportals.com/contact-us/">Contact
+          us</a> if you have any queries about your prescription prepayment certificate.</p>
+
+      <hr>
+
+      <h2 class="nhsuk-heading-m">Please join the NHS Organ Donation Register</h2>
+      <p>Organ donation laws have changed - <a
+          href="https://www.organdonation.nhs.uk/uk-laws/?campaign=2499&utm_source=prescription_ppc&utm_medium=referral&utm_content=web&utm_campaign=partner">
+          Find out how the laws affect the country you live in and what your choices are on the Organ Donation website
+          (opens in new tab)</a>.
+      <p>If you needed an organ transplant, would you have one? If so, please help others.</p>
+      <p>Tell your family about your organ donation decision.</p>
+
+      <form
+        action="https://www.organdonation.nhs.uk/register-your-decision/donate/?campaign=2499&utm_source=prescription_ppc&utm_medium=referral&utm_content=web&utm_campaign=partner">
+        <button class="nhsuk-button" type="submit">
+          Register to donate
+        </button>
+      </form>
+
+      <p>(Opens on the NHS Organ Donor website in a new tab)</p>
+      <img src="/images/organ-donation.png" alt="Organ Donation UK logo">
+      <style>
+        @media (min-width:320px) {
+          /* smartphones, iPhone, portrait 480x320 phones */
+        }
+
+        img {
+          width: 190px;
+          height: 58px;
+        }
+      </style>
+
+    </div>
+
+    {% endblock %}

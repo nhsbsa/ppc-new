@@ -1,0 +1,121 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+  Start page - PPC
+{% endblock %}
+
+<!-- Header goes inside the header block -->
+<!-- More info and code for the header can be found at https://service-manual.nhs.uk/design-system/components/header -->
+{% block header %}
+  {{ header({
+    "service": {
+        "name": "Buy an NHS Prescription Prepayment Certificate",
+        "href": "/"
+      },
+      "showNav": "false",
+      "showSearch": "false"
+    })
+  }}
+    <!-- Phase banner -->
+    <div class="app-phase-banner">
+        <div class="nhsuk-width-container app-phase-banner__container">
+          <p class="app-phase-banner__content">
+            <strong class="nhsuk-tag app-phase-banner__tag">
+              beta
+            </strong>
+            <span class="app-phase-banner__text">
+              This is a new service – your <a class="govuk-link" href="https://online1.snapsurveys.com/PPC_beta_banner_feedback">feedback (opens in a new tab)</a> will help us to improve it.
+            </span>
+          </p>
+        </div>
+      </div>
+{% endblock %}
+
+<!-- For adding a breadcrumb -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
+{% block beforeContent %}
+
+{% endblock %}
+<div id="nhsuk-cookie-banner" data-nosnippet="true">
+  <div class="nhsuk-cookie-banner" id="cookiebanner">
+    <div class="nhsuk-width-container"> 
+      <br>
+        <h2>Cookies on the NHS website</h2> 
+        <p>We've put some small files called cookies on your device to make our site work.</p>
+        <p>We'd also like to use analytics cookies. These send information about how our site is used to services called Adobe Analytics, Hotjar and Google Analytics. We use this information to improve our site.</p>
+        <p>Let us know if this is OK. We'll use a cookie to save your choice. You can <a id="nhsuk-cookie-banner__link" href="nhsbsa-cookies" tabindex="1">read more about our cookies</a> before you choose.</p>
+        <form action="cookies-decision">
+            <button class="nhsuk-button" href="cookies/cookies-decision" tabindex="2">I'm OK with analytics cookies</button>&nbsp;&nbsp;&nbsp;
+        
+            <button class="nhsuk-button" href="#" tabindex="3">Do not use analytics cookies</button>
+          </form>
+    </div>
+  </div>
+
+  <div class="nhsuk-success-banner" id="nhsuk-cookie-confirmation-banner" style="display:none;">
+    <div class="nhsuk-width-container">
+      <p id="nhsuk-success-banner__message">You can change your cookie settings at any time using our <a href="/our-policies/cookies-policy/">cookies page</a>.</p>
+    </div>
+  </div>
+</div>
+<!-- For adding a back link -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/back-link -->
+{% block outerContent %}
+
+{% endblock %}
+
+<!-- For adding page content -->
+<!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <h1 class="nhsuk-headling-xl">
+        Buy an NHS Prescription Prepayment Certificate
+      </h1>
+
+     
+      <div class="nhsuk-warning-callout">
+        <h3 class="nhsuk-warning-callout__label">
+          <span role="text">
+            <span class="nhsuk-u-visually-hidden">Important: </span>
+            Important information
+          </span>
+        </h3>
+        <p>If you pay for NHS prescribed hormone replacement therapy (HRT) medicine, then an <a href="https://www.nhsbsa.nhs.uk/help-nhs-prescription-costs/nhs-hormone-replacement-therapy-prescription-prepayment-certificate-hrt-ppc" target="_blank" rel="noopener">HRT PPC could save you more money than a PPC (opens in new tab)</a>.</p>
+      </div>
+
+
+      <p>
+        Save money on NHS prescriptions by prepaying for them.
+      </p>
+
+      <p>You can pay a set price for prescriptions for 3 or 12 months, no matter how many you need.</p>
+<p>A prescription costs £9.90 per item, but prepaying for an unlimited number of prescriptions is:</p>
+      <ul class="list list-bullet">
+        <li>£32.05 for 3 months</li>
+        <li>£114.50 for 12 months (or 10 Direct Debit instalments of £11.45)</li>
+      </ul>
+
+
+      
+
+     <h2 class="nhsuk-heading-m">How it works</h2>
+      <p>We can send your certificate details by email, or you can print them at the end of the service.</p>
+
+     <p>Show your certificate details when you collect your prescription. You can collect prescriptions straight away, if your start date is today or earlier.</p>
+      
+     
+
+      
+
+     <a href="/updated-full-journey/v6/where-you-collect" class="nhsuk-button nhsuk-u-margin-bottom-8">
+      Buy now
+    </a>
+      <h2 class="nhsuk-heading-s">Other ways to buy</h3>
+      <p>The quickest way to buy a certificate is online. If you can't, there are <a href="https://www.nhsbsa.nhs.uk/help-nhs-prescription-costs/nhs-prescription-prepayment-certificate-ppc">other ways to buy one</a>.</p>
+    </div>
+
+  </div>
+{% endblock %}
+

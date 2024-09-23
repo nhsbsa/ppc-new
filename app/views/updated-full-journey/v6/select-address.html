@@ -1,0 +1,106 @@
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+Select address - PPC
+{% endblock %}
+
+
+<!-- Header goes inside the header block -->
+<!-- More info and code for the header can be found at https://service-manual.nhs.uk/design-system/components/header -->
+{% block header %}
+  {{ header({
+    "service": {
+        "name": "Buy an NHS Prescription Prepayment Certificate",
+        "href": "/"
+      },
+      "showNav": "false",
+      "showSearch": "false"
+    })
+  }}
+    <!-- Phase banner -->
+    <div class="app-phase-banner">
+        <div class="nhsuk-width-container app-phase-banner__container">
+          <p class="app-phase-banner__content">
+            <strong class="nhsuk-tag app-phase-banner__tag">
+              beta
+            </strong>
+            <span class="app-phase-banner__text">
+              This is a new service – your <a class="govuk-link" href="https://online1.snapsurveys.com/PPC_beta_banner_feedback">feedback (opens in a new tab)</a> will help us to improve it.
+            </span>
+          </p>
+        </div>
+      </div>
+{% endblock %}
+
+
+
+<!-- Your page content goes inside the content block -->
+<!-- More info and code for the page layout can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-two-thirds">
+    <div class="nhsuk-back-link">
+      <a class="nhsuk-back-link__link" href="javascript:history.go(-1)">
+        <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+          aria-hidden="true" height="24" width="24">
+          <path
+            d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z">
+          </path>
+        </svg>
+        Go back
+      </a>
+    </div>
+
+    <div class="nhsuk-grid-row">
+      <div class="nhsuk-grid-column-two-thirds">
+
+        <form class="form" action="select-address" method="post">
+
+          <!-- Change the page heading -->
+          <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+            <h1 class="nhsuk-fieldset__heading">
+              Select your address
+            </h1>
+          </legend>
+
+          <p>The address you select must match what is printed on your prescriptions.</p>
+
+
+          </fieldset>
+          <label class="nhsuk-label" for="select-1">
+            Postcode
+          </label>
+          <p>{{data['postcode']}} &nbsp; <a href="/updated-full-journey/v6/find-address">Change</a></p>
+
+          <label class="nhsuk-label" for="select-1">
+            Your address
+          </label>
+          <div class="nhsuk-form-group">
+
+            <select class="nhsuk-select" id="selected-address-house-number" name="selected-address-house-number">
+              <option value="0">Select your address</option>
+              <option value="1">1 Test Road, Newcastle, {{data['postcode']}}</option>
+              <option value="2">2 Test Road, Newcastle, {{data['postcode']}}</option>
+              <option value="3">3 Test Road, Newcastle, {{data['postcode']}}</option>
+              <option value="4">4 Test Road, Newcastle, {{data['postcode']}}</option>
+              <option value="5">5 Test Road, Newcastle, {{data['postcode']}}</option>
+              <option value="6">6 Test Road, Newcastle, {{data['postcode']}}</option>
+              <option value="7">7 Test Road, Newcastle, {{data['postcode']}}</option>
+            </select>
+          </div>
+
+          <p><a href="/updated-full-journey/v6/enter-address">My address is not listed</a></p>
+
+          <!-- <form action="/updated-full-journey/v6/nhs-number"> -->
+          <button class="nhsuk-button" type="submit">
+            Continue
+          </button>
+        </form>
+
+        <p><a href="/updated-full-journey/v6/start">Cancel</a></p>
+
+      </div>
+    </div>
+    {% endblock %}

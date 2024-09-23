@@ -1,0 +1,163 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+When do you want your prepayment certificate to start? - PPC
+{% endblock %}
+
+
+<!-- Header goes inside the header block -->
+<!-- More info and code for the header can be found at https://service-manual.nhs.uk/design-system/components/header -->
+{% block header %}
+  {{ header({
+    "service": {
+        "name": "Buy an NHS Prescription Prepayment Certificate",
+        "href": "/"
+      },
+      "showNav": "false",
+      "showSearch": "false"
+    })
+  }}
+    <!-- Phase banner -->
+    <div class="app-phase-banner">
+        <div class="nhsuk-width-container app-phase-banner__container">
+          <p class="app-phase-banner__content">
+            <strong class="nhsuk-tag app-phase-banner__tag">
+              beta
+            </strong>
+            <span class="app-phase-banner__text">
+              This is a new service – your <a class="govuk-link" href="https://online1.snapsurveys.com/PPC_beta_banner_feedback">feedback (opens in a new tab)</a> will help us to improve it.
+            </span>
+          </p>
+        </div>
+      </div>
+{% endblock %}
+
+
+{% block content %}
+<div class="nhsuk-back-link">
+  <a class="nhsuk-back-link__link" href="javascript:history.go(-1)">
+    <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+      aria-hidden="true">
+      <path
+        d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z">
+      </path>
+    </svg>
+    Go back</a>
+</div>
+
+
+<!-- CODE TO DYNAMICALLY CALCULATE THE START DATE RANGE OFFERED TO USERS (anywhere between 1 month before or after current date) -->
+<script>
+  var allMonths = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September',
+    'October', 'November', 'December'];
+
+  // LAST MONTH'S DATE
+  var dateBack = new Date();
+  var dateBackDay = dateBack.getDate();
+  var dateBackMonth = dateBack.getMonth() - 1; //January is 0!
+  var dateBackYear = dateBack.getFullYear();
+
+  // Convert month number to month name, so it can be written out in the DoB field
+  var dateBackMonthName = allMonths[dateBackMonth];
+  // Write out date for displaying in the page
+  var dateBackWritten = dateBackDay + ' ' + dateBackMonthName + ' ' + dateBackYear;
+
+
+  // NEXT MONTH'S DATE
+  var dateForward = new Date();
+  var dateForwardDay = dateForward.getDate();
+  var dateForwardMonth = dateForward.getMonth() + 1; //January is 0!
+  var dateForwardYear = dateForward.getFullYear();
+
+  // Convert month number to month name, so it can be written out in the DoB field
+  var dateForwardMonthName = allMonths[dateForwardMonth];
+  // Write out date for displaying in the page
+  var dateForwardWritten = dateForwardDay + ' ' + dateForwardMonthName + ' ' + dateForwardYear;
+</script>
+
+
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-two-thirds">
+
+    <fieldset class="nhsuk-fieldset">
+      <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+        <h1 class="nhsuk-fieldset__heading">
+          When do you want your prepayment certificate to start?
+        </h1>
+      </legend>
+
+      <p>
+        You can choose any date to start your prepayment certificate between
+        <script>document.write(dateBackWritten);</script> and
+        <script>document.write(dateForwardWritten);</script>.
+      </p>
+
+      <p>Choose the date you will collect your next prescription to get the most out of your certificate.</p>
+
+      <p>If you already have a certificate, choose a date after this expires.</p>
+
+      <p>If you have collected your prescription before today and you are eligible for a refund, choose the date you
+        collected your prescription.</p>
+
+
+      <details class="nhsuk-details" style="margin-top: 24px;">
+        <summary class="nhsuk-details__summary">
+          <span class="nhsuk-details__summary-text">
+            Refunds for previous prescriptions
+          </span>
+        </summary>
+        <div class="nhsuk-details__text">
+          <p>If you have backdated your certificate, you can only claim a refund for a prescription if you asked the
+            pharmacist for a FP57 refund form on the day you collected the prescription.</p>
+          <p>For more information on refunds, visit our <a
+              href="https://faq.nhsbsa.nhs.uk/knowledgebase/article/KA-03929/en-us#:~:text=When%20you%20can%20claim%20a,you%20can%20claim%20a%20refund."
+              target="_blank">Knowledge Base (opens in new tab)</a>.</p>
+        </div>
+      </details>
+
+      <form class="form" action="start-date" method="post">
+
+        <div class="nhsuk-date-input" id="example" style="margin-top: 30px;">
+          <div class="nhsuk-date-input__item">
+            <div class="nhsuk-form-group">
+              <label class="nhsuk-label nhsuk-date-input__label" for="start-day">
+                Day
+              </label>
+              <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="start-day" name="start-day"
+                type="number" pattern="[0-9]*">
+            </div>
+          </div>
+          <div class="nhsuk-date-input__item">
+            <div class="nhsuk-form-group">
+              <label class="nhsuk-label nhsuk-date-input__label" for="start-month">
+                Month
+              </label>
+              <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="start-month"
+                name="start-month" type="number" pattern="[0-9]*">
+            </div>
+          </div>
+          <div class="nhsuk-date-input__item">
+            <div class="nhsuk-form-group">
+              <label class="nhsuk-label nhsuk-date-input__label" for="start-year">
+                Year
+              </label>
+              <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-4" id="start-year" name="start-year"
+                type="number" pattern="[0-9]*">
+            </div>
+          </div>
+        </div>
+
+        <br>
+
+        <!-- <form action="/updated-full-journey/v6/fulfilment"> -->
+        <button class="nhsuk-button" type="submit">
+          Continue
+        </button>
+      </form>
+
+      <p><a href="/updated-full-journey/v6/start">Cancel</a></p>
+
+  </div>
+</div>
+
+{% endblock %}
