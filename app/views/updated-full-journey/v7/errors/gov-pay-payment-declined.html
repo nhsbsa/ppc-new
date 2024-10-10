@@ -1,0 +1,51 @@
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout-gov.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - edit the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title -->
+{% block pageTitle %}
+  GOV Pay - Your payment has been declined - PPC
+{% endblock %}
+
+{% block content %}
+<main id="content" role="main">
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+<br>
+      <!-- Change the page heading -->
+      <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+        <h1 class="nhsuk-fieldset__heading">
+          Your payment has been declined
+        </h1>
+      </legend>
+
+      <!-- Add content here -->
+      <!-- Styles and components can be found at https://service-manual.nhs.uk/design-system -->
+      <p>No money has been taken from your account. Contact your bank for more details.</p>
+      
+      
+      
+
+      
+
+      
+
+        
+        
+
+      <div class="form-group" style="margin-top:20px">
+        <a href="/updated-full-journey/v7/errors/payment-declined" class="govuk-button">
+          Continue
+        </a>
+        <br>
+      
+        
+      </div>
+
+  </div>
+</main>
+{% endblock %}

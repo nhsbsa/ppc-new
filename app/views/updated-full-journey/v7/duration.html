@@ -1,0 +1,148 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+How long do you want your PPC to last? - PPC
+{% endblock %}
+
+
+<!-- Header goes inside the header block -->
+<!-- More info and code for the header can be found at https://service-manual.nhs.uk/design-system/components/header -->
+{% block header %}
+  {{ header({
+    "service": {
+        "name": "Buy an NHS Prescription Prepayment Certificate",
+        "href": "/"
+      },
+      "showNav": "false",
+      "showSearch": "false"
+    })
+  }}
+    <!-- Phase banner -->
+    <div class="app-phase-banner">
+        <div class="nhsuk-width-container app-phase-banner__container">
+          <p class="app-phase-banner__content">
+            <strong class="nhsuk-tag app-phase-banner__tag">
+              beta
+            </strong>
+            <span class="app-phase-banner__text">
+              This is a new service – your <a class="govuk-link" href="https://online1.snapsurveys.com/PPC_beta_banner_feedback">feedback (opens in a new tab)</a> will help us to improve it.
+            </span>
+          </p>
+        </div>
+      </div>
+{% endblock %}
+
+
+{% block content %}
+<div class="nhsuk-back-link">
+  <a class="nhsuk-back-link__link" href="javascript:history.go(-1)">
+    <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+      aria-hidden="true">
+      <path
+        d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z">
+      </path>
+    </svg>
+    Go back</a>
+</div>
+
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-two-thirds">
+
+    <form class="form" action="duration-and-payment-choice" method="post">
+      <div class="nhsuk-form-group">
+        <fieldset class="nhsuk-fieldset" id="prepayment">
+          <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+            <h1 class="nhsuk-heading-l">Select how long you want your prepayment certificate to last</h1>
+          </legend>
+
+          <div class="nhsuk-inset-text" style="margin-top: 20px;">
+            <span class="nhsuk-u-visually-hidden">Information: </span>
+            <p><strong>If you're aged 58 or 59</strong></p>
+            <p>Your prepayment certificate will not automatically renew because you're approaching age 60 - at which
+              point
+              you will be eligible for free prescriptions.</p>
+          </div>
+
+          <!-- <div class="nhsuk-form-group"> -->
+          <!-- <h2 class="nhsuk-heading-m" id="12-months">12 months</h2> -->
+          <div class="nhsuk-radios nhsuk-radios--conditional">
+
+            <div class="nhsuk-radios__item dd-down">
+              <input class="nhsuk-radios__input" type="radio" value="twelvemonthdd" id="twelvemonthdd"
+                name="certduration" aria-controls="show-directdebit-message" aria-expanded="false">
+              <label class="nhsuk-label nhsuk-radios__label" for="twelvemonthdd">12 months by Direct Debit
+                <div class="nhsuk-hint" id="contact-hint" style="margin: 0;">
+                  10 monthly installments of £11.45
+                </div>
+              </label>
+            </div>
+
+            <div
+              class="nhsuk-radios__conditional nhsuk-u-padding-top-3 nhsuk-u-padding-bottom-3 nhsuk-radios__conditional--hidden"
+              id="show-directdebit-message">
+              <p>Your first installment will be taken on 15 August 2023. After that you can contact us to change the
+                payment date.</p>
+              <p>See our <a href="https://faq.nhsbsa.nhs.uk/knowledgebase/article/KA-03588/en-us"
+                  target="_blank">Knowledge Base (opens in new tab)</a> for more information on Direct Debit renewals.
+              </p>
+            </div>
+
+            <div class="nhsuk-radios__item" style="margin: 0">
+              <input class="nhsuk-radios__input" type="radio" value="twelvemonthsingle" id="twelvemonthsingle"
+                name="certduration" aria-expanded="false">
+              <label class="nhsuk-label nhsuk-radios__label" for="twelvemonthsingle">12 months by single payment
+                <div class="nhsuk-hint" id="contact-hint">
+                  1 payment of £114.50
+                </div>
+              </label>
+            </div>
+
+
+            <div class="nhsuk-radios__item">
+              <input class="nhsuk-radios__input" type="radio" value="threemonthsingle" id="threemonthsingle"
+                name="certduration">
+              <label class="nhsuk-label nhsuk-radios__label" for="threemonthsingle">3 months by single payment
+                <div class="nhsuk-hint" id="contact-hint" style="margin: 0;">
+                  1 payment of £32.05
+                </div>
+              </label>
+            </div>
+
+          </div>
+          <!-- </div> -->
+        </fieldset>
+      </div>
+
+      <button class="nhsuk-button" type="submit">
+        Continue
+      </button>
+    </form>
+
+    <details class="nhsuk-details" style="margin-top: 48px;">
+      <summary class="nhsuk-details__summary">
+        <span class="nhsuk-details__summary-text">
+          What option is best for me?
+        </span>
+      </summary>
+      <div class="nhsuk-details__text">
+        <p>It's important you carefully consider which certificate is best for you, based on your individual
+          circumstances.</p>
+
+        <p>A 3-month certificate costs £32.05, which will save you money if you need more than 3 items in 3 months.</p>
+
+        <p>A 12-month certificate costs £114.50, which will save you money if you need more than 11 items in 12 months.
+        </p>
+
+        <p>Depending on how many prescription items you need and for how long you might need them, it may be cheaper if
+          you purchase one or more 3-month prepayment certificates.</p>
+      </div>
+    </details>
+
+    <br>
+
+    <p><a href="/updated-full-journey/v7/start">Cancel</a></p>
+
+  </div>
+</div>
+
+{% endblock %}

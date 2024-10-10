@@ -1,0 +1,67 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+We could not process your details - PPC
+{% endblock %}
+
+<!-- Header goes inside the header block -->
+<!-- More info and code for the header can be found at https://service-manual.nhs.uk/design-system/components/header -->
+{% block header %}
+  {{ header({
+    "service": {
+        "name": "Buy an NHS Prescription Prepayment Certificate",
+        "href": "/"
+      },
+      "showNav": "false",
+      "showSearch": "false"
+    })
+  }}
+    <!-- Phase banner -->
+    <div class="app-phase-banner">
+        <div class="nhsuk-width-container app-phase-banner__container">
+          <p class="app-phase-banner__content">
+            <strong class="nhsuk-tag app-phase-banner__tag">
+              beta
+            </strong>
+            <span class="app-phase-banner__text">
+              This is a new service – your <a class="govuk-link" href="https://online1.snapsurveys.com/PPC_beta_banner_feedback">feedback (opens in a new tab)</a> will help us to improve it.
+            </span>
+          </p>
+        </div>
+      </div>
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-two-thirds">
+
+    <fieldset class="nhsuk-fieldset">
+      <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+        <h1 class="nhsuk-fieldset__heading">
+          Your application has timed out
+        </h1>
+      </legend>
+    </fieldset>
+
+    <p>We have reset your application because you did not do anything for 30 minutes. We did this to keep your
+      information secure.</p>
+
+    <a href="/updated-full-journey/v7/start" class="nhsuk-button">
+      Start application again
+    </a>
+
+
+
+    <p>If you need help <a href="https://faq.nhsbsa.nhs.uk/contact-us/">use our contact form</a> or call us on 0300 330
+      1341.</p>
+
+    <p>Lines are open Monday to Friday 8am to 6pm, and Saturday 9am to 3pm. Find out more about <a
+        href="https://www.nhsbsa.nhs.uk/contact-us/call-charges-and-phone-numbers">call charges (opens in new
+        tab)</a>.</p>
+
+  </div>
+</div>
+</main>
+</main>
+
+{% endblock %}
