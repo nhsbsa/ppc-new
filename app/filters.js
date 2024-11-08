@@ -12,18 +12,16 @@ module.exports = function (env) {
   //
   filters.alterTodaysDateByNumberOfMonths = function( monthOffset ){
 
-    let today = new Date();
-    var d = today.getDate();
+    const months = ['January','February', 'March','April','May','June','July','August','September','October','November','December'];
+
+    const today = new Date();
+    const d = today.getDate();
     today.setMonth(today.getMonth() + monthOffset);
     if (today.getDate() !== d) {
       today.setDate(0);
     }
 
-    return today.toLocaleDateString('en-GB', {
-      day: 'numeric',
-      month: 'long',
-      year: 'numeric'
-    });
+    return [ today.getDate(), months[today.getMonth()], today.getFullYear()].join(' ');
 
   };
 
