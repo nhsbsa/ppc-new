@@ -5,7 +5,40 @@ module.exports = function (env) {
    * gov.uk core filters by creating filter methods of the same name.
    * @type {Object}
    */
-  var filters = {}
+  var filters = {};
+
+  //
+  // ALTER DATE BY NUMBER OF MONTHS FUNCTION
+  //
+  filters.alterTodaysDateByNumberOfMonths = function( monthOffset ){
+
+    let today = new Date();
+    var d = today.getDate();
+    today.setMonth(today.getMonth() + monthOffset);
+    if (today.getDate() !== d) {
+      today.setDate(0);
+    }
+
+    return today.toLocaleDateString('en-GB', {
+      day: 'numeric',
+      month: 'long',
+      year: 'numeric'
+    });
+
+  };
+
+  //
+  // ALTER DATE BY NUMBER OF DAYS FUNCTION
+  //
+  filters.alterTodaysDateByNumberOfDays = function( dayOffset ){
+
+    let today = new Date();
+    today.setDate(today.getDate() + dayOffset);
+
+    // Manually format the date to avoid leading zeros (day, month, year)
+    return [ today.getDate(), today.getMonth() + 1, today.getFullYear()].join(' '); 
+
+  };
 
   /* ------------------------------------------------------------------
     add your methods to the filters obj below this comment block:
