@@ -440,19 +440,19 @@ Check your answers - 12 months full payment and to receive email - PPC
       <!-- PROCEED TO PAYMENT BUTTON -->
       <!-- For Direct Debit payments -->
       {% if (data['certduration'] === 'twelvemonthdd') %}
-      <a href="/updated-full-journey/v6/direct-debit" class="nhsuk-button">
+      <a href="direct-debit" class="nhsuk-button">
         Proceed to payment
       </a>
 
       <!-- For 12 month Single payments -->
       {% elseif (data['certduration'] === 'twelvemonthsingle') %}
-      <a href="/updated-full-journey/v6/gov-pay-12-months" class="nhsuk-button">
+      <a href="gov-pay-12-months" class="nhsuk-button">
         Proceed to payment
       </a>
 
       <!-- For 3 month Single payments -->
       {% else %}
-      <a href="/updated-full-journey/v6/gov-pay-3-months" class="nhsuk-button">
+      <a href="gov-pay-3-months" class="nhsuk-button">
         Proceed to payment
       </a>
       {% endif %}

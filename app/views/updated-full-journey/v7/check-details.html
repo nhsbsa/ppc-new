@@ -188,20 +188,20 @@ Check your answers - 12 months full payment and to receive email - PPC
       <!-- CALCULATE END MONTH AND YEAR -->
       <!-- If duration is 12 months... -->
       {% if (data['certduration'] === 'twelvemonthdd') or (data['certduration'] === 'twelvemonthsingle') %}
-      <!-- Simply set End Month the same as Start Month, and set End Year as 1 year after Start Year -->
-      {% set endMonth = data['start-month'] %}
-      {% set endYear = (data['start-year'] | int) + 1 %}
+        <!-- Simply set End Month the same as Start Month, and set End Year as 1 year after Start Year -->
+        {% set endMonth = data['start-month'] %}
+        {% set endYear = (data['start-year'] | int) + 1 %}
 
       <!-- Else if duration is 3 months... -->
       {% elseif data['certduration'] === 'threemonthsingle' %}
-      <!-- If certificate would expire in same year (if month is 9 or lower), set End Month as 3 months after Start Month -->
-      {% if 9 >= data['start-month'] %}
-      {% set endMonth = (data['start-month'] | int) + 3 %}
-      {% set endYear = data['start-year'] %}
+        <!-- If certificate would expire in same year (if month is 9 or lower), set End Month as 3 months after Start Month -->
+        {% if 9 >= data['start-month'] %}
+        {% set endMonth = (data['start-month'] | int) + 3 %}
+        {% set endYear = data['start-year'] %}
       <!-- Else, certificate would expire next year, so set End month to what it should be in next year, and End Year becomes 1 later -->
       {% else %}
-      {% set endMonth = (data['start-month'] | int) + 3 - 12 %}
-      {% set endYear = (data['start-year'] | int) + 1 %}
+        {% set endMonth = (data['start-month'] | int) + 3 - 12 %}
+        {% set endYear = (data['start-year'] | int) + 1 %}
       {% endif %}
       {% endif %}
       <!-- Minor issue: not all months have the same number of days (so isnt 100% accurate). But this should suffice. -->
@@ -440,25 +440,25 @@ Check your answers - 12 months full payment and to receive email - PPC
       <!-- PROCEED TO PAYMENT BUTTON -->
       <!-- For Direct Debit payments -->
       {% if (data['certduration'] === 'twelvemonthdd') %}
-      <a href="/updated-full-journey/v7/direct-debit" class="nhsuk-button">
+      <a href="direct-debit" class="nhsuk-button">
         Proceed to payment
       </a>
 
       <!-- For 12 month Single payments -->
       {% elseif (data['certduration'] === 'twelvemonthsingle') %}
-      <a href="/updated-full-journey/v7/gov-pay-12-months" class="nhsuk-button">
+      <a href="gov-pay-12-months" class="nhsuk-button">
         Proceed to payment
       </a>
 
       <!-- For 3 month Single payments -->
       {% else %}
-      <a href="/updated-full-journey/v7/gov-pay-3-months" class="nhsuk-button">
+      <a href="gov-pay-3-months" class="nhsuk-button">
         Proceed to payment
       </a>
       {% endif %}
 
 
-      <p class="navigation"><a class="cancel" href="/updated-full-journey/v7/start">Cancel</a></p>
+      <p class="navigation"><a class="cancel" href="start">Cancel</a></p>
 
   </div>
 </div>

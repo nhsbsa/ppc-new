@@ -2,14 +2,29 @@
 @import 'node_modules/nhsuk-frontend/packages/nhsuk';
 
 // Components that are not in the NHS.UK frontend library
-@import 'components/panel-confirmation';
+
 @import 'components/phase-banner';
+@import 'components/panel-confirmation';
+
+/*
 @import 'components/related-nav';
 @import 'components/tag';
+*/
 
 ///////////////////////////////////////////
 // Add your custom CSS/Sass styles below... 
 ///////////////////////////////////////////
+/// 
+
+
+.nhsuk-tag.app-phase-banner__tag {
+  text-transform: uppercase;
+}
+
+.nhsuk-expander .nhsuk-expander {
+  border-left: none;
+  border-right: none;
+}
 
 //TIME OUT SCREEN WARNING - POP UP//
 
