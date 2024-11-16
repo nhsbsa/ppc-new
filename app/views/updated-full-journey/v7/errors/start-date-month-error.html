@@ -49,14 +49,14 @@ When do you want your PPC to start? - Buy an NHS Prescription Prepayment Certifi
     <div class="nhsuk-grid-column-two-thirds">
 
 
-      {% set futureError = 'Enter a date between ' + ( 0 | alterTodaysDateByNumberOfMonths ) + ' and ' + ( 1 | alterTodaysDateByNumberOfMonths ) + '.' %}
+      {% set monthError = 'Start date must include a month' %}
 
       {{ errorSummary({
       titleText: 'There is a problem',
       descriptionText: '',
       errorList: [
           {
-          text: futureError,
+          text: monthError,
           href: "#example-error-1"
           }
       ]
@@ -99,23 +99,22 @@ When do you want your PPC to start? - Buy an NHS Prescription Prepayment Certifi
                         text: 'For example, ' + ( 7 | alterTodaysDateByNumberOfDays )
                     },
                     errorMessage: {
-                        text: futureError
+                        text: monthError
                     },
                     items: [
                         {
                         name: 'Day',
-                        classes: 'nhsuk-input--width-2 nhsuk-input--error',
+                        classes: 'nhsuk-input--width-2',
                         value: 20
                         },
                         {
+                        id: 'example-error-1',
                         name: 'Month',
-                        classes: 'nhsuk-input--width-2 nhsuk-input--error',
-                        value: 10
-                        },
+                        classes: 'nhsuk-input--width-2 nhsuk-input--error'                        },
                         {
                         name: 'Year',
-                        classes: 'nhsuk-input--width-4 nhsuk-input--error',
-                        value: 2025
+                        classes: 'nhsuk-input--width-4',
+                        value: 2024
                         }
                     ]
                     }) }}

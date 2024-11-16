@@ -49,14 +49,14 @@ When do you want your PPC to start? - Buy an NHS Prescription Prepayment Certifi
     <div class="nhsuk-grid-column-two-thirds">
 
 
-      {% set futureError = 'Enter a date between ' + ( 0 | alterTodaysDateByNumberOfMonths ) + ' and ' + ( 1 | alterTodaysDateByNumberOfMonths ) + '.' %}
+      {% set blankError = 'Enter the date you want your PPC to start' %}
 
       {{ errorSummary({
       titleText: 'There is a problem',
       descriptionText: '',
       errorList: [
           {
-          text: futureError,
+          text: blankError,
           href: "#example-error-1"
           }
       ]
@@ -87,7 +87,7 @@ When do you want your PPC to start? - Buy an NHS Prescription Prepayment Certifi
                 <div class="nhsuk-radios__conditional nhsuk-radios__conditional--hidden" id="conditional-contact-1">
                   <p>Choose the date you will collect your next prescription. If this is over a month away, you should wait and buy your PPC later.</p>
                  {{ dateInput({
-                    id: '',
+                    id: 'date-error',
                     fieldset: {
                         legend: {
                             text: 'Date you will collect your next prescription',
@@ -99,23 +99,21 @@ When do you want your PPC to start? - Buy an NHS Prescription Prepayment Certifi
                         text: 'For example, ' + ( 7 | alterTodaysDateByNumberOfDays )
                     },
                     errorMessage: {
-                        text: futureError
+                        text: blankError
                     },
                     items: [
                         {
                         name: 'Day',
-                        classes: 'nhsuk-input--width-2 nhsuk-input--error',
-                        value: 20
+                        classes: 'nhsuk-input--width-2 nhsuk-input--error'
                         },
                         {
                         name: 'Month',
-                        classes: 'nhsuk-input--width-2 nhsuk-input--error',
-                        value: 10
+                        classes: 'nhsuk-input--width-2 nhsuk-input--error'
                         },
                         {
+                        id: 'example-error-1',
                         name: 'Year',
-                        classes: 'nhsuk-input--width-4 nhsuk-input--error',
-                        value: 2025
+                        classes: 'nhsuk-input--width-4 nhsuk-input--error'
                         }
                     ]
                     }) }}
