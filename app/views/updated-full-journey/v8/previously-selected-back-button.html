@@ -1,0 +1,75 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+  You previously selected the back button when on the payment screen - PPC
+  {% endblock %}
+
+
+  <!-- Header goes inside the header block -->
+<!-- More info and code for the header can be found at https://service-manual.nhs.uk/design-system/components/header -->
+{% block header %}
+{{ header({
+  "service": {
+      "name": "Buy an NHS Prescription Prepayment Certificate",
+      "href": "/"
+    },
+    "showNav": "false",
+    "showSearch": "false"
+  })
+}}
+  <!-- Phase banner -->
+  <div class="app-phase-banner">
+      <div class="nhsuk-width-container app-phase-banner__container">
+        <p class="app-phase-banner__content">
+          <strong class="nhsuk-tag app-phase-banner__tag">
+            beta
+          </strong>
+          <span class="app-phase-banner__text">
+            This is a new service – your <a class="govuk-link" href="https://online1.snapsurveys.com/PPC_beta_banner_feedback">feedback (opens in a new tab)</a> will help us to improve it.
+          </span>
+        </p>
+      </div>
+    </div>
+{% endblock %}
+
+
+  {% block content %}       
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+       
+        <fieldset class="nhsuk-fieldset">
+            <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+              <h1 class="nhsuk-fieldset__heading">
+                You previously selected the back button when on the payment screen
+              </h1>
+            </legend>
+          </fieldset>
+      
+    <p>If you got an error or had any issues when trying to pay, your payment may have already been taken.</p>
+
+    <p>You can contact us to check if your payment was successful by:</p>
+    <ul class="list list-bullet">
+      <li>calling us on 0300 330 1341 - <a href="https://www.nhsbsa.nhs.uk/contact-us/call-charges-and-phone-numbers"> find out about call charges (opens in new tab)</a>.</li>
+      <li>using our <a href="https://faq.nhsbsa.nhs.uk/contact-us/">online contact form</a>.</li>
+    </ul>
+
+    <p>You can still continue to the payment screen. However, you could be charged again.</p>
+
+        
+
+
+
+        <form action="/updated-full-journey/v7/gov-pay-12-months">
+          <button class="nhsuk-button" type="submit">
+            Continue
+          </button>
+          </form>
+
+      <p><a href="/updated-full-journey/v7/start">Cancel</a></p>
+
+    </div>
+  </div>
+</main>
+</main>
+
+{% endblock %}

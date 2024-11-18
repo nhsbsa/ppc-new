@@ -1,0 +1,91 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+  Start page - PPC
+{% endblock %}
+
+
+<!-- Header goes inside the header block -->
+<!-- More info and code for the header can be found at https://service-manual.nhs.uk/design-system/components/header -->
+{% block header %}
+  {{ header({
+    "service": {
+        "name": "Buy an NHS Prescription Prepayment Certificate",
+        "href": "/"
+      },
+      "showNav": "false",
+      "showSearch": "false"
+    })
+  }}
+    <!-- Phase banner -->
+    <div class="app-phase-banner">
+        <div class="nhsuk-width-container app-phase-banner__container">
+          <p class="app-phase-banner__content">
+            <strong class="nhsuk-tag app-phase-banner__tag">
+              beta
+            </strong>
+            <span class="app-phase-banner__text">
+              This is a new service – your <a class="govuk-link" href="https://online1.snapsurveys.com/PPC_beta_banner_feedback">feedback (opens in a new tab)</a> will help us to improve it.
+            </span>
+          </p>
+        </div>
+      </div>
+{% endblock %}
+
+
+<!-- For adding a breadcrumb -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
+{% block beforeContent %}
+
+{% endblock %}
+
+<!-- For adding a back link -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/back-link -->
+
+
+
+<!-- For adding page content -->
+<!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <h1 class="nhsuk-heading-xl">Buy an NHS Prescription Prepayment Certificate (PPC)</h1>
+
+      {{ warningCallout({
+        heading: 'Important information',
+        HTML: '<p>If you pay for NHS prescribed hormone replacement therapy (HRT) medicine, then an <a href="https://www.nhsbsa.nhs.uk/help-nhs-prescription-costs/nhs-hormone-replacement-therapy-prescription-prepayment-certificate-hrt-ppc" rel="noopener">HRT PPC could save you more money than a PPC</a>.</p>'
+      }) }}
+
+      <p class="nhsuk-body-l">A PPC could save you money if you pay for your NHS prescriptions.</p>
+      <p class="nhsuk-body">The certificate covers all your NHS prescriptions for a set price.</p>
+      <p class="nhsuk-body">You will save money if you need more than 3 items in 3 months, or 11 items in 12 months.</p>
+      <p class="nhsuk-body">The prescription charge in England is £9.90 per item. A PPC costs:</p>
+
+      <ul class="nhsuk-list nhsuk-list--bullet">
+        <li>£32.05 for 3 months</li>
+        <li>£114.50 for 12 months (which you can choose to pay in 10 monthly Direct Debit instalments)</li>
+      </ul>
+
+      <h2 class="nhsuk-heading-l">Before you start</h2>
+      <p class="nhsuk-body">Check if you're entitled to free NHS prescriptions and other help with health costs using our eligibility checker.</p>
+
+      {{ actionLink({
+        text: "Find out if you're entitled to free NHS prescriptions",
+        href: 'https://www.nhsbsa.nhs.uk/check-if-youre-eligible-help'
+      }) }}
+      
+      <p class="nhsuk-body">You'll need a valid debit or credit card to pay for a PPC.</p>
+
+      {{ button({
+        text: 'Buy now',
+        href: '/updated-full-journey/v7/where-you-collect' 
+      }) }}
+
+      <p class="nhsuk-body">If you are applying on behalf of someone else, fill in the application using their details rather than your own.</p>
+      <p class="nhsuk-body">You cannot get a PPC by post using this online service. If you need it by post, you can buy one from some pharmacies.</p>
+    
+    </div>
+  </div>
+{% endblock %}
+

@@ -1,0 +1,77 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+  You can get free prescriptions soon - PPC
+  {% endblock %}
+
+
+  <!-- Header goes inside the header block -->
+<!-- More info and code for the header can be found at https://service-manual.nhs.uk/design-system/components/header -->
+{% block header %}
+{{ header({
+  "service": {
+      "name": "Buy an NHS Prescription Prepayment Certificate",
+      "href": "/"
+    },
+    "showNav": "false",
+    "showSearch": "false"
+  })
+}}
+  <!-- Phase banner -->
+  <div class="app-phase-banner">
+      <div class="nhsuk-width-container app-phase-banner__container">
+        <p class="app-phase-banner__content">
+          <strong class="nhsuk-tag app-phase-banner__tag">
+            beta
+          </strong>
+          <span class="app-phase-banner__text">
+            This is a new service – your <a class="govuk-link" href="https://online1.snapsurveys.com/PPC_beta_banner_feedback">feedback (opens in a new tab)</a> will help us to improve it.
+          </span>
+        </p>
+      </div>
+    </div>
+{% endblock %}
+
+  {% block content %}       
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+       
+        <fieldset class="nhsuk-fieldset">
+            <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+              <h1 class="nhsuk-fieldset__heading">
+                You will be eligible for free prescriptions soon
+              </h1>
+            </legend>
+          </fieldset>
+      
+    <h4>The information you gave indicates you are 59 years old.</h4>
+
+    <p>You will be eligible for free prescriptions from the age of 60.</p>
+
+    <div class="nhsuk-inset-text">
+      <span class="nhsuk-u-visually-hidden">Information: </span>
+      <p>Your prepayment certificate will not automatically renew if you are turning 60 within 9 months of your current certificate expiring.</p>
+    </div>
+
+    <h4>Covering the cost of your prescriptions until you reach 60</h4>
+
+    <p>Depending on how many months you have left before you turn age 60, you can choose to cover the cost of your prescriptions with one or more 3-month PPCs.</p>   
+
+    <p>A 3-month prescription prepayment certificate costs £32.05.</p>
+
+    <p>Press continue to proceed or cancel to stop.</p>
+
+        <form action="/updated-full-journey/v7/name">
+          <button class="nhsuk-button" type="submit">
+            Continue
+          </button>
+          </form>
+
+      <p><a href="/updated-full-journey/v7/start">Cancel</a></p>
+
+    </div>
+  </div>
+</main>
+</main>
+
+{% endblock %}

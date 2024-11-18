@@ -1,0 +1,117 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+What country do you collect your prescriptions in? - Buy an NHS Prescription Prepayment Certificate (PPC)
+{% endblock %}
+
+
+<!-- Header goes inside the header block -->
+<!-- More info and code for the header can be found at https://service-manual.nhs.uk/design-system/components/header -->
+{% block header %}
+  {{ header({
+    "service": {
+        "name": "Buy an NHS Prescription Prepayment Certificate",
+        "href": "/"
+      },
+      "showNav": "false",
+      "showSearch": "false"
+    })
+  }}
+    <!-- Phase banner -->
+    <div class="app-phase-banner">
+        <div class="nhsuk-width-container app-phase-banner__container">
+          <p class="app-phase-banner__content">
+            <strong class="nhsuk-tag app-phase-banner__tag">
+              beta
+            </strong>
+            <span class="app-phase-banner__text">
+              This is a new service – your <a class="govuk-link" href="https://online1.snapsurveys.com/PPC_beta_banner_feedback">feedback (opens in a new tab)</a> will help us to improve it.
+            </span>
+          </p>
+        </div>
+      </div>
+{% endblock %}
+
+<!-- For adding a breadcrumb -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
+{% block beforeContent %}
+
+{% endblock %}
+
+<!-- For adding a back link -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/back-link -->
+
+
+<!-- For adding page content -->
+<!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+
+  {{ backLink({
+    href: 'javascript:history.go(-1)',
+    text: 'Go back'
+  }) }}
+
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-two-thirds">
+
+    <!-- Change the page heading -->
+    <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+      <h1 class="nhsuk-fieldset__heading">
+        What country do you collect your prescriptions in?
+      </h1>
+    </legend>
+
+
+    <form class="form" action="where-you-collect" method="post">
+      <div class="nhsuk-form-group">
+        <fieldset class="nhsuk-fieldset">
+          <div class="nhsuk-radios">
+
+            <div class="nhsuk-radios__item">
+              <input class="nhsuk-radios__input" id="england" name="prescriptionCountryName" type="radio"
+                value="england">
+              <label class="nhsuk-label nhsuk-radios__label" for="example-1">
+                England
+              </label>
+            </div>
+            <div class="nhsuk-radios__item">
+              <input class="nhsuk-radios__input" id="scotland" name="prescriptionCountryName" type="radio"
+                value="scotland">
+              <label class="nhsuk-label nhsuk-radios__label" for="example-1">
+                Scotland
+              </label>
+            </div>
+            <div class="nhsuk-radios__item">
+              <input class="nhsuk-radios__input" id="wales" name="prescriptionCountryName" type="radio" value="wales">
+              <label class="nhsuk-label nhsuk-radios__label" for="example-2">
+                Wales
+              </label>
+            </div>
+            <div class="nhsuk-radios__item">
+              <input class="nhsuk-radios__input" id="northern" name="prescriptionCountryName" type="radio"
+                value="northern">
+              <label class="nhsuk-label nhsuk-radios__label" for="example-2">
+                Northern Ireland
+              </label>
+            </div>
+
+          </div>
+        </fieldset>
+
+      </div>
+
+
+
+      <button class="nhsuk-button" type="submit">
+        Continue
+      </button>
+    </form>
+
+
+    <p><a href="/updated-full-journey/v7/start">Cancel</a></p>
+
+  </div>
+</div>
+
+
+{% endblock %}
