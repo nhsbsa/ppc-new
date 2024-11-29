@@ -14,13 +14,13 @@ router.post(/where-you-collect/, (req, res) => {
     res.redirect('date-of-birth');
 
   } else if (UserLocation == "scotland") {
-    res.redirect('continue')
+    res.redirect('may-be-entitled')
 
   } else if (UserLocation == "wales") {
-    res.redirect('continue')
+    res.redirect('may-be-entitled')
 
   } else if (UserLocation == "northern") {
-    res.redirect('continue')
+    res.redirect('may-be-entitled')
   }
 })
 

@@ -8,7 +8,7 @@
 
 <!-- Set the page title -->
 {% block pageTitle %}
-What is your NHS number? No selection error - PPC
+  Do you know your NHS number?- Buy an NHS Prescription Prepayment Certificate (PPC)
 {% endblock %}
 
 <!-- Header goes inside the header block -->
@@ -16,7 +16,7 @@ What is your NHS number? No selection error - PPC
 {% block header %}
   {{ header({
     "service": {
-        "name": "Buy an NHS Prescription Prepayment Certificate",
+        "name": "Buy an NHS Prescription Prepayment Certificate (PPC)",
         "href": "/"
       },
       "showNav": "false",
@@ -70,7 +70,7 @@ What is your NHS number? No selection error - PPC
         
           <ul class="nhsuk-list nhsuk-error-summary__list">
             <li>
-              <a href="#email">You have not made a selection from the below options</a>
+              <a href="#email">Select yes if you know your NHS number</a>
             </li>
           </ul>
         </div>
@@ -92,12 +92,12 @@ What is your NHS number? No selection error - PPC
           </div>
           
             <span class="nhsuk-error-message" id="example-error-error">
-              <span class="nhsuk-u-visually-hidden">Error:</span> You have not made a selection from the below options
+              <span class="nhsuk-u-visually-hidden">Error:</span> Select yes if you know your NHS number
             </span>
           <div class="nhsuk-radios nhsuk-radios--conditional">
       
             <div class="nhsuk-radios__item">
-              <input class="nhsuk-radios__input" id="contact-1" name="contact" type="radio" value="email" aria-controls="conditional-contact-1" aria-expanded="false">
+              <input class="nhsuk-radios__input" id="email" name="contact" type="radio" value="email" aria-controls="conditional-contact-1" aria-expanded="false">
               <label class="nhsuk-label nhsuk-radios__label" for="contact-1">
                 Yes
               </label>
@@ -110,7 +110,7 @@ What is your NHS number? No selection error - PPC
                   NHS number
                 </label>
                 
-                <input class="nhsuk-input nhsuk-u-width-two-thirds" id="email" name="email" type="text">
+                <input class="nhsuk-input nhsuk-u-width-two-thirds" name="email" type="text">
               </div>
       
             </div>

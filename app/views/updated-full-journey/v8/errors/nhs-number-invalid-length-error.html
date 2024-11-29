@@ -8,7 +8,7 @@
 
 <!-- Set the page title -->
 {% block pageTitle %}
-What is your NHS number? Format error - PPC
+  Do you know your NHS number?- Buy an NHS Prescription Prepayment Certificate (PPC)
 {% endblock %}
 
 <!-- Header goes inside the header block -->
@@ -16,7 +16,7 @@ What is your NHS number? Format error - PPC
 {% block header %}
   {{ header({
     "service": {
-        "name": "Buy an NHS Prescription Prepayment Certificate",
+        "name": "Buy an NHS Prescription Prepayment Certificate (PPC)",
         "href": "/"
       },
       "showNav": "false",
@@ -70,14 +70,14 @@ What is your NHS number? Format error - PPC
 
         <ul class="nhsuk-list nhsuk-error-summary__list">
           <li>
-            <a href="#email">Enter a valid NHS number that is 10 numbers, like 1234567890 </a>
+            <a href="#email">NHS number must be 10 characters long</a>
           </li>
         </ul>
       </div>
     </div>
 
 
-    <div class="nhsuk-form-group nhsuk-form-group--error">
+    <div class="nhsuk-form-group">
 
       <fieldset class="nhsuk-fieldset" aria-describedby="contact-hint">
         <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
@@ -105,16 +105,15 @@ What is your NHS number? Format error - PPC
 
           <div class="nhsuk-radios__conditional nhsuk-radios__conditional--hidden" id="conditional-contact-1">
 
-            <div class="nhsuk-form-group">
+            <div class="nhsuk-form-group nhsuk-form-group--error">
               <label class="nhsuk-label" for="email">
                 NHS number
               </label>
               <span class="nhsuk-error-message" id="example-error-error">
-                <span class="nhsuk-u-visually-hidden">Error:</span> Enter a valid NHS number that is 10 numbers, like
-                1234567890
+                <span class="nhsuk-u-visually-hidden">Error:</span> NHS number must be 10 characters long
               </span>
               <input class="nhsuk-input nhsuk-u-width-two-thirds nhsuk-input--error" id="email" name="email" type="text"
-                value="@!@££*£*£test">
+                value="123456789023">
             </div>
 
           </div>

@@ -1,7 +1,7 @@
 {% extends 'layout.html' %}
 
 {% block pageTitle %}
-How long do you want your PPC to last? - PPC
+  How long do you want your PPC to last?- Buy an NHS Prescription Prepayment Certificate (PPC)
 {% endblock %}
 
 
@@ -10,7 +10,7 @@ How long do you want your PPC to last? - PPC
 {% block header %}
   {{ header({
     "service": {
-        "name": "Buy an NHS Prescription Prepayment Certificate",
+        "name": "Buy an NHS Prescription Prepayment Certificate (PPC)",
         "href": "/"
       },
       "showNav": "false",
@@ -52,16 +52,8 @@ How long do you want your PPC to last? - PPC
       <div class="nhsuk-form-group">
         <fieldset class="nhsuk-fieldset" id="prepayment">
           <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
-            <h1 class="nhsuk-heading-l">Select how long you want your prepayment certificate to last</h1>
+            <h1 class="nhsuk-heading-l">How long do you want your PPC to last?</h1>
           </legend>
-
-          <div class="nhsuk-inset-text" style="margin-top: 20px;">
-            <span class="nhsuk-u-visually-hidden">Information: </span>
-            <p><strong>If you're aged 58 or 59</strong></p>
-            <p>Your prepayment certificate will not automatically renew because you're approaching age 60 - at which
-              point
-              you will be eligible for free prescriptions.</p>
-          </div>
 
           <!-- <div class="nhsuk-form-group"> -->
           <!-- <h2 class="nhsuk-heading-m" id="12-months">12 months</h2> -->
@@ -116,31 +108,10 @@ How long do you want your PPC to last? - PPC
       <button class="nhsuk-button" type="submit">
         Continue
       </button>
+
+      <p><a href="start">Cancel</a></p>
+
     </form>
-
-    <details class="nhsuk-details" style="margin-top: 48px;">
-      <summary class="nhsuk-details__summary">
-        <span class="nhsuk-details__summary-text">
-          What option is best for me?
-        </span>
-      </summary>
-      <div class="nhsuk-details__text">
-        <p>It's important you carefully consider which certificate is best for you, based on your individual
-          circumstances.</p>
-
-        <p>A 3-month certificate costs £32.05, which will save you money if you need more than 3 items in 3 months.</p>
-
-        <p>A 12-month certificate costs £114.50, which will save you money if you need more than 11 items in 12 months.
-        </p>
-
-        <p>Depending on how many prescription items you need and for how long you might need them, it may be cheaper if
-          you purchase one or more 3-month prepayment certificates.</p>
-      </div>
-    </details>
-
-    <br>
-
-    <p><a href="/updated-full-journey/v7/start">Cancel</a></p>
 
   </div>
 </div>

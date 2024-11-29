@@ -10,6 +10,8 @@ router.use('/updated-full-journey/v4', require('./views/updated-full-journey/v4/
 router.use('/updated-full-journey/v5', require('./views/updated-full-journey/v5/_routes'))
 router.use('/updated-full-journey/v6', require('./views/updated-full-journey/v6/_routes'))
 router.use('/updated-full-journey/v7', require('./views/updated-full-journey/v7/_routes'))
+router.use('/updated-full-journey/v8', require('./views/updated-full-journey/v8/_routes'))
+
 
 
 //Global variables

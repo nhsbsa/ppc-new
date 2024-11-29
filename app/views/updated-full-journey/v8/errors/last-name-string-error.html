@@ -8,7 +8,7 @@
 
 <!-- Set the page title -->
 {% block pageTitle %}
-  What is your name? Last name string error - PPC
+  What is your name? - Buy an NHS Prescription Prepayment Certificate (PPC)
 {% endblock %}
 
 <!-- Header goes inside the header block -->
@@ -16,7 +16,7 @@
 {% block header %}
   {{ header({
     "service": {
-        "name": "Buy an NHS Prescription Prepayment Certificate",
+        "name": "Buy an NHS Prescription Prepayment Certificate (PPC)",
         "href": "/"
       },
       "showNav": "false",
@@ -40,14 +40,15 @@
 
 <!-- For adding a breadcrumb -->
 <!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
-{% block beforeContent %}
 
-{% endblock %}
 
 <!-- For adding a back link -->
 <!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/back-link -->
-{% block outerContent %}
-
+{% block beforeContent %}
+{{ backLink({
+  href: 'javascript:history.go(-1)',
+  text: 'Go back'
+}) }}
 {% endblock %}
 
 <!-- For adding page content -->
@@ -64,7 +65,7 @@
         <div class="nhsuk-error-summary__body">
           <ul class="nhsuk-list nhsuk-error-summary__list">
             <li>
-              <a href="#last-name">Last name must only include letters a to z, apostrophes ('), hyphens (-) and spaces</a>
+              <a href="#last-name">Last name must only include letters a to z, spaces, hyphens and apostrophes</a>
             </li>
             
           </ul>
@@ -81,10 +82,7 @@
 
       <!-- Add content here -->
       <!-- Styles and components can be found at https://service-manual.nhs.uk/design-system -->
-      <p>
-        Your first name and last name must match what is printed on your prescriptions.
-      </p>
-      
+
       <div class="nhsuk-form-group ">
         <label class="nhsuk-label" for="first-name">
           First name
@@ -98,7 +96,7 @@
           Last name
         </label>
         <span class="nhsuk-error-message" id="last-name-error">
-          <span class="nhsuk-u-visually-hidden">Error:</span> Last name must only include letters a to z, apostrophes ('), hyphens (-) and spaces
+          <span class="nhsuk-u-visually-hidden">Error:</span> Last name must only include letters a to z, spaces, hyphens and apostrophes
         </span>
         <input class="nhsuk-input nhsuk-input--error" id="last-name" name="last-name" type="text" aria-describedby="last-name-error" value="!@£$%^&*(())" for="last-name-error">
       </div>
@@ -110,7 +108,7 @@
         </button>
       </form>
 
-      <p><a href="/updated-full-journey/v7/start">Cancel</a></p>
+      <p><a href="start">Cancel</a></p>
 
 
 </div>

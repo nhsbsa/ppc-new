@@ -8,7 +8,7 @@
 
 <!-- Set the page title -->
 {% block pageTitle %}
-  What is your name? First and last name length error - PPC
+  What is your name? - Buy an NHS Prescription Prepayment Certificate (PPC)
 {% endblock %}
 
 <!-- Header goes inside the header block -->
@@ -16,7 +16,7 @@
 {% block header %}
   {{ header({
     "service": {
-        "name": "Buy an NHS Prescription Prepayment Certificate",
+        "name": "Buy an NHS Prescription Prepayment Certificate (PPC)",
         "href": "/"
       },
       "showNav": "false",
@@ -38,16 +38,13 @@
       </div>
 {% endblock %}
 
-<!-- For adding a breadcrumb -->
-<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
-{% block beforeContent %}
-
-{% endblock %}
-
 <!-- For adding a back link -->
 <!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/back-link -->
-{% block outerContent %}
-
+{% block beforeContent %}
+{{ backLink({
+  href: 'javascript:history.go(-1)',
+  text: 'Go back'
+}) }}
 {% endblock %}
 
 <!-- For adding page content -->
@@ -64,12 +61,8 @@
         <div class="nhsuk-error-summary__body">
           <ul class="nhsuk-list nhsuk-error-summary__list">
             <li>
-              <a href="#first-name">First name must be 50 characters or less</a>
+              <a href="#last-name">Enter your last name</a>
             </li>
-            <li>
-              <a href="#last-name">Last name must be 50 characters or less</a>
-            </li>
-            
           </ul>
         </div>
       </div>
@@ -84,18 +77,12 @@
 
       <!-- Add content here -->
       <!-- Styles and components can be found at https://service-manual.nhs.uk/design-system -->
-      <p>
-        Your first name and last name must match what is printed on your prescriptions.
-      </p>
       
-      <div class="nhsuk-form-group nhsuk-form-group--error">
+      <div class="nhsuk-form-group">
         <label class="nhsuk-label" for="first-name">
           First name
         </label>
-        <span class="nhsuk-error-message" id="last-name-error">
-          <span class="nhsuk-u-visually-hidden">Error:</span> First name must be 50 characters or less
-        </span>
-        <input class="nhsuk-input nhsuk-input--error" id="first-name" name="first-name" type="text" aria-describedby="first-name-error" value="Janeeeeeeeeeeeeeeeeeee" for="first-name-error">
+        <input class="nhsuk-input" id="first-name" name="first-name" type="text" value="Jane" aria-describedby="first-name" for="first-name">
       </div>
 
       <div class="nhsuk-form-group nhsuk-form-group--error">
@@ -103,9 +90,9 @@
           Last name
         </label>
         <span class="nhsuk-error-message" id="last-name-error">
-          <span class="nhsuk-u-visually-hidden">Error:</span> Last name must be 50 characters or less
+          <span class="nhsuk-u-visually-hidden">Error:</span> Enter your last name
         </span>
-        <input class="nhsuk-input nhsuk-input--error" id="last-name" name="last-name" type="text" aria-describedby="last-name-error" value="Doeeeeeeeeeeeeeeeeeeeeeeee" for="last-name-error">
+        <input class="nhsuk-input nhsuk-input--error" id="last-name" name="last-name" type="text" aria-describedby="last-name-error" for="last-name-error">
       </div>
 
       
@@ -115,7 +102,7 @@
         </button>
       </form>
 
-      <p><a href="/updated-full-journey/v7/start">Cancel</a></p>
+      <p><a href="start">Cancel</a></p>
 
 
 
