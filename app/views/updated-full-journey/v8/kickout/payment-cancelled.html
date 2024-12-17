@@ -1,7 +1,7 @@
 {% extends 'layout.html' %}
 
 {% block pageTitle %}
-Your payment has been cancelled - PPC
+  Your payment has been cancelled - Buy an NHS Prescription Prepayment Certificate (PPC)
 {% endblock %}
 
 <!-- Header goes inside the header block -->
@@ -9,7 +9,7 @@ Your payment has been cancelled - PPC
 {% block header %}
   {{ header({
     "service": {
-        "name": "Buy an NHS Prescription Prepayment Certificate",
+        "name": "Buy an NHS Prescription Prepayment Certificate (PPC)",
         "href": "/"
       },
       "showNav": "false",
@@ -42,18 +42,12 @@ Your payment has been cancelled - PPC
         </h1>
       </legend>
     </fieldset>
+    <br>
 
-    <p>We have not taken any money out of your account.</p>
+    <p>We have not taken any money out of your account.<br><br>
+      If you want to try again, you will have to <a href="/updated-full-journey/v8/start">return to the start</a>.</p>
 
-    <p>If you want to try again, you will have to <a href="/updated-full-journey/v7/start">return to the start</a>.</p>
-
-    <p>If you need help, contact us:</p>
-
-    <p>Telephone 0300 330 1341 (this call will be charged at a local rate).</p>
-
-    <p>Lines are open Monday to Friday 8am to 6pm, and Saturday 9am to 3pm.</p>
-
-    <p>Alternatively, <a href="https://faq.nhsbsa.nhs.uk/contact-us/">use our contact form(opens in new tab)</a>.</p>
+    <p><a href="https://www.nhsbsa.nhs.uk/contact-nhs-help-health-costs">Contact us</a> if you need further help.</p>
 
 
   </div>
