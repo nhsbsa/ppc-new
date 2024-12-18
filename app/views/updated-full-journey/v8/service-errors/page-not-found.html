@@ -1,5 +1,5 @@
 <!-- Extends the layout from /views/layout.html -->
-{% extends 'layout-kickout.html' %}
+{% extends 'layout.html' %}
 <!-- 
   In /views/layout.html you can:
     - edit the header and footer 
@@ -8,7 +8,34 @@
 
 <!-- Set the page title -->
 {% block pageTitle %}
-  Page not found - PPC
+  Page not found - Buy an NHS Prescription Prepayment Certificate (PPC)
+{% endblock %}
+
+<!-- Header goes inside the header block -->
+<!-- More info and code for the header can be found at https://service-manual.nhs.uk/design-system/components/header -->
+{% block header %}
+  {{ header({
+    "service": {
+        "name": "Buy an NHS Prescription Prepayment Certificate (PPC)",
+        "href": "/"
+      },
+      "showNav": "false",
+      "showSearch": "false"
+    })
+  }}
+    <!-- Phase banner -->
+    <div class="app-phase-banner">
+        <div class="nhsuk-width-container app-phase-banner__container">
+          <p class="app-phase-banner__content">
+            <strong class="nhsuk-tag app-phase-banner__tag">
+              beta
+            </strong>
+            <span class="app-phase-banner__text">
+              This is a new service – your <a class="govuk-link" href="https://online1.snapsurveys.com/PPC_beta_banner_feedback">feedback (opens in a new tab)</a> will help us to improve it.
+            </span>
+          </p>
+        </div>
+      </div>
 {% endblock %}
 
 <!-- For adding a breadcrumb -->
@@ -20,16 +47,7 @@
 <!-- For adding a back link -->
 <!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/back-link -->
 {% block outerContent %}
-<div class="govuk-phase-banner">
-  <p class="govuk-phase-banner__content">
-    <strong class="govuk-tag govuk-phase-banner__content__tag">
-      beta
-    </strong>
-    <span class="govuk-phase-banner__text">
-      This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
-    </span>
-  </p>
-</div>
+
 {% endblock %}
 
 <!-- For adding page content -->
@@ -54,8 +72,8 @@
         The page you are trying to request could not be found.
        
       </p>
+      <p><a href="/updated-full-journey/v8/start">Start application again</a></p>
       <p><a href="https://www.nhsbsa.nhs.uk/contact-nhs-help-health-costs">Contact us</a> if you need further help.</p>
-      <p><a href="https://www.nhsbsa.nhs.uk/">Go to NHS Business Services home</a></p>
       <!-- End of content -->
     </div>  
   </div>
