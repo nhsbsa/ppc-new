@@ -2,7 +2,7 @@
 {% extends 'layout.html' %}
 
 {% block pageTitle %}
-Select address - PPC
+Select your address - Buy an NHS Prescription Prepayment Certificate (PPC)
 {% endblock %}
 
 
@@ -72,7 +72,10 @@ Select address - PPC
           <label class="nhsuk-label" for="select-1">
             Postcode
           </label>
-          <p>{{data['postcode']}} &nbsp; <a href="/updated-full-journey/v7/find-address">Change</a></p>
+          <p>{{data['postcode']}} &nbsp; <a href="postcode">
+              Change<span class="nhsuk-u-visually-hidden"> postcode</span>
+            </a>
+          </p>
 
           <label class="nhsuk-label" for="select-1">
             Your address
