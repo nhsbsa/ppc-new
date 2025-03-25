@@ -60,11 +60,11 @@
       <p class="nhsuk-body-l">A PPC could save you money if you pay for your NHS prescriptions.</p>
       <p class="nhsuk-body">The certificate covers all your NHS prescriptions for a set price.</p>
       <p class="nhsuk-body">You will save money if you need more than 3 items in 3 months, or 11 items in 12 months.</p>
-      <p class="nhsuk-body">The prescription charge in England is £9.90 per item. A PPC costs:</p>
+      <p class="nhsuk-body">The prescription charge in England is {{ data.NHSPrescriptionCost }} per item. A PPC costs:</p>
 
       <ul class="nhsuk-list nhsuk-list--bullet">
-        <li>£32.05 for 3 months</li>
-        <li>£114.50 for 12 months (which you can choose to pay in 10 monthly Direct Debit instalments)</li>
+        <li>{{ data.PPC3MonthsCost }} for 3 months</li>
+        <li>{{ data.PPC12MonthsCost }} for 12 months (which you can choose to pay in 10 monthly Direct Debit instalments)</li>
       </ul>
 
       <h2 class="nhsuk-heading-l">Before you start</h2>

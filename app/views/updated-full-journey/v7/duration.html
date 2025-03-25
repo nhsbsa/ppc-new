@@ -72,7 +72,7 @@ How long do you want your PPC to last? - PPC
                 name="certduration" aria-controls="show-directdebit-message" aria-expanded="false">
               <label class="nhsuk-label nhsuk-radios__label" for="twelvemonthdd">12 months by Direct Debit
                 <div class="nhsuk-hint" id="contact-hint" style="margin: 0;">
-                  10 monthly installments of £11.45
+                  10 monthly installments of {{ data.PPCDirectDebitCost }}
                 </div>
               </label>
             </div>
@@ -92,7 +92,7 @@ How long do you want your PPC to last? - PPC
                 name="certduration" aria-expanded="false">
               <label class="nhsuk-label nhsuk-radios__label" for="twelvemonthsingle">12 months by single payment
                 <div class="nhsuk-hint" id="contact-hint">
-                  1 payment of £114.50
+                  1 payment of {{ data.PPC12MonthsCost }}
                 </div>
               </label>
             </div>
@@ -103,7 +103,7 @@ How long do you want your PPC to last? - PPC
                 name="certduration">
               <label class="nhsuk-label nhsuk-radios__label" for="threemonthsingle">3 months by single payment
                 <div class="nhsuk-hint" id="contact-hint" style="margin: 0;">
-                  1 payment of £32.05
+                  1 payment of {{ data.PPC3MonthsCost }}
                 </div>
               </label>
             </div>
@@ -128,9 +128,9 @@ How long do you want your PPC to last? - PPC
         <p>It's important you carefully consider which certificate is best for you, based on your individual
           circumstances.</p>
 
-        <p>A 3-month certificate costs £32.05, which will save you money if you need more than 3 items in 3 months.</p>
+        <p>A 3-month certificate costs {{ data.PPC3MonthsCost }}, which will save you money if you need more than 3 items in 3 months.</p>
 
-        <p>A 12-month certificate costs £114.50, which will save you money if you need more than 11 items in 12 months.
+        <p>A 12-month certificate costs {{ data.PPC12MonthsCost }}, which will save you money if you need more than 11 items in 12 months.
         </p>
 
         <p>Depending on how many prescription items you need and for how long you might need them, it may be cheaper if

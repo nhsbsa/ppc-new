@@ -69,7 +69,7 @@ Check your answers - 12 months full payment and to receive email - PPC
           <dt class="nhsuk-summary-list__key" id="full-name">Name</dt>
           <dd class="nhsuk-summary-list__value" id="name-value">{{ data['firstname'] }} {{ data['lastname'] }}</dd>
           <dd class="nhsuk-summary-list__actions">
-            <a href="/updated-full-journey/v7/name" id="nameChangeButton" aria-label="Change name">Change</a>
+            <a href="name" id="nameChangeButton" aria-label="Change name">Change</a>
           </dd>
         </div>
 
@@ -86,7 +86,7 @@ Check your answers - 12 months full payment and to receive email - PPC
           <dd class="nhsuk-summary-list__value" id="dob-value">{{data['dob-day']}} {{dobMonthName}}
             {{data['dob-year']}}</dd>
           <dd class="nhsuk-summary-list__actions">
-            <a href="/updated-full-journey/v7/date-of-birth" id="dobChangeButton"
+            <a href="date-of-birth" id="dobChangeButton"
               aria-label="Change date of birth">Change</a>
           </dd>
         </div>
@@ -95,7 +95,7 @@ Check your answers - 12 months full payment and to receive email - PPC
           <dt class="nhsuk-summary-list__key" id="nhs-question">Do you know your NHS number?</dt>
           <dd class="nhsuk-summary-list__value" id="nhsq-value">{{data['nhs-number-known']}}</dd>
           <dd class="nhsuk-summary-list__actions">
-            <a href="/updated-full-journey/v7/nhs-number" id="nhsAnswerChangeButton"
+            <a href="nhs-number" id="nhsAnswerChangeButton"
               aria-label="Change do you know your NHS number?">Change</a>
           </dd>
         </div>
@@ -105,7 +105,7 @@ Check your answers - 12 months full payment and to receive email - PPC
           <dt class="nhsuk-summary-list__key" id="nhs-no">NHS Number</dt>
           <dd class="nhsuk-summary-list__value" id="nhs-number">{{data['nhs-number-entered']}}</dd>
           <dd class="nhsuk-summary-list__actions">
-            <a href="/updated-full-journey/v7/nhs-number" id="nhsNoChangeButton"
+            <a href="nhs-number" id="nhsNoChangeButton"
               aria-label="Change NHS number">Change</a>
           </dd>
         </div>
@@ -120,7 +120,7 @@ Check your answers - 12 months full payment and to receive email - PPC
           <dd class="nhsuk-summary-list__value" id="address-value">{{data['selected-address-house-number']}} Test
             Road<br>Newcastle<br>{{data['postcode']}}</dd>
           <dd class="nhsuk-summary-list__actions">
-            <a href="/updated-full-journey/v7/enter-address" id="addressChangeButton"
+            <a href="enter-address" id="addressChangeButton"
               aria-label="Change address">Change</a>
           </dd>
         </div>
@@ -141,7 +141,7 @@ Check your answers - 12 months full payment and to receive email - PPC
             {{data['postcode']}}
           </dd>
           <dd class="nhsuk-summary-list__actions">
-            <a href="/updated-full-journey/v7/enter-address" id="addressChangeButton"
+            <a href="enter-address" id="addressChangeButton"
               aria-label="Change address">Change</a>
           </dd>
         </div>
@@ -155,7 +155,7 @@ Check your answers - 12 months full payment and to receive email - PPC
           <dt class="nhsuk-summary-list__key" id="email-q">Receive PPC by email</dt>
           <dd class="nhsuk-summary-list__value" id="emailq-value">Yes</dd>
           <dd class="nhsuk-summary-list__actions">
-            <a href="/updated-full-journey/v7/fulfilment" id="prepayEmailSentChangeButton"
+            <a href="fulfilment" id="prepayEmailSentChangeButton"
               aria-label="Change get prepayment certificate and reminder by email?">Change</a>
           </dd>
         </div>
@@ -163,7 +163,7 @@ Check your answers - 12 months full payment and to receive email - PPC
           <dt class="nhsuk-summary-list__key" id="email-address">Email address</dt>
           <dd class="nhsuk-summary-list__value" id="email-address-value">{{data['email']}}</dd>
           <dd class="nhsuk-summary-list__actions">
-            <a href="/updated-full-journey/v7/email" id="emailChangeButton" aria-label="Change email address">Change</a>
+            <a href="email" id="emailChangeButton" aria-label="Change email address">Change</a>
           </dd>
         </div>
       </dl>
@@ -174,7 +174,7 @@ Check your answers - 12 months full payment and to receive email - PPC
         <dt class="nhsuk-summary-list__key" id="email-q">Receive PPC by email</dt>
         <dd class="nhsuk-summary-list__value" id="emailq-value">No</dd>
         <dd class="nhsuk-summary-list__actions">
-          <a href="/updated-full-journey/v7/fulfilment" id="prepayEmailSentChangeButton"
+          <a href="fulfilment" id="prepayEmailSentChangeButton"
             aria-label="Change get prepayment certificate and reminder by email?">Change</a>
         </dd>
       </div>
@@ -222,7 +222,7 @@ Check your answers - 12 months full payment and to receive email - PPC
           <dt class="nhsuk-summary-list__key" id="length">Length</dt>
           <dd class="nhsuk-summary-list__value" id="length-value">12 months</dd>
           <dd class="nhsuk-summary-list__actions">
-            <a href="/updated-full-journey/v7/duration" id="certLengthChangeButton"
+            <a href="duration" id="certLengthChangeButton"
               aria-label="Change certificate length">Change</a>
           </dd>
         </div>
@@ -232,7 +232,7 @@ Check your answers - 12 months full payment and to receive email - PPC
           <dd class="nhsuk-summary-list__value" id="starts-on">{{data['start-day']}} {{startMonthName}}
             {{data['start-year']}}</dd>
           <dd class="nhsuk-summary-list__actions">
-            <a href="/updated-full-journey/v7/start-date" id="startDateChangeButton"
+            <a href="start-date" id="startDateChangeButton"
               aria-label="Change start date">Change</a>
           </dd>
         </div>
@@ -247,7 +247,7 @@ Check your answers - 12 months full payment and to receive email - PPC
         <div class="nhsuk-summary-list__row">
           <dt class="nhsuk-summary-list__key" id="cost">Total cost</dt>
           <dd class="nhsuk-summary-list__value" id="total-cost">
-            <p id="total-costdd">£<span>114.50</span></p>
+            <p id="total-costdd"><span>{{ data.PPC12MonthsCost }}</span></p>
           </dd>
           <dd class="nhsuk-summary-list__actions"></dd>
         </div>
@@ -255,10 +255,10 @@ Check your answers - 12 months full payment and to receive email - PPC
         <div class="nhsuk-summary-list__row">
           <dt class="nhsuk-summary-list__key" id="method">Payment method</dt>
           <dd class="nhsuk-summary-list__value" id="pay-method">
-            <p id="method-dd">10 instalments of £<span>11.45</span> by Direct Debit</p>
+            <p id="method-dd">10 instalments of <span>{{ data.PPCDirectDebitCost }}</span> by Direct Debit</p>
           </dd>
           <dd class="nhsuk-summary-list__actions">
-            <a href="/updated-full-journey/v7/duration" id="methodChangeButton"
+            <a href="duration" id="methodChangeButton"
               aria-label="Change payment method">Change</a>
           </dd>
         </div>
@@ -271,7 +271,7 @@ Check your answers - 12 months full payment and to receive email - PPC
           <dt class="nhsuk-summary-list__key" id="length">Length</dt>
           <dd class="nhsuk-summary-list__value" id="length-value">12 months</dd>
           <dd class="nhsuk-summary-list__actions">
-            <a href="/updated-full-journey/v7/duration" id="certLengthChangeButton"
+            <a href="duration" id="certLengthChangeButton"
               aria-label="Change certificate length">Change</a>
           </dd>
         </div>
@@ -281,7 +281,7 @@ Check your answers - 12 months full payment and to receive email - PPC
           <dd class="nhsuk-summary-list__value" id="starts-on">{{data['start-day']}} {{startMonthName}}
             {{data['start-year']}}</dd>
           <dd class="nhsuk-summary-list__actions">
-            <a href="/updated-full-journey/v7/start-date" id="startDateChangeButton"
+            <a href="start-date" id="startDateChangeButton"
               aria-label="Change start date">Change</a>
           </dd>
         </div>
@@ -296,7 +296,7 @@ Check your answers - 12 months full payment and to receive email - PPC
         <div class="nhsuk-summary-list__row">
           <dt class="nhsuk-summary-list__key" id="cost">Total cost</dt>
           <dd class="nhsuk-summary-list__value" id="total-cost">
-            <p id="total-cost12">£<span>114.50</span></p>
+            <p id="total-cost12"><span>{{ data.PPC12MonthsCost }}</span></p>
           </dd>
           <dd class="nhsuk-summary-list__actions"></dd>
         </div>
@@ -307,7 +307,7 @@ Check your answers - 12 months full payment and to receive email - PPC
             <p id="method-card">Card payment</p>
           </dd>
           <dd class="nhsuk-summary-list__actions">
-            <a href="/updated-full-journey/v7/duration" id="methodChangeButton"
+            <a href="duration" id="methodChangeButton"
               aria-label="Change payment method">Change</a>
           </dd>
         </div>
@@ -320,7 +320,7 @@ Check your answers - 12 months full payment and to receive email - PPC
           <dt class="nhsuk-summary-list__key" id="length">Length</dt>
           <dd class="nhsuk-summary-list__value" id="length-value">3 months</dd>
           <dd class="nhsuk-summary-list__actions">
-            <a href="/updated-full-journey/v7/duration" id="certLengthChangeButton"
+            <a href="duration" id="certLengthChangeButton"
               aria-label="Change certificate length">Change</a>
           </dd>
         </div>
@@ -330,7 +330,7 @@ Check your answers - 12 months full payment and to receive email - PPC
           <dd class="nhsuk-summary-list__value" id="starts-on">{{data['start-day']}} {{startMonthName}}
             {{data['start-year']}}</dd>
           <dd class="nhsuk-summary-list__actions">
-            <a href="/updated-full-journey/v7/start-date" id="startDateChangeButton"
+            <a href="start-date" id="startDateChangeButton"
               aria-label="Change start date">Change</a>
           </dd>
         </div>
@@ -345,7 +345,7 @@ Check your answers - 12 months full payment and to receive email - PPC
         <div class="nhsuk-summary-list__row">
           <dt class="nhsuk-summary-list__key" id="cost">Total cost</dt>
           <dd class="nhsuk-summary-list__value" id="total-cost">
-            <p id="total-cost3">£<span>31.25</span></p>
+            <p id="total-cost3"><span>{{ data.PPC3MonthsCost }}</span></p>
           </dd>
           <dd class="nhsuk-summary-list__actions"></dd>
         </div>
@@ -401,13 +401,25 @@ Check your answers - 12 months full payment and to receive email - PPC
       <!-- CARD PAYMENT OPTIONS INFORMATION (for Single Payments only) -->
       {% if (data['certduration'] === 'twelvemonthsingle') or (data['certduration'] === 'threemonthsingle') %}
       <div class="payment-info-box" style="margin-bottom: 40px;">
+        {% if data.allowAppleAndGooglePay === 'true' %}
         <div class="notice-margin notice form-group">
           <p>
-            If you choose to continue, you will be transferred to our card payment provider to submit your payment
+            If you choose to continue, you will be transferred to our payment provider to submit your payment
             details. You can <a id="pay-link" href="https://www.payments.service.gov.uk/" target="_blank"
               rel="noopener">find out more about GOV.UK Pay on their website (opens in new tab)</a>.
           </p>
-        </div>
+
+          <ul class="accepted-cards field-empty">
+            <li class="visa" data-key="visa" data-credit="true" data-debit="true">
+            </li>
+            <li class="master-card" data-key="master-card" data-credit="true" data-debit="true">
+            </li>
+            <li class="jcb" data-key="jcb" data-credit="true" data-debit="false">
+            </li>
+            <li class="diners-club" data-key="diners-club" data-credit="true" data-debit="false">
+            </li>
+          </ul>
+          <span class="card-text">Accepted credit and debit card types</span>
 
         <ul class="apple-pay field-empty">
           <li class="apple-pay" title="Apple Pay logo" data-key="apple-pay" data-credit="true" data-debit="false">
@@ -422,19 +434,33 @@ Check your answers - 12 months full payment and to receive email - PPC
 
         <span class="card-text">Now accepting Apple Pay and Google Pay</span>
 
-        <ul class="accepted-cards field-empty">
-          <li class="visa" data-key="visa" data-credit="true" data-debit="true">
-          </li>
-          <li class="master-card" data-key="master-card" data-credit="true" data-debit="true">
-          </li>
-          <li class="jcb" data-key="jcb" data-credit="true" data-debit="false">
-          </li>
-          <li class="diners-club" data-key="diners-club" data-credit="true" data-debit="false">
-          </li>
-        </ul>
-        <span class="card-text">Accepted credit and debit card types</span>
       </div>
+      </div>
+        {% else %}
+
+        <div class="notice-margin notice form-group">
+          <p>
+            If you choose to continue, you will be transferred to our card payment provider to submit your payment
+            details. You can <a id="pay-link" href="https://www.payments.service.gov.uk/" target="_blank"
+              rel="noopener">find out more about GOV.UK Pay on their website (opens in new tab)</a>.
+          </p>
+
+          <ul class="accepted-cards field-empty">
+            <li class="visa" data-key="visa" data-credit="true" data-debit="true">
+            </li>
+            <li class="master-card" data-key="master-card" data-credit="true" data-debit="true">
+            </li>
+            <li class="jcb" data-key="jcb" data-credit="true" data-debit="false">
+            </li>
+            <li class="diners-club" data-key="diners-club" data-credit="true" data-debit="false">
+            </li>
+          </ul>
+          <span class="card-text">Accepted credit and debit card types</span>
+        </div>
+
       {% endif %}
+      {% endif %}
+
 
 
       <!-- PROCEED TO PAYMENT BUTTON -->

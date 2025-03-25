@@ -9,7 +9,7 @@
 <main id="content" role="main">
   <div class="grid-row">
     <div class="column-two-thirds">
-<br>
+
       <h1>Enter card details</h1>
       
       <div class="payment-summary-wrap">
@@ -23,7 +23,7 @@
               Total amount:
               
             </p>
-            <span id="amount" class="amount govuk-!-font-size-36 govuk-!-font-weight-bold" style="font-size:36px !important;">£32.05</span>
+            <span id="amount" class="amount govuk-!-font-size-36 govuk-!-font-weight-bold" style="font-size:36px !important;">{{ data.PPC3MonthsCost }}</span>
         </div>
 
         <form id="card-details" style="margin-top:20px;">
@@ -541,7 +541,28 @@
 </main>
 <style>
 
-  
+
+.or-lines {
+  padding: 1em 0;
+  text-align: center;
+  overflow: hidden;
+}
+
+.or-lines:before, .or-lines:after {
+  content: '';
+  width: 100%;
+  border-bottom: lightgray solid;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.or-lines:before {
+  margin-left: -100%;
+}
+
+.or-lines:after {
+  margin-right: -100%;
+}
 
 .accepted-cards .diners-club {
     background-position: 50% 100%;

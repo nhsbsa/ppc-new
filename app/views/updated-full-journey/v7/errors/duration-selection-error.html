@@ -64,7 +64,7 @@ How long do you want your PPC to last? - Selection not made error - PPC
                 <div>
                   <div class="nhsuk-radios__item dd-down">
                     <input class="nhsuk-radios__input" type="radio" value="DD" id="twelvemonthdd" name="certduration" aria-controls="show-directdebit-message" aria-expanded="false">
-                    <label class="nhsuk-label nhsuk-radios__label" for="twelvemonthdd">Direct Debit<br>10 instalments of <strong>£<span>11.45</span></strong> (£<span>111.60</span> total)</label>
+                    <label class="nhsuk-label nhsuk-radios__label" for="twelvemonthdd">Direct Debit<br>10 instalments of <strong>{{ data.PPCDirectDebitCost }}</strong> ({{ data.PPC12MonthsCost }}total)</label>
                   </div>
                   <div class="nhsuk-radios__conditional nhsuk-u-padding-top-3 nhsuk-u-padding-bottom-3 nhsuk-radios__conditional--hidden" id="show-directdebit-message">
                     <p>Your first instalment will be taken on <span>23/08/2023</span>. After that you can call us to change the payment date.</p>
@@ -74,7 +74,7 @@ How long do you want your PPC to last? - Selection not made error - PPC
                 <div>
                 <div class="nhsuk-radios__item">
                   <input class="nhsuk-radios__input" type="radio" value="12" id="twelvemonth" name="certduration">
-                  <label class="nhsuk-label nhsuk-radios__label" for="twelvemonth">Single payment<strong><br>(£<span>111.60</span>)</strong></label>
+                  <label class="nhsuk-label nhsuk-radios__label" for="twelvemonth">Single payment<strong><br>({{ data.PPC12MonthsCost }})</strong></label>
                 </div>
                 </div>
             </div>
@@ -84,7 +84,7 @@ How long do you want your PPC to last? - Selection not made error - PPC
               <h2 id="3-months" class="nhsuk-heading-m">3 months</h2>
               <div class="nhsuk-radios__item">
                 <input class="nhsuk-radios__input" type="radio" value="3" id="threemonth" name="certduration">
-                <label class="nhsuk-label nhsuk-radios__label" for="threemonth">Single payment<strong><br>(£<span>31.25</span>)</strong></label>
+                <label class="nhsuk-label nhsuk-radios__label" for="threemonth">Single payment<strong><br>({{ data.PPC3MonthsCost }})</strong></label>
               </div>
             </div>
         </div>

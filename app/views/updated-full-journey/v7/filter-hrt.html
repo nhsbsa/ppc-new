@@ -93,13 +93,13 @@ You may save more with an HRT PPC - PPC
         </p>
 
         <p>
-          HRT PPCs cover certain HRT medicines for a set price of £19.80 (the same price as 2 prescribed items) and is valid for 12 months.
+          HRT PPCs cover certain HRT medicines for a set price of {{ data.HRTPPCCost }} (the same price as 2 prescribed items) and is valid for 12 months.
         </p>
 
         <p>
           For example, if you get 4 items in a 3-month period and 3 of the items are HRT medicines covered by the HRT PPC. 
-          It is cheaper to buy an HRT PPC for £19.90 and pay the prescription charge of £9.90 for the other item.
-          This costs £29.70 in total so it is cheaper than buying a 3 month PPC for £32.05.
+          It is cheaper to buy an HRT PPC for {{ data.HRTPPCCost }} and pay the prescription charge of {{ data.NHSPrescriptionCost }} for the other item.
+          This costs {{ data.HRTPPCandNHSPrescriptionCost }} in total so it is cheaper than buying a 3 month PPC for {{ data.PPC3MonthsCost }}.
         </p>
 
         <div class="nhsuk-inset-text">
