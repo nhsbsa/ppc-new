@@ -8,7 +8,7 @@
 
 <!-- Set the page title -->
 {% block pageTitle %}
-  Cookies on the NHSBSA website - PPC
+  Cookies on the NHSBSA website - Buy an NHS Prescription Prepayment Certificate (PPC)
 {% endblock %}
 
 <!-- Header goes inside the header block -->
@@ -16,7 +16,7 @@
 {% block header %}
   {{ header({
     "service": {
-        "name": "Buy an NHS Prescription Prepayment Certificate",
+        "name": "Buy an NHS Prescription Prepayment Certificate (PPC)",
         "href": "/"
       },
       "showNav": "false",
@@ -85,12 +85,11 @@
       <li>we add any new cookies or change the cookies we use</li>
     </ul>
     <p>You can also <a href="choose-cookies">choose which cookies we use</a> at any time.<br><br>
-    Select continue to go back to the page you were looking at.
     </p>
    
-  <form action="javascript:history.go(-2)"> 
+  <form action="cookies-decision"> 
   <button class="nhsuk-button" type="submit">
-    Next
+    Return to application
   </button>
   </form> 
 

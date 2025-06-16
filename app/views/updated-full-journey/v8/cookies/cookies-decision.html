@@ -1,0 +1,121 @@
+
+<style>
+
+#nhsuk-cookie-banner .nhsuk-success-banner {
+    background-color: #007f3b;
+    color: #fff;
+    padding: 8px 0 8px 0;
+    position: relative;
+}
+
+#nhsuk-cookie-banner .nhsuk-success-banner p {
+    margin: 0;
+}
+
+#nhsuk-cookie-banner {
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    font-family: Frutiger W01,Arial,Sans-serif;
+    color: azure;
+}
+
+
+
+#nhsuk-cookie-banner p {
+    padding: 0px;
+    font-size: 16px;
+}
+
+#nhsuk-cookie-banner p {
+    margin-bottom: 16px;
+    display: block;
+    margin-top: 0;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+</style>
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout-cookies-1.html' %}
+
+
+<!-- 
+  In /views/layout.html you can:
+    - edit the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title -->
+{% block pageTitle %}
+  Buy an NHS Prescription Prepayment Certificate (PPC)
+{% endblock %}
+
+<!-- For adding a breadcrumb -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
+{% block beforeContent %}
+
+
+
+
+{% endblock %}
+
+<!-- For adding a back link -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/back-link -->
+{% block outerContent %}
+
+
+{% endblock %}
+
+
+<!-- For adding page content -->
+<!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+
+
+
+<!-- For adding page content -->
+<!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+
+
+
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-two-thirds">
+
+    <h1 class="nhsuk-heading-xl">Buy an NHS Prescription Prepayment Certificate (PPC)</h1>
+
+    {{ warningCallout({
+      heading: 'Important information',
+      HTML: '<p>If you pay for NHS prescribed hormone replacement therapy (HRT) medicine, then an <a href="https://www.nhsbsa.nhs.uk/help-nhs-prescription-costs/nhs-hormone-replacement-therapy-prescription-prepayment-certificate-hrt-ppc" rel="noopener">HRT PPC could save you more money than a PPC</a>.</p>'
+    }) }}
+
+    <p class="nhsuk-body-l">A PPC could save you money if you pay for your NHS prescriptions.</p>
+    <p class="nhsuk-body">The certificate covers all your NHS prescriptions for a set price.</p>
+    <p class="nhsuk-body">You will save money if you need more than 3 items in 3 months, or 11 items in 12 months.</p>
+    <p class="nhsuk-body">The prescription charge in England is {{ data.NHSPrescriptionCost }} per item. A PPC costs:</p>
+
+    <ul class="nhsuk-list nhsuk-list--bullet">
+      <li>{{ data.PPC3MonthsCost }} for 3 months</li>
+      <li>{{ data.PPC12MonthsCost }} for 12 months (which you can choose to pay in 10 monthly Direct Debit instalments)</li>
+    </ul>
+
+    <h2 class="nhsuk-heading-l">Before you start</h2>
+    <p class="nhsuk-body">Check if you're entitled to free NHS prescriptions and other help with health costs using our eligibility checker.</p>
+
+    {{ actionLink({
+      text: "Find out if you're entitled to free NHS prescriptions",
+      href: 'https://www.nhsbsa.nhs.uk/check-if-youre-eligible-help'
+    }) }}
+    
+    <p class="nhsuk-body">You'll need a valid debit or credit card to pay for a PPC.</p>
+
+    {{ button({
+      text: 'Buy now',
+      href: '' 
+    }) }}
+
+    <p class="nhsuk-body">If you are applying on behalf of someone else, fill in the application using their details rather than your own.</p>
+    <p class="nhsuk-body">You cannot get a PPC by post using this online service. If you need it by post, you can buy one from some pharmacies.</p>
+  
+  </div>
+</div>
+{% endblock %}

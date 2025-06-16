@@ -1,7 +1,13 @@
 {% extends 'layout.html' %}
 
+<!-- Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+{% block headCSS %}
+  <link href="/css/main.css" rel="stylesheet">
+{% endblock %}
+
+<!-- Set the page title -->
 {% block pageTitle %}
-  Start page - PPC
+  Buy an NHS Prescription Prepayment Certificate (PPC)
 {% endblock %}
 
 <!-- Header goes inside the header block -->
@@ -33,7 +39,7 @@
 
   {{ header({
     "service": {
-        "name": "Buy an NHS Prescription Prepayment Certificate",
+        "name": "Buy an NHS Prescription Prepayment Certificate (PPC)",
         "href": "/"
       },
       "showNav": "false",
@@ -70,55 +76,45 @@
 <!-- For adding page content -->
 <!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
 {% block content %}
-  <div class="nhsuk-grid-row">
-    <div class="nhsuk-grid-column-two-thirds">
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-two-thirds">
 
-      <h1 class="nhsuk-headling-xl">
-        Buy an NHS Prescription Prepayment Certificate
-      </h1>
+    <h1 class="nhsuk-heading-xl">Buy an NHS Prescription Prepayment Certificate (PPC)</h1>
 
-     
-      <div class="nhsuk-warning-callout">
-        <h3 class="nhsuk-warning-callout__label">
-          <span role="text">
-            <span class="nhsuk-u-visually-hidden">Important: </span>
-            Important information
-          </span>
-        </h3>
-        <p>If you pay for NHS prescribed hormone replacement therapy (HRT) medicine, then an <a href="https://www.nhsbsa.nhs.uk/help-nhs-prescription-costs/nhs-hormone-replacement-therapy-prescription-prepayment-certificate-hrt-ppc" target="_blank" rel="noopener">HRT PPC could save you more money than a PPC (opens in new tab)</a>.</p>
-      </div>
+    {{ warningCallout({
+      heading: 'Important information',
+      HTML: '<p>If you pay for NHS prescribed hormone replacement therapy (HRT) medicine, then an <a href="https://www.nhsbsa.nhs.uk/help-nhs-prescription-costs/nhs-hormone-replacement-therapy-prescription-prepayment-certificate-hrt-ppc" rel="noopener">HRT PPC could save you more money than a PPC</a>.</p>'
+    }) }}
 
+    <p class="nhsuk-body-l">A PPC could save you money if you pay for your NHS prescriptions.</p>
+    <p class="nhsuk-body">The certificate covers all your NHS prescriptions for a set price.</p>
+    <p class="nhsuk-body">You will save money if you need more than 3 items in 3 months, or 11 items in 12 months.</p>
+    <p class="nhsuk-body">The prescription charge in England is {{ data.NHSPrescriptionCost }} per item. A PPC costs:</p>
 
-      <p>
-        Save money on NHS prescriptions by prepaying for them.
-      </p>
+    <ul class="nhsuk-list nhsuk-list--bullet">
+      <li>{{ data.PPC3MonthsCost }} for 3 months</li>
+      <li>{{ data.PPC12MonthsCost }} for 12 months (which you can choose to pay in 10 monthly Direct Debit instalments)</li>
+    </ul>
 
-      <p>You can pay a set price for prescriptions for 3 or 12 months, no matter how many you need.</p>
-<p>A prescription costs £9.90 per item, but prepaying for an unlimited number of prescriptions is:</p>
-      <ul class="list list-bullet">
-        <li>£32.05 for 3 months</li>
-        <li>£114.50 for 12 months (or 10 Direct Debit instalments of £11.45)</li>
-      </ul>
+    <h2 class="nhsuk-heading-l">Before you start</h2>
+    <p class="nhsuk-body">Check if you're entitled to free NHS prescriptions and other help with health costs using our eligibility checker.</p>
 
+    {{ actionLink({
+      text: "Find out if you're entitled to free NHS prescriptions",
+      href: 'https://www.nhsbsa.nhs.uk/check-if-youre-eligible-help'
+    }) }}
+    
+    <p class="nhsuk-body">You'll need a valid debit or credit card to pay for a PPC.</p>
 
-      
+    {{ button({
+      text: 'Buy now',
+      href: '' 
+    }) }}
 
-     <h2 class="nhsuk-heading-m">How it works</h2>
-      <p>We can send your certificate details by email, or you can print them at the end of the service.</p>
-
-     <p>Show your certificate details when you collect your prescription. You can collect prescriptions straight away, if your start date is today or earlier.</p>
-      
-     
-
-      
-
-     <a href="/updated-full-journey/v7/where-you-collect" class="nhsuk-button nhsuk-u-margin-bottom-8">
-      Buy now
-    </a>
-      <h2 class="nhsuk-heading-s">Other ways to buy</h3>
-      <p>The quickest way to buy a certificate is online. If you can't, there are <a href="https://www.nhsbsa.nhs.uk/help-nhs-prescription-costs/nhs-prescription-prepayment-certificate-ppc">other ways to buy one</a>.</p>
-    </div>
-
+    <p class="nhsuk-body">If you are applying on behalf of someone else, fill in the application using their details rather than your own.</p>
+    <p class="nhsuk-body">You cannot get a PPC by post using this online service. If you need it by post, you can buy one from some pharmacies.</p>
+  
   </div>
+</div>
 {% endblock %}
 
