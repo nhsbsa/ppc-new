@@ -4,40 +4,43 @@
     - add custom CSS and JavaScript
 -->
 <style>
-#nhsuk-cookie-banner .nhsuk-success-banner {
-    background-color: #007f3b;
-    color: #fff;
-    padding: 8px 0 8px 0;
-    position: relative;
-}
 
-#nhsuk-cookie-banner .nhsuk-success-banner p {
-    margin: 0;
-}
-
-#nhsuk-cookie-banner {
-    -moz-osx-font-smoothing: grayscale;
-    -webkit-font-smoothing: antialiased;
-    font-family: Frutiger W01,Arial,Sans-serif;
-    color: azure;
-}
-
-
-
-#nhsuk-cookie-banner p {
-    padding: 0px;
-    font-size: 16px;
-}
-
-#nhsuk-cookie-banner p {
-    margin-bottom: 16px;
-    display: block;
-    margin-top: 0;
+  #nhsuk-cookie-banner {
+    background-color: #007f3b !important;
+    color: #ffffff !important;
+    padding: 1rem 0;
+  }
+  
+  #nhsuk-cookie-banner .nhsuk-success-banner {
+    background-color: inherit;
+    color: inherit;
+    padding: 0;
+  }
+  
+  #nhsuk-cookie-banner p {
     font-size: 16px;
     line-height: 1.5;
+    margin: 0;
+  }
+  
+  #nhsuk-cookie-banner a {
+    color: #ffffff;
+    text-decoration: underline;
+  }
+  
+  @media (max-width: 640px) {
+  #nhsuk-cookie-confirmation-banner {
+    padding: 12px 0;
+    font-size: 14px;
+  }
+
+  #nhsuk-cookie-confirmation-banner a {
+    font-size: 14px;
+  }
 }
 
 </style>
+
 <!-- Extends the layout from /docs/views/template.html -->
 {% extends "template.html" %}
 
@@ -54,11 +57,13 @@
 <!-- Edit the header -->
 <!-- Header code examples can be found at https://service-manual.nhs.uk/design-system/components/header -->
 {% block header %}
-<div class="nhsuk-success-banner" id="nhsuk-cookie-confirmation-banner" style="background-color: #007f3b; padding: 8px 0 8px 0; color: #fff; block-size: 3em;">
-  <div class="nhsuk-width-container">
-    <p id="nhsuk-success-banner__message">You can change your cookie settings at any time using our <a href="choose-cookies" style="color:#ffffff;">cookies page</a>.</p>
+  <div class="nhsuk-success-banner" id="nhsuk-cookie-confirmation-banner" style="background-color: #007f3b; color: white; padding: 10px 0; text-align: center; display: block; width: 100%; box-sizing: border-box;">
+    <div class="nhsuk-width-container" style="text-align: left;">
+      <p id="nhsuk-success-banner__message" style="margin: 0; line-height: 1.5;">
+        You can change your cookie settings at any time using our <a href="choose-cookies" style="color: white; text-decoration: underline;">cookies page</a>.
+      </p>
+    </div>
   </div>
-</div>
   {{ header({
     "service": {
         "name": "Buy an NHS Prescription Prepayment Certificate (PPC)",
