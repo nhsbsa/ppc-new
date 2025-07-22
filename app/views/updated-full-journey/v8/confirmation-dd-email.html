@@ -10,7 +10,7 @@ Confirmation of Direct Debit and to receive email - PPC
 {% block header %}
   {{ header({
     "service": {
-        "name": "Buy an NHS Prescription Prepayment Certificate",
+        "name": "Buy an NHS Prescription Prepayment Certificate (PPC)",
         "href": "/"
       },
       "showNav": "false",
@@ -38,36 +38,63 @@ Confirmation of Direct Debit and to receive email - PPC
   <div class="nhsuk-grid-column-two-thirds">
 
     <!-- Done panel -->
-    <div class="nhsuk-panel nhsuk-panel--confirmation nhsuk-u-margin-bottom-5" style="background: #00703c; margin-top: 0;">
-      <h1 class="nhsuk-panel__title" style="color: white;">Application complete</h1><span
-        class="nhsuk-caption-l nhsuk-caption--bottom" style="text-align: center; color: white;">
-        <b>You have set up a Direct Debit payment for 12 months of prescriptions.</b> </span>
+    <div class="nhsuk-panel" style="padding: 30px;">
+      <h1 class="nhsuk-panel__title" style="text-align: left;">
+        Application complete
+      </h1>
+      <div class="nhsuk-panel__body" style="text-align: left; padding-top: 10px;">
+        You have made a Direct Debit payment for 12 months of prescriptions.
+      </div>
     </div>
-
-    <br>
 
     <p>If a pharmacist asks for evidence that you have prepaid, you must show them your certificate details.</p>
 
-    <div style="background-color: #005EB8; border-radius: 20px;">
-      <div style="padding-top: 15px;">
-      </div>
+    <style>
 
-      <dl class="nhsuk-summary-list" style="color: white; padding: 20px ; margin-bottom: 5px; margin-top: -25px;">
+      .panel-ppc {
+          display: block;
+          overflow: hidden;
+          background-color: #005EB8;
+          padding: 1.25rem;
+          border-radius: 1.25rem;
+          margin: 1.66666rem 0;
+      }
 
-        <div class="nhsuk-summary-list__row nhsuk-print-black">
-          <dt class="nhsuk-summary-list__key nhsuk-print-black">
+      .panel-ppc > *:first-child {
+          margin-top: 0;
+      }
+
+      .panel-ppc *,
+      .panel-ppc a,
+      .panel-ppc a:visited {
+          color: white;
+      }
+
+      .panel-ppc a:focus {
+          color: black;
+      }
+
+  </style>
+
+  <div class="panel-ppc">
+      
+      <dl class="nhsuk-summary-list">
+        
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key" >
             PPC for
           </dt>
-          <dd class="nhsuk-summary-list__value nhsuk-print-black">
+          <dd class="nhsuk-summary-list__value">
             {{ data['firstname'] }} {{ data['lastname'] }}
           </dd>
-        </div>
 
-        <div class="nhsuk-summary-list__row nhsuk-print-black">
-          <dt class="nhsuk-summary-list__key nhsuk-print-black">
+        </div>
+      
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
             Certificate reference
           </dt>
-          <dd class="nhsuk-summary-list__value nhsuk-print-black">
+          <dd class="nhsuk-summary-list__value">
             1000000001234
           </dd>
         </div>
@@ -108,21 +135,11 @@ Confirmation of Direct Debit and to receive email - PPC
 
       </dl>
 
-      <div style="color: white;">
-        <p class="nhsuk-print-black" style=" padding-left: 20px; padding-bottom: 20px;"><strong>If your personal details
-            change, you must contact the NHSBSA.</strong><br>If your details do not match our records, you may receive
-          a<br> penalty charge.</p>
-      </div>
-
-      <div style="color: white;">
-        <p class="nhsuk-print-black" style=" padding-left: 20px; padding-bottom: 20px;">Ways you can contact us can be
-          found on our website:<br> <strong>https://www.nhsbsa.nhs.uk/contact-nhs-help-health-costs</strong></p>
-      </div>
-
+      <h3 class="nhsuk-heading-s">If your personal details change, you must contact the NHSBSA.</h3>
+      <p class="nhsuk-body">If your details do not match you may receive a penalty charge.</p>
+      <p class="nhsuk-body">Ways to contact us can be found on our website:<br /><a class="nhsuk-link" href="https://www.nhsbsa.nhs.uk/contact-nhs-help-health-costs">https://www.nhsbsa.nhs.uk/contact-nhs-help-health-costs</a></p>
+      
     </div>
-
-
-    <br>
 
     <!-- Save or Print Cert -->
     <h2 class="nhsuk-heading-m">Save or print your certificate</h2>
@@ -133,54 +150,9 @@ Confirmation of Direct Debit and to receive email - PPC
       screenshot of your certificate details above.</p>
 
 
-    </svg> <a href="javascript:window.print();"><button class="nhsuk-button" data-prevent-double-click="true"
+    </svg> <a href=""><button class="nhsuk-button" data-prevent-double-click="true"
         data-inline="true" type="submit">
         Print or save a copy</button></a>
-
-    <!--  <div class="nhsuk-inset-text">
-          <span class="nhsuk-u-visually-hidden">Information: </span>
-
-          <dl class="nhsuk-summary-list">
-
-              <div class="nhsuk-summary-list__row">
-                <dt class="nhsuk-summary-list__key">
-                  Certificate for:
-                </dt>
-                <dd class="nhsuk-summary-list__value">
-                  Jane Doe
-                </dd>
-              </div>
-
-              <div class="nhsuk-summary-list__row">
-                  <dt class="nhsuk-summary-list__key">
-                    Certificate number:
-                  </dt>
-                  <dd class="nhsuk-summary-list__value">
-                    10000000006578
-                  </dd>
-                </div>
-
-                <div class="nhsuk-summary-list__row">
-                    <dt class="nhsuk-summary-list__key">
-                      Starts on:
-                    </dt>
-                    <dd class="nhsuk-summary-list__value">
-                      28 July 2023
-                    </dd>
-                  </div>
-
-                  <div class="nhsuk-summary-list__row">
-                      <dt class="nhsuk-summary-list__key">
-                        Ends on:
-                      </dt>
-                      <dd class="nhsuk-summary-list__value">
-                        27 July 2024
-                      </dd>
-                    </div>
-              </dl>
-        </div>-->
-
-    <br><br>
 
 
     <!-- Direct debit -->
@@ -198,7 +170,6 @@ Confirmation of Direct Debit and to receive email - PPC
       <p class="nhsuk-body">We prevent fraud by matching certificate details on our database with prescriptions.</p>
     </div>
 
-    <br>
     <div class="noprint">
       <!-- feedback -->
       <div class="nhsuk-form-group">
@@ -208,7 +179,6 @@ Confirmation of Direct Debit and to receive email - PPC
             rel="noopener" id="finished-button">Tell us what you think of this service.</a></p>
       </div>
 
-      <br>
       <!-- Contact us -->
       <h2 class="nhsuk-heading-m">Contact us</h2>
       <p class="nhsuk-body"><a class="nhsuk-link" href="https://nhsbsa-live.powerappsportals.com/contact-us/">Contact
