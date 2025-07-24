@@ -6,24 +6,22 @@
 
 {% block content %}
 
-<main id="content" role="main">
+<main id="main-content" role="main">
   <div class="grid-row">
     <div class="column-two-thirds">
-<br>
-      <h1>Enter card details</h1>
+      <h1 class="govuk-heading-xl">Enter card details</h1>
       
       <div class="payment-summary-wrap">
         <div class="payment-summary">
-          <h2 class="nhsuk-heading-l">Payment summary</h2>
-            <p id="payment-description" class="nhsk-body" style="font-size:19px;">
+          <h2 class="govuk-heading-l">Payment summary</h2>
+            <p id="payment-description" class="govuk-body">
               12 months single payment
             </p>
             
-            <p class="govuk-body govuk-!-margin-bottom-0" style="font-size:19px;">
+            <p class="govuk-body govuk-!-margin-bottom-0">
               Total amount:
-              
             </p>
-            <span id="amount" class="amount govuk-!-font-size-36 govuk-!-font-weight-bold" style="font-size:36px !important;">{{ data.PPC12MonthsCost }}</span>
+            <span id="amount" class="amount govuk-!-font-size-36 govuk-!-font-weight-bold">{{ data.PPC12MonthsCost }}</span>
         </div>
 
 
@@ -45,7 +43,7 @@
                 Card number
               </h3>
             </label>
-            <p class="accepted-cards-hint withdrawal-text govuk-!-margin-bottom-0" style="font-size:19px;">
+            <p class="accepted-cards-hint withdrawal-text govuk-hint">
               Accepted credit and debit card types
             </p>
 
@@ -187,10 +185,10 @@
                     <h3>Billing address</h3>
                   </legend>
 
-                  <div id="address-hint" class="govuk-hint govuk-!-margin-bottom-6" style="font-size:19px;">This is the address associated with the card</div>
+                  <div id="address-hint" class="govuk-hint govuk-!-margin-bottom-6">This is the address associated with the card</div>
 
                   <div class="govuk-form-group " data-validation="addressCountry">
-                    <label id="address-country-lbl" for="address-country" class="govuk-label" style="font-size:19px;">
+                    <label id="address-country-lbl" for="address-country" class="govuk-label">
                       <span
                         class="address-country-label"
                         data-label-replace="addressCountry"
@@ -455,7 +453,7 @@
                       <span
                         class="address-line-1-label"
                         data-label-replace="addressLine1"
-                        data-original-label="Building number or name and street" style="font-size:19px;">
+                        data-original-label="Building number or name and street">
                             Building number or name and street
                       </span>
 
@@ -482,7 +480,7 @@
                       <span
                     class="address-city-label"
                     data-label-replace="addressCity"
-                    data-original-label="Town or city" style="font-size:19px;">
+                    data-original-label="Town or city">
                         Town or city
                       </span>
                     </label>
@@ -495,7 +493,7 @@
                       autocomplete="billing address-level2"/>
                   </div>
                   <div class="govuk-form-group govuk-!-margin-bottom-0" data-validation="addressPostcode">
-                    <label id="address-postcode-lbl" for="address-postcode" class="govuk-label" style="font-size:19px;">
+                    <label id="address-postcode-lbl" for="address-postcode" class="govuk-label">
                       <span
                         class="address-postcode-label"
                         data-label-replace="addressPostcode"
@@ -520,32 +518,12 @@
                 Proceed to payment
               </a>
               <br>
-            
-              <p class="navigation"><a class="cancel" href="kickout/gov-pay-payment-cancelled">Cancel payment</a></p>
+
+              <p class="govuk-body">
+                <a href="kickout/gov-pay-payment-cancelled" class="govuk-link">Cancel payment</a>
+              </p>
             </div>
 
-
-            <!--<details class="nhsuk-details nhsuk-expander">
-              <summary class="nhsuk-details__summary">
-                <span class="nhsuk-details__summary-text">
-                  Errors and flags
-                </span>
-              </summary>
-              <div class="nhsuk-details__text">
-                <h4>Kickout pages</h4>
-                <ul>
-                  <li><a href="error-messages/retry/payment-declined-gov">Payment has been declined</a></li>
-                  
-              
-                </ul>
-                <h4>Error messages</h4>
-                <ul>
-                  <li><a href="error-messages/error-payment">Empty fields error</a></li>
-                  
-              
-                </ul>
-              </div>
-            </details>-->
         </form>
       </div>
     </div>
