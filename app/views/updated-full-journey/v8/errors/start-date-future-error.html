@@ -49,7 +49,7 @@ When do you want your PPC to start? - Buy an NHS Prescription Prepayment Certifi
     <div class="nhsuk-grid-column-two-thirds">
 
 
-      {% set futureError = 'Enter a date between ' + ( 0 | alterTodaysDateByNumberOfMonths ) + ' and ' + ( 1 | alterTodaysDateByNumberOfMonths ) + '.' %}
+      {% set futureError = 'Enter a start date between ' + ( 0 | alterTodaysDateByNumberOfMonths ) + ' and ' + ( 1 | alterTodaysDateByNumberOfMonths ) + '.' %}
 
       {{ errorSummary({
       titleText: 'There is a problem',
@@ -85,7 +85,7 @@ When do you want your PPC to start? - Buy an NHS Prescription Prepayment Certifi
                 </div>
           
                 <div class="nhsuk-radios__conditional nhsuk-radios__conditional--hidden" id="conditional-contact-1">
-                  <p>Choose the date you will collect your next prescription. If this is over a month away, you should wait and buy your PPC later.</p>
+                  <p>If you collected a prescription today, enter today's date. If not, enter the next date you will collect a prescription. If this is over a month away, you should wait and buy your PPC later.</p>
                  {{ dateInput({
                     id: '',
                     fieldset: {
