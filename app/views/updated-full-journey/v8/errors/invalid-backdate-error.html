@@ -98,16 +98,22 @@ When do you want your PPC to start? - Buy an NHS Prescription Prepayment Certifi
                     hint: {
                         text: 'For example, ' + ( 7 | alterTodaysDateByNumberOfDays )
                     },
+                    errorMessage: {
+                      text: backdateError
+                  },
                     items: [
                         {
                         name: 'Day',
-                        classes: 'nhsuk-input--width-2'                        },
+                        classes: 'nhsuk-input--width-2 nhsuk-input--error'
+                      },
                         {
                         name: 'Month',
-                        classes: 'nhsuk-input--width-2'                        },
+                        classes: 'nhsuk-input--width-2 nhsuk-input--error'
+                      },
                         {
                         name: 'Year',
-                        classes: 'nhsuk-input--width-4'                        }
+                        classes: 'nhsuk-input--width-4 nhsuk-input--error'
+                      }
                     ]
                     }) }}
 
