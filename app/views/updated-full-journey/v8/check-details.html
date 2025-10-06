@@ -67,7 +67,8 @@ Check your answers - Buy an NHS Prescription Prepayment Certificate (PPC)
       <dl class="nhsuk-summary-list">
         <div class="nhsuk-summary-list__row">
           <dt class="nhsuk-summary-list__key" id="full-name">Name</dt>
-          <dd class="nhsuk-summary-list__value" id="name-value">{{ data['firstname'] }} {{ data['lastname'] }}</dd>
+          <!-- <dd class="nhsuk-summary-list__value" id="name-value">{{ data['firstname'] }} {{ data['lastname'] }}</dd> -->
+          <dd class="nhsuk-summary-list__value" id="name-value">John Smith</dd>
           <dd class="nhsuk-summary-list__actions">
             <a href="name" id="nameChangeButton" aria-label="Change name">Change</a>
           </dd>
@@ -83,8 +84,9 @@ Check your answers - Buy an NHS Prescription Prepayment Certificate (PPC)
 
         <div class="nhsuk-summary-list__row">
           <dt class="nhsuk-summary-list__key" id="date-of-birth">Date of birth</dt>
-          <dd class="nhsuk-summary-list__value" id="dob-value">{{data['dob-day']}} {{dobMonthName}}
-            {{data['dob-year']}}</dd>
+          <!-- <dd class="nhsuk-summary-list__value" id="dob-value">{{data['dob-day']}} {{dobMonthName}}
+            {{data['dob-year']}}</dd> -->
+            <dd class="nhsuk-summary-list__value" id="dob-value">1 January 1999</dd>
           <dd class="nhsuk-summary-list__actions">
             <a href="date-of-birth" id="dobChangeButton"
               aria-label="Change date of birth">Change</a>
@@ -149,21 +151,21 @@ Check your answers - Buy an NHS Prescription Prepayment Certificate (PPC)
 
 
         <!-- EMAIL SUBSECTION -->
-        <!-- Show chosen email adrress, if selected by user -->
-        {% if data['fulfilment'] === 'email' %}
+        <!-- Show chosen email address, if selected by user -->
+        {% if data['certificateByEmailOrPost'] === 'email' %}
         <div class="nhsuk-summary-list__row">
           <dt class="nhsuk-summary-list__key" id="email-q">Receive PPC by email</dt>
           <dd class="nhsuk-summary-list__value" id="emailq-value">Yes</dd>
           <dd class="nhsuk-summary-list__actions">
-            <a href="fulfilment" id="prepayEmailSentChangeButton"
-              aria-label="Change get prepayment certificate and reminder by email?">Change</a>
+            <a href="do-you-want-email" id="prepayEmailSentChangeButton"
+              aria-label="Change how you want to get your PPC">Change</a>
           </dd>
         </div>
         <div class="nhsuk-summary-list__row">
           <dt class="nhsuk-summary-list__key" id="email-address">Email address</dt>
-          <dd class="nhsuk-summary-list__value" id="email-address-value">{{data['email']}}</dd>
+          <dd class="nhsuk-summary-list__value" id="email-address-value">john.smith@outlook.com</dd>
           <dd class="nhsuk-summary-list__actions">
-            <a href="email" id="emailChangeButton" aria-label="Change email address">Change</a>
+            <a href="do-you-want-email" id="emailChangeButton" aria-label="Change email address">Change</a>
           </dd>
         </div>
       </dl>
@@ -174,7 +176,7 @@ Check your answers - Buy an NHS Prescription Prepayment Certificate (PPC)
         <dt class="nhsuk-summary-list__key" id="email-q">Receive PPC by email</dt>
         <dd class="nhsuk-summary-list__value" id="emailq-value">No</dd>
         <dd class="nhsuk-summary-list__actions">
-          <a href="fulfilment" id="prepayEmailSentChangeButton"
+          <a href="do-you-want-email" id="prepayEmailSentChangeButton"
             aria-label="Change get prepayment certificate and reminder by email?">Change</a>
         </dd>
       </div>

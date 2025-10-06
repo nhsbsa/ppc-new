@@ -99,11 +99,21 @@
 
     <!-- <br> -->
 
-    <form action="confirmation-dd-email">
-      <button class="nhsuk-button" type="submit">
-        Confirm and submit
-      </button>
-    </form>
+              <!-- CONFIRM AND SUBMIT BUTTON -->
+          <!-- For email confirmation -->
+          {% if (data['certificateByEmailOrPost'] === 'email') %}
+          <a href="confirmation-dd-email" class="nhsuk-button">
+            Confirm and submit
+          </a>
+
+          <!-- For print -->
+          {% elseif (data['certificateByEmailOrPost'] === 'post') %}
+          <a href="confirmation-dd-print" class="nhsuk-button">
+            Confirm and submit
+          </a>
+
+          {% endif %}
+          
 
     <p><a href="start">Cancel</a></p>
 

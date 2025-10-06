@@ -9,6 +9,7 @@
 <main id="content" role="main">
   <div class="grid-row">
     <div class="column-two-thirds">
+      
 
       <h1 class="govuk-heading-xl">Confirm your payment</h1>
       
@@ -62,11 +63,23 @@
             </dd>
           </div>
         </dl>
+
+
+          <!-- CONFIRM PAYMENT BUTTON -->
+          <!-- For email confirmation -->
+          {% if (data['certificateByEmailOrPost'] === 'email') %}
+          <a href="confirmation-3-months-email" class="govuk-button">
+            Confirm payment
+          </a>
+
+          <!-- For print -->
+          {% elseif (data['certificateByEmailOrPost'] === 'post') %}
+          <a href="confirmation-3-months-print" class="govuk-button">
+            Confirm payment
+          </a>
+
+          {% endif %}
              
-              <div class="form-group" style="margin-top:20px">
-                <a href="confirmation-3-months-email" class="govuk-button">
-                  Confirm payment
-                </a>
                 <br>
   
                 <p class="govuk-body">

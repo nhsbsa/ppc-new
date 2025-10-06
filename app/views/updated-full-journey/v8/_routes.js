@@ -37,23 +37,12 @@ router.post(/continue/, function (req, res) {
   }
 })
 
-//fulfilment
-router.post(/fulfilment/, function (req, res) {
-  // creating a variable named contact - assigning the variable the value of the radio button selected
-  var TestFulfilment = req.session.data["fulfilment"]
-  if (TestFulfilment == "email") {
-    res.redirect('email')
-  }
 
-  else {
+//get certificate by email?
+router.post(/get-certificate-by-email/, function (req, res) {
     res.redirect('check-details')
-  }
 })
 
-//email address
-router.post(/contact-email/, (req, res) => {
-  res.redirect('check-details');
-})
 
 //duration-and-payment-choice
 router.post(/duration-and-payment-choice/, (req, res) => {
@@ -72,7 +61,7 @@ router.post(/date-of-birth/, (req, res) => {
 
 //start-date
 router.post(/start-date/, (req, res) => {
-  res.redirect('fulfilment');
+  res.redirect('do-you-want-email');
 })
 
 //nhs-number

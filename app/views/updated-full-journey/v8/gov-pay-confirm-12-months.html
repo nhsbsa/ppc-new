@@ -63,17 +63,27 @@
         </dl>
 
 
-            <div class="form-group" style="margin-top:20px">
-              <a href="confirmation-12-months-email" class="govuk-button">
-                Confirm payment
-              </a>
+          <!-- CONFIRM PAYMENT BUTTON -->
+          <!-- For email confirmation -->
+          {% if (data['certificateByEmailOrPost'] === 'email') %}
+          <a href="confirmation-12-months-email" class="govuk-button">
+            Confirm payment
+          </a>
+
+          <!-- For print -->
+          {% elseif (data['certificateByEmailOrPost'] === 'post') %}
+          <a href="confirmation-12-months-print" class="govuk-button">
+            Confirm payment
+          </a>
+
+          {% endif %}
+
               <br>
 
               <p class="govuk-body">
                 <a href="gov-pay-payment-cancelled" class="govuk-link">Cancel payment</a>
               </p>
             </div>
-        </form>
       </div>
     </div>
   </div>
