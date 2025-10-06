@@ -59,65 +59,7 @@ Do you want to get your PPC by email? - Buy an NHS Prescription Prepayment Certi
 <div class="nhsuk-grid-row">
   <div class="nhsuk-grid-column-two-thirds">
 
-
-      <form action="get-certificate-by-email" method="post" novalidate class="form">
-      
-    
-        <!-- YES for 12 months direct debit -->
-        {% if data['certduration'] === 'twelvemonthdd' %}
-        {% set yesHTML %}
-          {{ input({
-            id: 'invalid-error',
-            name: 'email',
-            value: "@£%&^$%&",
-            classes: 'nhsuk-u-width-two-thirds',
-            attributes: { 'autocomplete' : 'off' },
-            label: {
-              text: "Email address"
-            },
-            errorMessage: {
-              text: "Enter an email address in the correct format, like name@example.com"
-            }
-          }) }}
-          <br>
-          <p class="nhsuk-body">Your PPC will automatically renew after 12 months, as long as you don't cancel your Direct Debit.</p>
-          <p class="nhsuk-body">We'll send your new PPC by email.</p>
-        {% endset -%}
-
-        <!-- NO -->
-        {% set noHTML %}
-          <p class="nhsuk-body">Your PPC will automatically renew after 12 months, as long as you don't cancel your Direct Debit.</p>
-          <p class="nhsuk-body">We'll send you a reminder by post one month before your renewal date.</p>
-        {% endset -%}
-
-
-        <!-- YES for 12 months single payment -->
-        {% elif data['certduration'] === 'twelvemonthsingle' %}
-        {% set yesHTML %}
-        {{ input({
-          id: 'invalid-error',
-          name: 'email',
-          value: "@£%&^$%&",
-          classes: 'nhsuk-u-width-two-thirds',
-          attributes: { 'autocomplete' : 'off' },
-          label: {
-            text: "Email address"
-          },
-          errorMessage: {
-            text: "Enter an email address in the correct format, like name@example.com"
-          }
-        }) }}
-
-      {% endset -%}
-
-      <!-- NO -->
-      {% set noHTML %}
-        <p class="nhsuk-body">We'll send you a reminder by post one month before your PPC expires.</p>
-      {% endset -%}
-
-
-      <!-- YES for 3 months single payment -->
-      {% elif data['certduration'] === 'threemonthsingle' %}
+      <!-- YES -->
       {% set yesHTML %}
       {{ input({
         id: 'invalid-error',
@@ -139,7 +81,6 @@ Do you want to get your PPC by email? - Buy an NHS Prescription Prepayment Certi
     {% set noHTML %}
       <p class="nhsuk-body">You will not get a reminder when your PPC is due to expire.</p>
     {% endset -%}
-  {% endif %}
 
         <!-- RADIOS -->
         {{ radios({
@@ -178,8 +119,6 @@ Do you want to get your PPC by email? - Buy an NHS Prescription Prepayment Certi
         {{ button({
           text: 'Continue'
         }) }}
-
-      </form>
 
 
       <p><a href="start">Cancel</a></p>
