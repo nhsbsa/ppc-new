@@ -1,0 +1,184 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+Do you want to get your PPC by email? - Buy an NHS Prescription Prepayment Certificate (PPC)
+{% endblock %}
+
+
+<!-- Header goes inside the header block -->
+<!-- More info and code for the header can be found at https://service-manual.nhs.uk/design-system/components/header -->
+{% block header %}
+  {{ header({
+    "service": {
+        "name": "Buy an NHS Prescription Prepayment Certificate (PPC)",
+        "href": "/"
+      },
+      "showNav": "false",
+      "showSearch": "false"
+    })
+  }}
+    <!-- Phase banner -->
+    <div class="app-phase-banner">
+        <div class="nhsuk-width-container app-phase-banner__container">
+          <p class="app-phase-banner__content">
+            <strong class="nhsuk-tag app-phase-banner__tag">
+              beta
+            </strong>
+            <span class="app-phase-banner__text">
+              This is a new service – your <a class="govuk-link" href="https://online1.snapsurveys.com/PPC_beta_banner_feedback">feedback (opens in a new tab)</a> will help us to improve it.
+            </span>
+          </p>
+        </div>
+      </div>
+{% endblock %}
+
+
+{% block content %}
+<div class="nhsuk-back-link">
+  <a class="nhsuk-back-link__link" href="javascript:history.go(-1)">
+    <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+      aria-hidden="true">
+      <path
+        d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z">
+      </path>
+    </svg>
+    Go back</a>
+</div>
+
+
+{{ errorSummary({
+  titleText: "There is a problem",
+  errorList: [
+    {
+      text: "Enter your email address",
+      href: "#blank-error"
+    }
+  ]
+}) }}
+
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-two-thirds">
+
+
+      <form action="get-certificate-by-email" method="post" novalidate class="form">
+      
+    
+        <!-- YES for 12 months direct debit -->
+        {% if data['certduration'] === 'twelvemonthdd' %}
+        {% set yesHTML %}
+          {{ input({
+            id: 'blank-error',
+            name: 'email',
+            classes: 'nhsuk-u-width-two-thirds',
+            attributes: { 'autocomplete' : 'off' },
+            label: {
+              text: "Email address"
+            },
+            errorMessage: {
+              text: "Enter your email address"
+            }
+          }) }}
+          <br>
+          <p class="nhsuk-body">Your PPC will automatically renew after 12 months, as long as you don't cancel your Direct Debit.</p>
+          <p class="nhsuk-body">We'll send your new PPC by email.</p>
+        {% endset -%}
+
+        <!-- NO -->
+        {% set noHTML %}
+          <p class="nhsuk-body">Your PPC will automatically renew after 12 months, as long as you don't cancel your Direct Debit.</p>
+          <p class="nhsuk-body">We'll send you a reminder by post one month before your renewal date.</p>
+        {% endset -%}
+
+
+        <!-- YES for 12 months single payment -->
+        {% elif data['certduration'] === 'twelvemonthsingle' %}
+        {% set yesHTML %}
+        {{ input({
+          id: 'blank-error',
+          name: 'email',
+          classes: 'nhsuk-u-width-two-thirds',
+          attributes: { 'autocomplete' : 'off' },
+          label: {
+            text: "Email address"
+          },
+          errorMessage: {
+            text: "Enter your email address"
+          }
+        }) }}
+
+      {% endset -%}
+
+      <!-- NO -->
+      {% set noHTML %}
+        <p class="nhsuk-body">We'll send you a reminder by post one month before your PPC expires.</p>
+      {% endset -%}
+
+
+      <!-- YES for 3 months single payment -->
+      {% elif data['certduration'] === 'threemonthsingle' %}
+      {% set yesHTML %}
+      {{ input({
+        id: 'blank-error',
+        name: 'email',
+        classes: 'nhsuk-u-width-two-thirds',
+        attributes: { 'autocomplete' : 'off' },
+        label: {
+          text: "Email address"
+        },
+        errorMessage: {
+          text: "Enter your email address"
+        }
+      }) }}
+
+    {% endset -%}
+
+    <!-- NO -->
+    {% set noHTML %}
+      <p class="nhsuk-body">You will not get a reminder when your PPC is due to expire.</p>
+    {% endset -%}
+  {% endif %}
+
+        <!-- RADIOS -->
+        {{ radios({
+          name: 'certificateByEmailOrPost',
+          fieldset: {
+            legend: {
+              text: 'Do you want to get your PPC by email?',
+              classes: 'nhsuk-fieldset__legend--l',
+              isPageHeading: true
+            }
+          },
+          hint: {
+            html: '<p>At the end of the application you can also print or save a copy of your PPC.</p>
+                   <p>If you give your email address we\'ll send you an email reminder one month before your PPC expires.</p>'
+          },
+          items: [
+            {
+              text: 'Yes',
+              conditional : {
+                html : yesHTML
+              }
+            },
+            {
+              text: 'No',
+              conditional : {
+                html : noHTML
+              }
+            }
+          ]
+        }) }}
+
+
+        {{ button({
+          text: 'Continue'
+        }) }}
+
+      </form>
+
+
+      <p><a href="start">Cancel</a></p>
+
+  </div>
+</div>
+
+{% endblock %}
