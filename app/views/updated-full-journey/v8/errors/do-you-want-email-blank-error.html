@@ -141,6 +141,7 @@ Do you want to get your PPC by email? - Buy an NHS Prescription Prepayment Certi
         <!-- RADIOS -->
         {{ radios({
           name: 'certificateByEmailOrPost',
+          value: 'email',
           fieldset: {
             legend: {
               text: 'Do you want to get your PPC by email?',
@@ -154,12 +155,14 @@ Do you want to get your PPC by email? - Buy an NHS Prescription Prepayment Certi
           },
           items: [
             {
+              value: 'email',
               text: 'Yes',
               conditional : {
                 html : yesHTML
               }
             },
             {
+              value: 'post',
               text: 'No',
               conditional : {
                 html : noHTML
