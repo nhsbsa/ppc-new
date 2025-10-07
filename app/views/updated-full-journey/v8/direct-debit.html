@@ -34,7 +34,7 @@ Enter bank details - Buy an NHS Prescription Prepayment Certificate (PPC)
 
 
 {% block content %}
-<div class="nhsuk-back-link">
+<!-- <div class="nhsuk-back-link">
   <a class="nhsuk-back-link__link" href="javascript:history.go(-1)">
     <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
       aria-hidden="true">
@@ -43,7 +43,7 @@ Enter bank details - Buy an NHS Prescription Prepayment Certificate (PPC)
       </path>
     </svg>
     Go back</a>
-</div>
+</div> -->
 
 
 <div class="nhsuk-grid-row">
@@ -55,18 +55,22 @@ Enter bank details - Buy an NHS Prescription Prepayment Certificate (PPC)
         <legend class="nhsuk-fieldset__legend nhsuk-label--l">
           <h1 class="nhsuk-fieldset__heading">Enter bank details</h1>
         </legend>
-        <div class="nhsuk-promo">
-          <div class="nhsbsa-summary__container nhsuk-u-margin-bottom-4">
+          <div class="nhsuk-promo nhsuk-u-margin-bottom-5">
             <h2 class="nhsuk-heading-m">Payment summary</h2>
             <p class="nhsuk-body">Prepay for 12 months of prescriptions</p>
             <p class="nhsuk-body">Amount to pay:</p>
             <p class="nhsuk-u-font-weight-bold nhsuk-u-margin-bottom-0">10 monthly payments of {{ data.PPCDirectDebitCost }}</p>
           </div>
-        </div>
 
-        <!-- ERRORS display -->
+        <style>
+          .nhsuk-promo{
+          background:white;
+          padding:20px;
+          box-shadow: 0 4px 0 0 #D8DDE0;
+          }
+        </style>
 
-        <!-- END Errors display -->
+
         <div class="nhsuk-form-group">
           <label for="accountname" id="accountname-label" class="nhsuk-label">Name on the account</label>
 
@@ -76,7 +80,7 @@ Enter bank details - Buy an NHS Prescription Prepayment Certificate (PPC)
 
         <div class="nhsuk-form-group">
           <fieldset class="nhsuk-fieldset" id="sort-code">
-            <legend class="nhsuk-fieldset__legend"><span class="nhsuk-label">Sort-code</span>
+            <legend class="nhsuk-fieldset__legend"><span class="nhsuk-label">Sort code</span>
             </legend>
 
             <div class="nhsuk-date-input">

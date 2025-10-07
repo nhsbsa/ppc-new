@@ -99,20 +99,17 @@
 
     <!-- <br> -->
 
-              <!-- CONFIRM AND SUBMIT BUTTON -->
+          <!-- CONFIRM AND SUBMIT BUTTON -->
           <!-- For email confirmation -->
-          {% if (data['certificateByEmailOrPost'] === 'email') %}
+          {% if data['certificateByEmailOrPost'] === 'email' or not data['certificateByEmailOrPost'] %}
           <a href="confirmation-dd-email" class="nhsuk-button">
             Confirm and submit
           </a>
-
-          <!-- For print -->
-          {% elseif (data['certificateByEmailOrPost'] === 'post') %}
+        {% elseif data['certificateByEmailOrPost'] === 'post' %}
           <a href="confirmation-dd-print" class="nhsuk-button">
             Confirm and submit
           </a>
-
-          {% endif %}
+        {% endif %}        
           
 
     <p><a href="start">Cancel</a></p>
