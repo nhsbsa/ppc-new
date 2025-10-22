@@ -45,9 +45,7 @@ Confirmation of Direct Debit and to receive email - PPC
       <div class="nhsuk-panel__body" style="text-align: left; padding-top: 10px;">
         You have made a Direct Debit payment for 12 months of prescriptions.
       </div>
-    </div>
-
-    <p>If a pharmacist asks for evidence that you have prepaid, you must show them your certificate details.</p>
+    </div>    
 
     <style>
 
@@ -76,6 +74,8 @@ Confirmation of Direct Debit and to receive email - PPC
 
   </style>
 
+<h2 class="nhsuk-heading-m">Your PPC</h2>
+
   <div class="panel-ppc">
       
       <dl class="nhsuk-summary-list">
@@ -86,8 +86,12 @@ Confirmation of Direct Debit and to receive email - PPC
           </dt>
           <dd class="nhsuk-summary-list__value">
             <!-- {{ data['firstname'] }} {{ data['lastname'] }} -->
-              John Smith
-          </dd>
+            {% if data.firstname or data.lastname %}
+            {{ data.firstname | default('') }} {{ data.lastname | default('') }}
+          {% else %}
+            John Smith
+          {% endif %}          
+        </dd>
 
         </div>
       
@@ -136,7 +140,7 @@ Confirmation of Direct Debit and to receive email - PPC
 
       </dl>
 
-      <h3 class="nhsuk-heading-s">If your personal details change, you must contact the NHSBSA.</h3>
+      <h3 class="nhsuk-heading-m">Contact us if your name or address changes</h3>
       <p class="nhsuk-body">If your details do not match you may receive a penalty charge.</p>
       <p class="nhsuk-body">Ways to contact us can be found on our website:<br /><a class="nhsuk-link" href="https://www.nhsbsa.nhs.uk/contact-nhs-help-health-costs">https://www.nhsbsa.nhs.uk/contact-nhs-help-health-costs</a></p>
       
@@ -145,15 +149,26 @@ Confirmation of Direct Debit and to receive email - PPC
     <!-- Save or Print Cert -->
     <h2 class="nhsuk-heading-m">Save or print your certificate</h2>
 
-    <p class="nhsuk-body">We have sent your certificate details to <span
-        class="nhsuk-u-font-weight-bold">john.smith@outlook.com</span>.</p>
+    <p class="nhsuk-body">We have sent your certificate details to 
+      <span class="nhsuk-u-font-weight-bold">john.smith@outlook.com</span>.
+    </p>
+
+    <p> If you cannot see the email, check your junk and spam folders.</p>
+
     <p>You can also save your certificate by printing this page, saving your certificate as a PDF or by taking a
       screenshot of your certificate details above.</p>
 
 
-    </svg> <a href=""><button class="nhsuk-button" data-prevent-double-click="true"
-        data-inline="true" type="submit">
-        Print or save a copy</button></a>
+    <div class="nhsuk-grid-row">
+      <div class="nhsuk-grid-column-full">
+      <button class="nhsuk-button" type="submit" data-prevent-double-click="true">
+        Save as a PDF</button>
+  
+      <button class="nhsuk-button nhsuk-button--secondary" style="margin-left: 10px;" data-module="nhsuk-button" type="submit" data-prevent-double-click="true">
+          Print out a copy
+        </button>
+      </div>
+    </div>
 
 
     <!-- Direct debit -->
@@ -183,37 +198,8 @@ Confirmation of Direct Debit and to receive email - PPC
       <!-- Contact us -->
       <h2 class="nhsuk-heading-m">Contact us</h2>
       <p class="nhsuk-body"><a class="nhsuk-link" href="https://nhsbsa-live.powerappsportals.com/contact-us/">Contact
-          us</a> if you have any queries about your prescription prepayment certificate.</p>
+          us</a> if you have any queries about your PPC.</p>
 
-      <hr>
-
-      <h2 class="nhsuk-heading-m">Please join the NHS Organ Donation Register</h2>
-      <p>Organ donation laws have changed - <a
-          href="https://www.organdonation.nhs.uk/uk-laws/?campaign=2499&utm_source=prescription_ppc&utm_medium=referral&utm_content=web&utm_campaign=partner">
-          Find out how the laws affect the country you live in and what your choices are on the Organ Donation website
-          (opens in new tab)</a>.
-      <p>If you needed an organ transplant, would you have one? If so, please help others.</p>
-      <p>Tell your family about your organ donation decision.</p>
-
-      <form
-        action="https://www.organdonation.nhs.uk/register-your-decision/donate/?campaign=2499&utm_source=prescription_ppc&utm_medium=referral&utm_content=web&utm_campaign=partner">
-        <button class="nhsuk-button" type="submit">
-          Register to donate
-        </button>
-      </form>
-
-      <p>(Opens on the NHS Organ Donor website in a new tab)</p>
-      <img src="/images/organ-donation.png" alt="Organ Donation UK logo">
-      <style>
-        @media (min-width:320px) {
-          /* smartphones, iPhone, portrait 480x320 phones */
-        }
-
-        img {
-          width: 190px;
-          height: 58px;
-        }
-      </style>
 
     </div>
 

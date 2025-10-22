@@ -8,7 +8,7 @@
 
 <!-- Set the page title -->
 {% block pageTitle %}
-Postcode Look-up address not selected error - PPC
+Select your address error - PPC
 {% endblock %}
 
 <!-- Header goes inside the header block -->
@@ -16,7 +16,7 @@ Postcode Look-up address not selected error - PPC
 {% block header %}
   {{ header({
     "service": {
-        "name": "Buy an NHS Prescription Prepayment Certificate",
+        "name": "Buy an NHS Prescription Prepayment Certificate (PPC)",
         "href": "/"
       },
       "showNav": "false",
@@ -79,45 +79,95 @@ Postcode Look-up address not selected error - PPC
       
       
 
-      
       <div class="nhsuk-form-group nhsuk-form-group--error">
+        <fieldset class="nhsuk-fieldset" aria-describedby="example-error-hint example-error-error">
+          <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+            <h1 class="nhsuk-fieldset__heading">
+              What is your address?
+            </h1>
+          </legend>
 
-        <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
-          <h1 class="nhsuk-fieldset__heading">
-            What is your address?
-          </h1>
-        </legend>
-        <p>
-          The address you give must match what is printed on your prescriptions. This helps us match your details correctly.
-        </p>
+          <p>The address you select must match what is printed on your prescriptions.</p>
 
-        <label class="nhsuk-label" for="select-1">
-          Postcode
-        </label>
-        <p>NE1 OLD &nbsp; <a href="/updated-full-journey/v7/find-address">Change</a></p>
-     
+          <span id="example-error-error" class="nhsuk-error-message">
+            <span class="nhsuk-u-visually-hidden">Error:</span> Select your address
+          </span>
 
-        <label class="nhsuk-label" for="select-1">
-          Your address
-        </label>
-        <span class="nhsuk-error-message" id="dob-errors-error">
-          <span class="nhsuk-u-visually-hidden">Error:</span> Select your address
-        </span>
+          <div class="nhsuk-radios">
         
-        <select class="nhsuk-select nhsuk-select--error" id="select-1" name="select-1">
-          <option value="0">Select your address</option>
-          <option value="1">1 Test Road, Town, NE1 OLD</option>
-          <option value="2">2 Test Road, Town, NE1 OLD</option>
-          <option value="3">3 Test Road, Town, NE1 OLD</option>
-          <option value="4">4 Test Road, Town, NE1 OLD</option>
-          <option value="5">5 Test Road, Town, NE1 OLD</option>
-          <option value="6">6 Test Road, Town, NE1 OLD</option>
-          <option value="7">7 Test Road, Town, NE1 OLD</option>
-        </select>
+            <div class="nhsuk-radios__item">
+              <input type="radio" value="0" id="select-1" class="nhsuk-radios__input" name="selectedAddressIndex">
+              <label for="address-0" class="nhsuk-label nhsuk-radios__label">HEALTH EDUCATION NORTH EAST 4 THE WATERFRONT, GOLDCREST WAY, NE15 8NY</label>
+            </div>
+          
+            <div class="nhsuk-radios__item">
+              <input type="radio" value="1" id="address-1" class="nhsuk-radios__input" name="selectedAddressIndex">
+              <label for="address-1" class="nhsuk-label nhsuk-radios__label">NHS PROPERTY SERVICES LTD 4 THE WATERFRONT, GOLDCREST WAY, NE15 8NY</label>
+            </div>
+
+            <div class="nhsuk-radios__item">
+              <input type="radio" value="2" id="address-2" class="nhsuk-radios__input" name="selectedAddressIndex">
+              <label for="address-2" class="nhsuk-label nhsuk-radios__label">NORTH EAST STRATEGIC HEALTH AUTHORITY 4 THE WATERFRONT, GOLDCREST WAY, NE15 8NY</label>
+            </div>
+
+            <div class="nhsuk-radios__item">
+              <input type="radio" value="3" id="address-3" class="nhsuk-radios__input" name="selectedAddressIndex">
+              <label for="address-3" class="nhsuk-label nhsuk-radios__label">NORTH OF ENGLAND CANCER NETWORK 4 THE WATERFRONT, GOLDCREST WAY, NE15 8NY</label>
+            </div>
+
+            <div class="nhsuk-radios__item">
+              <input type="radio" value="4" id="address-4" class="nhsuk-radios__input" name="selectedAddressIndex">
+              <label for="address-4" class="nhsuk-label nhsuk-radios__label">P H E QUALITY ASSURANCE 4 THE WATERFRONT, GOLDCREST WAY, NE15 8NY</label>
+            </div>
+
+            <div class="nhsuk-radios__item">
+              <input type="radio" value="5" id="address-5" class="nhsuk-radios__input" name="selectedAddressIndex">
+              <label for="address-5" class="nhsuk-label nhsuk-radios__label">NORTH OF ENGLAND COMMISSIONING SUPPORT RIVERSIDE HOUSE, GOLDCREST WAY, NE15 8NY</label>
+            </div>
+
+            <div class="nhsuk-radios__item">
+              <input type="radio" value="6" id="address-6" class="nhsuk-radios__input" name="selectedAddressIndex">
+              <label for="address-6" class="nhsuk-label nhsuk-radios__label">ONBOARD PRO LTD RIVERSIDE HOUSE, GOLDCREST WAY, NE15 8NY</label>
+            </div>
+
+            <div class="nhsuk-radios__item">
+              <input type="radio" value="7" id="address-7" class="nhsuk-radios__input" name="selectedAddressIndex">
+              <label for="address-7" class="nhsuk-label nhsuk-radios__label">POSITIVE SOLUTIONS RIVERSIDE HOUSE, GOLDCREST WAY, NE15 8NY</label>
+            </div>
+
+            <div class="nhsuk-radios__item">
+              <input type="radio" value="8" id="address-8" class="nhsuk-radios__input" name="selectedAddressIndex">
+              <label for="address-8" class="nhsuk-label nhsuk-radios__label">S G P CONSULTING RIVERSIDE HOUSE, GOLDCREST WAY, NE15 8NY</label>
+            </div>
+
+            <div class="nhsuk-radios__item">
+              <input type="radio" value="9" id="address-9" class="nhsuk-radios__input" name="selectedAddressIndex">
+              <label for="address-9" class="nhsuk-label nhsuk-radios__label">NHS B S A STELLA HOUSE, GOLDCREST WAY, NE15 8NY</label>
+            </div>
+          
+            <div class="nhsuk-radios__item">
+              <input type="radio" value="10" id="address-10" class="nhsuk-radios__input" name="selectedAddressIndex">
+              <label for="address-10" class="nhsuk-label nhsuk-radios__label">BERNICIA HOUSE NORTH EAST AMBULANCE SERVICE NHS TRUST THE WATERFRONT, GOLDCREST WAY, NE15 8NY</label>
+            </div>
+
+            <div class="nhsuk-radios__item">
+              <input type="radio" value="11" id="address-11" class="nhsuk-radios__input" name="selectedAddressIndex">
+              <label for="address-11" class="nhsuk-label nhsuk-radios__label">UNIT C1 PAJUNK UK MEDICAL PRODUCTS LTD THE WATERFRONT, GOLDCREST WAY, NE15 8NY</label>
+            </div>
+
+            <div class="nhsuk-radios__item">
+              <input type="radio" value="12" id="address-12" class="nhsuk-radios__input" name="selectedAddressIndex">
+              <label for="address-12" class="nhsuk-label nhsuk-radios__label">STANNAH STAIRLIFTS, GOLDCREST WAY, NE15 8NY</label>
+          </div>
+
+          </div>
+        </fieldset>
       </div>
+
+      <br><br>
       
 
-      <p><a href="/updated-full-journey/v7/enter-address">My address is not listed</a></p>
+      <p><a href="/updated-full-journey/v8/enter-address">My address is not listed</a></p>
   
       <form action="">
         <button class="nhsuk-button" type="submit">
