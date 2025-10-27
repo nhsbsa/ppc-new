@@ -81,36 +81,22 @@
               </div>
 
               <div class="nhsuk-form-group">
-                <fieldset class="nhsuk-fieldset" id="sort-code">
-                  <legend class="nhsuk-fieldset__legend"><span class="nhsuk-label">Sort code</span>
-                  </legend>
-                  
-                  <div class="nhsuk-date-input">
-                    <div class="nhsuk-date-input__item">
-                      <div class="nhsuk-form-group">
-                        <label class="nhsuk-u-visually-hidden" for="sortcode1">Sort-code 1</label>
-                        <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" type="text" id="sortcode1" maxlength="2" autocomplete="off" pattern="\d*" name="sortcode1" value="">
-                      </div>
-                    </div>
-                    <div class="nhsuk-date-input__item">
-                      <div class="nhsuk-form-group">
-                        <label class="nhsuk-u-visually-hidden" for="sortcode2">Sort-code 2</label>
-                        <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" type="text" id="sortcode2" maxlength="2" autocomplete="off" pattern="\d*" name="sortcode2" value="">
-                      </div>
-                    </div>
-                    <div class="nhsuk-date-input__item">
-                      <div class="nhsuk-form-group">
-                        <label class="nhsuk-u-visually-hidden" for="sortcode3">Sort-code 3</label>
-                        <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" type="text" id="sortcode3" maxlength="2" autocomplete="off" pattern="\d*" name="sortcode3" value="">
-                      </div>
-                    </div>
-                  </div>
-                </fieldset>
+                <label for="sortcode" id="sortcode-label" class="nhsuk-label">Sort code</label>
+                <div id="sort-code-hint" class="nhsuk-hint">
+                  Must be 6 digits long
+                </div>
+                <input type="text" class="nhsuk-input nhsuk-input--width-10" id="sortcode" maxlength="6"
+                  name="sortcode" value="">
               </div>
-
+      
+      
               <div class="nhsuk-form-group">
-                  <label for="accountnumber" id="accountnumber-label" class="nhsuk-label">Account number</label>
-                  <input type="text" class="nhsuk-input nhsuk-input--width-20" id="account-number" autocomplete="off" maxlength="8" pattern="\d*" name="accountnumber" value="">
+                <label for="accountnumber" id="accountnumber-label" class="nhsuk-label">Account number</label>
+                <div id="account-number-hint" class="nhsuk-hint">
+                  Must be between 6 and 8 digits long
+                </div>
+                <input type="text" class="nhsuk-input nhsuk-input--width-10" id="accountnumber" autocomplete="off"
+                  maxlength="8" pattern="\d*" name="accountnumber" value="">
               </div>
               
               <div class="nhsuk-form-group">
