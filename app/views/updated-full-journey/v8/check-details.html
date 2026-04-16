@@ -59,6 +59,11 @@ Check your answers - Buy an NHS Prescription Prepayment Certificate (PPC)
 
       <h1 class="nhsuk-heading-l">Check your answers</h1>
 
+      <div class="nhsuk-inset-text">
+        <span class="nhsuk-u-visually-hidden">Information: </span>
+        <p><strong>Check your details to avoid a penalty charge. The details here must match those on your prescriptions.</strong></p>
+      </div>
+    
 
       <!-- YOUR DETAILS SECTION -->
 
@@ -365,25 +370,8 @@ Check your answers - Buy an NHS Prescription Prepayment Certificate (PPC)
 
 
       <!-- WARNING CALLOUT -->
-      <!-- T&Cs warning callout content for Direct Debit payments -->
-      {% if data['certduration'] === 'twelvemonthdd' %}
-      <div class="nhsuk-warning-callout" style="margin-top:60px">
-        <h2 class="nhsuk-warning-callout__label">
-          <span role="text">
-            <span class="nhsuk-u-visually-hidden">Important: </span>
-            Terms and conditions
-          </span>
-        </h2>
-        <p>Before proceeding to payment, read the full <a
-            href="https://www.nhsbsa.nhs.uk/help-nhs-prescription-costs/nhs-prescription-prepayment-certificate-ppc/terms-and-conditions"
-            target="_blank" rel="noopener">
-            Prescription Prepayment Certificate terms and conditions (opens in new tab)</a>, which contains more details
-          on Direct Debit renewals, cancelling your Direct Debit, and refunds.
-        </p>
-      </div>
-
       <!-- Slightly different T&Cs warning callout content for single payments -->
-      {% elseif (data['certduration'] === 'twelvemonthsingle') or (data['certduration'] === 'threemonthsingle') %}
+      {% if (data['certduration'] === 'twelvemonthsingle') or (data['certduration'] === 'threemonthsingle') %}
       <div class="nhsuk-warning-callout" style="margin-top:60px; margin-bottom: 40px;">
         <h2 class="nhsuk-warning-callout__label">
           <span role="text">
@@ -391,10 +379,11 @@ Check your answers - Buy an NHS Prescription Prepayment Certificate (PPC)
             Terms and conditions
           </span>
         </h2>
-        <p>Before proceeding to payment, read the full <a
+        <p>Before you pay, read the full <a
             href="https://www.nhsbsa.nhs.uk/help-nhs-prescription-costs/nhs-prescription-prepayment-certificate-ppc/terms-and-conditions"
             target="_blank" rel="noopener">
             Prescription Prepayment Certificate terms and conditions (opens in new tab)</a>.
+            They contain details about refunds, renewals and cancelling your Direct Debit.
         </p>
       </div>
       {% endif %}
