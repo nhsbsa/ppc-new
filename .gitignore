@@ -47,16 +47,13 @@ jspm_packages/
 # Optional npm cache directory
 .npm
 
-# Optional eslint cache
-.eslintcache
-
 # Optional REPL history
 .node_repl_history
 
 # Output of 'npm pack'
 *.tgz
 
-# dotenv environment variables file
+# Environment variables file
 .env
 
 # System Files
@@ -68,3 +65,6 @@ Thumbs.db
 
 # Code coverage
 coverage
+
+# ESlint cache
+.cache

@@ -1,9 +1,6 @@
-//
-// DATA
-//
+// Use this file to set any default data
 
 module.exports = {
-
     NHSPrescriptionCost: '£9.90',
 
     HRTPPCCost: '£19.80',
@@ -15,5 +12,4 @@ module.exports = {
     PPC12MonthsCost: '£114.50',
 
     PPCDirectDebitCost: '£11.45'
-
 }

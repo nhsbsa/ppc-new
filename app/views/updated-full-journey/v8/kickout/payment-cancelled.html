@@ -1,34 +1,25 @@
+<!-- Extends the prototype kit template which in turn extends the NHS.UK frontend template -->
 {% extends 'layout.html' %}
 
-{% block pageTitle %}
-  Your payment has been cancelled - Buy an NHS Prescription Prepayment Certificate (PPC)
+{% block head %}
+  <!-- Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+ <link href="/assets/sass/main.css" rel="stylesheet">
+  <!-- <script src="/nhsuk-frontend/nhsuk.min.js" defer></script> -->
 {% endblock %}
 
-<!-- Header goes inside the header block -->
-<!-- More info and code for the header can be found at https://service-manual.nhs.uk/design-system/components/header -->
-{% block header %}
-  {{ header({
-    "service": {
-        "name": "Buy an NHS Prescription Prepayment Certificate (PPC)",
-        "href": "/"
-      },
-      "showNav": "false",
-      "showSearch": "false"
-    })
-  }}
-    <!-- Phase banner -->
-    <div class="app-phase-banner">
-        <div class="nhsuk-width-container app-phase-banner__container">
-          <p class="app-phase-banner__content">
-            <strong class="nhsuk-tag app-phase-banner__tag">
-              beta
-            </strong>
-            <span class="app-phase-banner__text">
-              This is a new service – your <a class="govuk-link" href="https://online1.snapsurveys.com/PPC_beta_banner_feedback">feedback (opens in a new tab)</a> will help us to improve it.
-            </span>
-          </p>
-        </div>
-      </div>
+<!-- Set the page title -->
+{% block pageTitle %}
+  Buy an NHS Prescription Prepayment Certificate (PPC)
+{% endblock %}
+
+<!-- For adding a breadcrumb -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
+{% block beforeContent %}
+{% endblock %}
+
+<!-- For adding a back link -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/back-link -->
+{% block outerContent %}
 {% endblock %}
 
 {% block content %}

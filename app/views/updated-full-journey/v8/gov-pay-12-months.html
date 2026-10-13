@@ -1,4 +1,4 @@
-{% extends "layout-gov.html" %}
+{% extends "govuk-layout.html" %}
 
 {% block page_title %}
 GOV.UK prototype kit - 12 months payment - PPC
@@ -111,7 +111,7 @@ GOV.UK prototype kit - 12 months payment - PPC
             <input id="cvc" type="text" inputmode="numeric" pattern="[0-9]*" value="" name="cvc"
               class="govuk-input govuk-input--width-3 cvc" maxlength="3" autocomplete="cc-csc" />
 
-            <img src="/images/security-code.png" height="30px" class="generic-cvc"
+            <img src="/assets/images/security-code.png" height="30px" class="generic-cvc"
               alt="The last 3 digits on the back of the card" />
           </div>
 
@@ -485,7 +485,7 @@ GOV.UK prototype kit - 12 months payment - PPC
     margin: 0 10px 5px 0;
     padding-bottom: 2rem;
     float: left;
-    background-image: url(/images/accepted-cards-sprite.png);
+    background-image: url(/assets/images/accepted-cards-sprite.png);
     background-size: 900% 200%;
   }
 

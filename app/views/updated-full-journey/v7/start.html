@@ -1,46 +1,29 @@
 {% extends 'layout.html' %}
 
+{% block head %}
+  <!-- Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+ <link href="/assets/sass/main.css" rel="stylesheet">
+  <!-- <script src="/nhsuk-frontend/nhsuk.min.js" defer></script> -->
+   
+{% endblock %}
+
+<!-- Set the page title -->
 {% block pageTitle %}
-  Start page - PPC
+  Buy an NHS Prescription Prepayment Certificate (PPC)
 {% endblock %}
 
-
-<!-- Header goes inside the header block -->
-<!-- More info and code for the header can be found at https://service-manual.nhs.uk/design-system/components/header -->
-{% block header %}
-  {{ header({
-    "service": {
-        "name": "Buy an NHS Prescription Prepayment Certificate",
-        "href": "/"
-      },
-      "showNav": "false",
-      "showSearch": "false"
-    })
-  }}
-    <!-- Phase banner -->
-    <div class="app-phase-banner">
-        <div class="nhsuk-width-container app-phase-banner__container">
-          <p class="app-phase-banner__content">
-            <strong class="nhsuk-tag app-phase-banner__tag">
-              beta
-            </strong>
-            <span class="app-phase-banner__text">
-              This is a new service – your <a class="govuk-link" href="https://online1.snapsurveys.com/PPC_beta_banner_feedback">feedback (opens in a new tab)</a> will help us to improve it.
-            </span>
-          </p>
-        </div>
-      </div>
-{% endblock %}
-
-
-<!-- For adding a breadcrumb -->
-<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
 {% block beforeContent %}
 
+  {{ backLink({
+    href: 'javascript:history.go(-1)',
+    text: 'Go back'
+  }) }}
 {% endblock %}
 
-<!-- For adding a back link -->
-<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/back-link -->
+
+{% block outerContent %}
+
+{% endblock %}
 
 
 
@@ -54,7 +37,7 @@
 
       {{ warningCallout({
         heading: 'Important information',
-        HTML: '<p>If you pay for NHS prescribed hormone replacement therapy (HRT) medicine, then an <a href="https://www.nhsbsa.nhs.uk/help-nhs-prescription-costs/nhs-hormone-replacement-therapy-prescription-prepayment-certificate-hrt-ppc" rel="noopener">HRT PPC could save you more money than a PPC</a>.</p>'
+        html: '<p>If you pay for NHS prescribed hormone replacement therapy (HRT) medicine, then an <a href="https://www.nhsbsa.nhs.uk/help-nhs-prescription-costs/nhs-hormone-replacement-therapy-prescription-prepayment-certificate-hrt-ppc" rel="noopener">HRT PPC could save you more money than a PPC</a>.</p>'
       }) }}
 
       <p class="nhsuk-body-l">A PPC could save you money if you pay for your NHS prescriptions.</p>

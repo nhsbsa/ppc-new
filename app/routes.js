@@ -1,6 +1,9 @@
 // External dependencies
-const express = require('express');
-const router = express.Router();
+const express = require('express')
+
+const router = express.Router()
+
+// Add your routes here - above the module.exports line
 
 // versioned routes files
 router.use('/updated-full-journey/v1', require('./views/updated-full-journey/v1/_routes'))
@@ -421,6 +424,4 @@ router.post(/contact-email/, (req, res) => {
   }
 })
 
-
-
-module.exports = router;
+module.exports = router
