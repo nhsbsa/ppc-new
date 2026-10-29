@@ -28,153 +28,120 @@
 
 {% block content %}
 
-<div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-row">
+        <div class="nhsuk-grid-column-two-thirds">
 
-    <div class="nhsuk-grid-column-two-thirds">
+            <form action="your-start-date" method="post" novalidate>
 
-      <div class="nhsuk-form-group">
-
-
-      <form action="start-date" method="post" novalidate>
-
-        <fieldset class="nhsuk-fieldset" aria-describedby="contact-hint">
-          <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
-            <h1 class="nhsuk-fieldset__heading">
-              When do you want your PPC to start?
-            </h1>
-          </legend>
-
-          <p>You can choose to start your PPC between {{ -1 | alterTodaysDateByNumberOfMonths }} and {{ 1 | alterTodaysDateByNumberOfMonths }}.</p>
-         
-            
-          <div class="nhsuk-form-group">
-              <div class="nhsuk-radios nhsuk-radios--conditional">
-          
-                <div class="nhsuk-radios__item">
-                  <input class="nhsuk-radios__input" id="contact-1" name="contact" type="radio" value="email" aria-controls="conditional-contact-1" aria-expanded="false">
-                  <label class="nhsuk-label nhsuk-radios__label" for="contact-1">
-                    <strong>To start today or later</strong>
-                  </label>
-                </div>
-          
-                <div class="nhsuk-radios__conditional nhsuk-radios__conditional--hidden" id="conditional-contact-1">
-                  <p>If you collected a prescription today, enter today's date. If not, enter the next date you will collect a prescription. If this is over a month away, you should wait and buy your PPC later.</p>
-                  <div class="nhsuk-form-group">
-                    <fieldset class="nhsuk-fieldset" aria-describedby="example-hint" role="group">
-                      
-                      <div class="nhsuk-hint" id="example-hint">
-                        For example, {{ 7 | alterTodaysDateByNumberOfDays }}
-                      </div>
-                  
-                      <div class="nhsuk-date-input" id="example">
-                        <div class="nhsuk-date-input__item">
-                          <div class="nhsuk-form-group">
-                            <label class="nhsuk-label nhsuk-date-input__label" for="example-day">
-                              Day
-                            </label>
-                            <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="example-day" name="example-day" type="text" pattern="[0-9]*" inputmode="numeric">
-                          </div>
-                        </div>
-                        <div class="nhsuk-date-input__item">
-                          <div class="nhsuk-form-group">
-                            <label class="nhsuk-label nhsuk-date-input__label" for="example-month">
-                              Month
-                            </label>
-                            <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="example-month" name="example-month" type="text" pattern="[0-9]*" inputmode="numeric">
-                          </div>
-                        </div>
-                        <div class="nhsuk-date-input__item">
-                          <div class="nhsuk-form-group">
-                            <label class="nhsuk-label nhsuk-date-input__label" for="example-year">
-                              Year
-                            </label>
-                            <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-4" id="example-year" name="example-year" type="text" pattern="[0-9]*" inputmode="numeric">
-                          </div>
-                        </div>
-                      </div>
-                    </fieldset>
-                  
-                  </div>
-
-              
-                </div>
-          
-                <div class="nhsuk-radios__item">
-                  <input class="nhsuk-radios__input" id="contact-2" name="contact" type="radio" value="phone" aria-controls="conditional-contact-2" aria-expanded="false">
-                  <label class="nhsuk-label nhsuk-radios__label" for="contact-2">
-                    <strong>I want to backdate my certificate - I have collected my prescription before today</strong>
-                  </label>
-                </div>
-          
-                <div class="nhsuk-radios__conditional nhsuk-radios__conditional--hidden" id="conditional-contact-2">
-          
-                  <div class="nhsuk-form-group">
-
-                   
-                    <p>If you've collected a prescription in the last month, you can claim a refund if you got an FP57 receipt when you paid. </p>
+                {% set differentDateHTML %}
                     
-                    <p>If you did not get an FP57 receipt you cannot get a refund and should start your PPC today or later.</p>
-                    <p>Choose the date you collected your prescription.</p>
-                    <div class="nhsuk-form-group">
-                      <fieldset class="nhsuk-fieldset" aria-describedby="example-hint" role="group">
-                        
-                        <div class="nhsuk-hint" id="example-hint">
-                          For example, {{ -7 | alterTodaysDateByNumberOfDays }}
-                        </div>
+
+                    {{ dateInput({
+                        id: 'startDate',
+                        namePrefix: 'startDate',
+                        formGroup: {
+                            classes: 'nhsuk-u-margin-bottom-4'
+                        },
+                        fieldset: {
+                            legend: {
+                                text: 'Certificate start date',
+                                classes: 'nhsuk-u-visually-hidden',
+                                isPageHeading: false
+                            }
+                        },
+                        hint: {
+                            html: 'For example, ' + (7 | alterTodaysDateByNumberOfDays)
+                        },
+                        items: [
+                            {
+                                name: 'day',
+                                value: data.startDate.day,
+                                classes: 'nhsuk-input--width-2',
+                                attributes: { 'autocomplete' : 'off' }
+                            },
+                            {
+                                name: 'month',
+                                value: data.startDate.month,
+                                classes: 'nhsuk-input--width-2',
+                                attributes: { 'autocomplete' : 'off' }
+                            },
+                            {
+                                name: 'year',
+                                value: data.startDate.year,
+                                classes: 'nhsuk-input--width-4',
+                                attributes: { 'autocomplete' : 'off' }
+                            }
+                        ]
+                    }) }}
+
+                {% endset %}
+
+                <style> 
+                    label[for="startWhen-1"],
+                    label[for="startWhen-2"]{
+                        font-weight: 600 !important;
+                    }  
+                </style>
+
+
+
+
+                {% call fieldset({
+                     legend: {
+                            text: 'When do you want your PPC to start?',
+                            classes: 'nhsuk-fieldset__legend--l',
+                            isPageHeading: true
+                        }
+                }) %}
+
+                <p class="nhsuk-body">You can choose to start your PPC today, or on any date up to one month in the future (until {{ ( 1 | alterTodaysDateByNumberOfMonths ) }}).</p>
+                <P>Choose the date you will collect your next PPC prescription. If this is over a month away, you should wait and buy your PPC later.</P>
+
+
+                <!-- DETAILS COMPONENT -->
+                {% set backDateHTML %}
+                    <p class="nhsuk-body">If you've collected an PPC prescription in the last month (since {{ ( -1 | alterTodaysDateByNumberOfMonths ) }}), you can claim a refund if you got an FP57 receipt when you paid.</p>
+                    <p class="nhsuk-body">If you did not get an FP57 receipt you cannot get a refund and should start your PPC today or later.</p>
+                    <p class="nhsuk-body">Choose the date you collected your prescription.</p>
                     
-                        <div class="nhsuk-date-input" id="example">
-                          <div class="nhsuk-date-input__item">
-                            <div class="nhsuk-form-group">
-                              <label class="nhsuk-label nhsuk-date-input__label" for="example-day">
-                                Day
-                              </label>
-                              <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="example-day" name="example-day" type="text" pattern="[0-9]*" inputmode="numeric">
-                            </div>
-                          </div>
-                          <div class="nhsuk-date-input__item">
-                            <div class="nhsuk-form-group">
-                              <label class="nhsuk-label nhsuk-date-input__label" for="example-month">
-                                Month
-                              </label>
-                              <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="example-month" name="example-month" type="text" pattern="[0-9]*" inputmode="numeric">
-                            </div>
-                          </div>
-                          <div class="nhsuk-date-input__item">
-                            <div class="nhsuk-form-group">
-                              <label class="nhsuk-label nhsuk-date-input__label" for="example-year">
-                                Year
-                              </label>
-                              <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-4" id="example-year" name="example-year" type="text" pattern="[0-9]*" inputmode="numeric">
-                            </div>
-                          </div>
-                        </div>
-                      </fieldset>
-                    </div>
-                  </div>
-                </div>
-              </div>
-          </div> 
-        </fieldset>
+                {% endset %}
 
-         <p>If you already have a valid exemption certificate check when it expires. <a href="https://www.nhsbsa.nhs.uk/check-if-you-have-nhs-exemption"> Find details on how to check this on our website (opens in a new tab).</a></p>
-      
+                {{ details({
+                    summaryText: 'Already collected and paid for prescriptions?',
+                    html: backDateHTML
+                }) }}
 
-        
-        <button class="nhsuk-button" type="submit">
-          Continue
-        </button>
-      </form>
-      
-      </div>
 
-      <p><a href="start">Cancel</a></p>
+                <!-- RADIO BUTTONS -->
+                {{ radios({
+                    idPrefix: 'startWhen',
+                    name: 'startWhen',
+                    value: data.startWhen,
+                    items: [
+                        {
+                            value: 'today',
+                            text: 'To start today'
+                        },
+                        {
+                            value: 'differentDate',
+                            text: 'To start on a different date',
+                            conditional: { html: differentDateHTML }
+                        }
+                    ]
+                }) }}
 
-      <!-- End of content -->
+                {% endcall %}
 
-    </div>  
+                <!-- END BUTTON -->
 
-  </div>
+                {{ button({
+                    text: 'Continue'
+                }) }}
 
-  
+            </form>
 
+            <p class="nhsuk-body"><a class="nhsuk-link" href="start">Cancel</a></p>
+
+        </div>
+    </div>
 {% endblock %}
